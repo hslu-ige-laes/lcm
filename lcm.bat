@@ -1,0 +1,1 @@
+wscript %~dp0\dist\script\wsf\run.wsf

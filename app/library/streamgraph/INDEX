@@ -1,0 +1,19 @@
+renderStreamgraph       Widget render function for use in Shiny
+sg_add_marker           Add a vertical marker (with optional label) to
+                        streamgraph
+sg_annotate             Add text annotation to streamgraph
+sg_axis_x               Modify streamgraph x axis formatting
+sg_axis_y               Modify streamgraph y axis formatting
+sg_colors               Modify streamgraph colors
+sg_fill_brewer          Use ColorBrewer palettes for streamgraph fill
+                        colors
+sg_fill_manual          Use manual colors for streamgraph fill colors
+sg_fill_tableau         Use Tableau discrete palettes for streamgraph
+                        fill colors
+sg_legend               Modify streamgraph legend properties
+sg_title                Add a title to the streamgraph
+streamgraph             Create a new streamgraph
+streamgraph-exports     streamgraph exported operators
+streamgraph-package     A package to make streamgraphs
+streamgraphOutput       Widget output function for use in Shiny
+widgetThumbnail         Make a thumbnail for an htmlwidget panel

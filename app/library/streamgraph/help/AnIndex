@@ -1,0 +1,17 @@
+streamgraph-package	streamgraph-package
+%>%	streamgraph-exports
+renderStreamgraph	renderStreamgraph
+sg_add_marker	sg_add_marker
+sg_annotate	sg_annotate
+sg_axis_x	sg_axis_x
+sg_axis_y	sg_axis_y
+sg_colors	sg_colors
+sg_fill_brewer	sg_fill_brewer
+sg_fill_manual	sg_fill_manual
+sg_fill_tableau	sg_fill_tableau
+sg_legend	sg_legend
+sg_title	sg_title
+streamgraph	streamgraph
+streamgraph-exports	streamgraph-exports
+streamgraphOutput	streamgraphOutput
+widgetThumbnail	widgetThumbnail

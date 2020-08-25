@@ -1,0 +1,11 @@
+.Rproj.user
+.RData
+.Rhistory
+/app/shiny/temp/*
+/app/shiny/data/ttn/*
+/app/shiny/data/csv/*
+/app/shiny/data/cache/*
+/app/shiny/config/*_Orig.csv
+
+# exception to the rules
+!.gitkeep

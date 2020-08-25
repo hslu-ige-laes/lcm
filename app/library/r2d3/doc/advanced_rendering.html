@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Overview</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h2>Overview</h2>
+
+<p>By default, D3 visualizations created with <strong>r2d3</strong> are monolithic scripts that do all of their work as a single computation (the body of the script). While this makes scripts straightforward to author by default, not all visualizations will confirm to this simple model. Rather, some visualizations will want to distinguish between the following activities:</p>
+
+<p>1) Code that performs one-time initialization for the visualization (e.g. creation of a D3 layout).</p>
+
+<p>2) Code that runs whenever the data underlying the visualization is changed.</p>
+
+<p>3) Code that runs whenever the visualizations container element is resized.</p>
+
+<p>This article describes how you can use the <strong>r2d3</strong> advanced rendering API to organize your visualization code to run in this more granular fashion.</p>
+
+<h2>onRender Callback</h2>
+
+<p>To distinguish between code that runs at initialization-time only and code that runs when data changes, organize your code so that the code which responds to data changes is contained within the <code>r2d3.onRender()</code> callback. For example:</p>
+
+<pre><code class="js">// Initialization
+svg
+ .attr(&quot;font-family&quot;, &quot;sans-serif&quot;)
+ .attr(&quot;font-size&quot;, &quot;8&quot;)
+ .attr(&quot;text-anchor&quot;, &quot;middle&quot;);
+
+var pack = d3.pack()
+  .size([width, height])
+  .padding(1.5);
+
+var format = d3.format(&quot;,d&quot;);
+var color = d3.scaleOrdinal(d3.schemeCategory20c);
+
+// Rendering
+r2d3.onRender(function(data, svg, width, height, options) {
+  var root = d3.hierarchy({children: data})
+    .sum(function(d) { return d.value; })
+    .each(function(d) {
+      if (id = d.data.id) {
+        var id, i = id.lastIndexOf(&quot;.&quot;);
+        d.id = id;
+        d.package = id.slice(0, i);
+        d.class = id.slice(i + 1);
+      }
+    });
+
+  var node = svg.selectAll(&quot;.node&quot;)
+    .data(pack(root).leaves())
+    .enter().append(&quot;g&quot;)
+      .attr(&quot;class&quot;, &quot;node&quot;)
+      .attr(&quot;transform&quot;, function(d) { return &quot;translate(&quot; + d.x + &quot;,&quot; + d.y + &quot;)&quot;; });
+
+  node.append(&quot;circle&quot;)
+      .attr(&quot;id&quot;, function(d) { return d.id; })
+      .attr(&quot;r&quot;, function(d) { return d.r; })
+      .style(&quot;fill&quot;, function(d) { return color(d.package); });
+
+  node.append(&quot;clipPath&quot;)
+      .attr(&quot;id&quot;, function(d) { return &quot;clip-&quot; + d.id; })
+    .append(&quot;use&quot;)
+      .attr(&quot;xlink:href&quot;, function(d) { return &quot;#&quot; + d.id; });
+
+  node.append(&quot;text&quot;)
+      .attr(&quot;clip-path&quot;, function(d) { return &quot;url(#clip-&quot; + d.id + &quot;)&quot;; })
+    .selectAll(&quot;tspan&quot;)
+    .data(function(d) { return d.class.split(/(?=[A-Z][^A-Z])/g); })
+    .enter().append(&quot;tspan&quot;)
+      .attr(&quot;x&quot;, 0)
+      .attr(&quot;y&quot;, function(d, i, nodes) { return 13 + (i - nodes.length / 2 - 0.5) * 10; })
+      .text(function(d) { return d; });
+
+  node.append(&quot;title&quot;)
+      .text(function(d) { return d.id + &quot;\n&quot; + format(d.value); });
+});
+</code></pre>
+
+<h2>onResize Callback</h2>
+
+<p>By default, when the element which contains your visualization is resized, <strong>r2d3</strong> will call back your script to re-render the visualization from scratch using the new size. In some cases this might be acceptable, but in other cases it makes sense to have code which explicitly handles the resize in a more efficient fashion.</p>
+
+<p>You can provide an explicit resize handler by implementing the <code>r2d3.onResize()</code> callback. For example, in a force directed D3 layout you might do this in the <code>onResize()</code> callback:</p>
+
+<pre><code class="js">r2d3.onResize(width, height) {
+  force.force(&quot;center&quot;, d3.forceCenter(width / 2, height / 2))
+    .restart();
+}
+</code></pre>
+
+</body>
+
+</html>

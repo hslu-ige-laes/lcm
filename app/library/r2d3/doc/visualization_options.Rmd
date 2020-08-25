@@ -1,0 +1,179 @@
+---
+title: "D3 Visualization Options"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{D3 Visualization Options}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+## Overview
+
+This article covers various options you can specify for D3 visualizations, including:
+
+1) Specifying the version of the D3 library to use
+
+2) Specifying the type of HTML container to render content withing (e.g. "svg", "canvas", "div", etc.) and
+ the ID of the containing element.
+
+3) Enabling users of your visualization to provide options that affect it's behavior
+
+4) Customizing the sizing behavior of D3 visualizations
+
+## D3 Version
+
+You can create D3 visualizations based on various versions of the D3 JavaScript library (currently versions 3, 4, and 5 are supported). The default version is 5 (the most recent release) however you can specify a a different version using the `d3_version` parameter. For example, to use version 3 you would do this:
+
+```{r}
+r2d3(data, script = "barchart.js", d3_version = "3")
+```
+
+Note that multiple versions of D3 can co-exist within a single R Markdown document or Shiny application (**r2d3** automatically handles ensuring that their namespaces don't clash).
+
+## D3 Container
+
+By default **r2d3** provides an SVG container for your visualization and make it automatically available to your D3 script in the `svg` variable. You can specify an alternate container via the `container` parameter. For example, to use a `div` element instead:
+
+```{r}
+r2d3(data, script = "barchart.js", container = "div")
+```
+
+In this case, a `div` rather than an `svg` variable is automatically provided to your D3 script:
+
+```{js}
+// !preview r2d3 data=c(10, 30, 40, 35, 20, 10), container="div"
+
+var bars = div
+  .selectAll("div")
+  .data(data);
+    
+bars.enter().append("div")
+  .style("width", function(d) { return 4 + d * 10 + "px"; })
+  .style("background-color", "steelblue")
+  .style("border", "1px solid white")
+  .style("color", "white")
+  .style("padding-left", "2px")
+  .text(function(d) { return d; });
+```
+
+Note that when specifying the `!preview` comment at the top of the script you should also be sure to add `container = "div"`.
+
+By default a random HTML element ID is generated for your visualization's container. If you want to specify an explicit ID (for example, if you have other JavaScript that needs to explicitly discover and interact with your visualization) then use the `elementId` parameter. For example:
+
+```{r}
+r2d3(data, script = "barchart.js", container = "div", elementId = "my-element")
+```
+
+
+## User Options
+
+You can access user-level options (e.g. choice of colors) via the `options` object provided to your script. User options are in turn provided a named list (`options`) passed to `r2d3()`. For example:
+
+```{r}
+r2d3(
+  data=c(0.3, 0.6, 0.8, 0.95, 0.40, 0.20), 
+  script = "barchart.js", 
+  options = list(color = "orange")
+)
+```
+
+The `options` object is then used in the expression `.attr('fill', options.color)` to make the fill color dynamic:
+
+```{js}
+// !preview r2d3 data=c(0.3, 0.6, 0.8, 0.95, 0.40, 0.20), options = list(color = "orange")
+
+var barHeight = Math.floor(height / data.length);
+
+svg.selectAll('rect')
+  .data(data)
+  .enter().append('rect')
+    .attr('width', function(d) { return d * width; })
+    .attr('height', barHeight)
+    .attr('y', function(d, i) { return i * barHeight; })
+    .attr('fill', options.color);
+```
+
+## Sizing
+
+When you render a D3 visualization, **r2d3** creates an R [htmlwidget](http://www.htmlwidgets.org) to host the visualization. This means that D3 visualizations inherit the default sizing behavior for htmlwidgets, including:
+
+1) Automatically filling available space in the RStudio Viewer and in standalone web browsers.
+
+2) Conforming to the currently active `fig.width` and `fig.height` chunk options within [R Markdown](https://rmarkdown.rstudio.com) documents.
+
+3) Filling available space when used in a [Shiny application](https://shiny.rstudio.com) or a [flexdashboard](https://rmarkdown.rstudio.com/flexdashboard).
+
+In order to take advantage of this dynamic sizing behavior, your should ensure that your D3 visualization uses the `width` and `height` variables that are provided automatically. Note the use of `height` in the computation of `barHeight` and `width` in the call to `.attr()` in this example:
+
+```{js}
+var barHeight = Math.floor(height / data.length);
+
+svg.selectAll('rect')
+  .data(data)
+  .enter().append('rect')
+    .attr('width', function(d) { return d * width; })
+    .attr('height', barHeight)
+    .attr('y', function(d, i) { return i * barHeight; })
+    .attr('fill', 'steelblue');
+```
+
+Whenever the size of the parent element displaying the visualization changes (e.g. when the user resizes the RStudio Viewer) your D3 script will be re-executed to render at the new size. Note that it's also possible to handle resizing at a more granular level if you use [advanced rendering](advanced_rendering.html) callbacks.
+
+### Custom Sizing
+
+You can override this default sizing behavior in two ways:
+
+1) Providing explicit `width` and/or `height` parameters when calling `r2d3()`.
+
+2) Providing an alternate [htmlwidgets sizing policy](http://www.htmlwidgets.org/develop_sizing.html) via the `sizing` argument to `r2d3()`.
+
+As mentioned above, you can also provide more fine grained resizing behavior (i.e. only resize rather than fully re-render) by using [advanced rendering](advanced_rendering.html) callbacks.
+
+## Themes
+
+To match themes provided by RStudio and other environments, **r2d3** provides a `theme` object that contains `background` and `foreground` values that you can use to make your visualization match the environment which it is rendered within.
+
+For example, to match the fill color of `rect` elements with the background, we use the `theme.foreground` for the stroke and `theme.background` for the fill:
+
+```{js}
+// !preview r2d3 data=c(0.3, 0.6, 0.8, 0.95, 0.40, 0.20)
+
+var barHeight = Math.floor(height / data.length);
+svg.selectAll('rect')
+  .data(data)
+  .enter().append('rect')
+    .attr("y", function(d, i) { return i * barHeight; })
+    .attr('width', function(d) { return d * width; })
+    .attr('height', barHeight)
+    .attr('stroke', theme.foreground)
+    .attr('fill', theme.background);
+```
+
+You can also explicitly set the theme using the `r2d3.theme` R option. For example:
+
+```{r}
+options(r2d3.theme = list(
+  background = "#FFFFFF",
+  foreground = "#000000")
+)
+```
+
+## Viewer
+
+The `viewer` argument to the `r2d3()` function enables you to customize how D3 visualizations are viewed when printed from within the RStudio console. The following options are available:
+
+| Option  | Description |
+|---------------------|---------------------|
+| `viewer = "internal"`  | (Default). Display within the RStudio Viewer pane. |
+| `viewer = "external"`  | Display within an external RStudio Viewer window. |
+| `viewer = "browser"`  | Display within an external web browser (e.g. Chrome). |
+
+The "external" option is useful if your visualization requires more space than an RStudio pane affords. The "browser" option is useful if you need access to browser debugging tools during development.
+
+Note that the `viewer` options described above are only fully supported within the [preview release of RStudio v1.2](https://www.rstudio.com/rstudio/download/preview/) (as opposed to the current stable release).
+

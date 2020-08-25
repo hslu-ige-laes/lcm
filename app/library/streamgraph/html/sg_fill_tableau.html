@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Use Tableau discrete palettes for streamgraph fill colors</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sg_fill_tableau {streamgraph}"><tr><td>sg_fill_tableau {streamgraph}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Use Tableau discrete palettes for streamgraph fill colors</h2>
+
+<h3>Description</h3>
+
+<p>Tableau discrete palettes provide colour schemes
+which are particularly suited and tested to display categorical values.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+sg_fill_tableau(sg, palette = "tableau20")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>sg</code></td>
+<td>
+<p>streamgraph object</p>
+</td></tr>
+<tr valign="top"><td><code>palette</code></td>
+<td>
+<p>Tableau discrete pallete atomic character value (defaults to <code>tableau20</code>). Must be one of
+<code>c("tableau20", "tableau10medium", "gray5", "colorblind10", "trafficlight", "purplegray12", "bluered12", "greenorange12", "cyclic")</code></p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>streamgraph object
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+library(dplyr)
+library(streamgraph)
+ggplot2movies::movies %&gt;%
+select(year, Action, Animation, Comedy, Drama, Documentary, Romance, Short) %&gt;%
+  tidyr::gather(genre, value, -year) %&gt;%
+  group_by(year, genre) %&gt;%
+  tally(wt=value) %&gt;%
+  ungroup %&gt;%
+  mutate(year=as.Date(sprintf("%d-01-01", year))) -&gt; dat
+
+streamgraph(dat, "genre", "n", "year") %&gt;%
+  sg_fill_tableau("purplegray12")
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>streamgraph</em> version 0.9.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

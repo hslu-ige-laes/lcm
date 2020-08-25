@@ -1,0 +1,140 @@
+AJjumptest              Ait-Sahalia and Jacod (2009) tests for the
+                        presence of jumps in the price series.
+BNSjumptest             Barndorff-Nielsen and Shephard (2006) tests for
+                        the presence of jumps in the price series.
+JOjumptest              Jiang and Oomen (2008) tests for the presence
+                        of jumps in the price series.
+MRC                     Modulated Realized Covariance (MRC): Return
+                        univariate or multivariate preaveraged
+                        estimator.
+RTQ                     Calculate the realized tripower quarticity
+RV                      An estimator of realized variance.
+SP500RM                 SP500 Realized Measures calculated with 5
+                        minute sampling
+aggregateQuotes         Aggregate a data.table or xts object containing
+                        quote data
+aggregateTrades         Aggregate a data.table or xts object containing
+                        trades data
+aggregatets             Aggregate a time series
+autoSelectExchangeQuotes
+                        Retain only data from the stock exchange with
+                        the highest volume
+autoSelectExchangeTrades
+                        Retain only data from the stock exchange with
+                        the highest trading volume
+exchangeHoursOnly       Extract data from an xts object for the
+                        Exchange Hours Only
+getLiquidityMeasures    Compute Liquidity Measure Function returns an
+                        xts or data.table object containing 23
+                        liquidity measures. Please see details below.
+                        Note that this assumes a regular time grid. The
+                        Lee + Ready measure uses two lags for the Tick
+                        Rule.
+getPrice                Get price column(s) from a timeseries
+getTradeDirection       Get trade direction
+harModel                HAR model estimation (Heterogeneous
+                        Autoregressive model for Realized volatility)
+hasQty                  Check for Trade, Bid, and Ask/Offer (BBO/TBBO),
+                        Quantity, and Price data
+heavyModel              HEAVY Model estimation
+highfrequency-package   highfrequency: Tools for Highfrequency Data
+                        Analysis
+ivInference             Function returns the value, the standard error
+                        and the confidence band of the integrated
+                        variance (IV) estimator.
+listAvailableKernels    Available Kernels
+lltc                    LLTC Data
+makePsd                 Returns the positive semidinite projection of a
+                        symmetric matrix using the eigenvalue method
+makeReturns             Compute log returns
+matchTradesQuotes       Match trade and quote data
+medRQ                   An estimator of integrated quarticity from
+                        applying the median operator on blocks of three
+                        returns.
+medRV                   medRV
+mergeQuotesSameTimestamp
+                        Merge multiple quote entries with the same time
+                        stamp
+mergeTradesSameTimestamp
+                        Merge multiple transactions with the same time
+                        stamp
+minRQ                   An estimator of integrated quarticity from
+                        applying the minimum operator on blocks of two
+                        returns.
+minRV                   minRV
+noZeroPrices            Delete the observations where the price is zero
+noZeroQuotes            Delete the observations where the bid or ask is
+                        zero
+quotesCleanup           Cleans quote data
+rAVGCov                 Realized Covariance: Average Subsample
+rBPCov                  Realized BiPower Covariance
+rBeta                   Realized beta: a tool in measuring risk with
+                        respect to the market.
+rCov                    Realized Covariance
+rHYCov                  Hayashi-Yoshida Covariance
+rKernelCov              Realized Covariance: Kernel
+rKurt                   Realized kurtosis of highfrequency return
+                        series.
+rMPV                    Realized multipower variation (MPV), an
+                        estimator of integrated power variation.
+rOWCov                  Realized Outlyingness Weighted Covariance
+rQPVar                  Realized quad-power variation of highfrequency
+                        return series.
+rQuar                   Realized quarticity of highfrequency return
+                        series.
+rRTSCov                 Robust two time scale covariance estimation
+rSV                     Realized semivariance of highfrequency return
+                        series.
+rSkew                   Realized skewness of highfrequency return
+                        series.
+rTPVar                  Realized tri-power variation estimator of
+                        quarticity for a highfrequency return series.
+rTSCov                  Two time scale covariance estimation
+rThresholdCov           Threshold Covariance
+realized_library        The realized library from the Oxford-Man
+                        Institute of Quantitative Finance
+refreshTime             Synchronize (multiple) irregular timeseries by
+                        refresh time
+rmLargeSpread           Delete entries for which the spread is more
+                        than "maxi" times the median spread
+rmNegativeSpread        Delete entries for which the spread is negative
+rmOutliersQuotes        Delete entries for which the mid-quote is
+                        outlying with respect to surrounding entries
+rmTradeOutliers         Delete transactions with unlikely transaction
+                        prices
+rmTradeOutliersUsingQuotes
+                        Delete transactions with unlikely transaction
+                        prices
+salesCondition          Delete entries with abnormal Sale Condition.
+sample_5minprices       Ten artificial time series for the NYSE trading
+                        days during January 2010
+sample_5minprices_jumps
+                        Ten artificial time series (including jumps)
+                        for the NYSE trading days during January 2010
+sample_qdata            Sample of cleaned quotes for stock XXX for 1
+                        day
+sample_qdata_microseconds
+                        Sample of cleaned quotes for stock XXX for 2
+                        days measured in microseconds
+sample_qdataraw         Sample of raw quotes for stock XXX for 1 day
+sample_qdataraw_microseconds
+                        Sample of raw quotes for stock XXX for 2 days
+                        measured in microseconds
+sample_real5minprices   Sample of imaginary price data for 61 days
+sample_returns_5min     Sample returns data
+sample_tdata            Sample of cleaned trades for stock XXX for 1
+                        day
+sample_tdata_microseconds
+                        Sample of cleaned trades for stock XXX for 2
+                        days
+sample_tdataraw         Sample of raw trades for stock XXX for 1 day
+sample_tdataraw_microseconds
+                        Sample of raw trades for stock XXX for 2 days
+sbux                    Starbucks Data
+selectExchange          Retain only data from a single stock exchange
+spotDrift               Spot Drift Estimation
+spotvol                 Spot volatility estimation
+tradesCleanup           Cleans trade data
+tradesCleanupUsingQuotes
+                        Perform a final cleaning procedure on trade
+                        data

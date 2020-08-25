@@ -1,0 +1,13 @@
+as_d3_data	as_d3_data
+as_d3_data.default	as_d3_data
+d3-shiny	d3-shiny
+d3Output	d3-shiny
+default_sizing	default_sizing
+html_dependencies_d3	html_dependencies_d3
+r2d3	r2d3
+read_json	reexports
+reexports	reexports
+renderD3	d3-shiny
+save_d3_html	save_d3_html
+save_d3_png	save_d3_png
+sizingPolicy	reexports

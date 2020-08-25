@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Modify streamgraph y axis formatting</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sg_axis_y {streamgraph}"><tr><td>sg_axis_y {streamgraph}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Modify streamgraph y axis formatting</h2>
+
+<h3>Description</h3>
+
+<p>Change the tick count &amp; format
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+sg_axis_y(sg, tick_count = 5, tick_format = ",g")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>sg</code></td>
+<td>
+<p>streamgraph object</p>
+</td></tr>
+<tr valign="top"><td><code>tick_count</code></td>
+<td>
+<p>number of y axis ticks, not tick interval (defaults to <code>5</code>);
+make this <code>0</code> if you want to hide the y axis labels</p>
+</td></tr>
+<tr valign="top"><td><code>tick_format</code></td>
+<td>
+<p>d3 <a href="https://github.com/mbostock/d3/wiki/Formatting#d3_format">tick format</a> string</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>streamgraph object
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+library(dplyr)
+library(streamgraph)
+ggplot2movies::movies %&gt;%
+select(year, Action, Animation, Comedy, Drama, Documentary, Romance, Short) %&gt;%
+  tidyr::gather(genre, value, -year) %&gt;%
+  group_by(year, genre) %&gt;%
+  tally(wt=value) %&gt;%
+  ungroup %&gt;%
+  mutate(year=as.Date(sprintf("%d-01-01", year))) -&gt; dat
+
+streamgraph(dat, "genre", "n", "year") %&gt;%
+  sg_axis_x(20, "year", "%Y") %&gt;%
+  sg_axis_y(0)
+
+## End(Not run)#' @export
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>streamgraph</em> version 0.9.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

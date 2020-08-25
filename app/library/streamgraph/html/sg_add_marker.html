@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Add a vertical marker (with optional label) to streamgraph</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sg_add_marker {streamgraph}"><tr><td>sg_add_marker {streamgraph}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Add a vertical marker (with optional label) to streamgraph</h2>
+
+<h3>Description</h3>
+
+<p>This is useful for marking/labeling notable events along the streams.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+sg_add_marker(sg, x, label = "", stroke_width = 0.5,
+  stroke = "#7f7f7f", space = 5, y = 0, color = "#7f7f7f",
+  size = 12, anchor = "start")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>sg</code></td>
+<td>
+<p>streamgraph object</p>
+</td></tr>
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>horizontal position</p>
+</td></tr>
+<tr valign="top"><td><code>label</code></td>
+<td>
+<p>text for the annotation</p>
+</td></tr>
+<tr valign="top"><td><code>stroke_width</code></td>
+<td>
+<p>line width</p>
+</td></tr>
+<tr valign="top"><td><code>stroke</code></td>
+<td>
+<p>line color</p>
+</td></tr>
+<tr valign="top"><td><code>space</code></td>
+<td>
+<p>space (in points) from the marker to place the label</p>
+</td></tr>
+<tr valign="top"><td><code>y</code></td>
+<td>
+<p>vertical position</p>
+</td></tr>
+<tr valign="top"><td><code>color</code></td>
+<td>
+<p>color of the label</p>
+</td></tr>
+<tr valign="top"><td><code>size</code></td>
+<td>
+<p>font size#' @export</p>
+</td></tr>
+<tr valign="top"><td><code>anchor</code></td>
+<td>
+<p>how to justify the label (one of <code>start</code> [left],
+<code>middle</code> [center] or <code>end</code> [right])</p>
+</td></tr>
+</table>
+
+<hr /><div style="text-align: center;">[Package <em>streamgraph</em> version 0.9.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

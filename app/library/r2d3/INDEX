@@ -1,0 +1,6 @@
+as_d3_data              Convert object to D3 data
+d3-shiny                Shiny bindings for d3
+html_dependencies_d3    D3 HTML dependencies
+r2d3                    D3 visualization
+save_d3_html            Save a D3 visualization as HTML
+save_d3_png             Save a D3 visualization as a PNG image

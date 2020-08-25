@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Modify streamgraph x axis formatting</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sg_axis_x {streamgraph}"><tr><td>sg_axis_x {streamgraph}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Modify streamgraph x axis formatting</h2>
+
+<h3>Description</h3>
+
+<p>Change the tick interval, units and label text display format for the
+streamgraph x axis.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+sg_axis_x(sg, tick_interval = NULL, tick_units = NULL,
+  tick_format = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>sg</code></td>
+<td>
+<p>streamgraph object</p>
+</td></tr>
+<tr valign="top"><td><code>tick_interval</code></td>
+<td>
+<p>tick interval</p>
+</td></tr>
+<tr valign="top"><td><code>tick_units</code></td>
+<td>
+<p>units for the ticks</p>
+</td></tr>
+<tr valign="top"><td><code>tick_format</code></td>
+<td>
+<p>how to show the labels (subset of <code>strftime</code>
+formatters for <code>date</code> scale, otherwise <code>sprintf</code> formats for
+<code>continuous</code> scale) (defaults to <code>%b</code> - must specify if <code>continuous</code>).
+See <a href="D3 formatting">https://github.com/mbostock/d3/wiki/Formatting</a> for more details.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>streamgraph object
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+library(dplyr)
+library(streamgraph)
+ggplot2movies::movies %&gt;%
+select(year, Action, Animation, Comedy, Drama, Documentary, Romance, Short) %&gt;%
+  tidyr::gather(genre, value, -year) %&gt;%
+  group_by(year, genre) %&gt;%
+  tally(wt=value) %&gt;%
+  ungroup %&gt;%
+  mutate(year=as.Date(sprintf("%d-01-01", year))) -&gt; dat
+
+streamgraph(dat, "genre", "n", "year") %&gt;%
+  sg_axis_x(20, "year", "%Y")
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>streamgraph</em> version 0.9.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

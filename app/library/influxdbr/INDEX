@@ -1,0 +1,12 @@
+create_database         Influx database management
+create_user             Influx authentication and authorization
+influx_connection       Create an influxdb_connection object
+influx_ping             Ping an influxdb server
+influx_query            Query an InfluxDB server
+influx_select           influx select helper
+influx_write            Write an xts or data.frame object to an
+                        InfluxDB server
+influxdbr               'influxdbr' package
+show_databases          Influx schema exploration
+show_diagnostics        Show diagnostics
+show_stats              Show stats

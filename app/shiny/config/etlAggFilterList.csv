@@ -1,0 +1,6 @@
+agg;func;fill;filterDpType
+15m;max;previous;ventilationFlat
+1h;mean;none;aQualRoom,tempOutsideAir,tempSupplyHeat,tempReturnHeat,tempRoom
+1d;mean;none;tempRoom,humRoom,tempOutsideAir
+1d;sum;none;energyHeatCentral
+1M;sum;none;hotWaterFlat,energyHeatFlat

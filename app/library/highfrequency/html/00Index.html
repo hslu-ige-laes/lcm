@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>R: Tools for Highfrequency Data Analysis</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+<h1> Tools for Highfrequency Data Analysis
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
+</h1>
+<hr/>
+<div style="text-align: center;">
+<a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
+<a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
+</div><h2>Documentation for package &lsquo;highfrequency&rsquo; version 0.6.5</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+<li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="highfrequency-package.html">highfrequency-package</a></td>
+<td>highfrequency: Tools for Highfrequency Data Analysis</td></tr>
+<tr><td style="width: 25%;"><a href="aggregateQuotes.html">aggregateQuotes</a></td>
+<td>Aggregate a data.table or xts object containing quote data</td></tr>
+<tr><td style="width: 25%;"><a href="aggregateTrades.html">aggregateTrades</a></td>
+<td>Aggregate a data.table or xts object containing trades data</td></tr>
+<tr><td style="width: 25%;"><a href="aggregatets.html">aggregatets</a></td>
+<td>Aggregate a time series</td></tr>
+<tr><td style="width: 25%;"><a href="AJjumptest.html">AJjumptest</a></td>
+<td>Ait-Sahalia and Jacod (2009) tests for the presence of jumps in the price series.</td></tr>
+<tr><td style="width: 25%;"><a href="autoSelectExchangeQuotes.html">autoSelectExchangeQuotes</a></td>
+<td>Retain only data from the stock exchange with the highest volume</td></tr>
+<tr><td style="width: 25%;"><a href="autoSelectExchangeTrades.html">autoSelectExchangeTrades</a></td>
+<td>Retain only data from the stock exchange with the highest trading volume</td></tr>
+<tr><td style="width: 25%;"><a href="BNSjumptest.html">BNSjumptest</a></td>
+<td>Barndorff-Nielsen and Shephard (2006) tests for the presence of jumps in the price series.</td></tr>
+<tr><td style="width: 25%;"><a href="exchangeHoursOnly.html">exchangeHoursOnly</a></td>
+<td>Extract data from an xts object for the Exchange Hours Only</td></tr>
+<tr><td style="width: 25%;"><a href="getLiquidityMeasures.html">getLiquidityMeasures</a></td>
+<td>Compute Liquidity Measure Function returns an xts or data.table object containing 23 liquidity measures. Please see details below. Note that this assumes a regular time grid. The Lee + Ready measure uses two lags for the Tick Rule.</td></tr>
+<tr><td style="width: 25%;"><a href="getPrice.html">getPrice</a></td>
+<td>Get price column(s) from a timeseries</td></tr>
+<tr><td style="width: 25%;"><a href="getTradeDirection.html">getTradeDirection</a></td>
+<td>Get trade direction</td></tr>
+<tr><td style="width: 25%;"><a href="harModel.html">harModel</a></td>
+<td>HAR model estimation (Heterogeneous Autoregressive model for Realized volatility)</td></tr>
+<tr><td style="width: 25%;"><a href="hasQty.html">hasQty</a></td>
+<td>Check for Trade, Bid, and Ask/Offer (BBO/TBBO), Quantity, and Price data</td></tr>
+<tr><td style="width: 25%;"><a href="heavyModel.html">heavyModel</a></td>
+<td>HEAVY Model estimation</td></tr>
+<tr><td style="width: 25%;"><a href="highfrequency-package.html">highfrequency</a></td>
+<td>highfrequency: Tools for Highfrequency Data Analysis</td></tr>
+<tr><td style="width: 25%;"><a href="ivInference.html">ivInference</a></td>
+<td>Function returns the value, the standard error and the confidence band of the integrated variance (IV) estimator.</td></tr>
+<tr><td style="width: 25%;"><a href="JOjumptest.html">JOjumptest</a></td>
+<td>Jiang and Oomen (2008) tests for the presence of jumps in the price series.</td></tr>
+<tr><td style="width: 25%;"><a href="listAvailableKernels.html">listAvailableKernels</a></td>
+<td>Available Kernels</td></tr>
+<tr><td style="width: 25%;"><a href="lltc.html">lltc</a></td>
+<td>LLTC Data</td></tr>
+<tr><td style="width: 25%;"><a href="makePsd.html">makePsd</a></td>
+<td>Returns the positive semidinite projection of a symmetric matrix using the eigenvalue method</td></tr>
+<tr><td style="width: 25%;"><a href="makeReturns.html">makeReturns</a></td>
+<td>Compute log returns</td></tr>
+<tr><td style="width: 25%;"><a href="matchTradesQuotes.html">matchTradesQuotes</a></td>
+<td>Match trade and quote data</td></tr>
+<tr><td style="width: 25%;"><a href="medRQ.html">medRQ</a></td>
+<td>An estimator of integrated quarticity from applying the median operator on blocks of three returns.</td></tr>
+<tr><td style="width: 25%;"><a href="medRV.html">medRV</a></td>
+<td>medRV</td></tr>
+<tr><td style="width: 25%;"><a href="mergeQuotesSameTimestamp.html">mergeQuotesSameTimestamp</a></td>
+<td>Merge multiple quote entries with the same time stamp</td></tr>
+<tr><td style="width: 25%;"><a href="mergeTradesSameTimestamp.html">mergeTradesSameTimestamp</a></td>
+<td>Merge multiple transactions with the same time stamp</td></tr>
+<tr><td style="width: 25%;"><a href="minRQ.html">minRQ</a></td>
+<td>An estimator of integrated quarticity from applying the minimum operator on blocks of two returns.</td></tr>
+<tr><td style="width: 25%;"><a href="minRV.html">minRV</a></td>
+<td>minRV</td></tr>
+<tr><td style="width: 25%;"><a href="MRC.html">MRC</a></td>
+<td>Modulated Realized Covariance (MRC): Return univariate or multivariate preaveraged estimator.</td></tr>
+<tr><td style="width: 25%;"><a href="noZeroPrices.html">noZeroPrices</a></td>
+<td>Delete the observations where the price is zero</td></tr>
+<tr><td style="width: 25%;"><a href="noZeroQuotes.html">noZeroQuotes</a></td>
+<td>Delete the observations where the bid or ask is zero</td></tr>
+<tr><td style="width: 25%;"><a href="quotesCleanup.html">quotesCleanup</a></td>
+<td>Cleans quote data</td></tr>
+<tr><td style="width: 25%;"><a href="rAVGCov.html">rAVGCov</a></td>
+<td>Realized Covariance: Average Subsample</td></tr>
+<tr><td style="width: 25%;"><a href="rBeta.html">rBeta</a></td>
+<td>Realized beta: a tool in measuring risk with respect to the market.</td></tr>
+<tr><td style="width: 25%;"><a href="rBPCov.html">rBPCov</a></td>
+<td>Realized BiPower Covariance</td></tr>
+<tr><td style="width: 25%;"><a href="rCov.html">rCov</a></td>
+<td>Realized Covariance</td></tr>
+<tr><td style="width: 25%;"><a href="realized_library.html">realized_library</a></td>
+<td>The realized library from the Oxford-Man Institute of Quantitative Finance</td></tr>
+<tr><td style="width: 25%;"><a href="refreshTime.html">refreshTime</a></td>
+<td>Synchronize (multiple) irregular timeseries by refresh time</td></tr>
+<tr><td style="width: 25%;"><a href="rHYCov.html">rHYCov</a></td>
+<td>Hayashi-Yoshida Covariance</td></tr>
+<tr><td style="width: 25%;"><a href="rKernelCov.html">rKernelCov</a></td>
+<td>Realized Covariance: Kernel</td></tr>
+<tr><td style="width: 25%;"><a href="rKurt.html">rKurt</a></td>
+<td>Realized kurtosis of highfrequency return series.</td></tr>
+<tr><td style="width: 25%;"><a href="rmLargeSpread.html">rmLargeSpread</a></td>
+<td>Delete entries for which the spread is more than "maxi" times the median spread</td></tr>
+<tr><td style="width: 25%;"><a href="rmNegativeSpread.html">rmNegativeSpread</a></td>
+<td>Delete entries for which the spread is negative</td></tr>
+<tr><td style="width: 25%;"><a href="rmOutliersQuotes.html">rmOutliersQuotes</a></td>
+<td>Delete entries for which the mid-quote is outlying with respect to surrounding entries</td></tr>
+<tr><td style="width: 25%;"><a href="rMPV.html">rMPV</a></td>
+<td>Realized multipower variation (MPV), an estimator of integrated power variation.</td></tr>
+<tr><td style="width: 25%;"><a href="rmTradeOutliers.html">rmTradeOutliers</a></td>
+<td>Delete transactions with unlikely transaction prices</td></tr>
+<tr><td style="width: 25%;"><a href="rmTradeOutliersUsingQuotes.html">rmTradeOutliersUsingQuotes</a></td>
+<td>Delete transactions with unlikely transaction prices</td></tr>
+<tr><td style="width: 25%;"><a href="rOWCov.html">rOWCov</a></td>
+<td>Realized Outlyingness Weighted Covariance</td></tr>
+<tr><td style="width: 25%;"><a href="rQPVar.html">rQPVar</a></td>
+<td>Realized quad-power variation of highfrequency return series.</td></tr>
+<tr><td style="width: 25%;"><a href="rQuar.html">rQuar</a></td>
+<td>Realized quarticity of highfrequency return series.</td></tr>
+<tr><td style="width: 25%;"><a href="rRTSCov.html">rRTSCov</a></td>
+<td>Robust two time scale covariance estimation</td></tr>
+<tr><td style="width: 25%;"><a href="rSkew.html">rSkew</a></td>
+<td>Realized skewness of highfrequency return series.</td></tr>
+<tr><td style="width: 25%;"><a href="rSV.html">rSV</a></td>
+<td>Realized semivariance of highfrequency return series.</td></tr>
+<tr><td style="width: 25%;"><a href="rThresholdCov.html">rThresholdCov</a></td>
+<td>Threshold Covariance</td></tr>
+<tr><td style="width: 25%;"><a href="rTPVar.html">rTPVar</a></td>
+<td>Realized tri-power variation estimator of quarticity for a highfrequency return series.</td></tr>
+<tr><td style="width: 25%;"><a href="RTQ.html">RTQ</a></td>
+<td>Calculate the realized tripower quarticity</td></tr>
+<tr><td style="width: 25%;"><a href="rTSCov.html">rTSCov</a></td>
+<td>Two time scale covariance estimation</td></tr>
+<tr><td style="width: 25%;"><a href="RV.html">RV</a></td>
+<td>An estimator of realized variance.</td></tr>
+<tr><td style="width: 25%;"><a href="salesCondition.html">salesCondition</a></td>
+<td>Delete entries with abnormal Sale Condition.</td></tr>
+<tr><td style="width: 25%;"><a href="sample_5minprices.html">sample_5minprices</a></td>
+<td>Ten artificial time series for the NYSE trading days during January 2010</td></tr>
+<tr><td style="width: 25%;"><a href="sample_5minprices_jumps.html">sample_5minprices_jumps</a></td>
+<td>Ten artificial time series (including jumps) for the NYSE trading days during January 2010</td></tr>
+<tr><td style="width: 25%;"><a href="sample_qdata.html">sample_qdata</a></td>
+<td>Sample of cleaned quotes for stock XXX for 1 day</td></tr>
+<tr><td style="width: 25%;"><a href="sample_qdataraw.html">sample_qdataraw</a></td>
+<td>Sample of raw quotes for stock XXX for 1 day</td></tr>
+<tr><td style="width: 25%;"><a href="sample_qdataraw_microseconds.html">sample_qdataraw_microseconds</a></td>
+<td>Sample of raw quotes for stock XXX for 2 days measured in microseconds</td></tr>
+<tr><td style="width: 25%;"><a href="sample_qdata_microseconds.html">sample_qdata_microseconds</a></td>
+<td>Sample of cleaned quotes for stock XXX for 2 days measured in microseconds</td></tr>
+<tr><td style="width: 25%;"><a href="sample_real5minprices.html">sample_real5minprices</a></td>
+<td>Sample of imaginary price data for 61 days</td></tr>
+<tr><td style="width: 25%;"><a href="sample_returns_5min.html">sample_returns_5min</a></td>
+<td>Sample returns data</td></tr>
+<tr><td style="width: 25%;"><a href="sample_tdata.html">sample_tdata</a></td>
+<td>Sample of cleaned trades for stock XXX for 1 day</td></tr>
+<tr><td style="width: 25%;"><a href="sample_tdataraw.html">sample_tdataraw</a></td>
+<td>Sample of raw trades for stock XXX for 1 day</td></tr>
+<tr><td style="width: 25%;"><a href="sample_tdataraw_microseconds.html">sample_tdataraw_microseconds</a></td>
+<td>Sample of raw trades for stock XXX for 2 days</td></tr>
+<tr><td style="width: 25%;"><a href="sample_tdata_microseconds.html">sample_tdata_microseconds</a></td>
+<td>Sample of cleaned trades for stock XXX for 2 days</td></tr>
+<tr><td style="width: 25%;"><a href="sbux.html">sbux</a></td>
+<td>Starbucks Data</td></tr>
+<tr><td style="width: 25%;"><a href="selectExchange.html">selectExchange</a></td>
+<td>Retain only data from a single stock exchange</td></tr>
+<tr><td style="width: 25%;"><a href="SP500RM.html">SP500RM</a></td>
+<td>SP500 Realized Measures calculated with 5 minute sampling</td></tr>
+<tr><td style="width: 25%;"><a href="spotDrift.html">spotDrift</a></td>
+<td>Spot Drift Estimation</td></tr>
+<tr><td style="width: 25%;"><a href="spotvol.html">spotvol</a></td>
+<td>Spot volatility estimation</td></tr>
+<tr><td style="width: 25%;"><a href="tradesCleanup.html">tradesCleanup</a></td>
+<td>Cleans trade data</td></tr>
+<tr><td style="width: 25%;"><a href="tradesCleanupUsingQuotes.html">tradesCleanupUsingQuotes</a></td>
+<td>Perform a final cleaning procedure on trade data</td></tr>
+</table>
+</body></html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create a new streamgraph</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for streamgraph {streamgraph}"><tr><td>streamgraph {streamgraph}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create a new streamgraph</h2>
+
+<h3>Description</h3>
+
+<p><code>streamgraph()</code> initializes the streamgraph html widget
+and takes a data frame in &quot;long&quot; format with columns for the
+category (by default, it looks for <code>key</code>) and its associated
+<code>date</code>  and <code>value</code>. You can supply the names for those
+columns if they aren't named as such in your data.<br />
+<br />
+By default, interactivity is on, but you can disable that by setting
+the <code>interactive</code> parameter to <code>FALSE</code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+streamgraph(data, key, value, date, width = NULL, height = NULL,
+  offset = "silhouette", interpolate = "cardinal",
+  interactive = TRUE, scale = "date", top = 20, right = 40,
+  bottom = 30, left = 50, sort = TRUE, complete = TRUE,
+  order = c("compat", "asis", "inside-out", "reverse"))
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>data frame</p>
+</td></tr>
+<tr valign="top"><td><code>key</code></td>
+<td>
+<p>bare or quoted name of the category column (defaults to <code>key</code>)</p>
+</td></tr>
+<tr valign="top"><td><code>value</code></td>
+<td>
+<p>bare or quoted name of the value column (defaults to <code>value</code>)</p>
+</td></tr>
+<tr valign="top"><td><code>date</code></td>
+<td>
+<p>bare or quoted name of the date column (defaults to <code>date</code>)</p>
+</td></tr>
+<tr valign="top"><td><code>width</code></td>
+<td>
+<p>Width in pixels (optional, defaults to automatic sizing)</p>
+</td></tr>
+<tr valign="top"><td><code>height</code></td>
+<td>
+<p>Height in pixels (optional, defaults to automatic sizing)</p>
+</td></tr>
+<tr valign="top"><td><code>offset</code></td>
+<td>
+<p>see d3's <a href="https://github.com/mbostock/d3/wiki/Stack-Layout#offset">offset layout</a> for more details.
+The default is probably fine for most uses but can be one of <code>silhouette</code> (default),
+<code>wiggle</code>, <code>expand</code> or <code>zero</code></p>
+</td></tr>
+<tr valign="top"><td><code>interpolate</code></td>
+<td>
+<p>see d3's <a href="https://github.com/mbostock/d3/wiki/SVG-Shapes#area_interpolate">area interpolation</a> for more details.
+The default is probably fine fore most uses, but can be one of <code>cardinal</code> (default),
+<code>linear</code>, <code>step</code>, <code>step-before</code>, <code>step-after</code>, <code>basis</code>, <code>basis-open</code>,
+<code>cardinal-open</code>, <code>monotone</code></p>
+</td></tr>
+<tr valign="top"><td><code>interactive</code></td>
+<td>
+<p>set to <code>FALSE</code> if you do not want an interactive streamgraph</p>
+</td></tr>
+<tr valign="top"><td><code>scale</code></td>
+<td>
+<p>axis scale (<code>date</code> [default] or <code>continuous</code>)</p>
+</td></tr>
+<tr valign="top"><td><code>top</code></td>
+<td>
+<p>top margin (default should be fine, this allows for fine-tuning plot space)</p>
+</td></tr>
+<tr valign="top"><td><code>right</code></td>
+<td>
+<p>right margin (default should be fine, this allows for fine-tuning plot space)</p>
+</td></tr>
+<tr valign="top"><td><code>bottom</code></td>
+<td>
+<p>bottom margin (default should be fine, this allows for fine-tuning plot space)</p>
+</td></tr>
+<tr valign="top"><td><code>left</code></td>
+<td>
+<p>left margin (default should be fine, this allows for fine-tuning plot space)</p>
+</td></tr>
+<tr valign="top"><td><code>sort</code></td>
+<td>
+<p>experimental</p>
+</td></tr>
+<tr valign="top"><td><code>complete</code></td>
+<td>
+<p>experimental</p>
+</td></tr>
+<tr valign="top"><td><code>order</code></td>
+<td>
+<p>streamgraph ribbon order. &quot;'compat'&quot; to match the orignial package behavior,
+&quot;'asis'&quot; to use the input order, &quot;'inside-out'&quot; to sort by index of maximum value,
+then use balanced weighting, or &quot;'reverse'&quot; to reverse the input layer order.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>streamgraph object
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+library(dplyr)
+library(streamgraph)
+ggplot2movies::movies %&gt;%
+select(year, Action, Animation, Comedy, Drama, Documentary, Romance, Short) %&gt;%
+  tidyr::gather(genre, value, -year) %&gt;%
+  group_by(year, genre) %&gt;%
+  tally(wt=value) %&gt;%
+  ungroup %&gt;%
+  mutate(year=as.Date(sprintf("%d-01-01", year))) -&gt; dat
+
+streamgraph(dat, "genre", "n", "year")
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>streamgraph</em> version 0.9.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

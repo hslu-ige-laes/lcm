@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Modify streamgraph colors</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sg_colors {streamgraph}"><tr><td>sg_colors {streamgraph}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Modify streamgraph colors</h2>
+
+<h3>Description</h3>
+
+<p>Change the ColorBrewer palette being used
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+sg_colors(sg, palette = NULL, axis_color = "black",
+  tooltip_color = "black", label_color = "black")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>sg</code></td>
+<td>
+<p>streamgraph object</p>
+</td></tr>
+<tr valign="top"><td><code>palette</code></td>
+<td>
+<p>UNUSED; being removed in next release; use <code>sg_fill_*</code> instead</p>
+</td></tr>
+<tr valign="top"><td><code>axis_color</code></td>
+<td>
+<p>color of the axis text (defaults to &quot;<code>black</code>&quot;)</p>
+</td></tr>
+<tr valign="top"><td><code>tooltip_color</code></td>
+<td>
+<p>color of the tooltip text (defaults to &quot;<code>black</code>&quot;)</p>
+</td></tr>
+<tr valign="top"><td><code>label_color</code></td>
+<td>
+<p>color of the label text for the legend select menu (defaults to &quot;<code>black</code>&quot;)</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>streamgraph object
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+library(dplyr)
+library(streamgraph)
+ggplot2movies::movies %&gt;%
+select(year, Action, Animation, Comedy, Drama, Documentary, Romance, Short) %&gt;%
+  tidyr::gather(genre, value, -year) %&gt;%
+  group_by(year, genre) %&gt;%
+  tally(wt=value) %&gt;%
+  ungroup %&gt;%
+  mutate(year=as.Date(sprintf("%d-01-01", year))) -&gt; dat
+
+streamgraph(dat, "genre", "n", "year") %&gt;%
+  sg_colors("PuOr")
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>streamgraph</em> version 0.9.0 <a href="00Index.html">Index</a>]</div>
+</body></html>
