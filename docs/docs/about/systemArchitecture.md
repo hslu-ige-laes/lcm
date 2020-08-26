@@ -8,14 +8,14 @@ parent: About the app
 # System Architecture
 
 ## Overview
-
+<br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/docs/systemArchitecture_01.PNG" alt="Application architecture" onclick="window.open('anotherpage.html', '_blank');" />
 <br>
 - The architecture follows the [data warehouse](https://en.wikipedia.org/wiki/Data_warehouse)- and [ETL principle](https://en.wikipedia.org/wiki/Extract,_transform,_load) (Extract, Transform, Load), where "Load" colloquially stands for store.
 - Time series data from multiple sources get collected and saved in a raw format (the only exceptions are influxDB data, where the original raw data does not get saved).
 - To keep things simple, all the configurations and time series data are saved as csv files.
 - An aggregation and filter process then collects the required datapoints according to the app configuration and saves again the preprocessed data.
-- The Shiny application consists of different modules which then access these processed data.
+- The Shiny application consists of different modules which then access, analyzes and visualizes these processed data.
 
 ## Data Sources
 Data can get fetched from different sources:
