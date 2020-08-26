@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Download App
+nav_order: 3
 parent: Installation
 ---
 

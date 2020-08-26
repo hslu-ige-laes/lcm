@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Install R
+nav_order: 2
 parent: Installation
 ---
 

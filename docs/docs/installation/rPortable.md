@@ -1,6 +1,7 @@
 ---
 layout: default
 title: R Portable
+nav_order: 1
 parent: Installation
 ---
 
