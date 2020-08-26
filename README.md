@@ -3,7 +3,6 @@
 
 **See [https://hslu-ige-laes.github.io/lcm/](https://hslu-ige-laes.github.io/lcm/) for detailed documentation**
 
-<br>
 - “lcm” is an open source based monitoring application for residential buildings.
 - It fetches, stores and analyzes IoT data.
 - The focus of the analyses is on comfort monitoring and energy saving.
