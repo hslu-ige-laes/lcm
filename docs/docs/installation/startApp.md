@@ -11,7 +11,7 @@ parent: Installation
 - A browser will open
 - To stop the application simply close the browser window
 
-## via "R Studio console"
+## via "RStudio console"
 1. Open the R Studio Project by clicking `lcm.Rproj`
 1. Either run `runApp("./app/shiny/")` in the console or open the file `/app/shiny/server.R` in the files tab and click the green arrow "> Run App".
 1. To stop the application press the red stop icon
