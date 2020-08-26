@@ -6,6 +6,7 @@ description: "Low Cost Monitoring - Documentation"
 permalink: /
 ---
 # lcm - Low Cost Monitoring
+<img src="https://github.com/hslu-ige-laes/lcm/raw/master/docs/assets/images/lcm.png" width="150" align="right" class="inline"/>
 - "lcm" is an open source based application for residential buildings to fetch, store and analyze IoT data.
 - The focus of the analyses is on comfort monitoring and energy saving.
 - Supported data sources are LoRaWAN sensors, influxDB and csv files.

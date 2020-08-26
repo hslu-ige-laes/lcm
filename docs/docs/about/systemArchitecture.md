@@ -6,19 +6,30 @@ parent: About the app
 ---
 
 # System Architecture
+
+---
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
+## Overview
+{: .no_toc }
 The basic structure follows the [data warehouse principle](https://en.wikipedia.org/wiki/Data_warehouse). Data from multiple sources get collected and saved. Following the ETL principle (Extract, Transform, Load), where "Load" colloquially stands for store.  
 
 [![Application Architecture](https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/docs/systemArchitecture_01.PNG)]()
 
-## Data Warehouse
-Data get saved in a raw format. The only exceptions are influxDB data, where the original raw data does not get saved. To keep things simple and for , all the configurations are saved as csv files.
+The time series get saved in a raw format. The only exceptions are influxDB data, where the original raw data does not get saved. To keep things simple and for , all the configurations are saved as csv files.
 
 
 ## File structure
 ### /config [Configuration parameters]
 To keep things simple, all the configurations are saved as csv files.
 
-### bldgHierarchy.csv [Building Hierarchy]
+#### bldgHierarchy.csv [Building Hierarchy]
 >The file can be edited in the app under `Menue > Settings > Building Hierarchy`
 
 Every Datapoint respectively sensor gets assigned with a location. This information is used to label diagrams and create pull down menues.
@@ -33,7 +44,7 @@ Flat A;120;3;Dormitory,Bathroom,Bathroom,Aisle,Kitchen,Living Room,Office
 
 >Note that the different rooms of the flat are comma separated while the rest is separated with semicolons.
 
-### configApp.csv [Application configurations]
+#### configApp.csv [Application configurations]
 >The file can be edited in the app under `Menue > Settings > App Configuration`
 
 Application specific configuration settings.
