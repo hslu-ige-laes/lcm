@@ -7,7 +7,9 @@
 - It fetches, stores, analyzes and visualizes IoT data.
 - The focus of the analyses is on comfort monitoring and energy saving.
 
-## Installation instructions
+## Simpliefied installation instructions
+> For more details please consult the detailed documentation mentioned above.
+
 ### without installing R (only on Windows)
 1. <a href="https://downgit.github.io/#/home?url=https://github.com/hslu-ige-laes/lcm" download>Download lcm application</a>
 1. Extract the content to a folder of your choice
