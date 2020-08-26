@@ -1,0 +1,9 @@
+---
+layout: default
+title: R Portable
+parent: Installation
+---
+
+# R Portable for Windows
+- "R Portable" configures R to work with the PortableApps framework, so R can be run without installing R and without leaving artifacts on the computer.
+- To use it, simply download the "lcm" application as described below and execute `lcm.bat`.
