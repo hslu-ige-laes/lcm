@@ -7,4 +7,4 @@ permalink: /docs/modules
 ---
 
 # Modules
-Here you can find details about each module.
+Details about each module in the application.
