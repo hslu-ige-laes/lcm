@@ -7,6 +7,7 @@ permalink: /
 ---
 # lcm - Low Cost Monitoring
 <img src="https://github.com/hslu-ige-laes/lcm/raw/master/docs/assets/images/lcm.png" width="100" align="right" class="inline"/>
+
 - "lcm" is an open source based application for residential buildings.
 - It fetches, stores and analyzes IoT data.
 - The focus of the analyses is on comfort monitoring and energy saving.
