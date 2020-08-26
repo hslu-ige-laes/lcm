@@ -1,7 +1,7 @@
 ---
 layout: default
 title: comfortTempROa
-parent: Modules
+parent: Module Descriptions
 ---
 
 # comfortTempROa

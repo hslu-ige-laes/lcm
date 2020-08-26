@@ -1,7 +1,7 @@
 ---
 layout: default
 title: comfortTempHum
-parent: Modules
+parent: Module Descriptions
 ---
 
 # comfortTempHum

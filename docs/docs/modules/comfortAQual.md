@@ -1,7 +1,7 @@
 ---
 layout: default
 title: comfortAQual
-parent: Modules
+parent: Module Descriptions
 ---
 
 # comfortAQual

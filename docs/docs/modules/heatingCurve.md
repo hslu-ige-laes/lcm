@@ -1,7 +1,7 @@
 ---
 layout: default
 title: heatingCurve
-parent: Modules
+parent: Module Descriptions
 ---
 
 # heatingCurve

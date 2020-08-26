@@ -1,7 +1,7 @@
 ---
 layout: default
 title: hotWaterFlats
-parent: Modules
+parent: Module Descriptions
 ---
 
 # hotWaterFlats

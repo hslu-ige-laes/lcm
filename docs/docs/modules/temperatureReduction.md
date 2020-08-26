@@ -1,7 +1,7 @@
 ---
 layout: default
 title: temperatureReduction
-parent: Modules
+parent: Module Descriptions
 ---
 
 # temperatureReduction

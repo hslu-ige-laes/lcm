@@ -1,7 +1,7 @@
 ---
 layout: default
 title: heatingFlats
-parent: Modules
+parent: Module Descriptions
 ---
 
 # heatingFlats

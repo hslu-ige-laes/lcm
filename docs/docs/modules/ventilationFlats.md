@@ -1,7 +1,7 @@
 ---
 layout: default
 title: ventilationFlats
-parent: Modules
+parent: Module Descriptions
 ---
 
 # ventilationFlats

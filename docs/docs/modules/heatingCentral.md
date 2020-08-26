@@ -1,7 +1,7 @@
 ---
 layout: default
 title: heatingCentral
-parent: Modules
+parent: Module Descriptions
 ---
 
 # heatingCentral
