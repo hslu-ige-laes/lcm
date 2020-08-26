@@ -15,11 +15,24 @@ parent: About the app
 {:toc}
 
 ---
-## /config [Configuration parameters]
-To keep things simple, all the configurations are saved as csv files.
+## /app [Application]
+- app.R is starting script for R Portable
+- config.cfg conatains configuration for R Portable
+- packages.txt includes R libraries which get installed for R Portable. If you extend the application and require a new R package, then you have to edit this file. 
 
-### bldgHierarchy.csv [Building Hierarchy]
->The file can be edited in the app under `Menue > Settings > Building Hierarchy`
+### /library
+Includes the downloaded R packages.
+> Only used with R Portable.
+
+### /shiny
+This folder contains the Shiny application and all the saved time series data and app configurations.
+> If you work in a local R installation and don't use R Portable, only this folder is interesting for you.
+
+#### /config [Configuration parameters]
+> To keep things simple, all the configurations are saved as csv files.
+
+##### /bldgHierarchy.csv [Building Hierarchy]
+> The file can be edited in the app under `Menue > Settings > Building Hierarchy`
 
 Every Datapoint respectively sensor gets assigned with a location. This information is used to label diagrams and create pull down menues.
 
@@ -33,7 +46,7 @@ Flat A;120;3;Dormitory,Bathroom,Bathroom,Aisle,Kitchen,Living Room,Office
 
 >Note that the different rooms of the flat are comma separated while the rest is separated with semicolons.
 
-### configApp.csv [Application configurations]
+##### /configApp.csv [Application configurations]
 >The file can be edited in the app under `Menue > Settings > App Configuration`
 
 Application specific configuration settings.
@@ -44,7 +57,7 @@ pageTitle;bldgAltitude;bldgTimeZone
 Low Cost Monitoring;450;Europe/Zurich
 ```
 
-## /csvScripts [csv parsing scripts]
+#### /csvScripts [csv parsing scripts]
 For csv data sources the importer foresees the standard file formatting options with different settings of e.g. delimiter etc.
 
 Unfortunately some files come with special formatting and require special parsing. In such cases a specific user-defined R parsing script can be created.
@@ -71,11 +84,19 @@ myParsingScriptName <- function(filePath = NULL) {
 >**Attention**
 >- Make sure the returned timestamp of df is UTC and not local time!
 
-## /modules [Shiny modules]
+#### /modules [Shiny modules]
 The application is based on <a href="https://mastering-shiny.org/scaling-modules.html" target="_blank">modules</a> in order to keep everything in a maintainable and sustainable manner. Basically every page in the application has its own module.
 
 https://engineering-shiny.org/structure.html#communication-between-modules
 
-## /data [Data ingestion and storage]
+#### /data [Data ingestion and storage]
 To keep things simple, all the configuration values as well the imported data get's saved as csv file.
 Cached and aggregated values are saved as R .rds files.
+
+## /dist
+- This folder contains the R Portable code to run "lcm" in Windows as self-contained desktop R application.
+- If you work with a local R installation you don't need this folder.
+
+## /docs [Documents]
+- Files for the documentation on [https://hslu-ige-laes.github.io/lcm/](https://hslu-ige-laes.github.io/lcm/)
+- The documentation is written in [Markdown language](https://en.wikipedia.org/wiki/Markdown).
