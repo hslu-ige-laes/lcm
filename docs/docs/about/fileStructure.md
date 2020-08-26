@@ -52,12 +52,6 @@ Flat A;120;3;Dormitory,Bathroom,Bathroom,Aisle,Kitchen,Living Room,Office
 - This file contains application specific configuration settings.
 - The file can be edited in the app under `Menue > Settings > App Configuration`
 
-Exemplary content:
-```csv
-pageTitle;bldgAltitude;bldgTimeZone
-Low Cost Monitoring;450;Europe/Zurich
-```
-
 ##### /configCsv.csv
 - This file contains information about the imported csv files.
 - The file can be edited in the app under `Menue > Settings > Data Sources > csv Files`
