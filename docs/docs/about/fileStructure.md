@@ -58,6 +58,27 @@ pageTitle;bldgAltitude;bldgTimeZone
 Low Cost Monitoring;450;Europe/Zurich
 ```
 
+##### /configCsv.csv
+- This file contains information about the imported csv files.
+- The file can be edited in the app under `Menue > Settings > Data Sources > csv Files`
+
+##### /configInfluxdb.csv
+- This file contains information about the connected [influxDB](https://www.influxdata.com/products/influxdb-overview/) databases.
+- The file can be edited in the app under `Menue > Settings > Data Sources > InfluxDB`
+
+##### /configTtn.csv
+- This file contains information about the connected [the things network](https://www.influxdata.com/products/influxdb-overview/) applications.
+- Please see [https://hslu-ige-laes.github.io/lora-devices-ttn/](https://hslu-ige-laes.github.io/lora-devices-ttn/) to learn how to create an application and integrate LoRaWAN devices.
+- The file can be edited in the app under `Menue > Settings > Data Sources > the things network`
+
+##### /dataPoints.csv
+- This file contains information about the configured data points.
+- The file can be edited in the app under `Menue > Settings > Data Points`
+
+##### /etlAggFilterList.csv
+- This file contains information which datapoint types should get aggregated.
+- You only have to modify this file if you extend or adapt the application modules.
+
 #### /csvScripts
 - In this folder you can save project specific csv parsing scripts.
 - For csv data sources the importer foresees the standard file formatting options with different settings of e.g. delimiter etc.
