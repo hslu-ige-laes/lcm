@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Naming Conventions
+nav_order: 9
 parent: About the app
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Data Sources
+nav_order: 2
 parent: About the app
 ---
 
