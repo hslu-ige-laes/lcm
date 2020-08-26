@@ -7,7 +7,7 @@
 - It fetches, stores, analyzes and visualizes IoT data.
 - The focus of the analyses is on comfort monitoring and energy saving.
 
-## Simpliefied installation instructions
+## Simplified installation instructions
 > For more details please consult the detailed documentation mentioned above.
 
 ### without installing R (only on Windows)
