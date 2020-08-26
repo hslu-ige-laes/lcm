@@ -80,9 +80,9 @@ configurationModule <- function(input, output, session) {
   observeEvent(input$saveButton, {
     # the theme gets saved into the dataframe in configurationThemeModule.R
     # via an observeEvent on the drowdown
-    saveConfigFile(here::here("app", "shiny", "data", "configApp.csv"), "pageTitle", input$pageTitle)
-    saveConfigFile(here::here("app", "shiny", "data", "configApp.csv"), "bldgAltitude", input$bldgAltitude)
-    saveConfigFile(here::here("app", "shiny", "data", "configApp.csv"), "bldgTimeZone", input$bldgTimeZone)
+    saveConfigFile(here::here("app", "shiny", "config", "configApp.csv"), "pageTitle", input$pageTitle)
+    saveConfigFile(here::here("app", "shiny", "config", "configApp.csv"), "bldgAltitude", input$bldgAltitude)
+    saveConfigFile(here::here("app", "shiny", "config", "configApp.csv"), "bldgTimeZone", input$bldgTimeZone)
     shinyalert(
       title = "Success",
       text = "Settings applied",

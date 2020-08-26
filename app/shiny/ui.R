@@ -13,7 +13,7 @@ sidebar <- dashboardSidebar(
     # icons from https://fontawesome.com/icons?d=gallery&m=free
     id = "tabs",
     menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
-    menuItemOutput("tempreductionMenuItem"),
+    menuItemOutput("tempReductionMenuItem"),
     menuItemOutput("comfortTempHumMenuItem"),
     menuItemOutput("comfortTempROaMenuItem"),
     menuItemOutput("comfortAqualMenuItem"),
@@ -54,8 +54,8 @@ body <- dashboardBody(
             "content tbd"
     ),
     
-    tabItem(tabName = "tempreduction",
-            temperatureReductionModuleUI("tempreduction")
+    tabItem(tabName = "tempReduction",
+            tempReductionModuleUI("tempReduction")
     ),
     
     tabItem(tabName = "comfortTempHum",

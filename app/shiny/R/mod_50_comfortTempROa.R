@@ -172,7 +172,7 @@ comfortTempROaModule <- function(input, output, session, aggData) {
   # filter according to room selection
   df.room <- reactive({
     data <- df.flat() %>% filter(room == input$room)
-    saveRDS(data, paste0(here::here("app", "shiny", "temp", "dfRoom.rds")))
+    #saveRDS(data, paste0(here::here("app", "shiny", "temp", "dfRoom.rds")))
     
     return(data)
   })

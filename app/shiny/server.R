@@ -4,9 +4,9 @@
 server <- function(input, output, session) {
   
   # Create Optional Menu Bar Items
-  output$tempreductionMenuItem <- renderMenu({
+  output$tempReductionMenuItem <- renderMenu({
     if((nrow(dataPoints() %>% filter(dpType == "tempRoom") %>% unique()) > 0)){
-      menuItem("Temperature Reduction", icon = icon("thermometer-quarter"), tabName = "tempreduction")
+      menuItem("Temperature Reduction", icon = icon("thermometer-quarter"), tabName = "tempReduction")
     }
   })
   
@@ -69,7 +69,7 @@ server <- function(input, output, session) {
   
    # ======================================================================
   # Modules
-  callModule(temperatureReductionModule, "tempreduction", aggData = data_1d_mean())
+  callModule(tempReductionModule, "tempReduction", aggData = data_1d_mean())
   callModule(comfortTempHumModule, "cmfTempHum", aggData = data_1d_mean())
   # 
   callModule(comfortTempROaModule, "cmfTempROa", aggData = data_1h_mean())

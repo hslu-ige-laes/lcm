@@ -99,9 +99,14 @@ ttnWriteRawCsv <- function(data = NULL, sourceName, locTimeZone = "Europe/Zurich
       
       datapointName <- as.character(deviceDatapoints[j])
       datapointFileName <- paste0(here::here(), "/app/shiny/data/ttn/", sourceName, "/", deviceName, "_", datapointName, ".csv")
+      folderName <- paste0(here::here(), "/app/shiny/data/ttn/", sourceName, "/")
 
       filter <- c("time", datapointName)
       datapointDataNew <- deviceData %>% select(one_of(filter)) %>% na.omit()
+      
+      if (!file.exists(folderName)){
+        dir.create(folderName)
+      }
       
       if(file.exists(datapointFileName)){
         # load existing file
@@ -120,6 +125,7 @@ ttnWriteRawCsv <- function(data = NULL, sourceName, locTimeZone = "Europe/Zurich
         }
       }else{
         # create new file
+        print(datapointFileName)
         write.table(datapointDataNew, file = datapointFileName, row.names = FALSE, sep = ";")
         print(paste0("created new file: ", datapointFileName))
       }

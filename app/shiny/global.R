@@ -47,7 +47,7 @@ source(here::here("app", "shiny", "R", "fct_etlSourceCsv_server.R"))
 
 source(here::here("app", "shiny", "R", "utils_server.R"))
 
-source(here::here("app", "shiny", "R", "mod_01_temperatureReduction.R"))
+source(here::here("app", "shiny", "R", "mod_01_tempReduction.R"))
 source(here::here("app", "shiny", "R", "mod_02_comfortTempHum.R"))
 source(here::here("app", "shiny", "R", "mod_50_comfortTempROa.R"))
 source(here::here("app", "shiny", "R", "mod_03_comfortAQual.R"))
@@ -115,7 +115,7 @@ data_1d_mean <- reactiveFileReader(1000, session =  session, file = here::here("
 
 if (!file.exists(here::here("app", "shiny", "data", "cache","data_1d_sum.rds"))) {
   df <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
-  saveRDS(df, here::here("app", "shiny", "data", "cache","data_1d_diffMax.rds"))
+  saveRDS(df, here::here("app", "shiny", "data", "cache","data_1d_sum.rds"))
 }
 
 data_1d_sum <- reactiveFileReader(1000, session =  session, file = here::here("app", "shiny", "data", "cache","data_1d_sum.rds"), readRDS)

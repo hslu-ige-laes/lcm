@@ -3,7 +3,7 @@
 
 # ======================================================================
 
-temperatureReductionModuleUI <- function(id) {
+tempReductionModuleUI <- function(id) {
   
   ns <- NS(id)
   
@@ -62,7 +62,7 @@ temperatureReductionModuleUI <- function(id) {
                    width = 12,
                    column(
                      width = 12,
-                     includeMarkdown(here::here("docs", "docs", "modules","temperatureReduction.md"))
+                     includeMarkdown(here::here("docs", "docs", "modules","tempReduction.md"))
                    )
                  )
                )
@@ -71,7 +71,7 @@ temperatureReductionModuleUI <- function(id) {
   )
 }
 
-temperatureReductionModule <- function(input, output, session, aggData) {
+tempReductionModule <- function(input, output, session, aggData) {
 
   # date range slider
   sliderDate <- reactiveValues()
@@ -226,7 +226,7 @@ temperatureReductionModule <- function(input, output, session, aggData) {
   })
   
   output$boxPlot <- renderPlotly({
-    withProgress(message = 'Creating plot', detail = "Boxplot", value = NULL, {
+    # withProgress(message = 'Creating plot', detail = "Boxplot", value = NULL, {
       minY <- df.all() %>% select(Temp)
       minY <- min(floor(min(minY$Temp)) %>% floor() - 1, input$temperatureSetpoint - 1)
       maxY <- df.all() %>% select(Temp)
@@ -258,6 +258,6 @@ temperatureReductionModule <- function(input, output, session, aggData) {
                        )
         ) %>%
         layout(yaxis = yaxis)
-    })
+    # })
   })
 }
