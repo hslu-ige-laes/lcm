@@ -100,15 +100,19 @@ myParsingScriptName <- function(filePath = NULL) {
 **Attention**
 - Make sure the returned timestamp of df is UTC and not local time!
 
-#### /modules
-- The application is based on <a href="https://mastering-shiny.org/scaling-modules.html" target="_blank">modules</a> in order to keep everything in a maintainable and sustainable manner.
-- Basically every page in the application has its own module.
-- To learn how data can get exchanged between modules please consult the following [link](https://engineering-shiny.org/structure.html#communication-between-modules)
-
 #### /data
 - This folder includes all the raw data from the data sources (except of InfluxDB) and the cached data.
 - To keep things simple, all raw time series data get saved as csv files.
 - Cached and aggregated values are saved as R .rds files (due to performance).
+
+#### /R
+- This folder contains all R files (server functions, modules and helper functions).
+- The application is based on <a href="https://mastering-shiny.org/scaling-modules.html" target="_blank">modules</a> in order to keep everything in a maintainable and sustainable manner.
+- Basically every page in the application has its own module.
+- To learn how data can get exchanged between modules please consult the following [link](https://engineering-shiny.org/structure.html#communication-between-modules)
+
+#### /www
+- Shiny application folder where files for the web server session can get saved, e.g. the favicon.ico
 
 ## /dist
 - This folder contains the R Portable code to run "lcm" in Windows as self-contained desktop R application.
