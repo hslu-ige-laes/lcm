@@ -23,3 +23,5 @@ parent: Installation
 1. As target enter `"C:\Program Files\R\R-3.6.3\bin\R.exe" -e "shiny::runApp('C:/PATH_TO_YOUR_APP/lcm/shiny', launch.browser = TRUE)` where you have to exchange `PATH_TO_YOUR_APP` with your folder location
 1. By double clicking the icon a dos command window as well as a browser opens
 1. To stop the application close the dos command window
+
+tbd: Test Launcher.R file on own desktop for automatic shortcut creation...
