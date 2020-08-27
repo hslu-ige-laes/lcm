@@ -5,14 +5,18 @@ nav_order: 01
 parent: Module Descriptions
 ---
 
-## Purpose
-tbd
+## Background
+- The comparison of the room temperature with the humidity at the same time allows a comfort evaluation.
+- In order to enable a quick visual evaluation, zones where people feel comfortable are color-coded.
 
 ## Visualizations
-#### Room Temperature versus relative Humidity
-<br>
+### Room Temperature versus relative Humidity
+This visualization goes back in 1975 where Frank W. published such a plot in a report (Reports from building research - room climate and thermal comfort. Berlin: Ernst & Sohn).
+<br><br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_02.PNG" style="border:1px solid lightgrey"/>
 <br>
+
+- Tooltip: Place the mouse pointer over a datapoint to get more information of a specific measurement.
 
 ### Mollier hx-Diagram
 The Mollier h,x-diagram was proposed by Richard Mollier in 1923 and allows to describe changes of state of humid air. In the present case it is used to show comfort states regarding temperature and humidity.
@@ -31,6 +35,24 @@ The Mollier h,x-diagram was proposed by Richard Mollier in 1923 and allows to de
 Source: [https://github.com/hslu-ige-laes/d3-mollierhx](https://github.com/hslu-ige-laes/d3-mollierhx)
 
 ## Settings
+- To access the settings, the plus symbol in the upper right corner of the title bar must be pressed.
+- Per default the settings tab is collapsed.
+
 <br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_03.PNG" style="border:1px solid lightgrey"/>
 <br>
+
+### Time Range
+- The date left is automatically the oldest timestamp and on the right side the newest.
+- Narrow the time range to make comparisons.
+
+### Visible Seasons
+- The points are colored according to the season.
+- With the checkboxes the measurements of a season can be shown and hidden individually.
+
+### "Room Temperature vs. relative Humidity"-Diagram Properties
+- not yet implemented
+
+### "Mollier hx"-Diagram Properties
+- The three sliders in the upper line change the comfort zone.
+- The two sliders in the lower line change the ranges of the x- and y-axis
