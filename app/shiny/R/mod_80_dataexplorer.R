@@ -27,7 +27,7 @@ dataexplorerModuleUI <- function(id) {
         box(
           width = 3,
           # Select whether to overlay smooth trend line
-          checkboxInput(inputId = ns("smoother"), label = strong("Overlay smooth trend line"), value = FALSE),
+          checkboxInput(inputId = ns("smoother"), label = strong("Overlay trend line"), value = FALSE),
           
           # Display only if the smoother is checked
           conditionalPanel(condition = "input.smoother == true", ns = ns,
@@ -38,8 +38,8 @@ dataexplorerModuleUI <- function(id) {
         ),
         box(
           width = 4,
-          downloadButton(ns("downloadDataCsv"), "Download csv-file"),
-          downloadButton(ns("downloadDataXlsx"), "Download Excel-file")
+          downloadButton(ns("exportDataCsv"), "Export csv-file"),
+          downloadButton(ns("exportDataXlsx"), "Export Excel-file")
         )
       )
     ),
@@ -95,7 +95,8 @@ dataexplorerModule <- function(input, output, session) {
       )
     }else{
       updateSelectInput(session, 'agg',
-                        choices = c("15m","1h", "1d", "1W", "1M", "1Y"),
+                        # choices = c("15m","1h", "1d", "1W", "1M", "1Y"),
+                        choices = list("15 minutes" = "15m","1 hour" = "1h", "1 day" = "1d", "1 week" = "1W", "1 month" = "1M", "1 year" = "1Y"),
                         selected = "1d"
       )
     }
@@ -184,7 +185,7 @@ dataexplorerModule <- function(input, output, session) {
     return(fileName)                
   })
   
-  output$downloadDataCsv <- downloadHandler(
+  output$exportDataCsv <- downloadHandler(
     filename = function() {
       paste0(fileName(), ".csv")
     },
@@ -193,7 +194,7 @@ dataexplorerModule <- function(input, output, session) {
     }
   )
   
-  output$downloadDataXlsx <- downloadHandler(
+  output$exportDataXlsx <- downloadHandler(
     filename = function() {
       paste0(fileName(), ".xlsx")
     },

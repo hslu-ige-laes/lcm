@@ -4,14 +4,14 @@
 # ======================================================================
 
 
-heatingCurveModuleUI <- function(id) {
+centralHeatingModuleUI <- function(id) {
 
   ns <- NS(id)
   
   tagList(
     fluidRow(
       box(
-        title = "Heating",
+        title = "Central > Heating",
         solidHeader = TRUE,
         status="primary",
         width = 12,
@@ -37,11 +37,15 @@ heatingCurveModuleUI <- function(id) {
         ),
         box(
           width = 2,
-          selectInput(inputId = ns("tempSupplyHeat"), 
-                      label = "Supply Temperature Heating",
+          selectInput(inputId = ns("energyHeatCentral"), 
+                      label = "Energy Heat Meter Central",
                       choices = NULL,
                       selectize = FALSE
           )
+        ),
+        box(
+          width = 2,
+          numericInput(ns("limRegLine"), "Threshold to exclude low values for regression line", min = 0, max = 100000, value = 15, step = 1)
         )
       )
     ),
@@ -50,10 +54,10 @@ heatingCurveModuleUI <- function(id) {
       tabPanel("Overview",
                fluidRow(
                  box(
-                   title="Heating Curve ",
+                   title="Heating Energy Signature",
                    status="primary",
                    width = 12,
-                   plotlyOutput(ns("heatingCurvePlot"), height = "auto")
+                   plotlyOutput(ns("energySignaturePlot"), height = "auto")
                  )
                )
       ),
@@ -66,7 +70,7 @@ heatingCurveModuleUI <- function(id) {
                      width = 12,
                      column(
                        width = 12,
-                       includeMarkdown(here::here("docs", "docs", "modules","heatingCurve.md"))
+                       includeMarkdown(here::here("docs", "docs", "modules","centralHeating.md"))
                      )
                    )
                  )
@@ -76,7 +80,7 @@ heatingCurveModuleUI <- function(id) {
   )
 }
 
-heatingCurveModule <- function(input, output, session, aggData) {
+centralHeatingModule <- function(input, output, session, aggDataEnergyHeat, aggDataTOa) {
 
   # date range slider
   sliderDate <- reactiveValues()
@@ -98,61 +102,40 @@ heatingCurveModule <- function(input, output, session, aggData) {
                       value = c(start, end)
     )
   })
-
-  # data fetching
-  outsideTempData <- reactive({
-    withProgress(message = 'Fetching data', detail = "tempOutsideAir", value = NULL, {
-      data <- aggData %>% filter(dpType == "tempOutsideAir")
-    })
-    return(data)
-  })
-
-  supplyTempData <- reactive({
-    withProgress(message = 'Fetching data', detail = "tempSupplyHeat", value = NULL, {
-      data <- aggData %>% filter(dpType == "tempSupplyHeat")
-    })
-    return(data)
-  })
-
+  
   observe({
-    dpList <- outsideTempData() %>% select(abbreviation) %>% unique()
+    dpList <- aggDataTOa %>% filter(dpType == "tempOutsideAir") %>% select(abbreviation) %>% unique()
     updateSelectInput(session, "tempOutsideAir",
                       choices = dpList$abbreviation
     )
   })
 
   observe({
-    dpList <- supplyTempData() %>% select(abbreviation) %>% unique()
-    updateSelectInput(session, "tempSupplyHeat",
+    dpList <- aggDataEnergyHeat %>% filter(dpType == "energyHeatCentral")  %>% select(abbreviation) %>% unique()
+    updateSelectInput(session, "energyHeatCentral",
                       choices = dpList$abbreviation
     )
   })
 
   # combine two data frames
   df.all <- reactive({
-    req(supplyTempData())
-    req(outsideTempData())
     req(input$tempOutsideAir)
-    req(input$tempSupplyHeat)
-
-    data <- inner_join(supplyTempData() %>% filter(abbreviation == input$tempSupplyHeat), outsideTempData() %>% filter(abbreviation == input$tempOutsideAir) , by="time") %>% na.omit()
-
+    req(input$energyHeatCentral)
+    
+    data <- inner_join(aggDataTOa %>% filter(abbreviation == input$tempOutsideAir), aggDataEnergyHeat %>% filter(abbreviation == input$energyHeatCentral) , by="time") %>% na.omit()
+ 
     names(data)[1] <- "Date"
-    names(data)[2] <- "TSuVal"
-    names(data)[3] <- "TSuName"
-    names(data)[7] <- "TOaVal"
-    names(data)[8] <- "TOaName"
-    
+    names(data)[2] <- "TOa"
+    names(data)[3] <- "Sensor"
+    names(data)[7] <- "Q_Heat"
+    names(data)[8] <- "Meter"
+
     data <- data %>% mutate(season = season(Date))
-    
-    data <- data %>% mutate(tempOaRollMean = rollmean(TOaVal, 48, fill = NA, align = "right"))
-    data <- data %>% na.omit()
 
     return(data)
   })
 
 df.season <- reactive({
-  req(input$season)
   df.all() %>% filter(season %in% input$season)
 })
 
@@ -181,25 +164,30 @@ df.fall <- reactive({
   df() %>% filter(season=="Fall")
 })
 
+lim <- reactive({
+  max <- df() %>% select(Q_Heat) %>% max()
+  lim <- min(max(input$limRegLine,1), max)
+  return(lim)
+})
+
+fit <- reactive({lm(Q_Heat ~ TOa, data = filter(df(), Q_Heat >= lim()))})
+
 # Generate Plot
-output$heatingCurvePlot <- renderPlotly({
+output$energySignaturePlot <- renderPlotly({
   # Create a Progress object
-  withProgress(message = 'Creating plot', detail = "heatingCurvePlot", value = NULL, {
-    
-    minY <- min(df.all()$TSuVal) - 1
-    maxY <- max(df.all()$TSuVal) + 1
-    
+  withProgress(message = 'Creating plot', detail = "energySignaturePlot", value = NULL, {
+
     p <- plot_ly()
 
     if("Spring" %in% input$season){
       p <- p %>% add_markers(data = df.spring(),
-                  x = ~TOaVal,
-                  y = ~TSuVal,
-                  marker = list(color = "#2db27d", opacity = 0.3),
+                  x = ~TOa,
+                  y = ~Q_Heat,
+                  marker = list(color = "#2db27d", opacity = 0.7),
                   name = "Spring",
                   hoverinfo = "text",
-                  text = ~ paste("Outside Temp:  ", sprintf("%.1f \u00B0C", tempOaRollMean),
-                                 "<br />Supply Temp: ", sprintf("%.1f \u00B0C", TSuVal),
+                  text = ~ paste("Temp:    ", sprintf("%.1f \u00B0C", TOa),
+                                 "<br />Q_Heat:", sprintf("%.0f kWh/d", Q_Heat),
                                  "<br />Date:     ", df.spring()$Date,
                                  "<br />Season: ", df.spring()$season
                   )
@@ -207,13 +195,13 @@ output$heatingCurvePlot <- renderPlotly({
     }
     if("Summer" %in% input$season){
       p <- p %>% add_markers(data = df.summer(),
-                x = ~TOaVal,
-                y = ~TSuVal,
-                marker = list(color = "#fde725", opacity = 0.3),
+                x = ~TOa,
+                y = ~Q_Heat,
+                marker = list(color = "#fde725", opacity = 0.7),
                 name = "Summer",
                 hoverinfo = "text",
-                text = ~ paste("Outside Temp:  ", sprintf("%.1f \u00B0C", tempOaRollMean),
-                               "<br />Supply Temp: ", sprintf("%.1f \u00B0C", TSuVal),
+                text = ~ paste("Temp:    ", sprintf("%.1f \u00B0C", TOa),
+                               "<br />Q_Heat:", sprintf("%.0f kWh/d", Q_Heat),
                                "<br />Date:     ", df.summer()$Date,
                                "<br />Season: ", df.summer()$season
                 )
@@ -221,13 +209,13 @@ output$heatingCurvePlot <- renderPlotly({
     }
     if("Fall" %in% input$season){
       p <- p %>% add_markers(data = df.fall(),
-                  x = ~TOaVal,
-                  y = ~TSuVal,
-                  marker = list(color = "#440154", opacity = 0.3),
+                  x = ~TOa,
+                  y = ~Q_Heat,
+                  marker = list(color = "#440154", opacity = 0.7),
                   name = "Fall",
                   hoverinfo = "text",
-                  text = ~ paste("Outside Temp:  ", sprintf("%.1f \u00B0C", tempOaRollMean),
-                                 "<br />Supply Temp: ", sprintf("%.1f \u00B0C", TSuVal),
+                  text = ~ paste("Temp:    ", sprintf("%.1f \u00B0C", TOa),
+                                 "<br />Q_Heat:", sprintf("%.0f kWh/d", Q_Heat),
                                  "<br />Date:     ", df.fall()$Date,
                                  "<br />Season: ", df.fall()$season
                   )
@@ -235,13 +223,13 @@ output$heatingCurvePlot <- renderPlotly({
     }
     if("Winter" %in% input$season){
       p <- p %>% add_markers(data = df.winter(),
-                  x = ~TOaVal,
-                  y = ~TSuVal,
-                  marker = list(color = "#365c8d", opacity = 0.3),
+                  x = ~TOa,
+                  y = ~Q_Heat,
+                  marker = list(color = "#365c8d", opacity = 0.7),
                   name = "Winter",
                   hoverinfo = "text",
-                  text = ~ paste("Outside Temp:  ", sprintf("%.1f \u00B0C", tempOaRollMean),
-                                 "<br />Supply Temp: ", sprintf("%.1f \u00B0C", TSuVal),
+                  text = ~ paste("Temp:    ", sprintf("%.1f \u00B0C", TOa),
+                                 "<br />Q_Heat:", sprintf("%.0f kWh/d", Q_Heat),
                                  "<br />Date:     ", df.winter()$Date,
                                  "<br />Season: ", df.winter()$season
                   )
@@ -249,9 +237,21 @@ output$heatingCurvePlot <- renderPlotly({
     }
 
     p <- p %>%
+      add_lines(data = filter(df(), Q_Heat >= lim()), x = ~TOa, y = fitted(fit()), name = "Regression line",
+                color = "orange",
+                hoverinfo = "skip"
+      ) %>%
+      add_markers(x = fit()["coefficients"]$coefficients[1]*-1/fit()["coefficients"]$coefficients[2], y = 0,
+                  marker = list(color = 'orange', opacity = 1, size = 15, symbol = "x", line = list(color = 'rgba(7, 7, 7, .8)',width = 1)),
+                  hoverinfo = "text",
+                  text = ~ paste("Temp:    ", sprintf("%.1f \u00B0C", fit()["coefficients"]$coefficients[1]*-1/fit()["coefficients"]$coefficients[2])
+                  ),
+                  name = "Base temperature"
+      ) %>%
       layout(
-        xaxis = list(title = "Outside temperature in \u00B0C (Rolling Mean last 48 hours)", range = c(min(-10,min(df.all()$TOaVal)), max(35,max(df.all()$TOaVal))), zeroline = F),
-        yaxis = list(title = "Supply temperature heating in \u00B0C", range = c(minY, maxY)),
+        shapes=list(type='line', x0= -5, x1= 35, y0=max(1,input$limRegLine), y1=max(1,input$limRegLine), line=list(dash="dash", width=1, color="darkgrey")),
+        xaxis = list(title = "Outside temperature (\u00B0C)", range = c(min(-5,min(df.all()$TOa)), max(35,max(df.all()$TOa))), zeroline = F),
+        yaxis = list(title = "Daily energy consumption (kWh/d)", range = c(-5, max(df.all()$Q_Heat) + 10)),
         showlegend = FALSE
       ) %>%
       plotly::config(modeBarButtons = list(list("toImage")), displaylogo = FALSE)

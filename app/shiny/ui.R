@@ -2,26 +2,32 @@
 # header
 header <- dashboardHeader(
   title = textOutput("pageTitle"),
-  tags$li(actionLink("updateButton", label = " Update data", icon = icon("sync")),class = "dropdown")
+  titleWidth = 250,
+  tags$li(actionLink("updateButton", label = " Update data", icon = icon("sync")), class = "dropdown")
 )
 
 # ======================================================================
 # sidebar
 sidebar <- dashboardSidebar(
+  width = 250,
   sidebarMenu(
+    tags$li(a(href = "https://www.hslu.ch/laes", target = "_blank",
+              img(src = "hsluLogo.png", width = "180px"),
+              style = "padding-top:10px; padding-left:14px; padding-bottom:10px;"),
+            class = "dropdown"),
     # Setting the id ensures input$tabs knows the names of currently selected tab
     # icons from https://fontawesome.com/icons?d=gallery&m=free
     id = "tabs",
     menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
-    menuItemOutput("tempReductionMenuItem"),
-    menuItemOutput("comfortTempHumMenuItem"),
-    menuItemOutput("comfortTempROaMenuItem"),
-    menuItemOutput("comfortAqualMenuItem"),
-    menuItemOutput("ventilationFlatsMenuItem"),
-    menuItemOutput("hotWaterFlatsMenuItem"),
-    menuItemOutput("heatingFlatsMenuItem"),
-    menuItemOutput("heatingCentralMenuItem"),
-    menuItemOutput("heatingCurveMenuItem"),
+    menuItemOutput("roomTempHumMenuItem"),
+    menuItemOutput("roomOutsideTempMenuItem"),
+    menuItemOutput("roomAirQualityMenuItem"),
+    menuItemOutput("roomTempReductionMenuItem"),
+    menuItemOutput("flatVentilationMenuItem"),
+    menuItemOutput("flatHotWaterMenuItem"),
+    menuItemOutput("flatHeatingMenuItem"),
+    menuItemOutput("centralHeatingMenuItem"),
+    menuItemOutput("centralHeatingCurveMenuItem"),
     menuItemOutput("dataExplorerMenuItem"),
     menuItem("Settings", icon = icon("cog"), startExpanded = FALSE,
              menuSubItem("App Configuration", icon = icon("user-cog"), tabName = "configuration"),
@@ -53,41 +59,41 @@ body <- dashboardBody(
     tabItem(tabName = "dashboard",
             "content tbd"
     ),
-    
-    tabItem(tabName = "tempReduction",
-            tempReductionModuleUI("tempReduction")
+
+    tabItem(tabName = "roomTempHum",
+            roomTempHumModuleUI("roomTempHum")
     ),
     
-    tabItem(tabName = "comfortTempHum",
-            comfortTempHumModuleUI("cmfTempHum")
+    tabItem(tabName = "roomOutsideTemp",
+            roomOutsideTempModuleUI("cmfTempROa")
     ),
     
-    tabItem(tabName = "comfortTempROa",
-            comfortTempROaModuleUI("cmfTempROa")
+    tabItem(tabName = "roomAirQuality",
+            roomAirQualityModuleUI("cmfAQual")
+    ),
+
+    tabItem(tabName = "roomTempReduction",
+            roomTempReductionModuleUI("roomTempReduction")
+    ),
+        
+    tabItem(tabName = "flatVentilation",
+            flatVentilationModuleUI("flatVentilation")
     ),
     
-    tabItem(tabName = "comfortAQual",
-            comfortAQualModuleUI("cmfAQual")
+    tabItem(tabName = "flatHotWater",
+            flatHotWaterModuleUI("flatHotWater")
     ),
     
-    tabItem(tabName = "ventilationFlats",
-            ventilationFlatsModuleUI("ventilationFlats")
+    tabItem(tabName = "flatHeating",
+            flatHeatingModuleUI("flatHeating")
     ),
     
-    tabItem(tabName = "hotWaterFlats",
-            hotWaterFlatsModuleUI("hotWaterFlats")
+    tabItem(tabName = "centralHeating",
+            centralHeatingModuleUI("centralHeating")
     ),
     
-    tabItem(tabName = "heatingFlats",
-            heatingFlatsModuleUI("heatingFlats")
-    ),
-    
-    tabItem(tabName = "heatingCentral",
-            heatingCentralModuleUI("heatingCentral")
-    ),
-    
-    tabItem(tabName = "heatingCurve",
-            heatingCurveModuleUI("heatingCurve")
+    tabItem(tabName = "centralHeatingCurve",
+            centralHeatingCurveModuleUI("centralHeatingCurve")
     ),
     
     tabItem(tabName = "dataexplorer",

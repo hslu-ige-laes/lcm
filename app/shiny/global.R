@@ -47,18 +47,18 @@ source(here::here("app", "shiny", "R", "fct_etlSourceCsv_server.R"))
 
 source(here::here("app", "shiny", "R", "utils_server.R"))
 
-source(here::here("app", "shiny", "R", "mod_01_tempReduction.R"))
-source(here::here("app", "shiny", "R", "mod_02_comfortTempHum.R"))
-source(here::here("app", "shiny", "R", "mod_50_comfortTempROa.R"))
-source(here::here("app", "shiny", "R", "mod_03_comfortAQual.R"))
+source(here::here("app", "shiny", "R", "mod_01_roomTempHum.R"))
+source(here::here("app", "shiny", "R", "mod_02_roomOutsideTemp.R"))
+source(here::here("app", "shiny", "R", "mod_03_roomAirQuality.R"))
+source(here::here("app", "shiny", "R", "mod_04_roomTempReduction.R"))
 
-source(here::here("app", "shiny", "R", "mod_04_ventilationFlats.R"))
+source(here::here("app", "shiny", "R", "mod_10_flatHeating.R"))
+source(here::here("app", "shiny", "R", "mod_11_flatHotWater.R"))
+source(here::here("app", "shiny", "R", "mod_12_flatVentilation.R"))
 
-source(here::here("app", "shiny", "R", "mod_05_hotWaterFlats.R"))
 
-source(here::here("app", "shiny", "R", "mod_06_heatingFlats.R"))
-source(here::here("app", "shiny", "R", "mod_07_heatingCentral.R"))
-source(here::here("app", "shiny", "R", "mod_08_heatingCurve.R"))
+source(here::here("app", "shiny", "R", "mod_20_centralHeating.R"))
+source(here::here("app", "shiny", "R", "mod_21_centralHeatingCurve.R"))
 
 source(here::here("app", "shiny", "R", "mod_80_dataexplorer.R"))
 

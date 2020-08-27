@@ -3,7 +3,7 @@
 
 # ======================================================================
 
-heatingFlatsModuleUI <- function(id) {
+flatHeatingModuleUI <- function(id) {
   #' Name UI
   #'
   #' User-Interface for the 
@@ -16,7 +16,7 @@ heatingFlatsModuleUI <- function(id) {
   tagList(
     fluidRow(
       box(
-        title = "Heating Flats",
+        title = "Flat > Heating",
         solidHeader = TRUE,
         status="primary",
         width = 12,
@@ -45,7 +45,7 @@ heatingFlatsModuleUI <- function(id) {
       )
     ),
     tabsetPanel(
-      id = "heatingFlatsTab",
+      id = "flatHeatingTab",
       tabPanel("Overview by Year",
                fluidRow(
                  box(
@@ -91,7 +91,7 @@ heatingFlatsModuleUI <- function(id) {
                      width = 12,
                      column(
                        width = 12,
-                       includeMarkdown(here::here("docs", "docs", "modules","heatingFlats.md"))
+                       includeMarkdown(here::here("docs", "docs", "modules","flatHeating.md"))
                      )
                    )
                  )
@@ -101,7 +101,7 @@ heatingFlatsModuleUI <- function(id) {
   )
 }
 
-heatingFlatsModule <- function(input, output, session, aggData) {
+flatHeatingModule <- function(input, output, session, aggData) {
   #' Name
   #'
   #' Server-function for the 

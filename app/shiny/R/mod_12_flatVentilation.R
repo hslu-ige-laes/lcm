@@ -4,14 +4,14 @@
 # ======================================================================
 
 
-ventilationFlatsModuleUI <- function(id) {
+flatVentilationModuleUI <- function(id) {
 
   ns <- NS(id)
   
   tagList(
     fluidRow(
       box(
-        title = "Ventilation",
+        title = "Flat > Ventilation",
         solidHeader = TRUE,
         status="primary",
         width = 12,
@@ -59,7 +59,7 @@ ventilationFlatsModuleUI <- function(id) {
                    width = 12,
                    column(
                      width = 12,
-                     includeMarkdown(here::here("docs", "docs", "modules","ventilationFlats.md"))
+                     includeMarkdown(here::here("docs", "docs", "modules","flatVentilation.md"))
                    )
                  )
                )
@@ -68,7 +68,7 @@ ventilationFlatsModuleUI <- function(id) {
   )
 }
 
-ventilationFlatsModule <- function(input, output, session, aggData) {
+flatVentilationModule <- function(input, output, session, aggData) {
 
   # date range slider
   sliderDate <- reactiveValues()
@@ -211,11 +211,11 @@ output$ventilationSchedulePlot <- renderPlotly({
 output$ventilationOverview <- renderPlotly({
   # Create a Progress object
   # print(df())
-  # withProgress(message = 'Creating plot', detail = "ventilationOverview", value = NULL, {
+  withProgress(message = 'Creating plot', detail = "ventilationOverview", value = NULL, {
     p <- ggplot(df(), aes(x=day,
                           y=hourMin,
                           fill = stage,
-                          text = paste("</br>Day: ", weekDayName ,"</br>Time: ", hour, ":", minute,"</br>Level: ", stage)
+                          text = paste("</br>Day: ", weekDayName, "</br>Level: ", stage)
                           )
     ) +
       geom_tile(colour = "white") +
@@ -226,7 +226,7 @@ output$ventilationOverview <- renderPlotly({
       facet_grid(year~month) 
     
     ggplotly(p)
-  # })
+  })
 })
 
 }

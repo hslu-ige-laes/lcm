@@ -3,14 +3,14 @@
 
 # ======================================================================
 
-tempReductionModuleUI <- function(id) {
+roomTempReductionModuleUI <- function(id) {
   
   ns <- NS(id)
   
   tagList(
     fluidRow(
       box(
-        title = "Temperature Reduction",
+        title = "Room > Temperature Reduction",
         solidHeader = TRUE,
         status="primary",
         width = 12,
@@ -33,7 +33,7 @@ tempReductionModuleUI <- function(id) {
       )
     ),
     tabsetPanel(
-      id = "tempReduction",
+      id = "roomTempReduction",
       tabPanel("Overview",
                fluidRow(
                  box(
@@ -62,7 +62,7 @@ tempReductionModuleUI <- function(id) {
                    width = 12,
                    column(
                      width = 12,
-                     includeMarkdown(here::here("docs", "docs", "modules","tempReduction.md"))
+                     includeMarkdown(here::here("docs", "docs", "modules","roomTempReduction.md"))
                    )
                  )
                )
@@ -71,7 +71,7 @@ tempReductionModuleUI <- function(id) {
   )
 }
 
-tempReductionModule <- function(input, output, session, aggData) {
+roomTempReductionModule <- function(input, output, session, aggData) {
 
   # date range slider
   sliderDate <- reactiveValues()

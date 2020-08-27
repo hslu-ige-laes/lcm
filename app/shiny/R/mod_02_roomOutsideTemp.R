@@ -4,14 +4,14 @@
 # ======================================================================
 
 
-comfortTempROaModuleUI <- function(id) {
+roomOutsideTempModuleUI <- function(id) {
   
   ns <- NS(id)
   
   tagList(
     fluidRow(
       box(
-        title = "Comfort Temperature Room and Outside Air",
+        title = "Room > Room versus Outside Temperature",
         solidHeader = TRUE,
         status="primary",
         width = 12,
@@ -60,7 +60,7 @@ comfortTempROaModuleUI <- function(id) {
       tabPanel("Overview",
               fluidRow(
                 box(
-                  title="Temperature  Room vs. Outside Air",
+                  title="Room vs. Outside Temperature",
                   status="primary",
                   width = 12,
                   plotlyOutput(ns("tempROaPlot"))
@@ -76,7 +76,7 @@ comfortTempROaModuleUI <- function(id) {
                      width = 12,
                      column(
                        width = 12,
-                       includeMarkdown(here::here("docs", "docs", "modules","comfortTempROa.md"))
+                       includeMarkdown(here::here("docs", "docs", "modules","roomOutsideTemp.md"))
                      )
                    )
                  )
@@ -85,7 +85,7 @@ comfortTempROaModuleUI <- function(id) {
     )
 )}
 
-comfortTempROaModule <- function(input, output, session, aggData) {
+roomOutsideTempModule <- function(input, output, session, aggData) {
 
   # date range slider
   sliderDate <- reactiveValues()
@@ -217,7 +217,7 @@ comfortTempROaModule <- function(input, output, session, aggData) {
   # Temperature Room vs Outside Air Plot
  
   output$tempROaPlot <- renderPlotly({
-    withProgress(message = 'Creating plot', detail = "temperature room vs. outside air plot", value = NULL, {
+    withProgress(message = 'Creating plot', detail = "indoor vs. outdoor temperature plot", value = NULL, {
 
       # axis properties
       minx <- floor(min(-4,min(df.all()$tempOaRollMean)))

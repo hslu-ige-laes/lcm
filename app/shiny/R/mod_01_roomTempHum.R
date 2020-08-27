@@ -4,14 +4,14 @@
 # ======================================================================
 
 
-comfortTempHumModuleUI <- function(id) {
+roomTempHumModuleUI <- function(id) {
   
   ns <- NS(id)
   
   tagList(
     fluidRow(
       box(
-        title = "Comfort Temperature and Humidity",
+        title = "Room > Temperature versus Humidity",
         solidHeader = TRUE,
         status="primary",
         width = 12,
@@ -52,7 +52,7 @@ comfortTempHumModuleUI <- function(id) {
       tabPanel("Overview",
               fluidRow(
                 box(
-                  title="Temperature vs. Humidity",
+                  title="Room Temperature vs. relative Humidity",
                   status="primary",
                   width = 6,
                   plotlyOutput(ns("tempHumPlot")),
@@ -111,7 +111,7 @@ comfortTempHumModuleUI <- function(id) {
                    width = 12,
                    column(
                      width = 12,
-                     includeMarkdown(here::here("docs", "docs", "modules","comfortTempHum.md"))
+                     includeMarkdown(here::here("docs", "docs", "modules","roomTempHum.md"))
                    )
                  )
                )
@@ -119,7 +119,7 @@ comfortTempHumModuleUI <- function(id) {
     )
 )}
 
-comfortTempHumModule <- function(input, output, session, aggData) {
+roomTempHumModule <- function(input, output, session, aggData) {
   
   # date range slider
   sliderDate <- reactiveValues()
@@ -327,12 +327,12 @@ comfortTempHumModule <- function(input, output, session, aggData) {
                     )
         ) %>% 
         layout(
-          xaxis = list(title = "Temperature in \u00B0C",
+          xaxis = list(title = "Room Temperature in \u00B0C",
                        range = c(minx, maxx),
                        tick0 = minx,
                        dtick = 2,
                        titlefont = list(size = 14, color = "darkgrey")),
-          yaxis = list(title = "Humidity in %rH",
+          yaxis = list(title = "Relative Room Humidity in %rH",
                        range = c(miny, maxy),
                        titlefont = list(size = 14, color = "darkgrey")),
           hoverlabel = list(align = "left"),

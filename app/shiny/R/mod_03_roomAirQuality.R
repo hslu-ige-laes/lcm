@@ -3,7 +3,7 @@
 
 # ======================================================================
 
-comfortAQualModuleUI <- function(id) {
+roomAirQualityModuleUI <- function(id) {
   #' Comfort Air Quality UI
   #'
   #' User-Interface
@@ -16,7 +16,7 @@ comfortAQualModuleUI <- function(id) {
   tagList(
     fluidRow(
       box(
-        title = "Comfort Air Quality",
+        title = "Room > Air Quality",
         solidHeader = TRUE,
         status="primary",
         width = 12,
@@ -41,7 +41,7 @@ comfortAQualModuleUI <- function(id) {
       )
     ),
     tabsetPanel(
-      id = "comfortAQualTab",
+      id = "roomAirQualityTab",
       tabPanel("Overview",
                fluidRow(
                  box(
@@ -78,7 +78,7 @@ comfortAQualModuleUI <- function(id) {
                    width = 12,
                    column(
                      width = 12,
-                     includeMarkdown(here::here("docs", "docs", "modules","comfortAQual.md"))
+                     includeMarkdown(here::here("docs", "docs", "modules","roomAirQuality.md"))
                    )
                  )
                )
@@ -87,7 +87,7 @@ comfortAQualModuleUI <- function(id) {
   )
 }
 
-comfortAQualModule <- function(input, output, session, aggData) {
+roomAirQualityModule <- function(input, output, session, aggData) {
   #' Comfort Air Quality
   #'
   #' Server-function

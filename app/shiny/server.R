@@ -4,60 +4,61 @@
 server <- function(input, output, session) {
   
   # Create Optional Menu Bar Items
-  output$tempReductionMenuItem <- renderMenu({
-    if((nrow(dataPoints() %>% filter(dpType == "tempRoom") %>% unique()) > 0)){
-      menuItem("Temperature Reduction", icon = icon("thermometer-quarter"), tabName = "tempReduction")
-    }
-  })
-  
-  output$comfortTempHumMenuItem <- renderMenu({
+  output$roomTempHumMenuItem <- renderMenu({
     if((nrow(dataPoints() %>% filter(dpType == "tempRoom") %>% unique()) > 0) & 
        (nrow(dataPoints() %>% filter(dpType == "humRoom") %>% unique()) > 0)){
-      menuItem("Comfort Temp/Hum", icon = icon("spa"), tabName = "comfortTempHum")
+      menuItem("Room > Temp vs. Hum", icon = icon("spa"), tabName = "roomTempHum")
     }
   })
 
-  output$comfortTempROaMenuItem <- renderMenu({
+  output$roomOutsideTempMenuItem <- renderMenu({
     if((nrow(dataPoints() %>% filter(dpType == "tempRoom") %>% unique()) > 0) & 
        (nrow(dataPoints() %>% filter(dpType == "tempOutsideAir") %>% unique()) > 0)){
-       menuItem("Comfort TempR/Oa", icon = icon("spa"), tabName = "comfortTempROa")
+       menuItem("Room > Room vs. Outside Temp", icon = icon("spa"), tabName = "roomOutsideTemp")
     }
   })
   
-  output$comfortAqualMenuItem <- renderMenu({
+  output$roomAirQualityMenuItem <- renderMenu({
     if(nrow(dataPoints() %>% filter(dpType == "aQualRoom") %>% unique()) > 0){
-      menuItem("Comfort AQual", icon = icon("spa"), tabName = "comfortAQual")
+      menuItem("Room > Air Quality", icon = icon("spa"), tabName = "roomAirQuality")
+    }
+  })
+
+  output$roomTempReductionMenuItem <- renderMenu({
+    if((nrow(dataPoints() %>% filter(dpType == "tempRoom") %>% unique()) > 0)){
+      menuItem("Room > Temp Reduction", icon = icon("thermometer-quarter"), tabName = "roomTempReduction")
     }
   })
   
-  output$ventilationFlatsMenuItem <- renderMenu({
-    if((nrow(dataPoints() %>% filter(dpType == "ventilationFlat"))) > 0){
-      menuItem("Ventilation Flats", icon = icon("atom"), tabName = "ventilationFlats")   
-    }
-  })
-  
-  output$hotWaterFlatsMenuItem <- renderMenu({
-    if((nrow(dataPoints() %>% filter(dpType == "hotWaterFlat"))) > 0){
-      menuItem("Hot Water Flats", icon = icon("shower"), tabName = "hotWaterFlats")   
-    }
-  })
-  
-  output$heatingFlatsMenuItem <- renderMenu({
+  output$flatHeatingMenuItem <- renderMenu({
     if((nrow(dataPoints() %>% filter(dpType == "energyHeatFlat"))) > 0){
-      menuItem("Heating Flats", icon = icon("gripfire"), tabName = "heatingFlats")   
+      menuItem("Flat > Heating", icon = icon("gripfire"), tabName = "flatHeating")   
     }
   })
   
-  output$heatingCentralMenuItem <- renderMenu({
+  output$flatHotWaterMenuItem <- renderMenu({
+    if((nrow(dataPoints() %>% filter(dpType == "hotWaterFlat"))) > 0){
+      menuItem("Flat > Hot Water", icon = icon("shower"), tabName = "flatHotWater")   
+    }
+  })
+  
+  output$flatVentilationMenuItem <- renderMenu({
+    if((nrow(dataPoints() %>% filter(dpType == "ventilationFlat"))) > 0){
+      menuItem("Flat > Ventilation", icon = icon("atom"), tabName = "flatVentilation")   
+    }
+  })
+
+  output$centralHeatingMenuItem <- renderMenu({
     if((nrow(dataPoints() %>% filter(dpType == "energyHeatCentral") %>% unique()) > 0) & 
-       (nrow(dataPoints() %>% filter(dpType == "tempOutsideAir") %>% unique()) > 0)){      menuItem("Heating Central", icon = icon("gripfire"), tabName = "heatingCentral")   
+       (nrow(dataPoints() %>% filter(dpType == "tempOutsideAir") %>% unique()) > 0)){
+      menuItem("Central > Heating", icon = icon("gripfire"), tabName = "centralHeating")   
     }
   })
   
-  output$heatingCurveMenuItem <- renderMenu({
+  output$centralHeatingCurveMenuItem <- renderMenu({
     if((nrow(dataPoints() %>% filter(dpType == "tempSupplyHeat") %>% unique()) > 0) & 
        (nrow(dataPoints() %>% filter(dpType == "tempOutsideAir") %>% unique()) > 0)){
-      menuItem("Heating Curve", icon = icon("gripfire"), tabName = "heatingCurve")   
+      menuItem("Central > Heating Curve", icon = icon("gripfire"), tabName = "centralHeatingCurve")   
     }
   })
   
@@ -69,16 +70,16 @@ server <- function(input, output, session) {
   
    # ======================================================================
   # Modules
-  callModule(tempReductionModule, "tempReduction", aggData = data_1d_mean())
-  callModule(comfortTempHumModule, "cmfTempHum", aggData = data_1d_mean())
+  callModule(roomTempReductionModule, "roomTempReduction", aggData = data_1d_mean())
+  callModule(roomTempHumModule, "roomTempHum", aggData = data_1d_mean())
   # 
-  callModule(comfortTempROaModule, "cmfTempROa", aggData = data_1h_mean())
-  callModule(comfortAQualModule, "cmfAQual", aggData = data_1h_mean())
-  callModule(ventilationFlatsModule,"ventilationFlats", aggData = data_15m_max())
-  callModule(hotWaterFlatsModule,"hotWaterFlats", aggData = data_1M_sum())
-  callModule(heatingFlatsModule,"heatingFlats", aggData = data_1M_sum())
-  callModule(heatingCentralModule,"heatingCentral", aggDataTOa = data_1d_mean(), aggDataEnergyHeat = data_1d_sum())
-  callModule(heatingCurveModule,"heatingCurve", aggData = data_1h_mean())
+  callModule(roomOutsideTempModule, "cmfTempROa", aggData = data_1h_mean())
+  callModule(roomAirQualityModule, "cmfAQual", aggData = data_1h_mean())
+  callModule(flatVentilationModule,"flatVentilation", aggData = data_15m_max())
+  callModule(flatHotWaterModule,"flatHotWater", aggData = data_1M_sum())
+  callModule(flatHeatingModule,"flatHeating", aggData = data_1M_sum())
+  callModule(centralHeatingModule,"centralHeating", aggDataTOa = data_1d_mean(), aggDataEnergyHeat = data_1d_sum())
+  callModule(centralHeatingCurveModule,"centralHeatingCurve", aggData = data_1h_mean())
   callModule(dataexplorerModule,"dataexplorer")
   
   # ======================================================================
