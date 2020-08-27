@@ -2,7 +2,7 @@
 layout: default
 title: App Settings
 nav_order: 1
-parent: Configure your Project
+parent: Quick Start Guide
 ---
 
 # Application settings
