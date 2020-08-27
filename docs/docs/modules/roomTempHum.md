@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Room Temperature versus Humidity
+title: Room > Temp vs. Hum
 parent: Module Descriptions
 ---
 
