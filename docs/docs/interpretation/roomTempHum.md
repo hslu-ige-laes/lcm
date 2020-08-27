@@ -4,7 +4,7 @@ title: Room > Temp vs. Hum
 nav_order: 01
 parent: Interpretation
 ---
-
+### Interpretation
 #### Temperature
 - From a comfort perspective the temperature should be between 20°C in Winter and 26°C in Summer.
 - Many people feel very comfortable at 21°C. In winter, however, appropriate clothing (long trousers, sweaters, socks) are necessary.

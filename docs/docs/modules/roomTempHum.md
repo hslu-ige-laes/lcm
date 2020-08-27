@@ -10,7 +10,7 @@ parent: Module Descriptions
 - In order to enable a quick visual evaluation, zones where people feel comfortable are color-coded.
 
 ### Visualizations
-### Room Temperature versus relative Humidity
+#### Room Temperature versus relative Humidity
 Frank W. showed such visualization already in 1975 in a report.
 <br><br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_02.PNG" style="border:1px solid lightgrey"/>

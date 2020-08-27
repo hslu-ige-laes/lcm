@@ -110,7 +110,6 @@ roomTempHumModuleUI <- function(id) {
     ),
     fluidRow(
       box(
-        title = "Interpretation",
         status="primary",
         width = 12,
         column(
