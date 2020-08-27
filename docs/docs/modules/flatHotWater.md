@@ -5,6 +5,5 @@ nav_order: 11
 parent: Module Descriptions
 ---
 
-# hotWaterFlats
 ## Subtitle
 Content tbd

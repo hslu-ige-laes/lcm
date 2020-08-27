@@ -5,6 +5,5 @@ nav_order: 3
 parent: Module Descriptions
 ---
 
-# comfortAQual
 ## Subtitle
 Content tbd
