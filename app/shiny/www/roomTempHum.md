@@ -4,13 +4,13 @@
 ## Visualizations
 ### Room Temperature versus relative Humidity
 <br>
-<img src="roomTempHum_02.PNG" alt="Room Temperature versus relative Humidity" style="border:1px solid lightgrey"/>
+<img src="./roomTempHum_02.PNG" alt="Room Temperature versus relative Humidity" style="border:1px solid lightgrey"/>
 <br>
 
 ### Mollier hx-Diagram
 The Mollier h,x-diagram was proposed by Richard Mollier in 1923 and allows to describe changes of state of humid air. In the present case it is used to show comfort states regarding temperature and humidity.
 <br><br>
-<img src="roomTempHum_01.PNG" alt="mollier hx-Diagram" style="border:1px solid lightgrey"/>
+<img src="./roomTempHum_01.PNG" alt="mollier hx-Diagram" style="border:1px solid lightgrey"/>
 <br>
 - It is valid for a certain air pressure. The lcm application calculates the air pressure from the building altitude (meters above sea level) which you can change in the settings `Settings > App Configuration`.
 - The basic scale for the h,x-diagram is a temperature scale, which is applied vertically as y-axis.
@@ -25,5 +25,5 @@ Source: [https://github.com/hslu-ige-laes/d3-mollierhx](https://github.com/hslu-
 
 ## Settings
 <br>
-<img src="roomTempHum_03.PNG" alt="Settings" style="border:1px solid lightgrey"/>
+<img src="./roomTempHum_03.PNG" alt="Settings" style="border:1px solid lightgrey"/>
 <br>
