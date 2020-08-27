@@ -102,7 +102,9 @@ roomTempHumModuleUI <- function(id) {
                    width = 12,
                    column(
                      width = 12,
-                     includeMarkdown(here::here("docs", "docs", "modules","roomTempHum.md"))
+                     # includeMarkdown(here::here("docs", "docs", "modules","roomTempHum.md"))
+                     includeMarkdown(here::here("app", "shiny", "www","roomTempHum.md"))
+                     
                    )
                  )
                )
