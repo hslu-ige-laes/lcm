@@ -18,14 +18,6 @@ roomOutsideTempModuleUI <- function(id) {
         collapsible = TRUE,
         collapsed = TRUE,
         box(
-          width = 2,
-          selectInput(inputId = ns("tempOutsideAir"), 
-                      label = "Temperature Outside Air",
-                      choices = NULL,
-                      multiple=F
-          )
-        ),
-        box(
           width = 3,
           sliderInput(inputId = ns("slider"),
                       label = "Time Range",
@@ -37,10 +29,10 @@ roomOutsideTempModuleUI <- function(id) {
         ),
         box(
           width = 2,
-          checkboxGroupInput(inputId = ns("season"), 
-                             label = "Visible Seasons",
-                             choices = list("Winter", "Spring", "Summer", "Fall"),
-                             selected = list("Winter", "Spring", "Summer", "Fall")
+          selectInput(inputId = ns("tempOutsideAir"), 
+                      label = "Temperature Outside Air",
+                      choices = NULL,
+                      multiple=F
           )
         )
       )
@@ -57,6 +49,11 @@ roomOutsideTempModuleUI <- function(id) {
                               label = "Room",
                               choices = NULL,
                               multiple=F
+                  ),
+                  checkboxGroupInput(inputId = ns("season"), 
+                                     label = "Visible Seasons",
+                                     choices = list("Winter", "Spring", "Summer", "Fall"),
+                                     selected = list("Winter", "Spring", "Summer", "Fall")
                   )
                 ),
                 box(
@@ -74,10 +71,7 @@ roomOutsideTempModuleUI <- function(id) {
                    width = 12,
                    column(
                      width = 12,
-                     column(
-                       width = 12,
-                       includeMarkdown(here::here("docs", "docs", "modules","roomOutsideTemp.md"))
-                     )
+                     includeMarkdown(here::here("docs", "docs", "modules","roomOutsideTemp.md"))
                    )
                  )
                )
@@ -85,11 +79,12 @@ roomOutsideTempModuleUI <- function(id) {
     ),
     fluidRow(
       box(
-        title = "Interpretation",
-        solidHeader = TRUE,
+        status="primary",
         width = 12,
-        background = "light-blue",
-        "A box with a solid light-blue background"
+        column(
+          width = 12,
+          includeMarkdown(here::here("docs", "docs", "interpretation","roomOutsideTemp.md"))
+        )
       )
     )
 )}
