@@ -42,7 +42,7 @@ sidebar <- dashboardSidebar(
 # body (connects the sidebar with the body and calls the according module)
 body <- dashboardBody(
   # style adaptions
-  # tags$head(tags$style(".shiny-notification {position: fixed; top: 20% ;left: 50%}")),
+  tags$head(tags$style(HTML(".main-header .logo {text-align: left;}"))),
   tags$head(
     tags$style(
       HTML(".shiny-notification {
