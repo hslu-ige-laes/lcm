@@ -111,10 +111,12 @@ roomTempHumModuleUI <- function(id) {
     fluidRow(
       box(
         title = "Interpretation",
-        solidHeader = TRUE,
+        status="primary",
         width = 12,
-        background = "light-blue",
-        "A box with a solid light-blue background"
+        column(
+          width = 12,
+          includeMarkdown(here::here("docs", "docs", "interpretation","roomTempHum.md"))
+        )
       )
     )
 )}
