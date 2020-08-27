@@ -50,9 +50,6 @@ Source: [https://github.com/hslu-ige-laes/d3-mollierhx](https://github.com/hslu-
 - The points are colored according to the season.
 - With the checkboxes the measurements of a season can be shown and hidden individually.
 
-### "Room Temperature vs. relative Humidity"-Diagram Properties
-- not yet implemented
-
 ### "Mollier hx"-Diagram Properties
 - The three sliders in the upper line change the comfort zone.
 - The two sliders in the lower line change the ranges of the x- and y-axis
