@@ -7,3 +7,5 @@ parent: Quick Start Guide
 
 # Application settings
 tbd
+
+[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/addDataSources/){: .btn .btn-green }
