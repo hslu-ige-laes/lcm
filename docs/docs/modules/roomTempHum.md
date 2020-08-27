@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Room > Temp vs. Hum
-nav_order: 1
+nav_order: 01
 parent: Module Descriptions
 ---
 
