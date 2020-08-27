@@ -15,18 +15,8 @@ roomTempHumModuleUI <- function(id) {
         solidHeader = TRUE,
         status="primary",
         width = 12,
-        box(
-          width = 2,
-          selectInput(ns("flat"), "Select flat", choices = NULL)
-        ),
-        box(
-          width = 2,
-          selectInput(inputId = ns("room"),
-                      label = "Room",
-                      choices = NULL,
-                      multiple=F
-          )
-        ),
+        collapsible = TRUE,
+        collapsed = TRUE,
         box(
           width = 3,
           sliderInput(inputId = ns("slider"),
@@ -44,6 +34,36 @@ roomTempHumModuleUI <- function(id) {
                              choices = list("Winter", "Spring", "Summer", "Fall"),
                              selected = list("Winter", "Spring", "Summer", "Fall")
           )
+        ),
+        box(
+          title="Mollier hx Plot Properties",
+          status="info",
+          width = 6,
+          box(
+            width = 4,
+            sliderInput(ns("sliderCmfTemp"), "Zone Temperature",
+                        min = 15, max = 30, step = 0.5, value = c(20, 26), post = "\u00B0C")
+          ),
+          box(
+            width = 4,
+            sliderInput(ns("sliderCmfHumRel"), "Zone Rel. humidity",
+                        min = 0, max = 100, step = 5, value = c(35, 65), post = "%rH")
+          ),
+          box(
+            width = 4,
+            sliderInput(ns("sliderCmfHumAbs"), "Zone Abs. humidity",
+                        min = 0, max = 0.035, step = 0.0005, value = c(0, 0.0115), post = "kg/kg")
+          ),
+          box(
+            width = 4,
+            sliderInput(ns("sliderGraphTemp"), "Range Y-Axis",
+                        min = -20, max = 40, step = 5, value = c(15, 30), post = "\u00B0C")
+          ),
+          box(
+            width = 4,
+            sliderInput(ns("sliderGraphHumAbs"), "Range X-Axis",
+                        min = 0, max = 0.035, step = 0.0005, value = c(0, 0.02), post = "kg/kg")
+          )
         )
       )
     ),
@@ -52,55 +72,26 @@ roomTempHumModuleUI <- function(id) {
       tabPanel("Overview",
               fluidRow(
                 box(
+                  status="primary",
+                  width = 2,
+                  selectInput(ns("flat"), "Flat", choices = NULL),
+                  selectInput(inputId = ns("room"),
+                              label = "Room",
+                                choices = NULL,
+                                multiple=F
+                    )
+                ),
+                box(
                   title="Room Temperature vs. relative Humidity",
                   status="primary",
-                  width = 6,
+                  width = 5,
                   plotlyOutput(ns("tempHumPlot")),
                 ),
                 box(
                   title="Mollier hx Diagram",
                   status="primary",
-                  width = 6,
+                  width = 5,
                   d3Output(ns("mollierHxPlot"))
-                ),
-                box(
-                  title="Mollier hx Plot Properties",
-                  status="info",
-                  width = 6,
-                  collapsible = TRUE,
-                  collapsed = TRUE,
-                  box(
-                    width = 4,
-                    sliderInput(ns("sliderGraphTemp"), "Y-Axis",
-                                min = -20, max = 40, step = 5, value = c(15, 30), post = "\u00B0C")
-                  ),
-                  box(
-                    width = 4,
-                    sliderInput(ns("sliderGraphHumAbs"), "X-Axis",
-                                min = 0, max = 0.035, step = 0.0005, value = c(0, 0.02), post = "kg/kg")
-                  )
-                ),
-                box(
-                  title="Mollier hx Comfort Zone Properties",
-                  status="info",
-                  width = 6,
-                  collapsible = TRUE,
-                  collapsed = TRUE,
-                  box(
-                    width = 4,
-                    sliderInput(ns("sliderCmfTemp"), "Temperature",
-                                min = 15, max = 30, step = 0.5, value = c(20, 26), post = "\u00B0C")
-                  ),
-                  box(
-                    width = 4,
-                    sliderInput(ns("sliderCmfHumRel"), "Relative humidity",
-                                min = 0, max = 100, step = 5, value = c(35, 65), post = "%rH")
-                  ),
-                  box(
-                    width = 4,
-                    sliderInput(ns("sliderCmfHumAbs"), "Absolute humidity",
-                                min = 0, max = 0.035, step = 0.0005, value = c(0, 0.0115), post = "kg/kg")
-                  )
                 )
               )
       ),
@@ -115,6 +106,15 @@ roomTempHumModuleUI <- function(id) {
                    )
                  )
                )
+      )
+    ),
+    fluidRow(
+      box(
+        title = "Interpretation",
+        solidHeader = TRUE,
+        width = 12,
+        background = "light-blue",
+        "A box with a solid light-blue background"
       )
     )
 )}

@@ -15,18 +15,8 @@ roomOutsideTempModuleUI <- function(id) {
         solidHeader = TRUE,
         status="primary",
         width = 12,
-        box(
-          width = 2,
-          selectInput(ns("flat"), "Select flat", choices = NULL)
-        ),
-        box(
-          width = 2,
-          selectInput(inputId = ns("room"),
-                      label = "Room",
-                      choices = NULL,
-                      multiple=F
-          )
-        ),
+        collapsible = TRUE,
+        collapsed = TRUE,
         box(
           width = 2,
           selectInput(inputId = ns("tempOutsideAir"), 
@@ -60,9 +50,19 @@ roomOutsideTempModuleUI <- function(id) {
       tabPanel("Overview",
               fluidRow(
                 box(
+                  status="primary",
+                  width = 2,
+                  selectInput(ns("flat"), "Flat", choices = NULL),
+                  selectInput(inputId = ns("room"),
+                              label = "Room",
+                              choices = NULL,
+                              multiple=F
+                  )
+                ),
+                box(
                   title="Room vs. Outside Temperature",
                   status="primary",
-                  width = 12,
+                  width = 8,
                   plotlyOutput(ns("tempROaPlot"))
                 )
               )
@@ -81,6 +81,15 @@ roomOutsideTempModuleUI <- function(id) {
                    )
                  )
                )
+      )
+    ),
+    fluidRow(
+      box(
+        title = "Interpretation",
+        solidHeader = TRUE,
+        width = 12,
+        background = "light-blue",
+        "A box with a solid light-blue background"
       )
     )
 )}
@@ -215,8 +224,7 @@ roomOutsideTempModule <- function(input, output, session, aggData) {
   })
 
   # Temperature Room vs Outside Air Plot
- 
-  output$tempROaPlot <- renderPlotly({
+   output$tempROaPlot <- renderPlotly({
     withProgress(message = 'Creating plot', detail = "indoor vs. outdoor temperature plot", value = NULL, {
 
       # axis properties

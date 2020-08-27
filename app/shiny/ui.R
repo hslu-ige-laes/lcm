@@ -13,12 +13,13 @@ sidebar <- dashboardSidebar(
   sidebarMenu(
     tags$li(a(href = "https://www.hslu.ch/laes", target = "_blank",
               img(src = "hsluLogo.png", width = "180px"),
-              style = "padding-top:10px; padding-left:14px; padding-bottom:10px;"),
+              style = "padding-top:15px; padding-left:14px; padding-bottom:0px;"),
             class = "dropdown"),
+    tags$hr(),
     # Setting the id ensures input$tabs knows the names of currently selected tab
     # icons from https://fontawesome.com/icons?d=gallery&m=free
     id = "tabs",
-    menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
+    menuItem("Overview", tabName = "overview", icon = icon("dashboard")),
     menuItemOutput("roomTempHumMenuItem"),
     menuItemOutput("roomOutsideTempMenuItem"),
     menuItemOutput("roomAirQualityMenuItem"),
@@ -56,7 +57,7 @@ body <- dashboardBody(
   ),
   # body content
   tabItems(
-    tabItem(tabName = "dashboard",
+    tabItem(tabName = "overview",
             "content tbd"
     ),
 
