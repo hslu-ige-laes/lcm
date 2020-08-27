@@ -2,6 +2,7 @@
 layout: default
 title: Room > Temp vs. Hum
 nav_order: 01
+nav_exclude: true
 parent: Interpretation
 ---
 ### Interpretation
