@@ -15,3 +15,4 @@ tbd
 ## csv-Files
 tbd
 
+[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/addDataPoints/){: .btn .btn-green }
