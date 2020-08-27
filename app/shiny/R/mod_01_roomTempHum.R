@@ -28,14 +28,6 @@ roomTempHumModuleUI <- function(id) {
           )
         ),
         box(
-          width = 2,
-          checkboxGroupInput(inputId = ns("season"), 
-                             label = "Visible Seasons",
-                             choices = list("Winter", "Spring", "Summer", "Fall"),
-                             selected = list("Winter", "Spring", "Summer", "Fall")
-          )
-        ),
-        box(
           title="Mollier hx Diagram Properties",
           status="info",
           width = 6,
@@ -79,6 +71,11 @@ roomTempHumModuleUI <- function(id) {
                               label = "Room",
                                 choices = NULL,
                                 multiple=F
+                    ),
+                    checkboxGroupInput(inputId = ns("season"), 
+                                       label = "Visible Seasons",
+                                       choices = list("Winter", "Spring", "Summer", "Fall"),
+                                       selected = list("Winter", "Spring", "Summer", "Fall")
                     )
                 ),
                 box(
