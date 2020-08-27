@@ -3,14 +3,8 @@
 
 # ======================================================================
 
-ModuleUI <- function(id) {
-  #' Name UI
-  #'
-  #' User-Interface for the 
-  #' @param id id for ns()
-  #' @export
-  #' @author Reto Marek
-  
+templateModuleUI <- function(id) {
+
   ns <- NS(id)
   
   tagList(
@@ -38,26 +32,31 @@ ModuleUI <- function(id) {
                  )
                )
       ),
-      tabPanel("Tab 2",
+      tabPanel("Info",
                fluidRow(
                  box(
-                   title="tbd",
                    status="primary",
                    width = 12,
-                   "content tbd"
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","template.md"))
+                   )
                  )
                )
+      ),
+      fluidRow(
+        box(
+          title = "Interpretation",
+          solidHeader = TRUE,
+          width = 12,
+          background = "light-blue",
+          "A box with a solid light-blue background"
+        )
       )
     )
   )
 }
 
-Module <- function(input, output, session) {
-  #' Name
-  #'
-  #' Server-function for the 
-  #' @param filename a String representing the filename inclusive extension.
-  #' @export
-  #' @author Reto Marek
- 
+templateModule <- function(input, output, session) {
+  # add server code and visualizations
 }
