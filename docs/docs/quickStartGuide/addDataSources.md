@@ -2,7 +2,7 @@
 layout: default
 title: Add Data Sources
 nav_order: 2
-parent: Configure your Project
+parent: Quick Start Guide
 ---
 
 # Add Data Sources
