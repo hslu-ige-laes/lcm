@@ -121,7 +121,7 @@ body <- dashboardBody(
 
 # ======================================================================
 # Put all parts together into ui
-ui <- dashboardPage(title = "Monitoring Dashboard",
+ui <- dashboardPage(title = "Low Cost Monitoring",
                     skin = "blue",
                     header,
                     sidebar,

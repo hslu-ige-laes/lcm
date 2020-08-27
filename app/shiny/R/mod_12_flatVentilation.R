@@ -15,6 +15,8 @@ flatVentilationModuleUI <- function(id) {
         solidHeader = TRUE,
         status="primary",
         width = 12,
+        collapsible = TRUE,
+        collapsed = TRUE,
         box(
           width = 3,
           sliderInput(ns("slider"), "Time range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y")
@@ -63,6 +65,15 @@ flatVentilationModuleUI <- function(id) {
                    )
                  )
                )
+      )
+    ),
+    fluidRow(
+      box(
+        title = "Interpretation",
+        solidHeader = TRUE,
+        width = 12,
+        background = "light-blue",
+        "A box with a solid light-blue background"
       )
     )
   )
