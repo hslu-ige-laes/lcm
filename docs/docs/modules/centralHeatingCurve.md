@@ -1,9 +1,9 @@
 ---
 layout: default
-title: heatingCurve
+title: Central > Heating Curve
+nav_order: 21
 parent: Module Descriptions
 ---
 
-# heatingCurve
 ## Subtitle
 Content tbd

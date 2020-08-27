@@ -6,7 +6,6 @@ has_children: true
 permalink: /docs/installation
 ---
 
-# Installation
 - To run the application an installed R environment is required.
 - The application is tested with R version 3.6.3.
 - R Studio (a graphical user interface for R) is recommended.

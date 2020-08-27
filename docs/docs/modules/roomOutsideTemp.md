@@ -1,6 +1,7 @@
 ---
 layout: default
-title: comfortTempROa
+title: Room > Room vs. Outside Temp
+nav_order: 2
 parent: Module Descriptions
 ---
 

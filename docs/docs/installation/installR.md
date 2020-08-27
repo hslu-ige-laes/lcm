@@ -5,7 +5,6 @@ nav_order: 2
 parent: Installation
 ---
 
-# Install R
 If "R Portable" is not suitable for you, R and R Studio can be installed as follows.
 
 R is maintained by an international team of developers who make the language available through the web page of [The Comprehensive R Archive Network](http://cran.r-project.org/).

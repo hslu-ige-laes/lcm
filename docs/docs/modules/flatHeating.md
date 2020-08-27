@@ -1,6 +1,7 @@
 ---
 layout: default
-title: heatingFlats
+title: Flat > Heating
+nav_order: 10
 parent: Module Descriptions
 ---
 

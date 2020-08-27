@@ -5,11 +5,10 @@ nav_order: 1
 parent: Module Descriptions
 ---
 
-# Room Temperature versus Humidity
-## Purpose
+### Purpose
 
 ## Visualizations
-### Room Temperature versus relative Humidity
+#### Room Temperature versus relative Humidity
 <br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_02.PNG" style="border:1px solid lightgrey"/>
 <br>

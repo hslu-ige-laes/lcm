@@ -4,14 +4,14 @@
 # ======================================================================
 
 
-centralHeatingModuleUI <- function(id) {
+centralHeatingSignatureModuleUI <- function(id) {
 
   ns <- NS(id)
   
   tagList(
     fluidRow(
       box(
-        title = "Central > Heating",
+        title = "Central > Heating Signature",
         solidHeader = TRUE,
         status="primary",
         width = 12,
@@ -56,7 +56,7 @@ centralHeatingModuleUI <- function(id) {
       tabPanel("Overview",
                fluidRow(
                  box(
-                   title="Heating Energy Signature",
+                   title="Heating Signature",
                    status="primary",
                    width = 12,
                    plotlyOutput(ns("energySignaturePlot"), height = "auto")
@@ -72,7 +72,7 @@ centralHeatingModuleUI <- function(id) {
                      width = 12,
                      column(
                        width = 12,
-                       includeMarkdown(here::here("docs", "docs", "modules","centralHeating.md"))
+                       includeMarkdown(here::here("docs", "docs", "modules","centralHeatingSignature.md"))
                      )
                    )
                  )
@@ -91,7 +91,7 @@ centralHeatingModuleUI <- function(id) {
   )
 }
 
-centralHeatingModule <- function(input, output, session, aggDataEnergyHeat, aggDataTOa) {
+centralHeatingSignatureModule <- function(input, output, session, aggDataEnergyHeat, aggDataTOa) {
 
   # date range slider
   sliderDate <- reactiveValues()

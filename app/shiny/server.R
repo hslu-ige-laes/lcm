@@ -48,10 +48,10 @@ server <- function(input, output, session) {
     }
   })
 
-  output$centralHeatingMenuItem <- renderMenu({
+  output$centralHeatingSignatureMenuItem <- renderMenu({
     if((nrow(dataPoints() %>% filter(dpType == "energyHeatCentral") %>% unique()) > 0) & 
        (nrow(dataPoints() %>% filter(dpType == "tempOutsideAir") %>% unique()) > 0)){
-      menuItem("Central > Heating", icon = icon("gripfire"), tabName = "centralHeating")   
+      menuItem("Central > Heating Signature", icon = icon("gripfire"), tabName = "centralHeatingSignature")   
     }
   })
   
@@ -78,7 +78,7 @@ server <- function(input, output, session) {
   callModule(flatVentilationModule,"flatVentilation", aggData = data_15m_max())
   callModule(flatHotWaterModule,"flatHotWater", aggData = data_1M_sum())
   callModule(flatHeatingModule,"flatHeating", aggData = data_1M_sum())
-  callModule(centralHeatingModule,"centralHeating", aggDataTOa = data_1d_mean(), aggDataEnergyHeat = data_1d_sum())
+  callModule(centralHeatingSignatureModule,"centralHeatingSignature", aggDataTOa = data_1d_mean(), aggDataEnergyHeat = data_1d_sum())
   callModule(centralHeatingCurveModule,"centralHeatingCurve", aggData = data_1h_mean())
   callModule(dataexplorerModule,"dataexplorer")
   

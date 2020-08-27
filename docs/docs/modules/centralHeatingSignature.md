@@ -1,9 +1,10 @@
 ---
 layout: default
-title: heatingCentral
+title: Central > Heating Signature
+nav_order: 20
 parent: Module Descriptions
 ---
 
-# heatingCentral
+# Heating Signature
 ## Subtitle
 Content tbd

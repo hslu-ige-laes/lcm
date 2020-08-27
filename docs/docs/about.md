@@ -6,7 +6,6 @@ has_children: true
 permalink: /docs/about
 ---
 
-# About the app
 ## General
 - The app is built as a [Shiny](https://shiny.rstudio.com/) web application which is based on the [programming language R](https://en.wikipedia.org/wiki/R_(programming_language)).
 - R and its web application extension [Shiny](https://shiny.rstudio.com/) are a good solution to build prototypes of web apps which require data analysis and visualization functionality.

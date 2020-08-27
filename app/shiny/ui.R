@@ -25,9 +25,9 @@ sidebar <- dashboardSidebar(
     menuItemOutput("roomAirQualityMenuItem"),
     menuItemOutput("roomTempReductionMenuItem"),
     menuItemOutput("flatVentilationMenuItem"),
-    menuItemOutput("flatHotWaterMenuItem"),
     menuItemOutput("flatHeatingMenuItem"),
-    menuItemOutput("centralHeatingMenuItem"),
+    menuItemOutput("flatHotWaterMenuItem"),
+    menuItemOutput("centralHeatingSignatureMenuItem"),
     menuItemOutput("centralHeatingCurveMenuItem"),
     menuItemOutput("dataExplorerMenuItem"),
     menuItem("Settings", icon = icon("cog"), startExpanded = FALSE,
@@ -89,8 +89,8 @@ body <- dashboardBody(
             flatHeatingModuleUI("flatHeating")
     ),
     
-    tabItem(tabName = "centralHeating",
-            centralHeatingModuleUI("centralHeating")
+    tabItem(tabName = "centralHeatingSignature",
+            centralHeatingSignatureModuleUI("centralHeatingSignature")
     ),
     
     tabItem(tabName = "centralHeatingCurve",

@@ -5,7 +5,6 @@ nav_order: 6
 parent: Installation
 ---
 
-# Start lcm application
 ## via "R Portable"
 - Execute `lcm.bat` in the application folder
 - A browser will open and show the application

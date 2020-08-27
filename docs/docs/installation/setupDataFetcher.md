@@ -5,9 +5,6 @@ nav_order: 5
 parent: Installation
 ---
 
-# Set up data fetcher
-tbd
-
 ## Windows
 tbd: describe how to set up scheduled jobs
 

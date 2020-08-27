@@ -5,7 +5,6 @@ nav_order: 3
 parent: Installation
 ---
 
-# Install R Studio
 R Studio is an application like Microsoft Word — except that instead of helping you write in English, R Studio helps you write in R.
 
 1. Click [here](https://rstudio.com/products/rstudio/download/) to choose the operating system and download R Studio Desktop "Free". 

@@ -5,7 +5,6 @@ nav_order: 2
 parent: Quick Start Guide
 ---
 
-# Add Data Sources
 ## the things network
 tbd
 

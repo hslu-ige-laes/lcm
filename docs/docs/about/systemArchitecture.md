@@ -5,8 +5,6 @@ nav_order: 1
 parent: About the app
 ---
 
-# System Architecture
-
 ## Overview
 <br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/systemArchitecture_01.PNG" alt="Application architecture" onclick="window.open('https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/systemArchitecture_01.PNG', '_blank');" />
