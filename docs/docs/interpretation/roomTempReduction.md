@@ -2,9 +2,8 @@
 layout: default
 title: Room > Temp Reduction
 nav_order: 04
-parent: Interpretation
+parent: Modules
 ---
 
-### Interpretation
-#### Title
-content tbd
+## Subtitle
+Content tbd

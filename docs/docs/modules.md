@@ -6,4 +6,3 @@ has_children: true
 permalink: /docs/modules
 ---
 
-Details about each module in the application.

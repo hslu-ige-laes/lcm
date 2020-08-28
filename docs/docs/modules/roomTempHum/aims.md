@@ -6,5 +6,7 @@ parent: Room > Temp vs. Hum
 grand_parent: Modules
 ---
 
-- The comparison of the room temperature with the humidity at the same time allows a comfort evaluation.
-- In order to enable a quick visual evaluation, zones where people feel comfortable are color-coded.
+### Comfort and building protection
+- Satisfied and healthy residents
+- Avoidance of moisture damage
+- Prevention of damage to wooden floors

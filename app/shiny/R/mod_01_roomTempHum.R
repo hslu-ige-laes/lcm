@@ -1,9 +1,3 @@
-
-# ======================================================================
-
-# ======================================================================
-
-
 roomTempHumModuleUI <- function(id) {
   
   ns <- NS(id)
@@ -20,29 +14,29 @@ roomTempHumModuleUI <- function(id) {
         box(
           title="Mollier hx Diagram Properties",
           status="info",
-          width = 6,
+          width = 12,
           box(
-            width = 4,
+            width = 2,
             sliderInput(ns("sliderCmfTemp"), "Zone Temperature",
                         min = 15, max = 30, step = 0.5, value = c(20, 26), post = "\u00B0C")
           ),
           box(
-            width = 4,
+            width = 2,
             sliderInput(ns("sliderCmfHumRel"), "Zone Rel. humidity",
                         min = 0, max = 100, step = 5, value = c(35, 65), post = "%rH")
           ),
           box(
-            width = 4,
+            width = 2,
             sliderInput(ns("sliderCmfHumAbs"), "Zone Abs. humidity",
                         min = 0, max = 0.035, step = 0.0005, value = c(0, 0.0115), post = "kg/kg")
           ),
           box(
-            width = 4,
+            width = 2,
             sliderInput(ns("sliderGraphTemp"), "Range Y-Axis",
                         min = -20, max = 40, step = 5, value = c(15, 30), post = "\u00B0C")
           ),
           box(
-            width = 4,
+            width = 2,
             sliderInput(ns("sliderGraphHumAbs"), "Range X-Axis",
                         min = 0, max = 0.035, step = 0.0005, value = c(0, 0.02), post = "kg/kg")
           )
@@ -51,7 +45,7 @@ roomTempHumModuleUI <- function(id) {
     ),
     tabsetPanel(
       id = "tempHum",
-      tabPanel("Visualisation",
+      tabPanel("Visualization",
               fluidRow(
                 box(
                   status="primary",
@@ -278,19 +272,18 @@ roomTempHumModule <- function(input, output, session, aggData) {
     })
   )
   
-  
   # Temperature vs Humidity Plot
   miny <- 0.0
   maxy <- 100.0
   
-  df.zoneYetComfortable <- data.frame(Temp = c(20,17,16,17,21.5,25,27,25.5,20),
+  df.zoneStillComfortable <- data.frame(Temp = c(20,17,16,17,21.5,25,27,25.5,20),
                                       Hum = c(20,40,75,85,80,60,30,20,20),
-                                      Zones = "yet comfortable")
+                                      Zones = "Still comfortable")
   
   
   df.zoneComfortable <- data.frame(Temp = c(19,17.5,22.5,24,19),
                                    Hum = c(38,74,65,35,38),
-                                   Zones = "comfortable")
+                                   Zones = "Comfortable")
   
   
   # Plot
@@ -306,25 +299,21 @@ roomTempHumModule <- function(input, output, session, aggData) {
                                           Hum = c(miny,maxy,maxy, miny, miny),
                                           Zones = "uncomfortable")
 
-      df.zones <- rbind.fill(df.zoneNotComfortable, df.zoneYetComfortable)
+      df.zones <- rbind.fill(df.zoneNotComfortable, df.zoneStillComfortable)
       df.zones <- rbind.fill(df.zones, df.zoneComfortable)
 
       df() %>%
-        # split(.$room) %>%
-        # lapply(function(d){
-        plot_ly(showlegend = FALSE) %>%
-        # add_polygons(
-        #   data = df.zoneNotComfortable, x = ~Temp, y = ~Hum, name = "Not comfortable", opacity = 0.1, color = I("red"), hoverinfo="skip"
-        # ) %>%
-        add_polygons(
-          data = df.zoneYetComfortable, x = ~Temp, y = ~Hum, name = "Yet comfortable", opacity = 0.25, color = I("orange"), hoverinfo="skip"
-        ) %>%
+        plot_ly(showlegend = TRUE) %>%
         add_polygons(
           data = df.zoneComfortable, x = ~Temp, y = ~Hum, name = "Comfortable", opacity = 0.4, color = I("yellowgreen"), hoverinfo="skip"
         ) %>% 
+        add_polygons(
+          data = df.zoneStillComfortable, x = ~Temp, y = ~Hum, name = "Still comfortable", opacity = 0.25, color = I("orange"), hoverinfo="skip"
+        ) %>%
         add_markers(data = df() %>% filter(season == "Spring"),
                     x = ~temperature,
                     y = ~humidity,
+                    name = "Spring",
                     marker = list(color = "#2db27d", opacity = 0.4),
                     hoverinfo = "text",
                     text = ~ paste("Temp:    ", sprintf("%.1f \u00B0C", temperature),
@@ -336,6 +325,7 @@ roomTempHumModule <- function(input, output, session, aggData) {
         add_markers(data = df() %>% filter(season == "Summer"),
                     x = ~temperature,
                     y = ~humidity,
+                    name = "Summer",
                     marker = list(color = "#febc2b", opacity = 0.4),
                     hoverinfo = "text",
                     text = ~ paste("Temp:    ", sprintf("%.1f \u00B0C", temperature),
@@ -347,6 +337,7 @@ roomTempHumModule <- function(input, output, session, aggData) {
         add_markers(data = df() %>% filter(season == "Fall"),
                     x = ~temperature,
                     y = ~humidity,
+                    name = "Fall",
                     marker = list(color = "#440154", opacity = 0.4),
                     hoverinfo = "text",
                     text = ~ paste("Temp:    ", sprintf("%.1f \u00B0C", temperature),
@@ -358,6 +349,7 @@ roomTempHumModule <- function(input, output, session, aggData) {
         add_markers(data = df() %>% filter(season == "Winter"),
                     x = ~temperature,
                     y = ~humidity,
+                    name = "Winter",
                     marker = list(color = "#365c8d", opacity = 0.4),
                     hoverinfo = "text",
                     text = ~ paste("Temp:    ", sprintf("%.1f \u00B0C", temperature),

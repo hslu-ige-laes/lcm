@@ -70,14 +70,13 @@ server <- function(input, output, session) {
   
    # ======================================================================
   # Modules
-  callModule(roomTempReductionModule, "roomTempReduction", aggData = data_1d_mean())
   callModule(roomTempHumModule, "roomTempHum", aggData = data_1d_mean())
-  # 
   callModule(roomOutsideTempModule, "cmfTempROa", aggData = data_1h_mean())
   callModule(roomAirQualityModule, "cmfAQual", aggData = data_1h_mean())
-  callModule(flatVentilationModule,"flatVentilation", aggData = data_15m_max())
-  callModule(flatHotWaterModule,"flatHotWater", aggData = data_1M_sum())
+  callModule(roomTempReductionModule, "roomTempReduction", aggData = data_1d_mean())
   callModule(flatHeatingModule,"flatHeating", aggData = data_1M_sum())
+  callModule(flatHotWaterModule,"flatHotWater", aggData = data_1M_sum())
+  callModule(flatVentilationModule,"flatVentilation", aggData = data_15m_max())
   callModule(centralHeatingSignatureModule,"centralHeatingSignature", aggDataTOa = data_1d_mean(), aggDataEnergyHeat = data_1d_sum())
   callModule(centralHeatingCurveModule,"centralHeatingCurve", aggData = data_1h_mean())
   callModule(dataexplorerModule,"dataexplorer")
