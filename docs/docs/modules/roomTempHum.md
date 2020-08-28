@@ -19,8 +19,8 @@ Such visualizations have existed for more than 45 years and were shown e.g. by F
 - Tooltip: Place the mouse pointer over a datapoint to get more information of a specific measurement.
 
 #### Mollier hx-Diagram
-The Mollier h,x-diagram was proposed by Richard Mollier in 1923 <a href="#mollierhxand">[2]</a> allows to describe changes of state of humid air. In the present case it is used to show comfort states regarding temperature and humidity.
-This visualisation is written in D3 and open-source <a href="#mollierhxand">[3]</a> 
+The Mollier h,x-diagram was proposed by Richard Mollier in 1923 <a href="#mollierhx">[2]</a> allows to describe changes of state of humid air. In the present case it is used to show comfort states regarding temperature and humidity.
+This visualisation is written in D3 and open-source <a href="#d3-mollierhx">[3]</a> 
 <br><br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_01.PNG" style="border:1px solid lightgrey"/>
 <br>
