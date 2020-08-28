@@ -10,7 +10,7 @@ parent: Interpretation
 - Many people feel very comfortable at 21°C. In winter, however, appropriate clothing (long trousers, sweaters, socks) are then necessary.
 - Consider the following rule of thumb: per degree of temperature reduction you save between 5% and 10% of heating energy, depending on the building!
 - Bedrooms in well-insulated and well-ventilated buildings may well have 18°C.
-- <a href="#frank1975">Frank (1975)</a>
+
 
 #### Humidity
 - From a comfort perspective the relative humidity should be between 30% and 65%.
@@ -24,6 +24,3 @@ parent: Interpretation
 - From a comfort point of view, people feel uncomfortable if the absolute humidity in the air rises above 11.5g of water per kg of air, this is called the sultriness limit ("Schwülgrenze" in German).
 - This limit is visible in the hx-diagram where a vertical line cuts the comfort zone to the right at 11.5g/kg.
 - Hence at all points to the right of this limit the climate feels sultry.
-
-### References
-<a id="frank1975"></a>Frank, Walther (1975): Raumklima und thermische Behaglichkeit. Literaturauswertung, durchgeführt im Auftr. d. Bundesmin. f. Raumordnung, Bauwesen u. Städtebau. Berlin, München, Düsseldorf: Ernst (Berichte aus der Bauforschung, H. 104).
