@@ -56,6 +56,6 @@ This visualisation is written in D3 and open-source <a href="#d3-mollierhx">[3]<
 
 ### References
 <a id="frank1975">[1] </a>Frank, W. (1975). Raumklima und thermische Behaglichkeit: Literaturauswertung, durchgeführt im Auftr. d. Bundesmin. f. Raumordnung, Bauwesen u. Städtebau. Berichte aus der Bauforschung: H. 104. <br>
-<a id="mollierhx">[2] </a> Mollier-h-x-Diagramm (n.d.). In Wikipedia. Retrieved August 28, 2020, from <a href="https://de.wikipedia.org/wiki/Mollier-h-x-Diagramm" target="_blank"></><br>
-<a id="d3-mollierhx">[3] </a>d3-mollierhx (n.d.). In Github. Retrieved August 28, 2020, from <a href="https://github.com/hslu-ige-laes/d3-mollierhx" target="_blank"/><br>
-[https://github.com/hslu-ige-laes/d3-mollierhx](https://github.com/hslu-ige-laes/d3-mollierhx){:target="_blank"}
+<a id="mollierhx">[2] </a> Mollier-h-x-Diagramm (n.d.). In Wikipedia. Retrieved August 28, 2020, from <a href="https://de.wikipedia.org/wiki/Mollier-h-x-Diagramm" target="_blank">https://de.wikipedia.org/wiki/Mollier-h-x-Diagramm</a><br>
+<a id="d3-mollierhx">[3] </a>d3-mollierhx (n.d.). In Github. Retrieved August 28, 2020, from <a href="https://github.com/hslu-ige-laes/d3-mollierhx" target="_blank">https://github.com/hslu-ige-laes/d3-mollierhx</a><br>
+
