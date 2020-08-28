@@ -11,7 +11,7 @@ parent: Module Descriptions
 
 ### Visualizations
 #### Room Temperature versus relative Humidity
-Frank W. showed such visualizations already in 1975 in a report.
+Such visualizations have existed for more than 45 years and were shown e.g. by <a href="#frank1975">Frank (1975)</a> in a report.
 <br><br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_02.PNG" style="border:1px solid lightgrey"/>
 <br>
@@ -53,3 +53,6 @@ Source: [https://github.com/hslu-ige-laes/d3-mollierhx](https://github.com/hslu-
 #### "Mollier hx"-Diagram Properties
 - The three sliders in the upper line change the comfort zone.
 - The two sliders in the lower line change the ranges of the x- and y-axis
+
+### References
+<a id="frank1975"></a>Frank, W. (1975). Raumklima und thermische Behaglichkeit: Literaturauswertung, durchgeführt im Auftr. d. Bundesmin. f. Raumordnung, Bauwesen u. Städtebau. Berichte aus der Bauforschung: H. 104. Ernst [in Komm.]. 
