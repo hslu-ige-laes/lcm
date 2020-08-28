@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Data Analysis
-nav_order: 01
+nav_order: 02
 parent: Room > Temp vs. Hum
 grand_parent: Modules
 ---
