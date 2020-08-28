@@ -92,30 +92,93 @@ roomTempHumModuleUI <- function(id) {
                   d3Output(ns("mollierHxPlot"))
                 )
               )
-      ),
-      tabPanel("Info",
+      )
+      # tabPanel("Info",
+      #          fluidRow(
+      #            box(
+      #              status="primary",
+      #              width = 12,
+      #              column(
+      #                width = 12,
+      #                includeMarkdown(here::here("docs", "docs", "modules","roomTempHum.md"))
+      #              )
+      #            )
+      #          )
+      # )
+    ),
+    tabsetPanel(
+      id = "documentation",
+      tabPanel("Goals",
                fluidRow(
                  box(
                    status="primary",
                    width = 12,
                    column(
                      width = 12,
-                     includeMarkdown(here::here("docs", "docs", "modules","roomTempHum.md"))
+                     includeMarkdown(here::here("docs", "docs", "modules","roomTempHum","goals.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("Data Analysis",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","roomTempHum","dataanalysis.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("User Interface",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","roomTempHum","userinterface.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("Interpretation",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","roomTempHum","interpretation.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("Recommendations",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","roomTempHum","recommendations.md"))
                    )
                  )
                )
       )
-    ),
-    fluidRow(
-      box(
-        status="primary",
-        width = 12,
-        column(
-          width = 12,
-          includeMarkdown(here::here("docs", "docs", "interpretation","roomTempHum.md"))
-        )
-      )
     )
+    # fluidRow(
+    #   box(
+    #     status="primary",
+    #     width = 12,
+    #     column(
+    #       width = 12,
+    #       includeMarkdown(here::here("docs", "docs", "interpretation","roomTempHum.md"))
+    #     )
+    #   )
+    # )
 )}
 
 roomTempHumModule <- function(input, output, session, aggData) {
