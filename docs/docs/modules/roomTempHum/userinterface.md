@@ -8,14 +8,15 @@ grand_parent: Modules
 
 ### Visualization(s)
 #### Room Temperature versus relative Humidity
+
 Such visualizations have existed for more than 45 years and were shown e.g. by Frank (1975) <a href="#frank1975">[1]</a> in a report.
 <br><br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_02.PNG" style="border:1px solid lightgrey"/>
 <br>
-
 - The x-axis represents the room temperature and the y-axis the relative humidity.
 - The two zones helps to indicate whether measured temperature/humidity values are within a comfortable, still comfortable range or not.
 - Tooltip: Place the mouse pointer over a datapoint to get more information of a specific measurement.
+<br><br>
 
 #### Mollier hx-Diagram
 The Mollier h,x-diagram was proposed by Richard Mollier in 1923 <a href="#mollierhx">[2]</a> allows to describe changes of state of humid air. In the present case it is used to show comfort states regarding temperature and humidity.
@@ -32,12 +33,13 @@ This visualisation is written in D3 and open-source <a href="#d3-mollierhx">[3]<
 - Measured values get integrated as scatter plot and are coloured according to the season (winter, spring, summer, fall).
 - Using the building altitude, temperature and relative humidity the application calculates the absolute water content.
 - A dot stands for a daily averaged state.
+<br><br>
 
 ### Settings
 #### Basic
-<br>
+
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_03.PNG" style="border:1px solid lightgrey"/>
-<br>
+<br><br>
 **Flat and Room**
 - Selection of flat resp. room which should get analyzed.
 - According to the building hierarchy all flats and rooms get listet which have a datapoint of type "tempRoom" or "humRoom".
@@ -53,9 +55,10 @@ This visualisation is written in D3 and open-source <a href="#d3-mollierhx">[3]<
 #### Extended
 - To access the extended settings, the plus symbol in the upper right corner of the title bar must be pressed.
 - Per default the extended settings tab is collapsed.
-<br>
+<br><br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_04.PNG" style="border:1px solid lightgrey"/>
-<br>
+<br><br>
+
 **"Mollier hx"-Diagram Properties**
 - The three sliders in the upper line change the comfort zone.
 - The two sliders in the lower line change the ranges of the x- and y-axis

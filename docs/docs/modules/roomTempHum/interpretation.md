@@ -9,7 +9,7 @@ grand_parent: Modules
 People have very different requirements for comfort in a room. Therefore, it will never be possible to satisfy everyone completely. Rather, one must always reckon with about **5 to 10% dissatisfied people**. <a href="#balmer2020">[2]</a>
 
 ### Temperature
-The comfort requirements have increased compared to the past and today, many people feel uncomfortable at 20°C. <a href="#balmer2020">[2]</a>
+The comfort requirements have increased compared to the past and today, many people feel uncomfortable at 20°C <a href="#balmer2020">[2]</a>. Please consider that when looking at the left visualization which dates back to 1975 <a href="#frank1975">[3]</a>. 
 
 - From a comfort perspective the temperature should be **between 21°C in winter and 26°C** in summer. <a href="#balmer2020">[2]</a>
 - Consider the following rule of thumb: **per degree of higher room temperature about 6% more heating energy is needed**. With well-insulated buildings, the value is even higher. <a href="#balmer2020">[2]</a>
@@ -35,9 +35,11 @@ Prolonged high room air humidity causes microbial growth <a href="#sia382_706">[
 
 #### Dew Point Temperature
 - Condensation occurs on surfaces that are colder than the dew point temperature.
-- The dew point temperature can be read from the [hx-diagram](https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_02.PNG).
-- There
+- The dew point temperature can be read from the hx-diagram:
+<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_05.PNG" style="border:1px solid lightgrey"/>
+<br><br>
 
 ### References
 <a id="sia382_706">[1]</a> SIA Schweizerischer Ingenieur- und Architektenverein (2007). Eingangsparameter für das Raumklima zur Auslegung und Bewertung der Energieeffizienz von Gebäuden - Raumluftqualität, Temperatur, Licht und Akustik. (SN/EN, SIA 382.706 / EN ISO 15251).<br>
 <a id="balmer2020">[2]</a> Balmer, M., Hubbuch, M., & Sandmeier, E. (2020). Energetische Betriebsoptimierung: Gebäude effizienter betreiben (1. Auflage). Fachbuchreihe «Nachhaltiges Bauen und Erneuern». FAKTOR Verlag AG.<br>
+<a id="frank1975">[3]</a> Frank, W. (1975). Raumklima und thermische Behaglichkeit: Literaturauswertung, durchgeführt im Auftr. d. Bundesmin. f. Raumordnung, Bauwesen u. Städtebau. Berichte aus der Bauforschung: H. 104. <br>
