@@ -20,9 +20,9 @@ Such visualizations have existed for more than 45 years and were shown e.g. by F
 
 #### Mollier hx-Diagram
 The Mollier h,x-diagram was proposed by Richard Mollier in 1923 <a href="#mollierhx">[2]</a> allows to describe changes of state of humid air. In the present case it is used to show comfort states regarding temperature and humidity.
-This visualisation is written in D3 and open-source <a href="#d3-mollierhx">[3]</a> 
 <br><br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_01.PNG" style="border:1px solid lightgrey"/>
+This visualisation is written in D3 and open-source <a href="#d3-mollierhx">[3]</a> 
 <br>
 - It is valid for a certain air pressure. The lcm application calculates the air pressure from the building altitude (meters above sea level) which you can change in the settings `Settings > App Configuration`.
 - The basic scale for the h,x-diagram is a temperature scale, which is applied vertically as y-axis.
@@ -57,4 +57,3 @@ This visualisation is written in D3 and open-source <a href="#d3-mollierhx">[3]<
 <a id="frank1975">[1] </a>Frank, W. (1975). Raumklima und thermische Behaglichkeit: Literaturauswertung, durchgeführt im Auftr. d. Bundesmin. f. Raumordnung, Bauwesen u. Städtebau. Berichte aus der Bauforschung: H. 104. 
 <a id="mollierhx">[2] </a> Mollier-h-x-Diagramm (n.d.). In Wikipedia. Retrieved August 28, 2020, from [https://de.wikipedia.org/wiki/Mollier-h-x-Diagramm](https://de.wikipedia.org/wiki/Mollier-h-x-Diagramm)
 <a id="d3-mollierhx">[3] </a>d3-mollierhx (n.d.). In Github. Retrieved August 28, 2020, from [https://github.com/hslu-ige-laes/d3-mollierhx](https://github.com/hslu-ige-laes/d3-mollierhx)
-
