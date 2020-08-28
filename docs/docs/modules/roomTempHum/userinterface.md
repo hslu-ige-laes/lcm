@@ -54,5 +54,3 @@ This visualisation is written in D3 and open-source <a href="#d3-mollierhx">[3]<
 <a id="frank1975">[1] </a>Frank, W. (1975). Raumklima und thermische Behaglichkeit: Literaturauswertung, durchgeführt im Auftr. d. Bundesmin. f. Raumordnung, Bauwesen u. Städtebau. Berichte aus der Bauforschung: H. 104. <br>
 <a id="mollierhx">[2] </a> Mollier-h-x-Diagramm (n.d.). In Wikipedia. Retrieved August 28, 2020, from [https://de.wikipedia.org/wiki/Mollier-h-x-Diagramm](https://de.wikipedia.org/wiki/Mollier-h-x-Diagramm)<br>
 <a id="d3-mollierhx">[3] </a>d3-mollierhx (n.d.). In Github. Retrieved August 28, 2020, from [https://github.com/hslu-ige-laes/d3-mollierhx](https://github.com/hslu-ige-laes/d3-mollierhx)<br>
-
-<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/systemArchitecture_01.PNG" alt="Application architecture" onclick="window.open('https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/systemArchitecture_01.PNG', '_blank');" />
