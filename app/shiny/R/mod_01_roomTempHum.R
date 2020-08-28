@@ -93,29 +93,17 @@ roomTempHumModuleUI <- function(id) {
                 )
               )
       )
-      # tabPanel("Info",
-      #          fluidRow(
-      #            box(
-      #              status="primary",
-      #              width = 12,
-      #              column(
-      #                width = 12,
-      #                includeMarkdown(here::here("docs", "docs", "modules","roomTempHum.md"))
-      #              )
-      #            )
-      #          )
-      # )
     ),
     tabsetPanel(
       id = "documentation",
-      tabPanel("Goals",
+      tabPanel("Aims",
                fluidRow(
                  box(
                    status="primary",
                    width = 12,
                    column(
                      width = 12,
-                     includeMarkdown(here::here("docs", "docs", "modules","roomTempHum","goals.md"))
+                     includeMarkdown(here::here("docs", "docs", "modules","roomTempHum","aims.md"))
                    )
                  )
                )
@@ -169,16 +157,6 @@ roomTempHumModuleUI <- function(id) {
                )
       )
     )
-    # fluidRow(
-    #   box(
-    #     status="primary",
-    #     width = 12,
-    #     column(
-    #       width = 12,
-    #       includeMarkdown(here::here("docs", "docs", "interpretation","roomTempHum.md"))
-    #     )
-    #   )
-    # )
 )}
 
 roomTempHumModule <- function(input, output, session, aggData) {

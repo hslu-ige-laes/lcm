@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Goals
+title: Aims
 nav_order: 01
 parent: Room > Temp vs. Hum
 grand_parent: Modules
