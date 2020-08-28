@@ -25,7 +25,7 @@ library(highfrequency)
 library(NCmisc)
 library(viridisLite)
 library(viridis)
-library(streamgraph)
+# library(streamgraph)
 library(writexl)
 library(markdown)
 

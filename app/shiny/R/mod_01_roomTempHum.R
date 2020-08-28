@@ -18,16 +18,6 @@ roomTempHumModuleUI <- function(id) {
         collapsible = TRUE,
         collapsed = TRUE,
         box(
-          width = 3,
-          sliderInput(inputId = ns("slider"),
-                      label = "Time Range",
-                      min = as.Date("2019-01-01"),
-                      max = as.Date("2020-01-01"),
-                      value = c(as.Date("2019-03-01"), as.Date("2019-09-01")),
-                      timeFormat = "%b %Y"
-          )
-        ),
-        box(
           title="Mollier hx Diagram Properties",
           status="info",
           width = 6,
@@ -71,12 +61,23 @@ roomTempHumModuleUI <- function(id) {
                               label = "Room",
                                 choices = NULL,
                                 multiple=F
-                    ),
+                  ),
+                  inputPanel(
+                      sliderInput(inputId = ns("slider"),
+                                  label = "Time Range",
+                                  min = as.Date("2019-01-01"),
+                                  max = as.Date("2020-01-01"),
+                                  value = c(as.Date("2019-03-01"), as.Date("2019-09-01")),
+                                  timeFormat = "%b %Y"
+                      )
+                  ),
+                  inputPanel(
                     checkboxGroupInput(inputId = ns("season"), 
                                        label = "Visible Seasons",
                                        choices = list("Winter", "Spring", "Summer", "Fall"),
                                        selected = list("Winter", "Spring", "Summer", "Fall")
                     )
+                  )
                 ),
                 box(
                   title="Room Temperature vs. relative Humidity",

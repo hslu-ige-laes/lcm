@@ -63,20 +63,20 @@ flatHotWaterModuleUI <- function(id) {
                  )
                )
       ),
-      tabPanel("Stream",
-               fluidRow(
-                 box(
-                   status="primary",
-                   width = 12,
-                   column(
-                     width = 12,
-                     # streamgraphOutput(ns("hotWaterFlatStream"), height = "400px", width = "100%")
-                     streamgraphOutput(ns("hotWaterFlatStream"))
-                     
-                   )
-                 )
-               )
-      ),
+      # tabPanel("Stream",
+      #          fluidRow(
+      #            box(
+      #              status="primary",
+      #              width = 12,
+      #              column(
+      #                width = 12,
+      #                # streamgraphOutput(ns("hotWaterFlatStream"), height = "400px", width = "100%")
+      #                streamgraphOutput(ns("hotWaterFlatStream"))
+      #                
+      #              )
+      #            )
+      #          )
+      # ),
       tabPanel("Info",
                fluidRow(
                  box(
@@ -370,18 +370,18 @@ flatHotWaterModule <- function(input, output, session, aggData) {
     })
   })
  
-  output$hotWaterFlatStream <- renderStreamgraph({
-    # Create a Progress object
-    withProgress(message = 'Creating plot', detail = "hot water flats stream", value = NULL, {
-      stream_colors <- viridis_pal()(numFlats())
-      if(input$selCalc == "Absolute (ltr)") {
-        streamgraph(df.abs.monthly(), key = flat, value = Consumption, date = Time, height = "400px") %>% 
-          sg_fill_manual(stream_colors) %>% sg_axis_x(tick_interval = 1, tick_units = "year", tick_format = "%Y")  
-      } else {
-        streamgraph(df.ppd.monthly(), key = flat, value = Consumption, date = Time, height = "400px") %>% 
-          sg_fill_manual(stream_colors) %>% sg_axis_x(tick_interval = 1, tick_units = "year", tick_format = "%Y")   
-      }
-    })
-  })
+  # output$hotWaterFlatStream <- renderStreamgraph({
+  #   # Create a Progress object
+  #   withProgress(message = 'Creating plot', detail = "hot water flats stream", value = NULL, {
+  #     stream_colors <- viridis_pal()(numFlats())
+  #     if(input$selCalc == "Absolute (ltr)") {
+  #       streamgraph(df.abs.monthly(), key = flat, value = Consumption, date = Time, height = "400px") %>% 
+  #         sg_fill_manual(stream_colors) %>% sg_axis_x(tick_interval = 1, tick_units = "year", tick_format = "%Y")  
+  #     } else {
+  #       streamgraph(df.ppd.monthly(), key = flat, value = Consumption, date = Time, height = "400px") %>% 
+  #         sg_fill_manual(stream_colors) %>% sg_axis_x(tick_interval = 1, tick_units = "year", tick_format = "%Y")   
+  #     }
+  #   })
+  # })
   
 }

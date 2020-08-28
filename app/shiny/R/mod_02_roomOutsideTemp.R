@@ -18,16 +18,6 @@ roomOutsideTempModuleUI <- function(id) {
         collapsible = TRUE,
         collapsed = TRUE,
         box(
-          width = 3,
-          sliderInput(inputId = ns("slider"),
-                      label = "Time Range",
-                      min = as.Date("2019-01-01"),
-                      max = as.Date("2020-01-01"),
-                      value = c(as.Date("2019-03-01"), as.Date("2019-09-01")),
-                      timeFormat = "%b %Y"
-          )
-        ),
-        box(
           width = 2,
           selectInput(inputId = ns("tempOutsideAir"), 
                       label = "Temperature Outside Air",
@@ -50,10 +40,21 @@ roomOutsideTempModuleUI <- function(id) {
                               choices = NULL,
                               multiple=F
                   ),
-                  checkboxGroupInput(inputId = ns("season"), 
-                                     label = "Visible Seasons",
-                                     choices = list("Winter", "Spring", "Summer", "Fall"),
-                                     selected = list("Winter", "Spring", "Summer", "Fall")
+                  inputPanel(
+                    sliderInput(inputId = ns("slider"),
+                                label = "Time Range",
+                                min = as.Date("2019-01-01"),
+                                max = as.Date("2020-01-01"),
+                                value = c(as.Date("2019-03-01"), as.Date("2019-09-01")),
+                                timeFormat = "%b %Y"
+                    )
+                  ),
+                  inputPanel(
+                    checkboxGroupInput(inputId = ns("season"), 
+                                       label = "Visible Seasons",
+                                       choices = list("Winter", "Spring", "Summer", "Fall"),
+                                       selected = list("Winter", "Spring", "Summer", "Fall")
+                    )
                   )
                 ),
                 box(
@@ -188,27 +189,30 @@ roomOutsideTempModule <- function(input, output, session, aggData) {
   })
   
   df.combined <- reactive({
-    req(df.room())
-    req(df.tempOutsideAir())
-    data <- inner_join(df.room(), df.tempOutsideAir() , by="time") %>% na.omit()
-    
-    names(data)[1] <- "time"
-    names(data)[2] <- "tempR"
-    names(data)[3] <- "Sensor TR"
-    names(data)[4] <- "flat"
-    names(data)[5] <- "room"
-    names(data)[7] <- "tempOa"
-    names(data)[8] <- "Sensor TOa"
-    
-    data <- data %>% mutate(tempOaRollMean = rollmean(tempOa, 48, fill = NA, align = "right"))
-    data <- data %>% na.omit()
-    
+    withProgress(message = 'Calculating data', detail = "for indoor vs. outdoor temperature plot", value = NULL, {
+      req(df.room())
+      req(df.tempOutsideAir())
+      data <- inner_join(df.room(), df.tempOutsideAir() , by="time") %>% na.omit()
+      
+      names(data)[1] <- "time"
+      names(data)[2] <- "tempR"
+      names(data)[3] <- "Sensor TR"
+      names(data)[4] <- "flat"
+      names(data)[5] <- "room"
+      names(data)[7] <- "tempOa"
+      names(data)[8] <- "Sensor TOa"
+      
+      data <- data %>% mutate(tempOaRollMean = rollmean(tempOa, 48, fill = NA, align = "right"))
+      data <- data %>% na.omit()
+    })
   })
   
   # filter data according to season settings
   df.season <- reactive({
-    data <- df.combined() %>% mutate(season = season(time))
-    data <- data %>% filter(season %in% input$season)
+    withProgress(message = 'Calculating data', detail = "for indoor vs. outdoor temperature plot", value = NULL, {
+      data <- df.combined() %>% mutate(season = season(time))
+      data <- data %>% filter(season %in% input$season)
+    })
     return(data)
   })
  
@@ -250,10 +254,10 @@ roomOutsideTempModule <- function(input, output, session, aggData) {
                     y = ~tempR,
                     marker = list(color = "#2db27d", opacity = 0.2),
                     hoverinfo = "text",
-                    text = ~ paste("TempR:    ", sprintf("%.1f \u00B0C", tempR),
-                                   "<br />TempOa:    ", sprintf("%.1f \u00B0C", tempOaRollMean),
-                                   "<br />Date:     ", time,
-                                   "<br />Season: ", season
+                    text = ~ paste("TempR:   ", sprintf("%.1f \u00B0C", tempR),
+                                   "<br />TempOa: ", sprintf("%.1f \u00B0C", tempOaRollMean),
+                                   "<br />Date:       ", time,
+                                   "<br />Season:  ", season
                     )
         ) %>%
         add_markers(data = df() %>% filter(season == "Summer"),
@@ -261,10 +265,10 @@ roomOutsideTempModule <- function(input, output, session, aggData) {
                     y = ~tempR,
                     marker = list(color = "#febc2b", opacity = 0.2),
                     hoverinfo = "text",
-                    text = ~ paste("TempR:    ", sprintf("%.1f \u00B0C", tempR),
-                                   "<br />TempOa:    ", sprintf("%.1f \u00B0C", tempOaRollMean),
-                                   "<br />Date:     ", time,
-                                   "<br />Season: ", season
+                    text = ~ paste("TempR:   ", sprintf("%.1f \u00B0C", tempR),
+                                   "<br />TempOa: ", sprintf("%.1f \u00B0C", tempOaRollMean),
+                                   "<br />Date:       ", time,
+                                   "<br />Season:  ", season
                     )
         ) %>%
         add_markers(data = df() %>% filter(season == "Fall"),
@@ -272,10 +276,10 @@ roomOutsideTempModule <- function(input, output, session, aggData) {
                     y = ~tempR,
                     marker = list(color = "#440154", opacity = 0.2),
                     hoverinfo = "text",
-                    text = ~ paste("TempR:    ", sprintf("%.1f \u00B0C", tempR),
-                                   "<br />TempOa:    ", sprintf("%.1f \u00B0C", tempOaRollMean),
-                                   "<br />Date:     ", time,
-                                   "<br />Season: ", season
+                    text = ~ paste("TempR:   ", sprintf("%.1f \u00B0C", tempR),
+                                   "<br />TempOa: ", sprintf("%.1f \u00B0C", tempOaRollMean),
+                                   "<br />Date:       ", time,
+                                   "<br />Season:  ", season
                     )
         ) %>%
         add_markers(data = df() %>% filter(season == "Winter"),
@@ -283,14 +287,14 @@ roomOutsideTempModule <- function(input, output, session, aggData) {
                     y = ~tempR,
                     marker = list(color = "#365c8d", opacity = 0.2),
                     hoverinfo = "text",
-                    text = ~ paste("TempR:    ", sprintf("%.1f \u00B0C", tempR),
-                                   "<br />TempOa:    ", sprintf("%.1f \u00B0C", tempOaRollMean),
-                                   "<br />Date:     ", time,
-                                   "<br />Season: ", season
+                    text = ~ paste("TempR:   ", sprintf("%.1f \u00B0C", tempR),
+                                   "<br />TempOa: ", sprintf("%.1f \u00B0C", tempOaRollMean),
+                                   "<br />Date:       ", time,
+                                   "<br />Season:  ", season
                     )
         ) %>%
         layout(
-          xaxis = list(title = "Outside Temperature in \u00B0C (Rolling Mean last 48 hours)",
+          xaxis = list(title = "Outside Air Temperature in \u00B0C (Rolling Mean last 48 hours)",
                        range = c(minx, maxx),
                        zeroline = FALSE,
                        tick0 = minx,

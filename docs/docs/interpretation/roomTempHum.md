@@ -2,13 +2,12 @@
 layout: default
 title: Room > Temp vs. Hum
 nav_order: 01
-nav_exclude: true
 parent: Interpretation
 ---
 ### Interpretation
 #### Temperature
 - From a comfort perspective the temperature should be between 20°C in Winter and 26°C in Summer.
-- Many people feel very comfortable at 21°C. In winter, however, appropriate clothing (long trousers, sweaters, socks) are necessary.
+- Many people feel very comfortable at 21°C. In winter, however, appropriate clothing (long trousers, sweaters, socks) are then necessary.
 - Consider the following rule of thumb: per degree of temperature reduction you save between 5% and 10% of heating energy, depending on the building!
 - Bedrooms in well-insulated and well-ventilated buildings may well have 18°C.
 
@@ -24,3 +23,13 @@ parent: Interpretation
 - From a comfort point of view, people feel uncomfortable if the absolute humidity in the air rises above 11.5g of water per kg of air, this is called the sultriness limit ("Schwülgrenze" in German).
 - This limit is visible in the hx-diagram where a vertical line cuts the comfort zone to the right at 11.5g/kg.
 - Hence at all points to the right of this limit the climate feels sultry.
+
+Some text in which I cite an author.[^fn1]
+
+More text. Another citation.[^fn2]
+
+What is this? Yet _another_ citation?[^fn3]
+
+[^fn1]: [@krycho:revelation:2015], ¶6.
+[^fn2]: Contra [@krycho:revelation:2015], ¶15, who has everything _quite_ wrong.
+[^fn3]: [@krycho:revelation:2015].

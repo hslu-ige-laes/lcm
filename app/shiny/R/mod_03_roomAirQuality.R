@@ -22,30 +22,20 @@ roomAirQualityModuleUI <- function(id) {
         width = 12,
         collapsible = TRUE,
         collapsed = TRUE,
+        # air quality classes according to EN 16798
         box(
-          width = 3,
-          sliderInput(inputId = ns("slider"),
-                      label = "Time Range",
-                      min = as.Date("2019-01-01"),
-                      max = as.Date("2020-01-01"),
-                      value = c(as.Date("2019-03-01"), as.Date("2019-09-01")),
-                      timeFormat = "%b %Y"
-                      )
-          ),
-          # air quality classes according to EN 16798
-          box(
-            width = 3,
-            numericInput(ns("iAQual1"), "Zone I (ppm)", min = 400, max = 2000, value = 1050, step = 50, width = "200px"),
-          ),
-          box(
-            width = 3,
-            numericInput(ns("iAQual2"), "Zone II (ppm)", min = 400, max = 2000, value = 1300, step = 50, width = "200px"),
-          ),
-          box(
-            width = 3,
-            numericInput(ns("iAQual3"), "Zone III (ppm)", min = 400, max = 4000, value = 1850, step = 50, width = "200px")
-          )
+          width = 2,
+          numericInput(ns("iAQual1"), "Zone I (ppm)", min = 400, max = 2000, value = 1050, step = 50, width = "150px"),
+        ),
+        box(
+          width = 2,
+          numericInput(ns("iAQual2"), "Zone II (ppm)", min = 400, max = 2000, value = 1300, step = 50, width = "150px"),
+        ),
+        box(
+          width = 2,
+          numericInput(ns("iAQual3"), "Zone III (ppm)", min = 400, max = 4000, value = 1850, step = 50, width = "150px")
         )
+      )
     ),
     tabsetPanel(
       id = "roomAirQualityTab",
@@ -53,7 +43,20 @@ roomAirQualityModuleUI <- function(id) {
                fluidRow(
                  box(
                    status="primary",
-                   width = 12,
+                   width = 2,
+                   inputPanel(
+                     sliderInput(inputId = ns("slider"),
+                                 label = "Time Range",
+                                 min = as.Date("2019-01-01"),
+                                 max = as.Date("2020-01-01"),
+                                 value = c(as.Date("2019-03-01"), as.Date("2019-09-01")),
+                                 timeFormat = "%b %Y"
+                     )
+                   )
+                 ),
+                 box(
+                   status="primary",
+                   width = 10,
                    plotlyOutput(ns("aQualPlots"), height = "auto")
                  )
                )
@@ -73,11 +76,12 @@ roomAirQualityModuleUI <- function(id) {
     ),
     fluidRow(
       box(
-        title = "Interpretation",
-        solidHeader = TRUE,
+        status="primary",
         width = 12,
-        background = "light-blue",
-        "A box with a solid light-blue background"
+        column(
+          width = 12,
+          includeMarkdown(here::here("docs", "docs", "interpretation","roomAirQuality.md"))
+        )
       )
     )
   )

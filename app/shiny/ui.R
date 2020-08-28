@@ -42,7 +42,14 @@ sidebar <- dashboardSidebar(
 # body (connects the sidebar with the body and calls the according module)
 body <- dashboardBody(
   # style adaptions
+  # remove space below forms (e.g. from input-checkboxgroup), it uses too much space
+  tags$head(tags$style(HTML(".form-group {margin-bottom: 0px;}"))),
+  tags$head(tags$style(HTML(".checkbox {margin-bottom: 0px;}"))),
+
+  # left-align title top left
   tags$head(tags$style(HTML(".main-header .logo {text-align: left;}"))),
+  
+  # place the notification boxes from withProgress() function top right and change color
   tags$head(
     tags$style(
       HTML(".shiny-notification {

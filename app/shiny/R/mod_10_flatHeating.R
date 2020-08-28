@@ -72,18 +72,18 @@ flatHeatingModuleUI <- function(id) {
                  )
                )
       ),
-      tabPanel("Stream",
-               fluidRow(
-                 box(
-                   status="primary",
-                   width = 12,
-                   column(
-                     width = 12,
-                     streamgraphOutput(ns("heatingFlatStream"), height = "400px", width = "100%")
-                   )
-                 )
-               )
-      ),
+      # tabPanel("Stream",
+      #          fluidRow(
+      #            box(
+      #              status="primary",
+      #              width = 12,
+      #              column(
+      #                width = 12,
+      #                streamgraphOutput(ns("heatingFlatStream"), height = "400px", width = "100%")
+      #              )
+      #            )
+      #          )
+      # ),
       tabPanel("Info",
                fluidRow(
                  box(
@@ -481,20 +481,20 @@ flatHeatingModule <- function(input, output, session, aggData) {
     })
   })
  
-  output$heatingFlatStream <- renderStreamgraph({
-    # Create a Progress object
-    withProgress(message = 'Creating plot', detail = "heating flats stream", value = NULL, {
-      stream_colors <- viridis_pal()(numFlats())
-      
-      if(input$selCalc == "Relative (kWh/m2)") {
-        streamgraph(df.size.monthly(), key = flat, value = Consumption, date = Time, height = "400px") %>% 
-          sg_fill_manual(stream_colors) %>% sg_axis_x(tick_interval = 1, tick_units = "year", tick_format = "%Y")
-      } else {
-        streamgraph(df.abs.monthly(), key = flat, value = Consumption, date = Time, height = "400px") %>% 
-          sg_fill_manual(stream_colors) %>% sg_axis_x(tick_interval = 1, tick_units = "year", tick_format = "%Y")
-      }
-        
-    })
-  })
+  # output$heatingFlatStream <- renderStreamgraph({
+  #   # Create a Progress object
+  #   withProgress(message = 'Creating plot', detail = "heating flats stream", value = NULL, {
+  #     stream_colors <- viridis_pal()(numFlats())
+  #     
+  #     if(input$selCalc == "Relative (kWh/m2)") {
+  #       streamgraph(df.size.monthly(), key = flat, value = Consumption, date = Time, height = "400px") %>% 
+  #         sg_fill_manual(stream_colors) %>% sg_axis_x(tick_interval = 1, tick_units = "year", tick_format = "%Y")
+  #     } else {
+  #       streamgraph(df.abs.monthly(), key = flat, value = Consumption, date = Time, height = "400px") %>% 
+  #         sg_fill_manual(stream_colors) %>% sg_axis_x(tick_interval = 1, tick_units = "year", tick_format = "%Y")
+  #     }
+  #       
+  #   })
+  # })
   
 }
