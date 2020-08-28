@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Module Descriptions
+title: Modules
 nav_order: 7
 has_children: true
 permalink: /docs/modules

@@ -2,7 +2,7 @@
 layout: default
 title: Central > Heating Curve
 nav_order: 21
-parent: Module Descriptions
+parent: Modules
 ---
 
 ## Subtitle
