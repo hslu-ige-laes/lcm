@@ -3,6 +3,7 @@ layout: default
 title: Userinterface
 nav_order: 03
 parent: Room > Temp vs. Hum
+grand_parent: Modules
 ---
 
 ### Visualization(s)

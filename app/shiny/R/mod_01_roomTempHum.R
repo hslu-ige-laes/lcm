@@ -51,7 +51,7 @@ roomTempHumModuleUI <- function(id) {
     ),
     tabsetPanel(
       id = "tempHum",
-      tabPanel("Overview",
+      tabPanel("Visualisation",
               fluidRow(
                 box(
                   status="primary",

@@ -3,6 +3,7 @@ layout: default
 title: Interpretation
 nav_order: 04
 parent: Room > Temp vs. Hum
+grand_parent: Modules
 ---
 ### Temperature
 - From a comfort perspective the temperature should be between 20°C in Winter and 26°C in Summer.
