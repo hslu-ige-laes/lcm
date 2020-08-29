@@ -18,17 +18,17 @@ roomTempHumModuleUI <- function(id) {
           box(
             width = 2,
             sliderInput(ns("sliderCmfTemp"), "Zone Temperature",
-                        min = 15, max = 30, step = 0.5, value = c(20, 26), post = "\u00B0C")
+                        min = 15, max = 30, step = 0.5, value = c(21, 26), post = "\u00B0C")
           ),
           box(
             width = 2,
             sliderInput(ns("sliderCmfHumRel"), "Zone Rel. humidity",
-                        min = 0, max = 100, step = 5, value = c(35, 65), post = "%rH")
+                        min = 0, max = 100, step = 5, value = c(30, 50), post = "%rH")
           ),
           box(
             width = 2,
             sliderInput(ns("sliderCmfHumAbs"), "Zone Abs. humidity",
-                        min = 0, max = 0.035, step = 0.0005, value = c(0, 0.0115), post = "kg/kg")
+                        min = 0, max = 0.035, step = 0.0005, value = c(0, 0.012), post = "kg/kg")
           ),
           box(
             width = 2,
@@ -138,14 +138,14 @@ roomTempHumModuleUI <- function(id) {
                  )
                )
       ),
-      tabPanel("Recommendations",
+      tabPanel("Actions",
                fluidRow(
                  box(
                    status="primary",
                    width = 12,
                    column(
                      width = 12,
-                     includeMarkdown(here::here("docs", "docs", "modules","roomTempHum","recommendations.md"))
+                     includeMarkdown(here::here("docs", "docs", "modules","roomTempHum","actions.md"))
                    )
                  )
                )

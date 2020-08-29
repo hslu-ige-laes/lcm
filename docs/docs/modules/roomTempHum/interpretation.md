@@ -35,9 +35,8 @@ Prolonged high room air humidity causes microbial growth <a href="#sia382_706">[
 
 #### Dew Point Temperature
 - Condensation occurs on surfaces that are colder than the dew point temperature.
-- The dew point temperature can be read from the hx-diagram:
-<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_05.PNG" style="border:1px solid lightgrey"/>
-<br><br>
+- The dew point temperature can be read from the hx-diagram:<br>
+  <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_05.PNG" style="border:1px solid lightgrey" width="30%"/>
 
 ### References
 <a id="sia382_706">[1]</a> SIA Schweizerischer Ingenieur- und Architektenverein (2007). Eingangsparameter für das Raumklima zur Auslegung und Bewertung der Energieeffizienz von Gebäuden - Raumluftqualität, Temperatur, Licht und Akustik. (SN/EN, SIA 382.706 / EN ISO 15251).<br>

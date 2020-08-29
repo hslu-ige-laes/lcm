@@ -38,7 +38,7 @@ This visualisation is written in D3 and open-source <a href="#d3-mollierhx">[3]<
 ### Settings
 #### Basic
 
-<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_03.PNG" style="border:1px solid lightgrey"/>
+<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_03.PNG" style="border:1px solid lightgrey" width="180px"/>
 <br><br>
 **Flat and Room**
 - Selection of flat resp. room which should get analyzed.
@@ -56,7 +56,7 @@ This visualisation is written in D3 and open-source <a href="#d3-mollierhx">[3]<
 - To access the extended settings, the plus symbol in the upper right corner of the title bar must be pressed.
 - Per default the extended settings tab is collapsed.
 <br><br>
-<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_04.PNG" style="border:1px solid lightgrey"/>
+<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_04.PNG" style="border:1px solid lightgrey" width="90%"/>
 <br><br>
 
 **"Mollier hx"-Diagram Properties**

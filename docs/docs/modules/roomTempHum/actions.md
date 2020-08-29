@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Recommendations
+title: Actions
 nav_order: 05
 parent: Room > Temp vs. Hum
 grand_parent: Modules
@@ -40,6 +40,7 @@ Usually the room air does not need to be humidified <a href="#sia382_706">[1]</a
 - Ventilate correctly in winter. If too little ventilation is provided, moisture collects in the room air. Open all windows for 5 to 10 minutes at least 3 times a day. If the apartment has a ventilation system, increase the ventilator one step. <a href="#besserwohnen2020">[3]</a>
 - Plants release moisture into the air. If you remove some of them, the air humidity will also decrease. <a href="#besserwohnen2020">[3]</a>
 - Do not dry laundry in the apartment. When laundry dries, it releases moisture into the air. Therefore, dry your laundry in the drying room and not in the apartment. <a href="#besserwohnen2020">[3]</a>
+- Hu
 
 ### References
 <a id="sia382_706">[1]</a> SIA Schweizerischer Ingenieur- und Architektenverein (2007). Eingangsparameter für das Raumklima zur Auslegung und Bewertung der Energieeffizienz von Gebäuden - Raumluftqualität, Temperatur, Licht und Akustik. (SN/EN, SIA 382.706 / EN ISO 15251).<br>
