@@ -53,27 +53,69 @@ flatVentilationModuleUI <- function(id) {
                  )
                )
                
-      ),
-      tabPanel("Info",
+      )
+    ),
+    tabsetPanel(
+      id = "documentation",
+      tabPanel("Aims",
                fluidRow(
                  box(
                    status="primary",
                    width = 12,
                    column(
                      width = 12,
-                     includeMarkdown(here::here("docs", "docs", "modules","flatVentilation.md"))
+                     includeMarkdown(here::here("docs", "docs", "modules","flatVentilation","aims.md"))
                    )
                  )
                )
-      )
-    ),
-    fluidRow(
-      box(
-        title = "Interpretation",
-        solidHeader = TRUE,
-        width = 12,
-        background = "light-blue",
-        "A box with a solid light-blue background"
+      ),
+      tabPanel("Data Analysis",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","flatVentilation","dataanalysis.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("User Interface",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","flatVentilation","userinterface.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("Interpretation",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","flatVentilation","interpretation.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("Actions",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","flatVentilation","actions.md"))
+                   )
+                 )
+               )
       )
     )
   )

@@ -64,28 +64,69 @@ roomOutsideTempModuleUI <- function(id) {
                   plotlyOutput(ns("tempROaPlot"))
                 )
               )
-      ),
-      tabPanel("Info",
+      )
+    ),
+    tabsetPanel(
+      id = "documentation",
+      tabPanel("Aims",
                fluidRow(
                  box(
                    status="primary",
                    width = 12,
                    column(
                      width = 12,
-                     includeMarkdown(here::here("docs", "docs", "modules","roomOutsideTemp.md"))
+                     includeMarkdown(here::here("docs", "docs", "modules","roomOutsideTemp","aims.md"))
                    )
                  )
                )
-      )
-    ),
-    fluidRow(
-      box(
-        status="primary",
-        width = 12,
-        column(
-          width = 12,
-          includeMarkdown(here::here("docs", "docs", "interpretation","roomOutsideTemp.md"))
-        )
+      ),
+      tabPanel("Data Analysis",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","roomOutsideTemp","dataanalysis.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("User Interface",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","roomOutsideTemp","userinterface.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("Interpretation",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","roomOutsideTemp","interpretation.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("Actions",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","roomOutsideTemp","actions.md"))
+                   )
+                 )
+               )
       )
     )
 )}

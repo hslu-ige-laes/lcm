@@ -62,30 +62,69 @@ centralHeatingSignatureModuleUI <- function(id) {
                    plotlyOutput(ns("energySignaturePlot"), height = "auto")
                  )
                )
-      ),
-      tabPanel("Info",
+      )
+    ),
+    tabsetPanel(
+      id = "documentation",
+      tabPanel("Aims",
                fluidRow(
                  box(
                    status="primary",
                    width = 12,
                    column(
                      width = 12,
-                     column(
-                       width = 12,
-                       includeMarkdown(here::here("docs", "docs", "modules","centralHeatingSignature.md"))
-                     )
+                     includeMarkdown(here::here("docs", "docs", "modules","centralHeatingSignature","aims.md"))
                    )
                  )
                )
-      )
-    ),
-    fluidRow(
-      box(
-        title = "Interpretation",
-        solidHeader = TRUE,
-        width = 12,
-        background = "light-blue",
-        "A box with a solid light-blue background"
+      ),
+      tabPanel("Data Analysis",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","centralHeatingSignature","dataanalysis.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("User Interface",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","centralHeatingSignature","userinterface.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("Interpretation",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","centralHeatingSignature","interpretation.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("Actions",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","centralHeatingSignature","actions.md"))
+                   )
+                 )
+               )
       )
     )
   )

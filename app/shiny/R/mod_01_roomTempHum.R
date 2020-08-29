@@ -43,53 +43,61 @@ roomTempHumModuleUI <- function(id) {
         )
       )
     ),
-    tabsetPanel(
-      id = "tempHum",
-      tabPanel("Visualization",
-              fluidRow(
-                box(
-                  status="primary",
-                  width = 2,
-                  selectInput(ns("flat"), "Flat", choices = NULL),
-                  selectInput(inputId = ns("room"),
-                              label = "Room",
-                                choices = NULL,
-                                multiple=F
-                  ),
-                  inputPanel(
-                      sliderInput(inputId = ns("slider"),
-                                  label = "Time Range",
-                                  min = as.Date("2019-01-01"),
-                                  max = as.Date("2020-01-01"),
-                                  value = c(as.Date("2019-03-01"), as.Date("2019-09-01")),
-                                  timeFormat = "%b %Y"
-                      )
-                  ),
-                  inputPanel(
-                    checkboxGroupInput(inputId = ns("season"), 
-                                       label = "Visible Seasons",
-                                       choices = list("Winter", "Spring", "Summer", "Fall"),
-                                       selected = list("Winter", "Spring", "Summer", "Fall")
-                    )
-                  )
-                ),
-                box(
-                  title="Room Temperature vs. relative Humidity",
-                  status="primary",
-                  width = 5,
-                  plotlyOutput(ns("tempHumPlot")),
-                ),
-                box(
-                  title="Mollier hx Diagram",
-                  status="primary",
-                  width = 5,
-                  d3Output(ns("mollierHxPlot"))
-                )
-              )
+    sidebarPanel(
+      width = 2,
+      fluidRow(
+        selectInput(ns("flat"), "Flat", choices = NULL),
+        selectInput(inputId = ns("room"),
+                    label = "Room",
+                    choices = NULL,
+                    multiple=F
+        ),
+        inputPanel(
+          sliderInput(inputId = ns("slider"),
+                      label = "Time Range",
+                      min = as.Date("2019-01-01"),
+                      max = as.Date("2020-01-01"),
+                      value = c(as.Date("2019-03-01"), as.Date("2019-09-01")),
+                      timeFormat = "%b %Y"
+          )
+        ),
+        inputPanel(
+          checkboxGroupInput(inputId = ns("season"), 
+                             label = "Visible Seasons",
+                             choices = list("Winter", "Spring", "Summer", "Fall"),
+                             selected = list("Winter", "Spring", "Summer", "Fall")
+          )
+        )
+      )
+    ),
+    mainPanel(
+      width = 10,
+      tabsetPanel(
+        id = "roomTempHumVis",
+        tabPanel("Visualizations",
+                 fluidRow(
+                   box(
+                     status="primary",
+                     width = 12,
+                     box(
+                       title="Room Temperature vs. relative Humidity",
+                       status="primary",
+                       width = 6,
+                       plotlyOutput(ns("tempHumPlot")),
+                     ),
+                     box(
+                       title="Mollier hx Diagram",
+                       status="primary",
+                       width = 6,
+                       d3Output(ns("mollierHxPlot"))
+                     )
+                   )
+                 )
+        )
       )
     ),
     tabsetPanel(
-      id = "documentation",
+      id = "roomTempHumDoc",
       tabPanel("Aims",
                fluidRow(
                  box(

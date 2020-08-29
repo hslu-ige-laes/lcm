@@ -71,7 +71,7 @@ flatHeatingModuleUI <- function(id) {
                    )
                  )
                )
-      ),
+      )
       # tabPanel("Stream",
       #          fluidRow(
       #            box(
@@ -83,30 +83,69 @@ flatHeatingModuleUI <- function(id) {
       #              )
       #            )
       #          )
-      # ),
-      tabPanel("Info",
+      # )
+    ),
+    tabsetPanel(
+      id = "documentation",
+      tabPanel("Aims",
                fluidRow(
                  box(
                    status="primary",
                    width = 12,
                    column(
                      width = 12,
-                     column(
-                       width = 12,
-                       includeMarkdown(here::here("docs", "docs", "modules","flatHeating.md"))
-                     )
+                     includeMarkdown(here::here("docs", "docs", "modules","flatHeating","aims.md"))
                    )
                  )
                )
-      )
-    ),
-    fluidRow(
-      box(
-        title = "Interpretation",
-        solidHeader = TRUE,
-        width = 12,
-        background = "light-blue",
-        "A box with a solid light-blue background"
+      ),
+      tabPanel("Data Analysis",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","flatHeating","dataanalysis.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("User Interface",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","flatHeating","userinterface.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("Interpretation",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","flatHeating","interpretation.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("Actions",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","flatHeating","actions.md"))
+                   )
+                 )
+               )
       )
     )
   )

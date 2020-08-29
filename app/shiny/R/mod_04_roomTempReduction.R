@@ -56,28 +56,70 @@ roomTempReductionModuleUI <- function(id) {
                    )
                  )
                )
-      ),
-      tabPanel("Info",
+      )
+    ),
+    tabsetPanel(
+      id = "documentation",
+      tabPanel("Aims",
                fluidRow(
                  box(
                    status="primary",
                    width = 12,
                    column(
                      width = 12,
-                     includeMarkdown(here::here("docs", "docs", "modules","roomTempReduction.md"))
+                     includeMarkdown(here::here("docs", "docs", "modules","roomTempReduction","aims.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("Data Analysis",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","roomTempReduction","dataanalysis.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("User Interface",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","roomTempReduction","userinterface.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("Interpretation",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","roomTempReduction","interpretation.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("Actions",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","roomTempReduction","actions.md"))
                    )
                  )
                )
       )
-    ),
-    fluidRow(
-      box(
-        title = "Interpretation",
-        solidHeader = TRUE,
-        width = 12,
-        background = "light-blue",
-        "A box with a solid light-blue background"
-        )
     )
   )
 }

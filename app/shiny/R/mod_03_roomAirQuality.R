@@ -60,28 +60,69 @@ roomAirQualityModuleUI <- function(id) {
                    plotlyOutput(ns("aQualPlots"), height = "auto")
                  )
                )
-      ),
-      tabPanel("Info",
+      )
+    ),
+    tabsetPanel(
+      id = "documentation",
+      tabPanel("Aims",
                fluidRow(
                  box(
                    status="primary",
                    width = 12,
                    column(
                      width = 12,
-                     includeMarkdown(here::here("docs", "docs", "modules","roomAirQuality.md"))
+                     includeMarkdown(here::here("docs", "docs", "modules","roomAirQuality","aims.md"))
                    )
                  )
                )
-      )
-    ),
-    fluidRow(
-      box(
-        status="primary",
-        width = 12,
-        column(
-          width = 12,
-          includeMarkdown(here::here("docs", "docs", "interpretation","roomAirQuality.md"))
-        )
+      ),
+      tabPanel("Data Analysis",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","roomAirQuality","dataanalysis.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("User Interface",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","roomAirQuality","userinterface.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("Interpretation",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","roomAirQuality","interpretation.md"))
+                   )
+                 )
+               )
+      ),
+      tabPanel("Actions",
+               fluidRow(
+                 box(
+                   status="primary",
+                   width = 12,
+                   column(
+                     width = 12,
+                     includeMarkdown(here::here("docs", "docs", "modules","roomAirQuality","actions.md"))
+                   )
+                 )
+               )
       )
     )
   )
