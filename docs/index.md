@@ -19,7 +19,7 @@ The construction of energy-efficient buildings is now state of the art in Switze
 Exploiting this potential is the goal of energy-related operational optimization. Experience shows that this can save between 10 and 15 percent of energy. In practice, this is often more for owner-occupied properties and less for properties used by third parties. Of course, energy-related operational optimizations alone do not save the climate, but they do make a tangible contribution to it and, in addition, relieve the users and/or owners of unnecessary costs.
 
 ### The Software Application
-Diese Applikation soll energetische Optimierung im Wohnbereich unterstützen und vereinfachen. Mit dem Einsatz von Open-Source Software soll so im preis-sensitiven Markt des Wohnbau eine kostengünstige Lösung vorgestellt werden, welche  Energiesparen im Wohnbau möglich macht. 
+This application should support and simplify energetic optimization in the living area. With the use of open-source software, a cost-effective solution is to be presented in the price-sensitive market of residential construction, which makes energy saving possible in residential construction.
 
 <hr>
 ### References 
