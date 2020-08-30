@@ -63,6 +63,7 @@ This visualisation is written in D3 and open-source <a href="#d3-mollierhx">[3]<
 - The three sliders in the upper line change the comfort zone.
 - The two sliders in the lower line change the ranges of the x- and y-axis
 
+<hr>
 ### References
 <a id="frank1975">[1]</a> Frank, W. (1975). Raumklima und thermische Behaglichkeit: Literaturauswertung, durchgeführt im Auftr. d. Bundesmin. f. Raumordnung, Bauwesen u. Städtebau. Berichte aus der Bauforschung: H. 104. <br>
 <a id="mollierhx">[2]</a> Mollier-h-x-Diagramm (n.d.). In Wikipedia. Retrieved August 28, 2020, from [https://de.wikipedia.org/wiki/Mollier-h-x-Diagramm](https://de.wikipedia.org/wiki/Mollier-h-x-Diagramm)<br>
