@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Actions
+title: Recommendations
 nav_order: 05
-parent: Room > Air Quality
+parent: Room > Temp Reduction
 grand_parent: Modules
 ---
 

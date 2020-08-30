@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Actions
+title: Recommendations
 nav_order: 05
 parent: Room > Temp vs. Hum
 grand_parent: Modules
@@ -43,7 +43,7 @@ Usually the room air does not need to be humidified <a href="#sia382_706">[1]</a
 
 ### References
 <a id="sia382_706">[1]</a> SIA Schweizerischer Ingenieur- und Architektenverein (2007). Eingangsparameter für das Raumklima zur Auslegung und Bewertung der Energieeffizienz von Gebäuden - Raumluftqualität, Temperatur, Licht und Akustik. (SN/EN, SIA 382.706 / EN ISO 15251).<br>
-<a id="balmer2020">[2]</a> Balmer, M., Hubbuch, M., & Sandmeier, E. (2020). Energetische Betriebsoptimierung: Gebäude effizienter betreiben (1. Auflage). Fachbuchreihe «Nachhaltiges Bauen und Erneuern». FAKTOR Verlag AG.<br>
-<a id="besserwohnen2020">[3]</a> Hochschule für Technik & Architektur Luzern. (2020). Besser Wohnen: Tipps und Tricks für mehr Komfort. Bern. Energie Schweiz, Bundesamt für Energie (BFE). https://pubdb.bfe.admin.ch/de/publication/download/10079 <br>
+<a id="balmer2020">[2]</a> Balmer, M., Hubbuch, M., & Sandmeier, E. (2020). Energetische Betriebsoptimierung: Gebäude effizienter betreiben (1. Auflage). Fachbuchreihe «Nachhaltiges Bauen und Erneuern». FAKTOR Verlag AG. [https://pubdb.bfe.admin.ch/de/publication/download/10042](https://pubdb.bfe.admin.ch/de/publication/download/10042)<br>
+<a id="besserwohnen2020">[3]</a> Hochschule für Technik & Architektur Luzern. (2020). Besser Wohnen: Tipps und Tricks für mehr Komfort. Bern. Energie Schweiz, Bundesamt für Energie (BFE). [https://pubdb.bfe.admin.ch/de/publication/download/10079](https://pubdb.bfe.admin.ch/de/publication/download/10079) <br>
 
 

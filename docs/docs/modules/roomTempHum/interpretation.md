@@ -40,5 +40,5 @@ Prolonged high room air humidity causes microbial growth <a href="#sia382_706">[
 
 ### References
 <a id="sia382_706">[1]</a> SIA Schweizerischer Ingenieur- und Architektenverein (2007). Eingangsparameter für das Raumklima zur Auslegung und Bewertung der Energieeffizienz von Gebäuden - Raumluftqualität, Temperatur, Licht und Akustik. (SN/EN, SIA 382.706 / EN ISO 15251).<br>
-<a id="balmer2020">[2]</a> Balmer, M., Hubbuch, M., & Sandmeier, E. (2020). Energetische Betriebsoptimierung: Gebäude effizienter betreiben (1. Auflage). Fachbuchreihe «Nachhaltiges Bauen und Erneuern». FAKTOR Verlag AG.<br>
+<a id="balmer2020">[2]</a> Balmer, M., Hubbuch, M., & Sandmeier, E. (2020). Energetische Betriebsoptimierung: Gebäude effizienter betreiben (1. Auflage). Fachbuchreihe «Nachhaltiges Bauen und Erneuern». FAKTOR Verlag AG. [https://pubdb.bfe.admin.ch/de/publication/download/10042](https://pubdb.bfe.admin.ch/de/publication/download/10042)<br>
 <a id="frank1975">[3]</a> Frank, W. (1975). Raumklima und thermische Behaglichkeit: Literaturauswertung, durchgeführt im Auftr. d. Bundesmin. f. Raumordnung, Bauwesen u. Städtebau. Berichte aus der Bauforschung: H. 104. <br>

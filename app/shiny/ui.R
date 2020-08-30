@@ -66,7 +66,14 @@ body <- dashboardBody(
   # body content
   tabItems(
     tabItem(tabName = "overview",
-            "content tbd"
+            box(
+              status="primary",
+              width = 12,
+              column(
+                width = 12,
+                includeMarkdown(here::here("docs","index.md"))
+              )
+            )
     ),
 
     tabItem(tabName = "roomTempHum",

@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Actions
+title: Recommendations
 nav_order: 05
-parent: Central > Heating Curve
+parent: Flat > Hot Water
 grand_parent: Modules
 ---
 

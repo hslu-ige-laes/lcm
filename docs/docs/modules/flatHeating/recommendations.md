@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Actions
+title: Recommendations
 nav_order: 05
 parent: Flat > Heating
 grand_parent: Modules

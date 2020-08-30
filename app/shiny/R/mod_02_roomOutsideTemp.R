@@ -116,14 +116,14 @@ roomOutsideTempModuleUI <- function(id) {
                  )
                )
       ),
-      tabPanel("Actions",
+      tabPanel("Recommendations",
                fluidRow(
                  box(
                    status="primary",
                    width = 12,
                    column(
                      width = 12,
-                     includeMarkdown(here::here("docs", "docs", "modules","roomOutsideTemp","actions.md"))
+                     includeMarkdown(here::here("docs", "docs", "modules","roomOutsideTemp","recommendations.md"))
                    )
                  )
                )

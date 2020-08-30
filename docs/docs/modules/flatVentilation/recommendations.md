@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Actions
+title: Recommendations
 nav_order: 05
-parent: Room > Room vs. Outside Temp
+parent: Flat > Ventilation
 grand_parent: Modules
 ---
 

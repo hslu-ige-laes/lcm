@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Actions
+title: Recommendations
 nav_order: 05
 parent: Central > Heating Signature
 grand_parent: Modules

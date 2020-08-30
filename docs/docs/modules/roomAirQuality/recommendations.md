@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Actions
+title: Recommendations
 nav_order: 05
-parent: Flat > Hot Water
+parent: Room > Air Quality
 grand_parent: Modules
 ---
 
