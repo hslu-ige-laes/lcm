@@ -19,7 +19,7 @@ sidebar <- dashboardSidebar(
     # Setting the id ensures input$tabs knows the names of currently selected tab
     # icons from https://fontawesome.com/icons?d=gallery&m=free
     id = "tabs",
-    menuItem("Overview", tabName = "overview", icon = icon("dashboard")),
+    menuItem("Home", tabName = "home ", icon = icon("home")),
     menuItemOutput("roomTempHumMenuItem"),
     menuItemOutput("roomOutsideTempMenuItem"),
     menuItemOutput("roomAirQualityMenuItem"),
@@ -65,7 +65,7 @@ body <- dashboardBody(
   ),
   # body content
   tabItems(
-    tabItem(tabName = "overview",
+    tabItem(tabName = "home",
             box(
               status="primary",
               width = 12,
