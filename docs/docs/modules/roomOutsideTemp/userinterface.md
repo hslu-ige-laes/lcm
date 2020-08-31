@@ -19,6 +19,8 @@ This Diagram comes from the standard SIA 180:2014 <a href="#sia180">[1, p. 24-25
   - Top line: Maximum limit for rooms with natural ventilation, while they are neither heated nor cooled
   - Center line: Maximum limit rooms while they are heated, cooled or mechanically ventilated
   - Bottom line: Minimal allowed temperature (same line for both maximum lines)
+- Tooltip: Place the mouse pointer over a datapoint to get more information of a specific measurement.
+
 
 ### Settings
 #### Basic
