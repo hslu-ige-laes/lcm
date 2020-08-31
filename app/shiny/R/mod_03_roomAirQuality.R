@@ -1,16 +1,5 @@
-
-# ======================================================================
-
-# ======================================================================
-
 roomAirQualityModuleUI <- function(id) {
-  #' Comfort Air Quality UI
-  #'
-  #' User-Interface
-  #' @param id id for ns()
-  #' @export
-  #' @author Reto Marek
-  
+
   ns <- NS(id)
   
   tagList(
@@ -37,33 +26,37 @@ roomAirQualityModuleUI <- function(id) {
         )
       )
     ),
-    tabsetPanel(
-      id = "roomAirQualityTab",
-      tabPanel("Overview",
-               fluidRow(
-                 box(
-                   status="primary",
-                   width = 2,
-                   inputPanel(
-                     sliderInput(inputId = ns("slider"),
-                                 label = "Time Range",
-                                 min = as.Date("2019-01-01"),
-                                 max = as.Date("2020-01-01"),
-                                 value = c(as.Date("2019-03-01"), as.Date("2019-09-01")),
-                                 timeFormat = "%b %Y"
-                     )
+    sidebarPanel(
+      width = 2,
+      fluidRow(
+        inputPanel(
+          sliderInput(inputId = ns("slider"),
+                      label = "Time Range",
+                      min = as.Date("2019-01-01"),
+                      max = as.Date("2020-01-01"),
+                      value = c(as.Date("2019-03-01"), as.Date("2019-09-01")),
+                      timeFormat = "%b %Y"
+          )
+        )
+      )
+    ),
+    mainPanel(
+      width = 10,
+      tabsetPanel(
+        id = "roomAirQualityVis",
+        tabPanel("Visualizations",
+                 fluidRow(
+                   box(
+                     status="primary",
+                     width = 12,
+                     plotlyOutput(ns("aQualPlots"), height = "auto")
                    )
-                 ),
-                 box(
-                   status="primary",
-                   width = 10,
-                   plotlyOutput(ns("aQualPlots"), height = "auto")
                  )
-               )
+        )
       )
     ),
     tabsetPanel(
-      id = "documentation",
+      id = "roomAirQualityDoc",
       tabPanel("Aims",
                fluidRow(
                  box(
