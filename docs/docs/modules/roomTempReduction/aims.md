@@ -6,10 +6,7 @@ parent: Room > Temp Reduction
 grand_parent: Modules
 ---
 
-### Title
-#### Subtitle
-- content tbd <a href="#referencename">[1]</a>
-
-<hr>
-### References
-<a id="referencename">[1]</a> referende <br>
+### Energy Efficiency and Comfort
+- Harmonization of temperatures in the house
+- Reduce heating energy by lowering the temperature
+- Still guarantee comfort
