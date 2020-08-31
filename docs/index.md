@@ -11,7 +11,7 @@ permalink: /
 ## lcm - Low Cost Monitoring
 - "lcm" is an open source based monitoring application for residential buildings.
 - It fetches, stores, analyzes and visualizes IoT data.
-- The focus of the analyses is on comfort monitoring and energy saving.
+- The focus of the analyses is on energy saving and at the same time maintaining the comfort expected today.
 - Supported data sources are LoRaWAN sensors, influxDB and csv files.
 
 ### Introduction <sub><a href="#balmer2020">[1]</a></sub>

@@ -60,7 +60,7 @@ roomOutsideTempModuleUI <- function(id) {
                 box(
                   title="Room vs. Outside Temperature",
                   status="primary",
-                  width = 8,
+                  width = 10,
                   plotlyOutput(ns("tempROaPlot"))
                 )
               )
@@ -277,22 +277,23 @@ roomOutsideTempModule <- function(input, output, session, aggData) {
       # line setpoint heat
       df.heatSp <- data.frame(tempOa = c(minx, 19, 23.5, maxx), tempR = c(20.5, 20.5, 22, 22))
       
-      # line setpoint cool according to SIA 180:2014 Fig. 3
-      df.coolSp1 <- data.frame(tempOa = c(minx, 12, 17.5, maxx),tempR = c(24.5, 24.5, 26.5, 26.5))
-      
       # line setpoint cool according to SIA 180:2014 Fig. 4
+      df.coolSp1 <- data.frame(tempOa = c(10, 12, 17.5, 25),tempR = c(24.5, 24.5, 26.5, 26.5))
+      
+      # line setpoint cool according to SIA 180:2014 Fig. 3
       df.coolSp2 <- data.frame(tempOa = c(minx, 10, maxx),tempR = c(25, 25, 0.33 * maxx + 21.8))
       
       df() %>%
         # split(.$room) %>%
         # lapply(function(d){
-        plot_ly(showlegend = FALSE) %>%
-        add_lines(data = df.heatSp, x = ~tempOa, y = ~tempR, opacity = 0.7, color = "#440154FF", hoverinfo="skip") %>%
-        add_lines(data = df.coolSp1, x = ~tempOa, y = ~tempR, opacity = 0.7, color = "#1E9B8AFF", hoverinfo="skip") %>%
-        add_lines(data = df.coolSp2, x = ~tempOa, y = ~tempR, opacity = 0.7, color = "#FDE725FF", hoverinfo="skip") %>%
+        plot_ly(showlegend = TRUE) %>%
+        add_lines(data = df.coolSp2, x = ~tempOa, y = ~tempR, name = "Max. for rooms while they are heated,<br>cooled or mechanically ventilated", opacity = 0.7, color = "#FDE725FF", hoverinfo="skip") %>%
+        add_lines(data = df.coolSp1, x = ~tempOa, y = ~tempR, name = "Max. for rooms with natural ventilation,<br>while they are neither heated nor cooled", opacity = 0.7, color = "#1E9B8AFF", hoverinfo="skip") %>%
+        add_lines(data = df.heatSp, x = ~tempOa, y = ~tempR, name = "Minimum", opacity = 0.7, color = "#440154FF", hoverinfo="skip") %>%
         add_markers(data = df() %>% filter(season == "Spring"),
                     x = ~tempOaRollMean,
                     y = ~tempR,
+                    name = "Spring",
                     marker = list(color = "#2db27d", opacity = 0.2),
                     hoverinfo = "text",
                     text = ~ paste("TempR:   ", sprintf("%.1f \u00B0C", tempR),
@@ -304,6 +305,7 @@ roomOutsideTempModule <- function(input, output, session, aggData) {
         add_markers(data = df() %>% filter(season == "Summer"),
                     x = ~tempOaRollMean,
                     y = ~tempR,
+                    name = "Summer",
                     marker = list(color = "#febc2b", opacity = 0.2),
                     hoverinfo = "text",
                     text = ~ paste("TempR:   ", sprintf("%.1f \u00B0C", tempR),
@@ -315,6 +317,7 @@ roomOutsideTempModule <- function(input, output, session, aggData) {
         add_markers(data = df() %>% filter(season == "Fall"),
                     x = ~tempOaRollMean,
                     y = ~tempR,
+                    name = "Fall",
                     marker = list(color = "#440154", opacity = 0.2),
                     hoverinfo = "text",
                     text = ~ paste("TempR:   ", sprintf("%.1f \u00B0C", tempR),
@@ -326,6 +329,7 @@ roomOutsideTempModule <- function(input, output, session, aggData) {
         add_markers(data = df() %>% filter(season == "Winter"),
                     x = ~tempOaRollMean,
                     y = ~tempR,
+                    name = "Winter",
                     marker = list(color = "#365c8d", opacity = 0.2),
                     hoverinfo = "text",
                     text = ~ paste("TempR:   ", sprintf("%.1f \u00B0C", tempR),

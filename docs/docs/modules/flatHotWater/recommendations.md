@@ -8,10 +8,8 @@ grand_parent: Modules
 
 ### General
 The hot water consumption depends very much on the user's requirements and habits. 
-Theoretically it can be easily and effectively minimized without compromising comfort by using water-saving fittings for washstands and shower heads.
-Washing dishes in a dishwasher instead of by hand for example not only saves water and energy, but also increases comfort. <a href="#balmer2020">[1]</a>
-<br><br>
-There is an extremely high amount of energy in hot water.
+Theoretically it can be easily and effectively minimized without compromising comfort by using water-saving fittings for washstands and shower heads. <a href="#balmer2020">[1]</a>
+And here is an extremely high amount of energy in hot water.
 Just one minute of showering for example requires more energy than is needed for all electronic devices in a household for a whole day.
 Devices such as the Amphiro with direct feedback help to raise awareness of energy consumption during showering. <a href="#amphiro">[2]</a>
 <br><br>
@@ -22,6 +20,12 @@ The following hot water saving tips can help residents to reduce their consumpti
 The challenge is to present the tips to the residents unobtrusively and with a lasting effect.
 
 ### Energy saving tips hot water
+
+#### Showering
+The best thing about showering is: No other activity can achieve greater savings through conscious behaviour every day and with such little effort.  <a href="#balmer2020">[1]</a>
+- Shower a little shorter and turn off the water while soaping. <a href="#wetzikon">[9]</a>
+  - About 8 liters of water are used per minute in your shower with the standard installed shower head.
+
 #### Washing Machine
 - Fill the washing machine as completely as possible. <a href="#co2online">[3]</a>
   - A new, energy-efficient machine uses approx. 45 liters of water per wash cycle. <a href="#practicetips">[4]</a>
@@ -41,21 +45,17 @@ The challenge is to present the tips to the residents unobtrusively and with a l
 #### Washing hands
 - Wash your hands with cold water  <a href="#energieschweiz">[7]</a>
   - We often turn off the warm water before the warm water even comes out. This way the warm water in the pipe cools down again unused.
+
 #### Bathing
 - Take a shower instead of a bath. <a href="#co2online">[3]</a>
   - A bath uses about 150 liters of water, while a shower uses only about 40 liters. <a href="#20min">[8]</a>
   
-#### Showering
-The best thing about showering is: No other activity can achieve greater savings through conscious behaviour every day and with such little effort.  <a href="#balmer2020">[1]</a>
-- Shower a little shorter and turn off the water while soaping. <a href="#wetzikon">[9]</a>
-  - About 8 liters of water are used per minute in your shower with the standard installed shower head.
 #### Brushing teeth
 - Do not let the water run while brushing your teeth. <a href="#polarstern">[11]</a>
   - Pay attention to the position of the tap and set it so that only cold water is supplied. Otherwise, warm water will be delivered which will cool down in the tap.
 
 <hr>
 ### References
-
 <a id="balmer2020">[1]</a> Balmer, M., Hubbuch, M., & Sandmeier, E. (2020). Energetische Betriebsoptimierung: Gebäude effizienter betreiben (1. Auflage). Fachbuchreihe «Nachhaltiges Bauen und Erneuern». FAKTOR Verlag AG. [https://pubdb.bfe.admin.ch/de/publication/download/10042](https://pubdb.bfe.admin.ch/de/publication/download/10042)<br>
 <a id="amphiro">[2]</a> [https://www.amphiro.chttps://www.co2online.de/energie-sparen/heizenergie-sparen/warmwasser/wasser-sparen-die-10-besten-tipps/#c89967)<br>
 <a id="co2online">[3]</a> [https://www.co2online.de/energie-sparen/heizenergie-sparen/warmwasser/wasser-sparen-die-10-besten-tipps/#c89967](https://www.co2online.de/energie-sparen/heizenergie-sparen/warmwasser/wasser-sparen-die-10-besten-tipps/#c89967)<br>
