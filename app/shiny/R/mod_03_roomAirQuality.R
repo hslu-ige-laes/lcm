@@ -218,7 +218,7 @@ roomAirQualityModule <- function(input, output, session, aggData) {
   # Generate Plot
   output$aQualPlots <- renderPlotly({
     # Create a Progress object
-    # withProgress(message = 'Creating plot', detail = "air quality plot", value = NULL, {
+    withProgress(message = 'Creating plot', detail = "air quality plot", value = NULL, {
       start <- as.Date(sliderDate$start)
       end <- as.Date(sliderDate$end)
       co2MaxVal <- max(df() %>% select(upper) %>% max(),input$iAQual3) + 200
@@ -277,6 +277,6 @@ roomAirQualityModule <- function(input, output, session, aggData) {
                        )
         ) %>% 
         layout(margin = list(t = 120), yaxis = yaxis)
-      # })
+      })
     })
 }
