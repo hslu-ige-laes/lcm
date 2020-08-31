@@ -278,7 +278,7 @@ roomOutsideTempModule <- function(input, output, session, aggData) {
       df.heatSp <- data.frame(tempOa = c(minx, 19, 23.5, maxx), tempR = c(20.5, 20.5, 22, 22))
       
       # line setpoint cool according to SIA 180:2014 Fig. 4
-      df.coolSp1 <- data.frame(tempOa = c(10, 12, 17.5, 25),tempR = c(24.5, 24.5, 26.5, 26.5))
+      df.coolSp1 <- data.frame(tempOa = c(minx, 12, 17.5, maxx),tempR = c(24.5, 24.5, 26.5, 26.5))
       
       # line setpoint cool according to SIA 180:2014 Fig. 3
       df.coolSp2 <- data.frame(tempOa = c(minx, 10, maxx),tempR = c(25, 25, 0.33 * maxx + 21.8))

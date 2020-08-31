@@ -6,10 +6,6 @@ parent: Room > Room vs. Outside Temp
 grand_parent: Modules
 ---
 
-### Title
-#### Subtitle
-- content tbd <a href="#referencename">[1]</a>
-
-<hr>
-### References
-<a id="referencename">[1]</a> referende <br>
+### Comfort and building protection
+- Satisfied and healthy residents
+- Use as little energy as necessary
