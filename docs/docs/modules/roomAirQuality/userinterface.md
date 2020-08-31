@@ -15,7 +15,7 @@ Standard time series x-y plot with band of upper- and lower quantiles (0.05 and 
 <br>
 - The x-axis represents the time and the y-axis the air quality value in ppm.
 - The four zones helps to indicate whether measured air qualities are within a comfortable range or not.
-- The amount of displayed charts is depending on the amount of configured sensors in ´Settings -> Data Points´
+- The amount of displayed charts is depending on the amount of configured sensors in `Settings > Data Points`
 - Tooltip: Place the mouse pointer over a datapoint to get more information of a specific measurement.
 <br><br>
 
