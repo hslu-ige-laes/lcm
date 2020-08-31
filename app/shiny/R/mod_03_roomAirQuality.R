@@ -47,6 +47,7 @@ roomAirQualityModuleUI <- function(id) {
         tabPanel("Visualizations",
                  fluidRow(
                    box(
+                     title="CO2 Flats with Indoor Air Quality Zones",
                      status="primary",
                      width = 12,
                      plotlyOutput(ns("aQualPlots"), height = "auto")
@@ -122,13 +123,7 @@ roomAirQualityModuleUI <- function(id) {
 }
 
 roomAirQualityModule <- function(input, output, session, aggData) {
-  #' Comfort Air Quality
-  #'
-  #' Server-function
-  #' @param filename a String representing the filename inclusive extension.
-  #' @export
-  #' @author Reto Marek
-  # date range slider
+
   sliderDate <- reactiveValues()
   
   observe({
@@ -209,12 +204,6 @@ roomAirQualityModule <- function(input, output, session, aggData) {
       end <- as.POSIXct(sliderDate$end, tz="Europe/Zurich")
       co2MaxVal <- max(df() %>% select(CO2) %>% max(),input$iAQual4)
       
-      # aQualZones <- data.frame(yMin = c(0,input$iAQual1, input$iAQual2, input$iAQual3, input$iAQual4),
-      #                          yMax = c(input$iAQual1, input$iAQual2, input$iAQual3, input$iAQual4, co2MaxVal + 200 ),
-      #                          xMin = rep(start, 5),
-      #                          xMax = rep(end, 5)
-      #                          )
-      
       aQualColors <- c("1" = "#2db27d", "2" = "#365c8d", "3" ="#fde725", "4" = "#440154")
 
       p <- ggplot(df()) +
@@ -227,7 +216,6 @@ roomAirQualityModule <- function(input, output, session, aggData) {
         scale_y_continuous(breaks = seq(0, co2MaxVal, by = 400),
                            limits = c(0,co2MaxVal)) +
         scale_x_datetime(limits = c(start, end), date_labels = "%e. %b %Y") +
-        ggtitle("CO<sub>2</sub>  Flats with Indoor Air Quality Zones") +
         facet_wrap(~room, ncol = 3, scales = "free") +
         theme_minimal() +
         theme( 
