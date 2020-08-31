@@ -6,10 +6,12 @@ parent: Room > Temp Reduction
 grand_parent: Modules
 ---
 
-### Title
-#### Subtitle
-- content tbd <a href="#referencename">[1]</a>
+### Data Aquisition
+- Temperature in °C
+- hourly values desirable
 
-<hr>
-### References
-<a id="referencename">[1]</a> referende <br>
+### Calculations
+- daily mean value for temperature
+- calculate season out of date (for later filtering)
+- calculate mean value per room
+- calculate difference to setpoint
