@@ -17,15 +17,18 @@ roomTempReductionModuleUI <- function(id) {
         collapsible = TRUE,
         collapsed = TRUE,
         box(
-          width = 3,
-          sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y")
-        ),
-        box(
           width = 2,
           numericInput(ns("temperatureSetpoint"), "Temperature setpoint", min = 15, max = 28, value = 21, step = 0.5)
+        )
+      )
+    ),
+    sidebarPanel(
+      width = 2,
+      fluidRow(
+        inputPanel(
+          sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y")
         ),
-        box(
-          width = 2,
+        inputPanel(
           checkboxGroupInput(ns("season"), 
                              label = "Visible Seasons",
                              choices = list("Winter", "Spring", "Summer", "Fall"),
@@ -34,32 +37,35 @@ roomTempReductionModuleUI <- function(id) {
         )
       )
     ),
-    tabsetPanel(
-      id = "roomTempReduction",
-      tabPanel("Overview",
-               fluidRow(
-                 box(
-                   status="primary",
-                   width = 12,
-                   plotlyOutput(ns("temperaturePlots"), height = "auto")
-                 )
-               )
-      ),
-      tabPanel("Boxplot",
-               fluidRow(
-                 box(
-                   status="primary",
-                   width = 12,
-                   column(
+    mainPanel(
+      width = 10,
+      tabsetPanel(
+        id = "roomTempReductionVis",
+        tabPanel("Overview",
+                 fluidRow(
+                   box(
+                     status="primary",
                      width = 12,
-                     plotlyOutput(ns("boxPlot"), height = "auto")
+                     plotlyOutput(ns("temperaturePlots"), height = "auto")
                    )
                  )
-               )
+        ),
+        tabPanel("Boxplot",
+                 fluidRow(
+                   box(
+                     status="primary",
+                     width = 12,
+                     column(
+                       width = 12,
+                       plotlyOutput(ns("boxPlot"), height = "auto")
+                     )
+                   )
+                 )
+        )
       )
     ),
     tabsetPanel(
-      id = "documentation",
+      id = "roomTempReductionDoc",
       tabPanel("Aims",
                fluidRow(
                  box(
