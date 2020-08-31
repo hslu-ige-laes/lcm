@@ -6,5 +6,5 @@ parent: Room > Air Quality
 grand_parent: Modules
 ---
 
-### Comfort and building protection
+### Comfort
 - Satisfied and healthy residents

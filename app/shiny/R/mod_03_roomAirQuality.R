@@ -14,15 +14,15 @@ roomAirQualityModuleUI <- function(id) {
         # air quality classes according to EN 16798
         box(
           width = 2,
-          numericInput(ns("iAQual1"), "Zone I (ppm)", min = 400, max = 2000, value = 1050, step = 50, width = "150px"),
+          numericInput(ns("iAQual1"), "Limit I (ppm)", min = 400, max = 2000, value = 600, step = 50, width = "150px"),
         ),
         box(
           width = 2,
-          numericInput(ns("iAQual2"), "Zone II (ppm)", min = 400, max = 2000, value = 1300, step = 50, width = "150px"),
+          numericInput(ns("iAQual2"), "Limit II (ppm)", min = 400, max = 2000, value = 1000, step = 50, width = "150px"),
         ),
         box(
           width = 2,
-          numericInput(ns("iAQual3"), "Zone III (ppm)", min = 400, max = 4000, value = 1850, step = 50, width = "150px")
+          numericInput(ns("iAQual3"), "Limit III (ppm)", min = 400, max = 4000, value = 1500, step = 50, width = "150px")
         )
       )
     ),
@@ -134,7 +134,7 @@ roomAirQualityModule <- function(input, output, session, aggData) {
   })
   
   observe({
-    dates <- df.all() %>% select(time) %>% arrange(time)
+    dates <- as.data.frame(df.all() %>% select(time) %>% arrange(time))
     start <- as.Date(dates[1,1], tz = "Europe/Zurich")
     end <- as.Date(dates[nrow(dates),1], tz = "Europe/Zurich")
     updateSliderInput(session,
@@ -155,24 +155,43 @@ roomAirQualityModule <- function(input, output, session, aggData) {
       data <- data %>% mutate(room = paste0(flat," - ", room))
       
       # calculate indoor air quality class
-      data <- data %>% mutate(iAQual =if_else(value < input$iAQual1,"1", 
-                                             if_else(value < input$iAQual2,"2", 
-                                                     if_else(value < input$iAQual3,"3", "4"))))
+      # data <- data %>% mutate(iAQual =if_else(value < input$iAQual1,"1", 
+      #                                        if_else(value < input$iAQual2,"2", 
+      #                                                if_else(value < input$iAQual3,"3", "4"))))
+      
+      # create day-column for later grouping
+      data <- data %>% 
+        mutate(
+          day = lubridate::date(time)
+        )
+
+      # calculate daily statistics
+      data <- data %>%
+        group_by(day) %>%
+        mutate(
+          avg=mean(value, na.rm=T),
+          upper=quantile(value, probs=0.95, na.rm=T), 
+          lower=quantile(value, probs=0.05, na.rm=T)
+        )
+      data <- data %>% ungroup()
+      
+      # Narrow down table to daily entries
+      data <- data %>% 
+        select(day, avg, upper, lower, room ) %>% 
+        # select(day, avg, upper, lower, room, iAQual ) %>% 
+        unique()
+      
+      # renaming names
+      colnames(data)[1] <- "time"
+
     })
     return(data)
   })
-  
-  # # filter according to room selection
-  # df.room <- reactive({
-  #   df.all() %>% filter(room == input$room)
-  # })
-  
+
   # filter according to time slider settings
   df <- reactive({
     data <- df.all() %>% filter(time >= sliderDate$start & time <= sliderDate$end)
-    # renaming names for proper hovertips
-    colnames(data)[1] <- "Date"
-    colnames(data)[2] <- "CO2"
+    
     return(data)
   })
   
@@ -200,22 +219,27 @@ roomAirQualityModule <- function(input, output, session, aggData) {
   output$aQualPlots <- renderPlotly({
     # Create a Progress object
     withProgress(message = 'Creating plot', detail = "air quality plot", value = NULL, {
-      start <- as.POSIXct(sliderDate$start, tz="Europe/Zurich")
-      end <- as.POSIXct(sliderDate$end, tz="Europe/Zurich")
-      co2MaxVal <- max(df() %>% select(CO2) %>% max(),input$iAQual4)
+      start <- as.Date(sliderDate$start)
+      end <- as.Date(sliderDate$end)
+      co2MaxVal <- max(df() %>% select(upper) %>% max(),input$iAQual3) + 200
       
       aQualColors <- c("1" = "#2db27d", "2" = "#365c8d", "3" ="#fde725", "4" = "#440154")
 
       p <- ggplot(df()) +
-        geom_hline(aes(yintercept = input$iAQual1), linetype = "dotted", color = "#365c8d", alpha = 0.5) +
-        geom_hline(aes(yintercept = input$iAQual2), linetype = "dotted", color = "#fde725", alpha = 0.8) +
-        geom_hline(aes(yintercept = input$iAQual3), linetype = "dotted", color = "#440154", alpha = 0.5) +
-        geom_line(aes(x = Date, y = CO2), size = 0.5, alpha = 0.3, color = "grey") +
-        geom_point(aes(x = Date, y = CO2, color = iAQual), size = 0.7, alpha = 0.7) +
-        scale_color_manual(values = aQualColors) +
-        scale_y_continuous(breaks = seq(0, co2MaxVal, by = 400),
+        annotate("rect", xmin = start, xmax = end, ymin = 0, ymax = input$iAQual1, fill = "#94D840FF", alpha = 0.1) +
+        annotate("rect", xmin = start, xmax = end, ymin = input$iAQual1, ymax = input$iAQual2, fill = "#56C667FF", alpha = 0.1) +
+        annotate("rect", xmin = start, xmax = end, ymin = input$iAQual2, ymax = input$iAQual3, fill = "#39558CFF", alpha = 0.1) +
+        annotate("rect", xmin = start, xmax = end, ymin = input$iAQual3, ymax = co2MaxVal, fill = "#440154FF", alpha = 0.1) +
+        geom_hline(aes(yintercept = input$iAQual1), linetype = "dotted", color = "#3F4788FF", alpha = 0.5) +
+        geom_hline(aes(yintercept = input$iAQual2), linetype = "dotted", color = "#3F4788FF", alpha = 0.5) +
+        geom_hline(aes(yintercept = input$iAQual3), linetype = "dotted", color = "#3F4788FF", alpha = 0.5) +
+        geom_line(aes(x = time, y = avg), size = 0.5, alpha = 0.7, color = "red") +
+        geom_ribbon(aes(x = time, y = avg, ymin = upper, ymax = lower), alpha = 0.2, color = "red") +
+        # geom_point(aes(x = time, y = avg, color = iAQual), size = 0.7, alpha = 0.7) +
+        # scale_color_manual(values = aQualColors) +
+        scale_y_continuous(breaks = seq(0, co2MaxVal, by = 200),
                            limits = c(0,co2MaxVal)) +
-        scale_x_datetime(limits = c(start, end), date_labels = "%e. %b %Y") +
+        # scale_x_date(limits = c(start, end), date_labels = "%e. %b %Y") +
         facet_wrap(~room, ncol = 3, scales = "free") +
         theme_minimal() +
         theme( 

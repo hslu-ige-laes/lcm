@@ -11,4 +11,7 @@ grand_parent: Modules
 - hourly values desirable
 
 ### Calculations
-- hourly mean value
+- calculate daily statistics
+  - average value
+  - upper quantile 0.95
+  - lower quantile 0.05)
