@@ -218,7 +218,7 @@ roomAirQualityModule <- function(input, output, session, aggData) {
   # Generate Plot
   output$aQualPlots <- renderPlotly({
     # Create a Progress object
-    withProgress(message = 'Creating plot', detail = "air quality plot", value = NULL, {
+    # withProgress(message = 'Creating plot', detail = "air quality plot", value = NULL, {
       start <- as.Date(sliderDate$start)
       end <- as.Date(sliderDate$end)
       co2MaxVal <- max(df() %>% select(upper) %>% max(),input$iAQual3) + 200
@@ -226,15 +226,27 @@ roomAirQualityModule <- function(input, output, session, aggData) {
       aQualColors <- c("1" = "#2db27d", "2" = "#365c8d", "3" ="#fde725", "4" = "#440154")
 
       p <- ggplot(df()) +
-        annotate("rect", xmin = start, xmax = end, ymin = 0, ymax = input$iAQual1, fill = "#94D840FF", alpha = 0.1) +
-        annotate("rect", xmin = start, xmax = end, ymin = input$iAQual1, ymax = input$iAQual2, fill = "#56C667FF", alpha = 0.1) +
-        annotate("rect", xmin = start, xmax = end, ymin = input$iAQual2, ymax = input$iAQual3, fill = "#39558CFF", alpha = 0.1) +
-        annotate("rect", xmin = start, xmax = end, ymin = input$iAQual3, ymax = co2MaxVal, fill = "#440154FF", alpha = 0.1) +
-        geom_hline(aes(yintercept = input$iAQual1), linetype = "dotted", color = "#3F4788FF", alpha = 0.5) +
-        geom_hline(aes(yintercept = input$iAQual2), linetype = "dotted", color = "#3F4788FF", alpha = 0.5) +
-        geom_hline(aes(yintercept = input$iAQual3), linetype = "dotted", color = "#3F4788FF", alpha = 0.5) +
-        geom_line(aes(x = time, y = avg), size = 0.5, alpha = 0.7, color = "red") +
-        geom_ribbon(aes(x = time, y = avg, ymin = upper, ymax = lower), alpha = 0.2, color = "red") +
+        geom_rect(aes(xmin = start, xmax = end, ymin = 0, ymax = input$iAQual1, text = paste("Excellent")), fill = "#94D840FF", alpha = 0.1) +
+        geom_rect(aes(xmin = start, xmax = end, ymin = input$iAQual1, ymax = input$iAQual2, text = paste("Good")), fill = "#56C667FF", alpha = 0.1) +
+        geom_rect(aes(xmin = start, xmax = end, ymin = input$iAQual2, ymax = input$iAQual3, text = paste("Moderate")), fill = "#39558CFF", alpha = 0.1) +
+        geom_rect(aes(xmin = start, xmax = end, ymin = input$iAQual3, ymax = co2MaxVal, text = paste("Too high")), fill = "#440154FF", alpha = 0.1) +
+        geom_hline(aes(yintercept = input$iAQual1, text = paste("Limit 1")), linetype = "dotted", color = "#3F4788FF", alpha = 0.5) +
+        geom_hline(aes(yintercept = input$iAQual2, text = paste("Limit 2")), linetype = "dotted", color = "#3F4788FF", alpha = 0.5) +
+        geom_hline(aes(yintercept = input$iAQual3, text = paste("Limit 3")), linetype = "dotted", color = "#3F4788FF", alpha = 0.5) +
+        geom_point(aes(x = time, y = avg
+                      # ggplotly error https://github.com/ropensci/plotly/issues/1153
+                      # text = paste("Date:       ", time,
+                      #              "\nUpper:     ", sprintf("%.0f ppm", upper),
+                      #              "\nAverage: ", sprintf("%.0f ppm", avg),
+                      #              "\nLower:    ", sprintf("%.0f ppm", lower))
+                      ), size = 0.5, alpha = 0.7, color = "red") +
+        geom_ribbon(aes(x = time, y = avg, ymin = upper, ymax = lower,
+                        # ggplotly error https://github.com/ropensci/plotly/issues/1153
+                        text = paste("Date:       ", time,
+                                     "<br />Upper:     ", sprintf("%.0f ppm", upper),
+                                     "<br />Average:  ", sprintf("%.0f ppm", avg),
+                                     "<br />Lower:     ", sprintf("%.0f ppm", lower))
+                        ), alpha = 0.2, color = "red") +
         # geom_point(aes(x = time, y = avg, color = iAQual), size = 0.7, alpha = 0.7) +
         # scale_color_manual(values = aQualColors) +
         scale_y_continuous(breaks = seq(0, co2MaxVal, by = 200),
@@ -244,7 +256,7 @@ roomAirQualityModule <- function(input, output, session, aggData) {
         theme_minimal() +
         theme( 
           strip.text = element_text(size = 13, color = "darkgrey"),
-          legend.position="none",
+          legend.position="top",
           panel.spacing.y = unit(2, "lines"),
           panel.spacing.x = unit(0, "lines"),
           plot.title = element_text(hjust = 0.5),
@@ -257,14 +269,14 @@ roomAirQualityModule <- function(input, output, session, aggData) {
         titlefont = list(size = 14, color = "darkgrey")
       )
       
-      ggplotly(p + ylab(" ") + xlab(" "), height = plotHeight(numRooms())) %>%
+      ggplotly(p + ylab(" ") + xlab(" "), height = plotHeight(numRooms()), tooltip = c("text")) %>%
         plotly::config(modeBarButtons = list(list("toImage")),
                        displaylogo = FALSE,
                        toImageButtonOptions = list(
-                       format = "svg"
+                        format = "svg"
                        )
         ) %>% 
         layout(margin = list(t = 120), yaxis = yaxis)
-      })
+      # })
     })
 }
