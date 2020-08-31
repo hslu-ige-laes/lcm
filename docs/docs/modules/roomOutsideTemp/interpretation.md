@@ -7,8 +7,7 @@ grand_parent: Modules
 ---
 
 ### General 
-- For the user of the rooms, the effectively expected room temperatures are decisive, assuming that the rooms are used as realistically as possible.<br>
-- For the assessment of the effectively expected room temperatures, a distinction is made between two variants: <a href="#enbau">[2]</a>
+- For the user of the rooms, the effectively expected room temperatures are decisive, assuming that the rooms are used as realistically as possible.
 - If the temperature is above the maximum line, this is called an overheating hour.
 - Note that the standard <a href="#sia180">[1]</a> refers to the "perceived temperature", which is an average between the measured room temperature and the measured temperature of the wall surfaces. So a simplification is made by showing only the measurement of the room air temperature.
 
@@ -32,6 +31,23 @@ grand_parent: Modules
 
   (*) For residential buildings the limit is 400 hours.
 
+### Sensor placement
+The placement of sensors is crucial. If the sensor is incorrectly positioned and is occasionally illuminated by direct sunlight, this is clearly visible in the measured values:
+<br><br>
+<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomOutsideTemp_05.PNG" style="border:1px solid lightgrey" width="90%"/>
+<br>
+
+- In summer with high outside temperatures the values are in the comfort range (shading elements are lowered and prevent direct irradiation)
+- On the other hand, there are outliers in winter which do not come from the heating system.
+
+**Mounting guidelines for sensors for measuring room temperature, relative humidity and air quality** <a href="#sensorplacement">[4]</a>
+- Mount sensors in rooms at a height of approx. 1.5 m and at least 50 cm away from the nearest wall or door
+- Do not expose to direct sunlight
+- Do not mount on outside walls
+- Do not place in niches and shelves
+- Avoid proximity of air currents and heat sources
+- Do not cover by curtains
+
 
 <hr>
 
@@ -39,3 +55,5 @@ grand_parent: Modules
 <a id="sia180">[1]</a> SIA Schweizerischer Ingenieur- und Architektenverein (2014). Wärmeschutz, Feuchteschutz und Raumklima in Gebäuden. (SN/EN, SIA 180). <br>
 <a id="enbau">[2]</a> [https://enbau-online.ch/bautechnik-der-gebaeudehuelle/2-3%E2%80%82waermeschutz-im-sommer/](https://enbau-online.ch/bautechnik-der-gebaeudehuelle/2-3%E2%80%82waermeschutz-im-sommer/) <br>
 <a id="sia382">[3]</a> SIA Schweizerischer Ingenieur- und Architektenverein (2014). Lüftungs- und Klimaanlagen - Allgemeine Grundlagen und Anforderungen. (SN, SIA 382/1). <br>
+<a id="sensorplacement">[4]</a> Siemens Schweiz AG. (2018). Montagerichtlinien für Sensoren. [https://www.siemens.com/download?A6V11420159 ](https://www.siemens.com/download?A6V11420159)<br>
+

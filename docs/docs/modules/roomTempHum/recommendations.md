@@ -42,6 +42,7 @@ Usually the room air does not need to be humidified <a href="#sia382_706">[1]</a
 - Do not dry laundry in the apartment. When laundry dries, it releases moisture into the air. Therefore, dry your laundry in the drying room and not in the apartment. <a href="#besserwohnen2020">[3]</a>
 
 <hr>
+
 ### References
 <a id="sia382_706">[1]</a> SIA Schweizerischer Ingenieur- und Architektenverein (2007). Eingangsparameter für das Raumklima zur Auslegung und Bewertung der Energieeffizienz von Gebäuden - Raumluftqualität, Temperatur, Licht und Akustik. (SN/EN, SIA 382.706 / EN ISO 15251).<br>
 <a id="balmer2020">[2]</a> Balmer, M., Hubbuch, M., & Sandmeier, E. (2020). Energetische Betriebsoptimierung: Gebäude effizienter betreiben (1. Auflage). Fachbuchreihe «Nachhaltiges Bauen und Erneuern». FAKTOR Verlag AG. [https://pubdb.bfe.admin.ch/de/publication/download/10042](https://pubdb.bfe.admin.ch/de/publication/download/10042)<br>

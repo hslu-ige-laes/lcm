@@ -25,6 +25,7 @@ This Diagram comes from the standard SIA 180:2014 <a href="#sia180">[1, p. 24-25
 
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomOutsideTemp_03.PNG" style="border:1px solid lightgrey" width="180px"/>
 <br><br>
+
 **Flat and Room**
 - Selection of flat resp. room which should get analyzed.
 - According to the building hierarchy all flats and rooms get listet which have a datapoint of type "tempRoom" or "humRoom".
@@ -41,9 +42,11 @@ This Diagram comes from the standard SIA 180:2014 <a href="#sia180">[1, p. 24-25
 - To access the extended settings, the plus symbol in the upper right corner of the title bar must be pressed.
 - Per default the extended settings tab is collapsed.
 <br><br>
-<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_04.PNG" style="border:1px solid lightgrey" width="90%"/>
+<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomOutsideTemp_04.PNG" style="border:1px solid lightgrey" width="90%"/>
 <br><br>
 
+**Temperature Outside Air**
+- Selection of the outdoor temperature sensor if more than one is configured under `Settings -> Data Points`.  
 
 <hr>
 

@@ -287,9 +287,40 @@ roomOutsideTempModule <- function(input, output, session, aggData) {
         # split(.$room) %>%
         # lapply(function(d){
         plot_ly(showlegend = TRUE) %>%
-        add_lines(data = df.coolSp2, x = ~tempOa, y = ~tempR, name = "Max. for rooms while they are heated,<br>cooled or mechanically ventilated", opacity = 0.7, color = "#FDE725FF", hoverinfo="skip") %>%
-        add_lines(data = df.coolSp1, x = ~tempOa, y = ~tempR, name = "Max. for rooms with natural ventilation,<br>while they are neither heated nor cooled", opacity = 0.7, color = "#1E9B8AFF", hoverinfo="skip") %>%
-        add_lines(data = df.heatSp, x = ~tempOa, y = ~tempR, name = "Minimum", opacity = 0.7, color = "#440154FF", hoverinfo="skip") %>%
+        add_lines(data = df.coolSp2,
+                  x = ~tempOa,
+                  y = ~tempR,
+                  name = "Max. for rooms while they are heated,<br>cooled or mechanically ventilated",
+                  opacity = 0.7,
+                  color = "#FDE725FF",
+                  hoverinfo = "text",
+                  text = ~ paste("Maximum for heated, cooled or mech. ventilated rooms",
+                                 "<br />TempR:   ", sprintf("%.1f \u00B0C", tempR),
+                                 "<br />TempOa: ", sprintf("%.1f \u00B0C", tempOa)
+                  )
+        ) %>%
+        add_lines(data = df.coolSp1,
+                  x = ~tempOa,
+                  y = ~tempR,
+                  name = "Max. for rooms with natural ventilation,<br>while they are neither heated nor cooled",
+                  opacity = 0.7,
+                  color = "#1E9B8AFF",
+                  hoverinfo = "text",
+                  text = ~ paste("Maximum for rooms with natural ventilation",
+                                 "<br />TempR:   ", sprintf("%.1f \u00B0C", tempR),
+                                 "<br />TempOa: ", sprintf("%.1f \u00B0C", tempOa)
+                  )        ) %>%
+        add_lines(data = df.heatSp,
+                  x = ~tempOa,
+                  y = ~tempR,
+                  name = "Minimum", 
+                  opacity = 0.7,
+                  color = "#440154FF",
+                  hoverinfo = "text",
+                  text = ~ paste("Minimum",
+                                 "<br />TempR:   ", sprintf("%.1f \u00B0C", tempR),
+                                 "<br />TempOa: ", sprintf("%.1f \u00B0C", tempOa)
+                  )        ) %>%
         add_markers(data = df() %>% filter(season == "Spring"),
                     x = ~tempOaRollMean,
                     y = ~tempR,

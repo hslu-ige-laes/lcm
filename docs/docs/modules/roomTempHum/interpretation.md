@@ -5,6 +5,7 @@ nav_order: 04
 parent: Room > Temp vs. Hum
 grand_parent: Modules
 ---
+
 ### General 
 People have very different requirements for comfort in a room. Therefore, it will never be possible to satisfy everyone completely. Rather, one must always reckon with about **5 to 10% dissatisfied people**. <a href="#balmer2020">[2]</a>
 
@@ -39,6 +40,7 @@ Prolonged high room air humidity causes microbial growth <a href="#sia382_706">[
   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_05.PNG" style="border:1px solid lightgrey" width="500px"/>
 
 <hr>
+
 ### References
 <a id="sia382_706">[1]</a> SIA Schweizerischer Ingenieur- und Architektenverein (2007). Eingangsparameter für das Raumklima zur Auslegung und Bewertung der Energieeffizienz von Gebäuden - Raumluftqualität, Temperatur, Licht und Akustik. (SN/EN, SIA 382.706 / EN ISO 15251).<br>
 <a id="balmer2020">[2]</a> Balmer, M., Hubbuch, M., & Sandmeier, E. (2020). Energetische Betriebsoptimierung: Gebäude effizienter betreiben (1. Auflage). Fachbuchreihe «Nachhaltiges Bauen und Erneuern». FAKTOR Verlag AG. [https://pubdb.bfe.admin.ch/de/publication/download/10042](https://pubdb.bfe.admin.ch/de/publication/download/10042)<br>
