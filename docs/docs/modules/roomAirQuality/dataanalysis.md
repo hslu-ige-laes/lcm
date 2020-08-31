@@ -6,10 +6,9 @@ parent: Room > Air Quality
 grand_parent: Modules
 ---
 
-### Title
-#### Subtitle
-- content tbd <a href="#referencename">[1]</a>
+### Data Aquisition
+- CO<sub>2</sub> in ppm
+- hourly values desirable
 
-<hr>
-### References
-<a id="referencename">[1]</a> referende <br>
+### Calculations
+- hourly mean value
