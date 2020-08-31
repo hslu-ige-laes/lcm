@@ -1,9 +1,3 @@
-
-# ======================================================================
-# season() aus mollierhx rauskopieren in helper-Functions
-# ======================================================================
-
-
 centralHeatingSignatureModuleUI <- function(id) {
 
   ns <- NS(id)
@@ -18,54 +12,54 @@ centralHeatingSignatureModuleUI <- function(id) {
         collapsible = TRUE,
         collapsed = TRUE,
         box(
-          width = 3,
-          sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y")
-        ),
-        box(
-          width = 2,
-          checkboxGroupInput(ns("season"), 
-                             label = "Visible Seasons",
-                             choices = list("Winter", "Spring", "Summer", "Fall"),
-                             selected = list("Winter")
-          )
-        ),
-        box(
-          width = 2,
-          selectInput(inputId = ns("tempOutsideAir"), 
-                      label = "Temperature Outside Air",
-                      choices = NULL,
-                      selectize = FALSE
-          )
-        ),
-        box(
-          width = 2,
-          selectInput(inputId = ns("energyHeatCentral"), 
-                      label = "Energy Heat Meter Central",
-                      choices = NULL,
-                      selectize = FALSE
-          )
-        ),
-        box(
           width = 2,
           numericInput(ns("limRegLine"), "Threshold to exclude low values for regression line", min = 0, max = 100000, value = 15, step = 1)
         )
       )
     ),
-    tabsetPanel(
-      id = "tabset1",
-      tabPanel("Overview",
-               fluidRow(
-                 box(
-                   title="Heating Signature",
-                   status="primary",
-                   width = 12,
-                   plotlyOutput(ns("energySignaturePlot"), height = "auto")
+    sidebarPanel(
+      width = 2,
+      fluidRow(
+        selectInput(inputId = ns("energyHeatCentral"), 
+                    label = "Energy Heat Meter Central",
+                    choices = NULL,
+                    selectize = FALSE
+        ),
+        selectInput(inputId = ns("tempOutsideAir"), 
+                    label = "Temperature Outside Air",
+                    choices = NULL,
+                    selectize = FALSE
+        ),
+        inputPanel(
+          sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y")
+        ),
+        inputPanel(
+          checkboxGroupInput(ns("season"), 
+                             label = "Visible Seasons",
+                             choices = list("Winter", "Spring", "Summer", "Fall"),
+                             selected = list("Winter")
+          )
+        )
+      )
+    ),
+    mainPanel(
+      width = 10,    
+      tabsetPanel(
+        id = "centralHeatingSignatureVis",
+        tabPanel("Visualizations",
+                 fluidRow(
+                   box(
+                     title="Heating Signature",
+                     status="primary",
+                     width = 12,
+                     plotlyOutput(ns("energySignaturePlot"), height = "auto")
+                   )
                  )
-               )
+        )
       )
     ),
     tabsetPanel(
-      id = "documentation",
+      id = "centralHeatingSignatureDoc",
       tabPanel("Aims",
                fluidRow(
                  box(

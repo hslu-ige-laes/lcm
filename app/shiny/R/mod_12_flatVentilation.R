@@ -1,9 +1,3 @@
-
-# ======================================================================
-# season() aus mollierhx rauskopieren in helper-Functions
-# ======================================================================
-
-
 flatVentilationModuleUI <- function(id) {
 
   ns <- NS(id)
@@ -19,44 +13,53 @@ flatVentilationModuleUI <- function(id) {
         collapsed = TRUE,
         box(
           width = 3,
-          sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y")
+          "no extended settings"
         ),
-        box(
-          width = 2,
-          selectInput(inputId = ns("dpVentilationFlat"), 
-                      label = "Ventilator",
-                      choices = NULL,
-                      selectize = FALSE
-          )
+
+      )
+    ),
+    sidebarPanel(
+      width = 2,
+      fluidRow(
+        selectInput(inputId = ns("dpVentilationFlat"), 
+                    label = "Ventilator",
+                    choices = NULL,
+                    selectize = FALSE
+        ),
+        inputPanel(
+          sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y")
+        )
+      )
+    ),
+    mainPanel(
+      width = 10,
+      tabsetPanel(
+        id = "flatVentilationVis",
+        tabPanel("Schedule",
+                 fluidRow(
+                   box(
+                     title="Ventilation Schedule",
+                     status="primary",
+                     width = 12,
+                     plotlyOutput(ns("ventilationSchedulePlot"), height = "auto")
+                   )
+                 )
+        ),
+        tabPanel("Heatmap",
+                 fluidRow(
+                   box(
+                     title="Overview of the ventilation stages",
+                     status="primary",
+                     width = 12,
+                     plotlyOutput(ns("ventilationOverview"), height = "auto")
+                   )
+                 )
+                 
         )
       )
     ),
     tabsetPanel(
-      id = "tabset1",
-      tabPanel("Schedule",
-               fluidRow(
-                 box(
-                   title="Ventilation Schedule",
-                   status="primary",
-                   width = 12,
-                   plotlyOutput(ns("ventilationSchedulePlot"), height = "auto")
-                 )
-               )
-      ),
-      tabPanel("Overview",
-               fluidRow(
-                 box(
-                   title="tbd",
-                   status="primary",
-                   width = 12,
-                   plotlyOutput(ns("ventilationOverview"), height = "auto")
-                 )
-               )
-               
-      )
-    ),
-    tabsetPanel(
-      id = "documentation",
+      id = "flatVentilationDoc",
       tabPanel("Aims",
                fluidRow(
                  box(

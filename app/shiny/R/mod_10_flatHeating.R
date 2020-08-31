@@ -1,16 +1,5 @@
-
-# ======================================================================
-
-# ======================================================================
-
 flatHeatingModuleUI <- function(id) {
-  #' Name UI
-  #'
-  #' User-Interface for the 
-  #' @param id id for ns()
-  #' @export
-  #' @author Reto Marek
-  
+
   ns <- NS(id)
   
   tagList(
@@ -24,69 +13,74 @@ flatHeatingModuleUI <- function(id) {
         collapsed = TRUE,
         box(
           width = 3,
-          sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y")
-        ),
-        box(
-          width = 2,
-          selectInput(ns("selCalc"), 
-                      label = "Calculation",
-                      choices = list("Absolute (kWh)", "Relative (kWh/m2)"),
-                      selected = list("Relative (kWh/m2)"),
-                      width = "200px"
-          )
-        ),
-        box(
-          width = 2,
-          radioButtons(ns("selLevel"), 
-                       label = "Level",
-                       choices = list("Building", "Flats"),
-                       selected = list("Flats"),
-                       width = "200px"
-          )
+          "no extended settings"
         )
       )
     ),
-    tabsetPanel(
-      id = "flatHeatingTab",
-      tabPanel("Overview by Year",
-               fluidRow(
-                 box(
-                   status="primary",
-                   width = 12,
-                   column(
-                     width = 12,
-                     plotlyOutput(ns("heatingFlatYear"), height = "auto", width = "auto")
-                   )
-                 )
-               )
-      ),
-      tabPanel("Overview by Month",
-               fluidRow(
-                 box(
-                   status="primary",
-                   width = 12,
-                   column(
-                     width = 12,
-                     plotlyOutput(ns("heatingFlatMonth"), height = "auto", width = "auto")
-                   )
-                 )
-               )
+    sidebarPanel(
+      width = 2,
+      fluidRow(
+        selectInput(ns("selCalc"), 
+                    label = "Calculation",
+                    choices = list("Absolute (kWh)", "Relative (kWh/m2)"),
+                    selected = list("Relative (kWh/m2)"),
+                    width = "200px"
+        ),
+        radioButtons(ns("selLevel"), 
+                     label = "Level",
+                     choices = list("Building", "Flats"),
+                     selected = list("Flats"),
+                     width = "200px"
+        ),
+        inputPanel(
+          sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y")
+        )
       )
-      # tabPanel("Stream",
-      #          fluidRow(
-      #            box(
-      #              status="primary",
-      #              width = 12,
-      #              column(
-      #                width = 12,
-      #                streamgraphOutput(ns("heatingFlatStream"), height = "400px", width = "100%")
-      #              )
-      #            )
-      #          )
-      # )
+    ),
+    mainPanel(
+      width = 10,
+      tabsetPanel(
+        id = "flatHeatingVis",
+        tabPanel("Overview by Year",
+                 fluidRow(
+                   box(
+                     status="primary",
+                     width = 12,
+                     column(
+                       width = 12,
+                       plotlyOutput(ns("heatingFlatYear"), height = "auto", width = "auto")
+                     )
+                   )
+                 )
+        ),
+        tabPanel("Overview by Month",
+                 fluidRow(
+                   box(
+                     status="primary",
+                     width = 12,
+                     column(
+                       width = 12,
+                       plotlyOutput(ns("heatingFlatMonth"), height = "auto", width = "auto")
+                     )
+                   )
+                 )
+        )
+        # tabPanel("Stream",
+        #          fluidRow(
+        #            box(
+        #              status="primary",
+        #              width = 12,
+        #              column(
+        #                width = 12,
+        #                streamgraphOutput(ns("heatingFlatStream"), height = "400px", width = "100%")
+        #              )
+        #            )
+        #          )
+        # )
+      )
     ),
     tabsetPanel(
-      id = "documentation",
+      id = "flatHeatingDoc",
       tabPanel("Aims",
                fluidRow(
                  box(
@@ -152,14 +146,7 @@ flatHeatingModuleUI <- function(id) {
 }
 
 flatHeatingModule <- function(input, output, session, aggData) {
-  #' Name
-  #'
-  #' Server-function for the 
-  #' @param filename a String representing the filename inclusive extension.
-  #' @export
-  #' @author Reto Marek
-  
-  
+
   # date range slider
   sliderDate <- reactiveValues()
   

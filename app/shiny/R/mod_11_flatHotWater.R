@@ -1,16 +1,5 @@
-
-# ======================================================================
-
-# ======================================================================
-
 flatHotWaterModuleUI <- function(id) {
-  #' Name UI
-  #'
-  #' User-Interface for the 
-  #' @param id id for ns()
-  #' @export
-  #' @author Reto Marek
-  
+
   ns <- NS(id)
   
   tagList(
@@ -24,62 +13,70 @@ flatHotWaterModuleUI <- function(id) {
         collapsed = TRUE,
         box(
           width = 3,
+          "no extended settings"
+          )
+      )
+    ),
+    sidebarPanel(
+      width = 2,
+      fluidRow(
+        inputPanel(
           sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y")
         ),
-        box(
-          width = 2,
-          selectInput(ns("selCalc"), 
-                      label = "Calculation",
-                      choices = list("Absolute (ltr)", "Relative (ltr/(pers day))"),
-                      selected = list("Relative (ltr/(pers day))"),
-                      width = "200px"
-          )
+        selectInput(ns("selCalc"), 
+                    label = "Calculation",
+                    choices = list("Absolute (ltr)", "Relative (ltr/(pers day))"),
+                    selected = list("Relative (ltr/(pers day))"),
+                    width = "200px"
         )
       )
     ),
-    tabsetPanel(
-      id = "flatHotWaterTab",
-      tabPanel("Overview by Year",
-               fluidRow(
-                 box(
-                   status="primary",
-                   width = 12,
-                   column(
+    mainPanel(
+      width = 10,
+      tabsetPanel(
+        id = "flatHotWaterVis",
+        tabPanel("Overview by Year",
+                 fluidRow(
+                   box(
+                     status="primary",
                      width = 12,
-                     plotlyOutput(ns("hotWaterFlatYear"), height = "auto", width = "auto")
+                     column(
+                       width = 12,
+                       plotlyOutput(ns("hotWaterFlatYear"), height = "auto", width = "auto")
+                     )
                    )
                  )
-               )
-      ),
-      tabPanel("Overview by Month",
-               fluidRow(
-                 box(
-                   status="primary",
-                   width = 12,
-                   column(
+        ),
+        tabPanel("Overview by Month",
+                 fluidRow(
+                   box(
+                     status="primary",
                      width = 12,
-                     plotlyOutput(ns("hotWaterFlatMonth"), height = "auto", width = "auto")
+                     column(
+                       width = 12,
+                       plotlyOutput(ns("hotWaterFlatMonth"), height = "auto", width = "auto")
+                     )
                    )
                  )
-               )
+        )
+        # tabPanel("Stream",
+        #          fluidRow(
+        #            box(
+        #              status="primary",
+        #              width = 12,
+        #              column(
+        #                width = 12,
+        #                # streamgraphOutput(ns("hotWaterFlatStream"), height = "400px", width = "100%")
+        #                streamgraphOutput(ns("hotWaterFlatStream"))
+        #                
+        #              )
+        #            )
+        #          )
+        # )
       )
-      # tabPanel("Stream",
-      #          fluidRow(
-      #            box(
-      #              status="primary",
-      #              width = 12,
-      #              column(
-      #                width = 12,
-      #                # streamgraphOutput(ns("hotWaterFlatStream"), height = "400px", width = "100%")
-      #                streamgraphOutput(ns("hotWaterFlatStream"))
-      #                
-      #              )
-      #            )
-      #          )
-      # )
     ),
     tabsetPanel(
-      id = "documentation",
+      id = "flatHotWaterDoc",
       tabPanel("Aims",
                fluidRow(
                  box(
@@ -145,14 +142,7 @@ flatHotWaterModuleUI <- function(id) {
 }
 
 flatHotWaterModule <- function(input, output, session, aggData) {
-  #' Name
-  #'
-  #' Server-function for the 
-  #' @param filename a String representing the filename inclusive extension.
-  #' @export
-  #' @author Reto Marek
-  
-  
+
   # date range slider
   sliderDate <- reactiveValues()
   

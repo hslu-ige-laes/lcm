@@ -1,9 +1,3 @@
-
-# ======================================================================
-# season() aus mollierhx rauskopieren in helper-Functions
-# ======================================================================
-
-
 centralHeatingCurveModuleUI <- function(id) {
 
   ns <- NS(id)
@@ -19,49 +13,53 @@ centralHeatingCurveModuleUI <- function(id) {
         collapsed = TRUE,
         box(
           width = 3,
+          "no extended settings"
+        )
+      )
+    ),
+    sidebarPanel(
+      width = 2,
+      fluidRow(
+        selectInput(inputId = ns("tempOutsideAir"), 
+                    label = "Temperature Outside Air",
+                    choices = NULL,
+                    selectize = FALSE
+        ),
+        selectInput(inputId = ns("tempSupplyHeat"), 
+                    label = "Supply Temperature Heating",
+                    choices = NULL,
+                    selectize = FALSE
+        ),
+        inputPanel(
           sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y")
         ),
-        box(
-          width = 2,
+        inputPanel(
           checkboxGroupInput(ns("season"), 
                              label = "Visible Seasons",
                              choices = list("Winter", "Spring", "Summer", "Fall"),
                              selected = list("Winter")
           )
-        ),
-        box(
-          width = 2,
-          selectInput(inputId = ns("tempOutsideAir"), 
-                      label = "Temperature Outside Air",
-                      choices = NULL,
-                      selectize = FALSE
-          )
-        ),
-        box(
-          width = 2,
-          selectInput(inputId = ns("tempSupplyHeat"), 
-                      label = "Supply Temperature Heating",
-                      choices = NULL,
-                      selectize = FALSE
-          )
+        )
+      )
+    ),
+    mainPanel(
+      width = 10,
+      tabsetPanel(
+        id = "centralHeatingCurveVis",
+        tabPanel("Visualizations",
+                 fluidRow(
+                   box(
+                     title="Heating Curve ",
+                     status="primary",
+                     width = 12,
+                     plotlyOutput(ns("centralHeatingCurvePlot"), height = "auto")
+                   )
+                 )
         )
       )
     ),
     tabsetPanel(
-      id = "tabset1",
-      tabPanel("Overview",
-               fluidRow(
-                 box(
-                   title="Heating Curve ",
-                   status="primary",
-                   width = 12,
-                   plotlyOutput(ns("centralHeatingCurvePlot"), height = "auto")
-                 )
-               )
-      )
-    ),
-    tabsetPanel(
-      id = "documentation",
+      id = "centralHeatingCurveDoc",
       tabPanel("Aims",
                fluidRow(
                  box(
