@@ -47,7 +47,7 @@ flatElectricityModuleUI <- function(id) {
                      title="Daily Electric Energy Consumption and Standby Power",
                      status="primary",
                      width = 12,
-                     plotlyOutput(ns("overviewPlot"))
+                     plotlyOutput(ns("overviewPlot"), height = "auto")
                    )
                  )
         )
@@ -160,8 +160,8 @@ flatElectricityModule <- function(input, output, session, aggData) {
       data <- data %>% mutate(season = season(time))
       
       # calculate sum and min per day
-      data <- data %>% group_by(day) %>% mutate(sum = sum(value)) %>% ungroup()
-      data <- data %>% group_by(day) %>% mutate(min = min(value)*1000) %>% ungroup()
+      data <- data %>% group_by(day, flat, room) %>% mutate(sum = sum(value)) %>% ungroup()
+      data <- data %>% group_by(day, flat, room) %>% mutate(min = min(value)*1000) %>% ungroup()
       
     })
     return(data)
@@ -206,6 +206,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
   # filter according to room selection
   df.room <- reactive({
     data <- df.flat() %>% filter(room == input$room)
+    print(head(data))
     return(data)
   })
 
@@ -228,7 +229,6 @@ flatElectricityModule <- function(input, output, session, aggData) {
     data <- data %>% mutate(ravgUsage = zoo::rollmean(x=sum, 7, fill = NA))
     data <- data %>% mutate(ravgStandby = zoo::rollmean(x=min, 7, fill = NA))
     
-    
     return(data)
   })
   
@@ -237,7 +237,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
     withProgress(message = 'Creating plot', detail = "electricity overview", value = NULL, {
       minY <- 0
       maxYUsage <- max(df.all() %>% select(sum), na.rm=TRUE)
-      maxYStandby <- max(df.all() %>% select(min), na.rm=TRUE)
+      maxYStandby <- max(max(df.all() %>% select(min), na.rm=TRUE), 0.25*maxYUsage/24*1000)
       minX <- sliderDate$start
       maxX <- sliderDate$end
       averageUsage <- mean(df.agg1d()$sum, na.rm=TRUE)
@@ -347,7 +347,8 @@ flatElectricityModule <- function(input, output, session, aggData) {
                      titlefont = list(size = 14, color = "darkgrey")),
         hoverlabel = list(align = "left"),
         margin = list(l = 80, t = 50, r = 50, b = 10),
-        legend = l
+        legend = l,
+        height = 500
       )
       
       fig2 <- df.agg1d() %>%
@@ -403,7 +404,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
           arrowhead = 7,
           ax = -20,
           ay = -15,
-          font = list(color = "darkgrey")
+          font = list(color = "black")
         ) %>% 
         add_annotations(
           x = maxX,
@@ -414,8 +415,8 @@ flatElectricityModule <- function(input, output, session, aggData) {
           showarrow = TRUE,
           arrowhead = 7,
           ax = -180,
-          ay = 15,
-          font = list(color = "darkgrey")
+          ay = -30,
+          font = list(color = "black")
         ) %>% 
         layout(
           xaxis = list(
