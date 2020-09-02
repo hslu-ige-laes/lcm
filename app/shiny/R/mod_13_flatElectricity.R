@@ -118,7 +118,7 @@ flatElectricityModuleUI <- function(id) {
     )
 )}
 
-flatElectricityModule <- function(input, output, session, aggData1hSum) {
+flatElectricityModule <- function(input, output, session, aggData) {
   
   # date range slider
   sliderDate <- reactiveValues()
@@ -144,10 +144,10 @@ flatElectricityModule <- function(input, output, session, aggData1hSum) {
   # get separate temp and hum data and merge it
   df.all <- reactive({
     withProgress(message = 'Calculating data', detail = "electricity plot", value = NULL, {
-      req(aggData1hSum)
+      req(aggData)
       
       # data <- merge.data.frame(aggData1dSum %>% filter(dpType == "eleFlat"), aggData1dMin %>% filter(dpType == "eleFlat"), by = c("time", "flat", "room"))
-      data <- aggData1hSum %>% filter(dpType == "eleFlat")
+      data <- aggData %>% filter(dpType == "eleFlat")
       # data <- data_1h_sum
       locTimeZone <- configFileApp()[["bldgTimeZone"]]
       data$day <- as.Date(data$time, tz = locTimeZone)
