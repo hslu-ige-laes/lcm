@@ -1,13 +1,4 @@
-# ======================================================================
-# tbd: automatically refresh the page when pageTitle changes in csv
-# ======================================================================
 configurationModuleUI <- function(id) {
-  #' Application Configuration UI
-  #'
-  #' User-Interface for the application configuration
-  #' @param id id for ns()
-  #' @export
-  #' @author Reto Marek
 
   ns <- NS(id)
 
@@ -33,10 +24,18 @@ configurationModuleUI <- function(id) {
                    fluidRow(
                      tags$br(),
                      box(
-                       title="Page Title",
+                       title="Title on top left",
                        status="primary",
                        width = 3,
                        textInput(ns("pageTitle"), "Page title", width = NULL, placeholder = NULL),
+                       tags$br()
+                     ),
+                     box(
+                       title="Building Type",
+                       status="primary",
+                       width = 3,
+                       helpText("The building type is used for electrical consumtion calculations."),
+                       radioButtons(ns("bldgType"), "Type", choices = c("Single Family House" = "single","Multi Family House" = "multi", selected = NULL)),
                        tags$br()
                      ),
                      box(
@@ -70,12 +69,6 @@ configurationModuleUI <- function(id) {
 }
 
 configurationModule <- function(input, output, session) {
-  #' Application Configuration
-  #'
-  #' Server-function for the application configuration
-  #' @param filename a String representing the filename inclusive extension.
-  #' @export
-  #' @author Reto Marek
 
   observeEvent(input$saveButton, {
     # the theme gets saved into the dataframe in configurationThemeModule.R
@@ -83,6 +76,7 @@ configurationModule <- function(input, output, session) {
     saveConfigFile(here::here("app", "shiny", "config", "configApp.csv"), "pageTitle", input$pageTitle)
     saveConfigFile(here::here("app", "shiny", "config", "configApp.csv"), "bldgAltitude", input$bldgAltitude)
     saveConfigFile(here::here("app", "shiny", "config", "configApp.csv"), "bldgTimeZone", input$bldgTimeZone)
+    saveConfigFile(here::here("app", "shiny", "config", "configApp.csv"), "bldgType", input$bldgType)
     shinyalert(
       title = "Success",
       text = "Settings applied",
@@ -108,6 +102,10 @@ configurationModule <- function(input, output, session) {
   
   observe({
     updateSelectInput(session = session, inputId = "bldgTimeZone", selected = configFileApp()[["bldgTimeZone"]])
+  })
+  
+  observe({
+    updateSelectInput(session = session, inputId = "bldgType", selected = configFileApp()[["bldgType"]])
   })
   
 }
