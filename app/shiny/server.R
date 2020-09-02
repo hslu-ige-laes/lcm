@@ -1,6 +1,3 @@
-# ======================================================================
-# Server function
-# ======================================================================
 server <- function(input, output, session) {
   
   # Create Optional Menu Bar Items
@@ -47,6 +44,12 @@ server <- function(input, output, session) {
       menuItem("Flat > Ventilation", icon = icon("atom"), tabName = "flatVentilation")   
     }
   })
+  
+  output$flatElectricityMenuItem <- renderMenu({
+    if((nrow(dataPoints() %>% filter(dpType == "eleFlat"))) > 0){
+      menuItem("Flat > Electricity", icon = icon("bolt"), tabName = "flatElectricity")   
+    }
+  })
 
   output$centralHeatingSignatureMenuItem <- renderMenu({
     if((nrow(dataPoints() %>% filter(dpType == "energyHeatCentral") %>% unique()) > 0) & 
@@ -68,7 +71,7 @@ server <- function(input, output, session) {
     }
   })
   
-   # ======================================================================
+  # ======================================================================
   # Modules
   callModule(roomTempHumModule, "roomTempHum", aggData = data_1d_mean())
   callModule(roomOutsideTempModule, "cmfTempROa", aggData = data_1h_mean())
@@ -77,6 +80,7 @@ server <- function(input, output, session) {
   callModule(flatHeatingModule,"flatHeating", aggData = data_1M_sum())
   callModule(flatHotWaterModule,"flatHotWater", aggData = data_1M_sum())
   callModule(flatVentilationModule,"flatVentilation", aggData = data_15m_max())
+  callModule(flatElectricityModule,"flatElectricity", aggData1MSum = data_1M_sum(), aggData1hSum = data_1h_sum())
   callModule(centralHeatingSignatureModule,"centralHeatingSignature", aggDataTOa = data_1d_mean(), aggDataEnergyHeat = data_1d_sum())
   callModule(centralHeatingCurveModule,"centralHeatingCurve", aggData = data_1h_mean())
   callModule(dataexplorerModule,"dataexplorer")
