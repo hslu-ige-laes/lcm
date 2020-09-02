@@ -285,7 +285,7 @@ roomTempReductionModule <- function(input, output, session, aggData) {
   })
   
   output$boxPlot <- renderPlotly({
-    # withProgress(message = 'Creating plot', detail = "Boxplot", value = NULL, {
+    withProgress(message = 'Creating plot', detail = "Boxplot", value = NULL, {
       minY <- df.all() %>% select(Temp)
       minY <- min(floor(min(minY$Temp)) %>% floor() - 1, input$temperatureSetpoint - 1)
       maxY <- df.all() %>% select(Temp)
@@ -317,6 +317,6 @@ roomTempReductionModule <- function(input, output, session, aggData) {
                        )
         ) %>%
         layout(yaxis = yaxis)
-    # })
+    })
   })
 }
