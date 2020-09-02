@@ -1,17 +1,5 @@
-
-# ======================================================================
-
-
-# ======================================================================
-
 dataPointsModuleUI <- function(id) {
-  #' Data Points Module UI
-  #'
-  #' User-Interface for the module data points
-  #' @param id id for ns()
-  #' @export
-  #' @author Reto Marek
-  
+
   ns <- NS(id)
   
   tagList(
@@ -36,12 +24,6 @@ dataPointsModuleUI <- function(id) {
 }
 
 dataPointsModule <- function(input, output, session) {
-  #' Data Points Module
-  #'
-  #' Server-function for the module data points
-  #' @export
-  #' @author Reto Marek
-  #'
 
   # tbd: abfangen wenn dataPoints.csv leer ist oder nicht existiert... dito andere files.
   # tbd: braucht es oben in ui das noch: uiOutput(ns("script")) ?
