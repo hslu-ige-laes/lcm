@@ -146,15 +146,17 @@ flatElectricityModule <- function(input, output, session, aggData) {
     withProgress(message = 'Calculating data', detail = "electricity plot", value = NULL, {
       req(aggData)
       
-      # data <- merge.data.frame(aggData1dSum %>% filter(dpType == "eleFlat"), aggData1dMin %>% filter(dpType == "eleFlat"), by = c("time", "flat", "room"))
+      # keep only eleFlat
       data <- aggData %>% filter(dpType == "eleFlat")
-      # data <- data_1h_sum
+      
+      # determine date related parameters for later filtering
       locTimeZone <- configFileApp()[["bldgTimeZone"]]
       data$day <- as.Date(data$time, tz = locTimeZone)
-      # data$day <- as.Date(data$time, tz = "Europe/Zurich")
       data$week <- lubridate::week(data$time)
       data$month <- lubridate::month(data$time)
       data$year <- lubridate::year(data$time)
+      
+      # determine season for later filtering
       data <- data %>% mutate(season = season(time))
       
       # calculate sum and min per day
