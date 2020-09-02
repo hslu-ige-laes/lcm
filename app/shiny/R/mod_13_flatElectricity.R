@@ -25,21 +25,17 @@ flatElectricityModuleUI <- function(id) {
                     choices = NULL,
                     multiple=F
         ),
-        inputPanel(
-          sliderInput(inputId = ns("slider"),
-                      label = "Time Range",
-                      min = as.Date("2019-01-01"),
-                      max = as.Date("2020-01-01"),
-                      value = c(as.Date("2019-03-01"), as.Date("2019-09-01")),
-                      timeFormat = "%b %Y"
-          )
+        sliderInput(inputId = ns("slider"),
+                    label = "Time Range",
+                    min = as.Date("2019-01-01"),
+                    max = as.Date("2020-01-01"),
+                    value = c(as.Date("2019-03-01"), as.Date("2019-09-01")),
+                    timeFormat = "%b %Y"
         ),
-        inputPanel(
-          checkboxGroupInput(inputId = ns("season"), 
-                             label = "Visible Seasons",
-                             choices = list("Winter", "Spring", "Summer", "Fall"),
-                             selected = list("Winter", "Spring", "Summer", "Fall")
-          )
+        checkboxGroupInput(inputId = ns("season"), 
+                           label = "Visible Seasons",
+                           choices = list("Winter", "Spring", "Summer", "Fall"),
+                           selected = list("Winter", "Spring", "Summer", "Fall")
         )
       )
     ),
