@@ -11,7 +11,7 @@ grand_parent: Modules
 
 Standard time series x-y plot with band of upper- and lower quantiles (0.05 and 0.95).
 <br><br>
-<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomAirQuality_01.PNG" style="border:1px solid lightgrey"/>
+<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomAirQuality_01.PNG" style="border:1px solid lightgrey" width = "90%"/>
 <br>
 - The x-axis represents the time and the y-axis the air quality value in ppm.
 - The four zones helps to indicate whether measured air qualities are within a comfortable range or not.

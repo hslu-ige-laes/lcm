@@ -11,7 +11,7 @@ grand_parent: Modules
 
 Such visualizations have existed for more than 45 years and were shown e.g. by Frank (1975) <a href="#frank1975">[1]</a> in a report.
 <br><br>
-<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_02.PNG" style="border:1px solid lightgrey"/>
+<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_02.PNG" style="border:1px solid lightgrey" width = "90%"/>
 <br>
 - The x-axis represents the room temperature and the y-axis the relative humidity.
 - The two zones helps to indicate whether measured temperature/humidity values are within a comfortable, still comfortable range or not.
