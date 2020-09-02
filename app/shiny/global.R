@@ -55,7 +55,7 @@ source(here::here("app", "shiny", "R", "mod_04_roomTempReduction.R"))
 source(here::here("app", "shiny", "R", "mod_10_flatHeating.R"))
 source(here::here("app", "shiny", "R", "mod_11_flatHotWater.R"))
 source(here::here("app", "shiny", "R", "mod_12_flatVentilation.R"))
-
+source(here::here("app", "shiny", "R", "mod_13_flatElectricity.R"))
 
 source(here::here("app", "shiny", "R", "mod_20_centralHeatingSignature.R"))
 source(here::here("app", "shiny", "R", "mod_21_centralHeatingCurve.R"))
@@ -106,6 +106,14 @@ if (!file.exists(here::here("app", "shiny", "data", "cache","data_1h_mean.rds"))
 
 data_1h_mean <- reactiveFileReader(1000, session =  session, file = here::here("app", "shiny", "data", "cache","data_1h_mean.rds"), readRDS)
 
+if (!file.exists(here::here("app", "shiny", "data", "cache","data_1h_sum.rds"))) {
+  df <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
+  saveRDS(df, here::here("app", "shiny", "data", "cache","data_1h_sum.rds"))
+}
+
+data_1h_sum <- reactiveFileReader(1000, session =  session, file = here::here("app", "shiny", "data", "cache","data_1h_sum.rds"), readRDS)
+
+
 if (!file.exists(here::here("app", "shiny", "data", "cache","data_1d_mean.rds"))) {
   df <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
   saveRDS(df, here::here("app", "shiny", "data", "cache","data_1d_mean.rds"))
@@ -119,6 +127,13 @@ if (!file.exists(here::here("app", "shiny", "data", "cache","data_1d_sum.rds")))
 }
 
 data_1d_sum <- reactiveFileReader(1000, session =  session, file = here::here("app", "shiny", "data", "cache","data_1d_sum.rds"), readRDS)
+
+if (!file.exists(here::here("app", "shiny", "data", "cache","data_1d_min.rds"))) {
+  df <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
+  saveRDS(df, here::here("app", "shiny", "data", "cache","data_1d_min.rds"))
+}
+
+data_1d_min <- reactiveFileReader(1000, session =  session, file = here::here("app", "shiny", "data", "cache","data_1d_min.rds"), readRDS)
 
 if (!file.exists(here::here("app", "shiny", "data", "cache","data_1M_sum.rds"))) {
   df <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
