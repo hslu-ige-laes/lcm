@@ -27,6 +27,7 @@ sidebar <- dashboardSidebar(
     menuItemOutput("flatVentilationMenuItem"),
     menuItemOutput("flatHeatingMenuItem"),
     menuItemOutput("flatHotWaterMenuItem"),
+    menuItemOutput("flatElectricityMenuItem"),
     menuItemOutput("centralHeatingSignatureMenuItem"),
     menuItemOutput("centralHeatingCurveMenuItem"),
     menuItemOutput("dataExplorerMenuItem"),
@@ -102,6 +103,10 @@ body <- dashboardBody(
     
     tabItem(tabName = "flatHeating",
             flatHeatingModuleUI("flatHeating")
+    ),
+    
+    tabItem(tabName = "flatElectricity",
+            flatElectricityModuleUI("flatElectricity")
     ),
     
     tabItem(tabName = "centralHeatingSignature",
