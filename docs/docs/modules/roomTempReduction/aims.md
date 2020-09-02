@@ -8,5 +8,5 @@ grand_parent: Modules
 
 ### Energy Efficiency and Comfort
 - Harmonization of temperatures in the house
-- Reduce heating energy by lowering the temperature
-- Still guarantee comfort
+- Reduction of heating energy by lowering the temperature
+- Guarantee comfort
