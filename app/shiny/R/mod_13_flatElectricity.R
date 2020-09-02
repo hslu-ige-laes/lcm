@@ -118,7 +118,7 @@ flatElectricityModuleUI <- function(id) {
     )
 )}
 
-flatElectricityModule <- function(input, output, session, aggData1MSum, aggData1hSum) {
+flatElectricityModule <- function(input, output, session, aggData1hSum) {
   
   # date range slider
   sliderDate <- reactiveValues()
