@@ -1,14 +1,5 @@
-# ======================================================================
-# tbd: automatically refresh the page when pageTitle changes in csv
-# ======================================================================
 bldgHierarchyModuleUI <- function(id) {
-  #' Application Configuration UI
-  #'
-  #' User-Interface for the application configuration
-  #' @param id id for ns()
-  #' @export
-  #' @author Reto Marek
-  
+
   ns <- NS(id)
   
   tagList(
@@ -33,13 +24,7 @@ bldgHierarchyModuleUI <- function(id) {
 }
 
 bldgHierarchyModule <- function(input, output, session) {
-  #' Application Configuration
-  #'
-  #' Server-function for the application configuration
-  #' @param filename a String representing the filename inclusive extension.
-  #' @export
-  #' @author Reto Marek
- 
+
   # Create Table.
   output$tableContent <- renderDataTable({
     datatable(bldgHierarchy(),
