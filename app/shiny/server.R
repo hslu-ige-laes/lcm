@@ -80,7 +80,7 @@ server <- function(input, output, session) {
   callModule(flatHeatingModule,"flatHeating", aggData = data_1M_sum())
   callModule(flatHotWaterModule,"flatHotWater", aggData = data_1M_sum())
   callModule(flatVentilationModule,"flatVentilation", aggData = data_15m_max())
-  callModule(flatElectricityModule,"flatElectricity", aggData1hSum = data_1h_sum())
+  callModule(flatElectricityModule,"flatElectricity", aggData = data_1h_sum())
   callModule(centralHeatingSignatureModule,"centralHeatingSignature", aggDataTOa = data_1d_mean(), aggDataEnergyHeat = data_1d_sum())
   callModule(centralHeatingCurveModule,"centralHeatingCurve", aggData = data_1h_mean())
   callModule(dataexplorerModule,"dataexplorer")
