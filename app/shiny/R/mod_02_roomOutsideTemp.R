@@ -23,29 +23,23 @@ roomOutsideTempModuleUI <- function(id) {
     ),
     sidebarPanel(
       width = 2,
-      fluidRow(
-        selectInput(ns("flat"), "Flat", choices = NULL),
-        selectInput(inputId = ns("room"),
-                    label = "Room",
-                    choices = NULL,
-                    multiple=F
-        ),
-        inputPanel(
-          sliderInput(inputId = ns("slider"),
-                      label = "Time Range",
-                      min = as.Date("2019-01-01"),
-                      max = as.Date("2020-01-01"),
-                      value = c(as.Date("2019-03-01"), as.Date("2019-09-01")),
-                      timeFormat = "%b %Y"
-          )
-        ),
-        inputPanel(
-          checkboxGroupInput(inputId = ns("season"), 
-                             label = "Visible Seasons",
-                             choices = list("Winter", "Spring", "Summer", "Fall"),
-                             selected = list("Winter", "Spring", "Summer", "Fall")
-          )
-        )
+      selectInput(ns("flat"), "Flat", choices = NULL),
+      selectInput(inputId = ns("room"),
+                  label = "Room",
+                  choices = NULL,
+                  multiple=F
+      ),
+      sliderInput(inputId = ns("slider"),
+                  label = "Time Range",
+                  min = as.Date("2019-01-01"),
+                  max = as.Date("2020-01-01"),
+                  value = c(as.Date("2019-03-01"), as.Date("2019-09-01")),
+                  timeFormat = "%b %Y"
+      ),
+      checkboxGroupInput(inputId = ns("season"), 
+                         label = "Visible Seasons",
+                         choices = list("Winter", "Spring", "Summer", "Fall"),
+                         selected = list("Winter", "Spring", "Summer", "Fall")
       )
     ),
     mainPanel(

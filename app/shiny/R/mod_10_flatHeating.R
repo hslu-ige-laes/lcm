@@ -19,23 +19,19 @@ flatHeatingModuleUI <- function(id) {
     ),
     sidebarPanel(
       width = 2,
-      fluidRow(
-        selectInput(ns("selCalc"), 
-                    label = "Calculation",
-                    choices = list("Absolute (kWh)", "Relative (kWh/m2)"),
-                    selected = list("Relative (kWh/m2)"),
-                    width = "200px"
-        ),
-        radioButtons(ns("selLevel"), 
-                     label = "Level",
-                     choices = list("Building", "Flats"),
-                     selected = list("Flats"),
-                     width = "200px"
-        ),
-        inputPanel(
-          sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y")
-        )
-      )
+      selectInput(ns("selCalc"), 
+                  label = "Calculation",
+                  choices = list("Absolute (kWh)", "Relative (kWh/m2)"),
+                  selected = list("Relative (kWh/m2)"),
+                  width = "200px"
+      ),
+      radioButtons(ns("selLevel"), 
+                   label = "Level",
+                   choices = list("Building", "Flats"),
+                   selected = list("Flats"),
+                   width = "200px"
+      ),
+      sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y")
     ),
     mainPanel(
       width = 10,

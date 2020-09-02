@@ -19,16 +19,12 @@ flatHotWaterModuleUI <- function(id) {
     ),
     sidebarPanel(
       width = 2,
-      fluidRow(
-        inputPanel(
-          sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y")
-        ),
-        selectInput(ns("selCalc"), 
-                    label = "Calculation",
-                    choices = list("Absolute (ltr)", "Relative (ltr/(pers day))"),
-                    selected = list("Relative (ltr/(pers day))"),
-                    width = "200px"
-        )
+      sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y"),
+      selectInput(ns("selCalc"), 
+                  label = "Calculation",
+                  choices = list("Absolute (ltr)", "Relative (ltr/(pers day))"),
+                  selected = list("Relative (ltr/(pers day))"),
+                  width = "200px"
       )
     ),
     mainPanel(

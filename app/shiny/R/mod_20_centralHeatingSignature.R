@@ -19,27 +19,21 @@ centralHeatingSignatureModuleUI <- function(id) {
     ),
     sidebarPanel(
       width = 2,
-      fluidRow(
-        selectInput(inputId = ns("energyHeatCentral"), 
-                    label = "Energy Heat Meter Central",
-                    choices = NULL,
-                    selectize = FALSE
-        ),
-        selectInput(inputId = ns("tempOutsideAir"), 
-                    label = "Temperature Outside Air",
-                    choices = NULL,
-                    selectize = FALSE
-        ),
-        inputPanel(
-          sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y")
-        ),
-        inputPanel(
-          checkboxGroupInput(ns("season"), 
-                             label = "Visible Seasons",
-                             choices = list("Winter", "Spring", "Summer", "Fall"),
-                             selected = list("Winter")
-          )
-        )
+      selectInput(inputId = ns("energyHeatCentral"), 
+                  label = "Energy Heat Meter Central",
+                  choices = NULL,
+                  selectize = FALSE
+      ),
+      selectInput(inputId = ns("tempOutsideAir"), 
+                  label = "Temperature Outside Air",
+                  choices = NULL,
+                  selectize = FALSE
+      ),
+      sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y"),
+      checkboxGroupInput(ns("season"), 
+                         label = "Visible Seasons",
+                         choices = list("Winter", "Spring", "Summer", "Fall"),
+                         selected = list("Winter")
       )
     ),
     mainPanel(

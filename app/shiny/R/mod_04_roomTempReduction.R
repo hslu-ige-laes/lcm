@@ -24,17 +24,11 @@ roomTempReductionModuleUI <- function(id) {
     ),
     sidebarPanel(
       width = 2,
-      fluidRow(
-        inputPanel(
-          sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y")
-        ),
-        inputPanel(
-          checkboxGroupInput(ns("season"), 
-                             label = "Visible Seasons",
-                             choices = list("Winter", "Spring", "Summer", "Fall"),
-                             selected = list("Winter")
-          )
-        )
+      sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y"),
+      checkboxGroupInput(ns("season"), 
+                         label = "Visible Seasons",
+                         choices = list("Winter", "Spring", "Summer", "Fall"),
+                         selected = list("Winter")
       )
     ),
     mainPanel(

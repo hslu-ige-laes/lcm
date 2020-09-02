@@ -44,9 +44,9 @@ sidebar <- dashboardSidebar(
 body <- dashboardBody(
   # style adaptions
   # remove space below forms (e.g. from input-checkboxgroup), it uses too much space
-  tags$head(tags$style(HTML(".form-group {margin-bottom: 0px;}"))),
+  tags$head(tags$style(HTML(".form-group {margin-bottom: 0px; margin-top: 10px;}"))),
   tags$head(tags$style(HTML(".checkbox {margin-bottom: 0px;}"))),
-  tags$head(tags$style(HTML(".well {padding-top: 10px; padding-right: 30px; padding-left: 30px; padding-bottom: 10px;}"))),
+  tags$head(tags$style(HTML(".well {padding-top: 5px;}"))),
 
   # left-align title top left
   tags$head(tags$style(HTML(".main-header .logo {text-align: left;}"))),
