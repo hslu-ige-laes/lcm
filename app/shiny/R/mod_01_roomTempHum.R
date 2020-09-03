@@ -38,7 +38,7 @@ roomTempHumModuleUI <- function(id) {
           box(
             width = 2,
             sliderInput(ns("sliderGraphHumAbs"), "Range X-Axis",
-                        min = 0, max = 0.035, step = 0.0005, value = c(0, 0.02), post = "kg/kg")
+                        min = 0, max = 0.035, step = 0.0005, value = c(0, 0.017), post = "kg/kg")
           )
         )
       )
@@ -304,6 +304,11 @@ roomTempHumModule <- function(input, output, session, aggData) {
       df.zones <- rbind.fill(df.zoneNotComfortable, df.zoneStillComfortable)
       df.zones <- rbind.fill(df.zones, df.zoneComfortable)
 
+      # legend
+      l <- list(
+        orientation = "h"
+      )
+      
       df() %>%
         plot_ly(showlegend = TRUE) %>%
         add_polygons(
@@ -370,7 +375,8 @@ roomTempHumModule <- function(input, output, session, aggData) {
                        range = c(miny, maxy),
                        titlefont = list(size = 14, color = "darkgrey")),
           hoverlabel = list(align = "left"),
-          margin = list(l = 80, t = 50, r = 50, b = 10)
+          margin = list(l = 80, t = 50, r = 50, b = 10),
+          legend = l
         ) %>%
 
         plotly::config(modeBarButtons = list(list("toImage")),
