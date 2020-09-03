@@ -203,7 +203,6 @@ roomTempReductionModule <- function(input, output, session, aggData) {
   }
 
   # Generate Plots
-  
   output$temperaturePlots <- renderPlotly({
     
     if(nrow(df()) == 0){
@@ -212,6 +211,7 @@ roomTempReductionModule <- function(input, output, session, aggData) {
 
     # Create a Progress object
     withProgress(message = 'Creating plot', detail = "temperature plot", value = NULL, {
+      
       start <- as.POSIXct(sliderDate$start, tz="Europe/Zurich")
       end <- as.POSIXct(sliderDate$end, tz="Europe/Zurich")
       textPosX <- as.POSIXct(start + difftime(end, start, units = "days")/2, tz="Europe/Zurich")
@@ -260,7 +260,7 @@ roomTempReductionModule <- function(input, output, session, aggData) {
         automargin = TRUE,
         titlefont = list(size = 14, color = "darkgrey")
       )
-      
+
       ggplotly(p + ylab(" ") + xlab(" "), height = plotHeight(numRooms()), tooltip = c("text")) %>%
         plotly::config(modeBarButtons = list(list("toImage")),
                        displaylogo = FALSE,
@@ -268,7 +268,8 @@ roomTempReductionModule <- function(input, output, session, aggData) {
                        format = "svg"
                        )
         ) %>% 
-        layout(margin = list(t = 120), yaxis = yaxis)
+        layout(margin = list(t = 120), 
+               yaxis = yaxis)
 
       })
   })
@@ -291,7 +292,7 @@ roomTempReductionModule <- function(input, output, session, aggData) {
           legend.position="none",
           plot.title = element_text(hjust = 0.5)
         )
-      
+
       yaxis <- list(
         title = "Temp<sub>Room</sub> in \u00B0C",
         automargin = TRUE,
