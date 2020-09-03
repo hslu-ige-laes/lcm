@@ -12,8 +12,99 @@ flatElectricityModuleUI <- function(id) {
         collapsible = TRUE,
         collapsed = TRUE,
         box(
-         "no extended settings"
+          width = 2,
+          numericInput(inputId = ns("occupants"),
+                       label = "Occupants",
+                       value = NULL,
+                       min = 1,
+                       max = 6,
+                       step = 0.5
+          )
+        ),
+        box(
+          width = 2,
+          numericInput(inputId = ns("rooms"),
+                       label = "Rooms",
+                       value = NULL,
+                       min = 1,
+                       max = 10,
+                       step = 0.5
+          )
+        ),
+        box(
+          width = 4,
+          selectInput(inputId = ns("dishwasher"),
+                      label = "Dishwasher",
+                      choices = c("none" = "none", "classic" = "classic", "with hot water supply" = "hotWaterSupply"),
+                      multiple = F,
+                      selected = "classic"
+          )
+        ),
+        box(
+          width = 3,
+          selectInput(inputId = ns("freezer"),
+                      label = "Freezer",
+                      choices = c("none" = "none", "classic" = "classic"),
+                      multiple = F,
+                      selected = "none"
+          )
+        ),
+        box(
+          width = 4,
+          selectInput(inputId = ns("cookingBaking"),
+                      label = "Cooking & Baking",
+                      choices = c("occasionally" = "occasionally", "normal" = "normal", "intensive" = "intensive"),
+                      multiple = F,
+                      selected = "normal"
+          )
+        ),
+        box(
+          width = 4,
+          selectInput(inputId = ns("effLighting"),
+                      label = "Efficient Lighting",
+                      choices = c("minority of lamps" = "minority", "mix" = "mix", "majority of lamps" = "majority"),
+                      multiple = F,
+                      selected = "mix"
+          )
+        ),
+        box(
+          width = 4,
+          selectInput(inputId = ns("dryer"),
+                      label = "Clothes Dryer",
+                      choices = c("none" = "none", "room air dryer" = "roomAir", "heat pump dryer" = "heatPump", "classic dryer" = "classic"),
+                      multiple = F,
+                      selected = "classic"
+          )
+        ),
+        box(
+          width = 4,
+          selectInput(inputId = ns("laundry"),
+                      label = "Washing Machine",
+                      choices = c("none" = "none", "classic" = "classic", "with hot water supply" = "hotWaterSupply"),
+                      multiple = F,
+                      selected = "classic"
+          )
+        ),
+        box(
+          width = 4,
+          selectInput(inputId = ns("waterHeater"),
+                      label = "Water Heater",
+                      choices = c("none" = "none", "Electric Boiler" = "electric", "Heat Pump" = "heatpump"),
+                      multiple = F,
+                      selected = "none"
+          )
+        ),
+        box(
+          width = 4,
+          selectInput(inputId = ns("eleCommon"),
+                      label = "Common electricity (building equipment, common lighting)",
+                      choices = c("excluded" = "excluded", "included" = "included"),
+                      multiple = F,
+                      selected = NULL
+          )
         )
+       
+ 
       )
     ),
     sidebarPanel(
@@ -119,6 +210,43 @@ flatElectricityModuleUI <- function(id) {
 )}
 
 flatElectricityModule <- function(input, output, session, aggData) {
+  
+  
+  # read typical electricitiy values
+  typEleValTable <- read.csv2(here::here("app", "shiny", "config", "typicalHousholdPowerConsumption.csv"), stringsAsFactors = FALSE, dec = ".")
+  
+  
+  # default values of settings tab
+  observe({
+    occCnt <- as.numeric(bldgHierarchy() %>% filter(flat == input$flat) %>% select(occupants))
+    updateNumericInput(session,
+                       "occupants",
+                       value = occCnt
+    )
+  })
+  
+  observe({
+    roomCnt <- as.numeric(typEleValTable %>% filter(bldgType == configFileApp()[["bldgType"]]) %>% filter(occupants == input$occupants) %>% select(roomDefault))
+    updateNumericInput(session,
+                       "rooms",
+                       value = roomCnt
+    )
+  })
+  
+  observe({
+    
+    if(configFileApp()[["bldgType"]] == "single"){
+      eleCommonSel <- "included"
+    } else {
+      eleCommonSel <- "excluded"
+    }
+    
+    updateNumericInput(session,
+                       "eleCommon",
+                       value = eleCommonSel
+    )
+  })
+  
   
   # date range slider
   sliderDate <- reactiveValues()
@@ -232,11 +360,84 @@ flatElectricityModule <- function(input, output, session, aggData) {
     return(data)
   })
   
+  # calculate electricity consumption of a typical household for comparison
+  # Source: Nipkov, J. (2013). Typischer Haushalt-Stromverbrauch. Schlussbericht. Bundesamt für Energie (BFE). [https://www.aramis.admin.ch/Default.aspx?DocumentID=61764]
+   typEleConsVal <- reactive({
+    req(input$rooms)
+    table <- typEleValTable %>% filter(bldgType == configFileApp()[["bldgType"]]) %>% filter(occupants == input$occupants)
+    
+    # Base value
+    value <- as.numeric(table %>% select(baseVal))
+    
+    # Correction room size
+    if(input$rooms < table$roomCntLoLi){
+      value <- value - table$roomCntCorr
+    }
+    if(input$rooms > table$roomCntHiLi){
+      value <- value + table$roomCntCorr
+    }
+    
+    # Dishwasher
+    switch(input$dishwasher,
+      none = {value <- value - table$dishwasherValue},
+      classic = {value <- value},
+      hotWaterSupply = {value <- value - table$dishwasherHotWaterCorr}
+    )
+    
+    # Freezer
+    if(input$freezer == "classic"){
+      value <- value + table$freezerVal
+    }
+    
+    # Cooking & Baking
+    switch(input$cookingBaking,
+           occasionally = {value <- value - table$cookingCorr},
+           normal = {value <- value},
+           intensive = {value <- value + table$cookingCorr}
+    )
+    
+    # Efficient Lighting
+    switch(input$effLighting,
+           minority = {value <- value + table$effLightingCorr},
+           mix = {value <- value},
+           majority = {value <- value - table$effLightingCorr}
+    )
+    
+    # Dryer
+    switch(input$dryer,
+           none = {value <- value - (table$dryerCorrVal)},
+           roomAir = {value <- value - ((table$laundryCorrVal + table$dryerCorrVal) * 0.25)},
+           heatPump = {value <- value - ((table$laundryCorrVal + table$dryerCorrVal) * 0.25)},
+           classic = {value <- value}
+    )
+    
+    # Laundry 
+    switch(input$laundry,
+           none = {value <- value - (table$laundryCorrVal)},
+           classic = {value <- value},
+           hotWaterSupply = {value <- value - ((table$laundryCorrVal + table$dryerCorrVal) * 0.25)}
+    )
+    
+    # Water Heater
+    switch(input$waterHeater,
+           none = {value <- value},
+           electric = {value <- value + table$electricWaterHeater},
+           heatPump = {value <- value + table$heatPumpWaterHeater}
+    )
+    
+    # common electricity
+    if(input$eleCommon == "excluded"){
+      value <- value - table$electricityCommonVal
+    }
+    return(value)
+  })
+
   # Plot
   output$overviewPlot <- renderPlotly({
     withProgress(message = 'Creating plot', detail = "electricity overview", value = NULL, {
       minY <- 0
       maxYUsage <- max(df.all() %>% select(sum), na.rm=TRUE)
+      maxYUsage <- max(maxYUsage, typEleConsVal()/365)
       maxYStandby <- max(max(df.all() %>% select(min), na.rm=TRUE), 0.25*maxYUsage/24*1000)
       minX <- sliderDate$start
       maxX <- sliderDate$end
@@ -303,8 +504,8 @@ flatElectricityModule <- function(input, output, session, aggData) {
                   type = "scatter",
                   mode = "markers",
                   y = ~ravgUsage,
-                  name = "Average (7 days)",
-                  marker = list(color = "orange", opacity = 0.5, symbol = "circle"),
+                  name = "Average Cons. (7 days)",
+                  marker = list(color = "orange", opacity = 0.4, symbol = "circle"),
                   hoverinfo = "text",
                   text = ~ paste("<br />rolling average:        ", sprintf("%.1f kWh/d", ravgUsage),
                                  "<br />Average vis. points: ", sprintf("%.1f kWh/d", averageUsage),
@@ -316,7 +517,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
                      xend = ~sliderDate$end,
                      y = ~averageUsage,
                      yend = ~averageUsage,
-                     name = "Average Total",
+                     name = "Average Cons. Total",
                      line = list(color = "orange", opacity = 1.0, dash = "dot"),
                      hoverinfo = "text",
                      text = ~ paste("<br />rolling average:        ", sprintf("%.1f kWh/d", ravgUsage),
@@ -324,32 +525,79 @@ flatElectricityModule <- function(input, output, session, aggData) {
                                     "<br />Date:                        ", day,
                                     "<br />Season:                   ", season
                      )
-      ) %>% 
-      add_annotations(
-        x = maxX,
-        y = averageUsage,
-        text = sprintf("%.1f kWh/d", averageUsage),
-        xref = "x",
-        yref = "y",
-        showarrow = TRUE,
-        arrowhead = 7,
-        ax = -20,
-        ay = -40,
-        font = list(color = "orange")
-        
-      ) %>% 
-      layout(
-        xaxis = list(
-          title = ""
-        ),
-        yaxis = list(title = "Consumption<br>(kWh/d)",
-                     range = c(minY, maxYUsage),
-                     titlefont = list(size = 14, color = "darkgrey")),
-        hoverlabel = list(align = "left"),
-        margin = list(l = 80, t = 50, r = 50, b = 10),
-        legend = l,
-        height = 500
-      )
+        ) %>% 
+        add_segments(x = ~sliderDate$start,
+                     xend = ~sliderDate$end,
+                     y = ~averageStandby*24/1000,
+                     yend = ~averageStandby*24/1000,
+                     name = "Average Standby Total",
+                     line = list(color = "black", opacity = 1.0, dash = "dot"),
+                     hoverinfo = "text",
+                     text = ~ paste("<br />Average standby power:          ", sprintf("%.0f W", averageStandby),
+                                    "<br />equals to daily energy:         ", sprintf("%.1f kWh", averageStandby*24/1000),
+                                    "<br />Standby percent of total cons.: ", sprintf("%.0f %%", shareStandby)
+                     )
+        ) %>% 
+        add_segments(x = ~sliderDate$start,
+                     xend = ~sliderDate$end,
+                     y = ~typEleConsVal()/365,
+                     yend = ~typEleConsVal()/365,
+                     name = "typical household",
+                     line = list(color = "#481567FF", opacity = 1.0, dash = "dot"),
+                     hoverinfo = "text",
+                     text = ~ paste("<br />typical household:           ", sprintf("%.0f kWh/year", typEleConsVal()),
+                                    "<br />equals to daily energy:      ", sprintf("%.1f kWh/day", typEleConsVal()/365),
+                                    "<br />consumption of current flat: ", sprintf("%.1f kWh/day", averageUsage)
+                     )
+        ) %>% 
+        add_annotations(
+          x = minX,
+          y = typEleConsVal()/365,
+          text = paste0("typical comparable household ", sprintf("%.1f kWh/d", typEleConsVal()/365)),
+          xref = "x",
+          yref = "y",
+          showarrow = TRUE,
+          arrowhead = 7,
+          ax = 100,
+          ay = -20,
+          font = list(color = "#481567FF")
+        ) %>% 
+        add_annotations(
+          x = maxX,
+          y = averageUsage,
+          text = paste0("Average consumption ", sprintf("%.1f kWh/d", averageUsage)),
+          xref = "x",
+          yref = "y",
+          showarrow = TRUE,
+          arrowhead = 7,
+          ax = -100,
+          ay = -60,
+          font = list(color = "orange")
+        ) %>% 
+        add_annotations(
+          x = maxX,
+          y = averageStandby*24/1000,
+          text = paste0(sprintf("%.1f %%", shareStandby), " of the consumption are standby-losses"),
+          xref = "x",
+          yref = "y",
+          showarrow = TRUE,
+          arrowhead = 7,
+          ax = -160,
+          ay = -15,
+          font = list(color = "black")
+        ) %>% 
+        layout(
+          xaxis = list(
+            title = ""
+          ),
+          yaxis = list(title = "Consumption<br>(kWh/d)",
+                       range = c(minY, maxYUsage),
+                       titlefont = list(size = 14, color = "darkgrey")),
+          hoverlabel = list(align = "left"),
+          margin = list(l = 80, t = 50, r = 50, b = 10),
+          legend = l,
+          height = 500
+        )
       
       fig2 <- df.agg1d() %>%
         plot_ly(x = ~day, showlegend = TRUE) %>%
@@ -370,7 +618,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
                   type = "scatter",
                   mode = "markers",
                   y = ~ravgStandby,
-                  name = "Average (7 days)",
+                  name = "Average Standby (7 days)",
                   marker = list(color = "darkgrey", opacity = 0.5, symbol = "circle"),
                   hoverinfo = "text",
                   text = ~ paste("<br />daily standby:           ", sprintf("%.0f W", min),
@@ -385,37 +633,23 @@ flatElectricityModule <- function(input, output, session, aggData) {
                      y = ~averageStandby,
                      yend = ~averageStandby,
                      name = "Average Total",
-                     line = list(color = "darkgrey", opacity = 1.0, dash = "dot"),
+                     line = list(color = "black", opacity = 1.0, dash = "dot"),
                      hoverinfo = "text",
-                     text = ~ paste("<br />daily standby:           ", sprintf("%.0f W", min),
-                                    "<br />rolling average:        ", sprintf("%.0f W", ravgStandby),
-                                    "<br />Average vis. points: ", sprintf("%.0f W", averageStandby),
-                                    "<br />Date:                        ", day,
-                                    "<br />Season:                   ", season
+                     text = ~ paste("<br />Average standby power:          ", sprintf("%.0f W", averageStandby),
+                                    "<br />equals to daily energy:         ", sprintf("%.1f kWh", averageStandby*24/1000),
+                                    "<br />Standby percent of total cons.: ", sprintf("%.0f %%", shareStandby)
                      )
         ) %>% 
         add_annotations(
           x = maxX,
           y = averageStandby,
-          text = sprintf("%.0f W", averageStandby),
+          text = paste0(sprintf("%.0f W", averageStandby), " standby-losses"),
           xref = "x",
           yref = "y",
           showarrow = TRUE,
           arrowhead = 7,
-          ax = -20,
-          ay = -15,
-          font = list(color = "black")
-        ) %>% 
-        add_annotations(
-          x = maxX,
-          y = averageStandby,
-          text = paste0(sprintf("%.1f %%", shareStandby), " of the consumption are standby losses"),
-          xref = "x",
-          yref = "y",
-          showarrow = TRUE,
-          arrowhead = 7,
-          ax = -180,
-          ay = -30,
+          ax = -60,
+          ay = -20,
           font = list(color = "black")
         ) %>% 
         layout(
