@@ -1,17 +1,3 @@
-# ==========================================================================
-
-# dpAbbr <- "energyHeat"
-# locTimeZone = "Europe/Zurich"
-# func = "mean"
-# func = "diffMax"
-# agg = "1d"
-# datetimeStart = "2020-01-01"
-# datetimeEnd = "2020-03-01"
-# datetimeStart = NULL
-# datetimeEnd = NULL
-
-# getTimeSeries(dpAbbr, datetimeStart, datetimeEnd, func, agg)
-
 etlAggFilterData <- function(){
   
   etlAggFilterList <- loadDataPointsFile(here::here("app", "shiny", "config", "etlAggFilterList.csv"))
@@ -20,7 +6,7 @@ etlAggFilterData <- function(){
 
   locTimeZone <- configFileApp[["bldgTimeZone"]]
   
-  # row <- 2
+  # row <- 3
   
   for(row in 1:nrow(etlAggFilterList)){
     filterDpType <- unlist(strsplit(as.character(etlAggFilterList[row,4]), split=","))
@@ -31,11 +17,15 @@ etlAggFilterData <- function(){
     # tic(paste0("getData: data_", agg, "_", func))
     
     # check if file exists
-    fileName <- here::here("app", "shiny", "data", "cache", paste0("data_",agg ,"_",func, ".rds"))
+    # fileName <- here::here("app", "shiny", "data", "cache", paste0("data_","1h" ,"_","mean", ".RData"))
+    # fileName <- "C:/Repositories/github/hslu-ige-laes/lcm/app/shiny/data/cache/data_1h_mean.RData"
+    fileName <- here::here("app", "shiny", "data", "cache", paste0("data_",agg ,"_",func, ".RData"))
     if (!file.exists(fileName)) {
       df.all <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
     } else {
-      df.all <- readRDS(fileName)
+      load(file = fileName)
+      # not nice I know...
+      # eval(parse(text=paste0("df.all <- ", "data_",agg ,"_",func)))
     }
     
     # create list for iteration
@@ -49,13 +39,12 @@ etlAggFilterData <- function(){
       
       data <- list()
       
-      # row <- 4
+      # row2 <- 2
       
       # loop through list
-      for (row in 1:nrow(list)) {
-        dpAbbr <- as.character(list[row,"abbreviation"])
-        # tic(paste0("update ", dpAbbr))
-        # withProgress(message = 'getting ', detail = dpAbbr, value = NULL, {
+      for (row2 in 1:nrow(list)) {
+        dpAbbr <- as.character(list[row2,"abbreviation"])
+        print(paste0("fetching ", dpAbbr))
         if(dpAbbr %in% list.old$abbreviation) {
           lastMeasurement <- df.all %>% filter(abbreviation == dpAbbr) %>% last()
           data.i <- getTimeSeries(dpAbbr, datetimeStart = lastMeasurement$time, datetimeEnd = NULL, func = func, agg = agg, fill = fill, locTimeZone = locTimeZone)
@@ -69,14 +58,12 @@ etlAggFilterData <- function(){
           
           # additional data in separate column for later filtering
           data.i$abbreviation <- dpAbbr
-          data.i$flat <- as.character(list[row,"flat"])
-          data.i$room <- as.character(list[row,"room"])
-          data.i$dpType <- as.character(list[row,"dpType"])
+          data.i$flat <- as.character(list[row2,"flat"])
+          data.i$room <- as.character(list[row2,"room"])
+          data.i$dpType <- as.character(list[row2,"dpType"])
           
           df.all <- rbind(df.all, as.data.frame(data.i))
         }
-        # })
-        # toc()
       }
     } else {
       df.all <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
@@ -86,7 +73,11 @@ etlAggFilterData <- function(){
     
     # df.all.raw <<- df.all.raw %>% unique()
     # df.all.raw <- df.all.raw %>% group_by(abbreviation, time)
-    saveRDS(df.all, fileName)
+    # saveRDS(df.all, fileName)
+    # not nice I know...
+    # eval(parse(text=paste0("data_",agg ,"_",func, "<- df.all")))
+    save(df.all, file = fileName)
+
     # toc()
     # toc()
 
@@ -169,7 +160,6 @@ getTimeSeries <- function(dpAbbr = NULL, dpSource = NULL, dpSourceRef = NULL, da
     
   }else if(nrow(configFileInfluxdb %>% select(sourceName) %>% filter(sourceName == source)) == 1){ # check influxDB
     list <- configFileInfluxdb %>% filter(sourceName == source)
-
     data <- influxdbGetTimeseries(host = list$influxdbHost,
                                   port = list$influxdbPort,
                                   user = list$influxdbUser,
@@ -180,10 +170,10 @@ getTimeSeries <- function(dpAbbr = NULL, dpSource = NULL, dpSourceRef = NULL, da
                                   datetimeEnd = datetimeEnd,
                                   func = func,
                                   agg = agg,
+                                  fieldKey = dpFieldKey,
                                   fill = fill,
                                   valueFactor = valueFactor,
                                   valueType = valueType,
-                                  fieldKey = dpFieldKey,
                                   locTimeZone = locTimeZone
     )
   }else if(nrow(configFileCsv %>% select(sourceName) %>% filter(sourceName == source)) == 1){ # check csv
