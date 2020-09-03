@@ -8,5 +8,5 @@ grand_parent: Modules
 
 ### Energy Efficiency
 - Reduction of electricity consumption
-- Reduction of standby power
+- Reduction of standby losses
 - Change user behavior through sensitization
