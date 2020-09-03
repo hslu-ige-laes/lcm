@@ -106,7 +106,23 @@ loadDataPointsFile <- function(dataPointsFilePath) {
   #'
   #' @author Reto Marek
   
-  dataPoints <- read_delim(file = dataPointsFilePath, delim = ";")
+  dataPoints <- read_delim(file = dataPointsFilePath,
+                           delim = ";",
+                           col_names = TRUE,
+                           col_types = c(
+                             abbreviation = col_character(),
+                             name = col_character(),
+                             flat = col_character(),
+                             room = col_character(),
+                             dpType = col_character(),
+                             sourceName = col_character(),
+                             sourceReference = col_character(),
+                             unit = col_character(),
+                             fieldKey = col_character(),
+                             valueFactor = col_double(),
+                             valueType = col_character()
+                            )
+                           )
   
   return(dataPoints)
 }
