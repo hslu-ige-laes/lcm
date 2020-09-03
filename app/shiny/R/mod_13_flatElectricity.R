@@ -334,7 +334,6 @@ flatElectricityModule <- function(input, output, session, aggData) {
   # filter according to room selection
   df.room <- reactive({
     data <- df.flat() %>% filter(room == input$room)
-    print(head(data))
     return(data)
   })
 
@@ -445,9 +444,15 @@ flatElectricityModule <- function(input, output, session, aggData) {
       averageStandby <- mean(df.agg1d()$min, na.rm=TRUE)
       shareStandby <- nrow(df.agg1d() %>% select(sum) %>% na.omit()) * averageStandby * 24 / (1000 * sum(df.agg1d()$sum, na.rm=TRUE)) * 100
   
+      # legend
       l <- list(
-        orientation = "h"
-        )
+        orientation = "h",
+        tracegroupgap = "20",
+        font = list(size = 8),
+        xanchor = "center",
+        x = 0.5,
+        itemclick = FALSE
+      )
       
       fig1 <- df.agg1d() %>%
         plot_ly(x = ~day, showlegend = TRUE) %>%
@@ -455,6 +460,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
                   type = "bar",
                   y = ~sum,
                   name = "Spring",
+                  legendgroup = "group1",
                   marker = list(color = "#2db27d", opacity = 0.2),
                   hoverinfo = "text",
                   text = ~ paste("<br />daily usage:              ", sprintf("%.1f kWh/d", sum),
@@ -468,6 +474,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
                   type = "bar",
                   y = ~sum,
                   name = "Summer",
+                  legendgroup = "group1",
                   marker = list(color = "#febc2b", opacity = 0.2),
                   hoverinfo = "text",
                   text = ~ paste("<br />rolling average:        ", sprintf("%.1f kWh/d", ravgUsage),
@@ -480,6 +487,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
                   type = "bar",
                   y = ~sum,
                   name = "Fall",
+                  legendgroup = "group1",
                   marker = list(color = "#440154", opacity = 0.2),
                   hoverinfo = "text",
                   text = ~ paste("<br />rolling average:        ", sprintf("%.1f kWh/d", ravgUsage),
@@ -492,6 +500,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
                   type = "bar",
                   y = ~sum,
                   name = "Winter",
+                  legendgroup = "group1",
                   marker = list(color = "#365c8d", opacity = 0.2),
                   hoverinfo = "text",
                   text = ~ paste("<br />rolling average:        ", sprintf("%.1f kWh/d", ravgUsage),
@@ -505,6 +514,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
                   mode = "markers",
                   y = ~ravgUsage,
                   name = "Average Cons. (7 days)",
+                  legendgroup = "group2",
                   marker = list(color = "orange", opacity = 0.4, symbol = "circle"),
                   hoverinfo = "text",
                   text = ~ paste("<br />rolling average:        ", sprintf("%.1f kWh/d", ravgUsage),
@@ -518,6 +528,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
                      y = ~averageUsage,
                      yend = ~averageUsage,
                      name = "Average Cons. Total",
+                     legendgroup = "group2",
                      line = list(color = "orange", opacity = 1.0, dash = "dot"),
                      hoverinfo = "text",
                      text = ~ paste("<br />rolling average:        ", sprintf("%.1f kWh/d", ravgUsage),
@@ -531,6 +542,8 @@ flatElectricityModule <- function(input, output, session, aggData) {
                      y = ~averageStandby*24/1000,
                      yend = ~averageStandby*24/1000,
                      name = "Average Standby Total",
+                     legendgroup = "group3",
+                     showlegend = FALSE,
                      line = list(color = "black", opacity = 1.0, dash = "dot"),
                      hoverinfo = "text",
                      text = ~ paste("<br />Average standby power:          ", sprintf("%.0f W", averageStandby),
@@ -543,6 +556,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
                      y = ~typEleConsVal()/365,
                      yend = ~typEleConsVal()/365,
                      name = "typical household",
+                     legendgroup = "group4",
                      line = list(color = "#481567FF", opacity = 1.0, dash = "dot"),
                      hoverinfo = "text",
                      text = ~ paste("<br />typical household:           ", sprintf("%.0f kWh/year", typEleConsVal()),
@@ -595,8 +609,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
                        titlefont = list(size = 14, color = "darkgrey")),
           hoverlabel = list(align = "left"),
           margin = list(l = 80, t = 50, r = 50, b = 10),
-          legend = l,
-          height = 500
+          legend = l
         )
       
       fig2 <- df.agg1d() %>%
@@ -605,6 +618,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
                   type = "bar",
                   y = ~min,
                   name = "Standby",
+                  legendgroup = "group3",
                   marker = list(color = "darkgrey", opacity = 0.2),
                   hoverinfo = "text",
                   text = ~ paste("<br />daily standby:           ", sprintf("%.0f W", min),
@@ -619,6 +633,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
                   mode = "markers",
                   y = ~ravgStandby,
                   name = "Average Standby (7 days)",
+                  legendgroup = "group3",
                   marker = list(color = "darkgrey", opacity = 0.5, symbol = "circle"),
                   hoverinfo = "text",
                   text = ~ paste("<br />daily standby:           ", sprintf("%.0f W", min),
@@ -632,7 +647,8 @@ flatElectricityModule <- function(input, output, session, aggData) {
                      xend = ~sliderDate$end,
                      y = ~averageStandby,
                      yend = ~averageStandby,
-                     name = "Average Total",
+                     name = "Average Standby Total",
+                     legendgroup = "group3",
                      line = list(color = "black", opacity = 1.0, dash = "dot"),
                      hoverinfo = "text",
                      text = ~ paste("<br />Average standby power:          ", sprintf("%.0f W", averageStandby),
