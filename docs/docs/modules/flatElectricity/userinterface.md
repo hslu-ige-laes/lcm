@@ -41,6 +41,8 @@ A simple overview of the time series data per room.
 - With the checkboxes the measurements of a season can be shown and hidden individually.
 
 #### Extended
+- To access the extended settings, the plus symbol in the upper right corner of the title bar must be pressed.
+- Per default the extended settings tab is collapsed.
 - All the settings below are used to calculate the "typical household" consumption.
 - Please note that you only have to select devices that are really connected to the corresponding electric meter.
 
@@ -99,7 +101,6 @@ A simple overview of the time series data per room.
 - excluded:  e.g. for multi family houses where the meter of the flat gets analyzed. Normally the coomon electricity is measured by a separate meter.
 
 <hr>
-
 
 ### References
 <a id="nipkov">[1]</a> Nipkov, J. (2013). Typischer Haushalt-Stromverbrauch. Schlussbericht. Bundesamt für Energie (BFE). [https://www.aramis.admin.ch/Default.aspx?DocumentID=61764](https://www.aramis.admin.ch/Default.aspx?DocumentID=61764)<br>
