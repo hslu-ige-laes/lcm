@@ -1,5 +1,5 @@
 server <- function(input, output, session) {
-  
+   
   # Create Optional Menu Bar Items
   output$roomTempHumMenuItem <- renderMenu({
     if((nrow(dataPoints() %>% filter(dpType == "tempRoom") %>% unique()) > 0) & 
@@ -71,34 +71,68 @@ server <- function(input, output, session) {
     }
   })
   
-  # ======================================================================
-  # Modules
-  callModule(roomTempHumModule, "roomTempHum", aggData = data_1d_mean())
-  callModule(roomOutsideTempModule, "cmfTempROa", aggData = data_1h_mean())
-  callModule(roomAirQualityModule, "cmfAQual", aggData = data_1h_mean())
-  callModule(roomTempReductionModule, "roomTempReduction", aggData = data_1d_mean())
-  callModule(flatHeatingModule,"flatHeating", aggData = data_1M_sum())
-  callModule(flatHotWaterModule,"flatHotWater", aggData = data_1M_sum())
-  callModule(flatVentilationModule,"flatVentilation", aggData = data_15m_max())
-  callModule(flatElectricityModule,"flatElectricity", aggData = data_1h_sum())
-  callModule(centralHeatingSignatureModule,"centralHeatingSignature", aggDataTOa = data_1d_mean(), aggDataEnergyHeat = data_1d_sum())
-  callModule(centralHeatingCurveModule,"centralHeatingCurve", aggData = data_1h_mean())
-  callModule(dataexplorerModule,"dataexplorer")
-  
-  # ======================================================================
-  # Settings
-  callModule(configurationModule, "app_configuration")
-  callModule(bldgHierarchyModule, "bldgHierarchy")
-  callModule(dataSourcesModule, "datasources")
-  callModule(dataSourcesModuleTtn, "datasources_ttn")
-  callModule(dataSourcesModuleInfluxdb, "datasources_influxdb")
-  callModule(dataSourcesModuleCsv, "datasources_csv")
-  callModule(dataPointsModule, "datapoints")
-
-  # ======================================================================
-  # server functions
+  # Read Data from cached files
+  data_15m_max <- reactiveVal(value = NULL)
   observe({
-    output$pageTitle <- renderText({as.character(configFileApp()[["pageTitle"]])})
+    invalidateLater(5000, session)
+    n <- new.env()
+    print("load data_15m_max.RData")
+    env <- load(here::here("app", "shiny", "data", "cache", "data_15m_max.RData"), envir = n)
+    data_15m_max(n[[names(n)]])
+  })
+  
+  data_1h_mean <- reactiveVal(value = NULL)
+  observe({
+    invalidateLater(5000, session)
+    n <- new.env()
+    print("load data_1h_mean.RData")
+    env <- load(here::here("app", "shiny", "data", "cache", "data_1h_mean.RData"), envir = n)
+    data_1h_mean(n[[names(n)]])
+  })
+  
+  data_1h_sum <- reactiveVal(value = NULL)
+  observe({
+    invalidateLater(5000, session)
+    n <- new.env()
+    print("load data_1h_sum.RData")
+    env <- load(here::here("app", "shiny", "data", "cache", "data_1h_sum.RData"), envir = n)
+    data_1h_sum(n[[names(n)]])
+  })
+  
+  data_1d_mean <- reactiveVal(value = NULL)
+  observe({
+    invalidateLater(5000, session)
+    n <- new.env()
+    print("load data_1d_mean.RData")
+    env <- load(here::here("app", "shiny", "data", "cache", "data_1d_mean.RData"), envir = n)
+    data_1d_mean(n[[names(n)]])
+  })
+  
+  data_1d_sum <- reactiveVal(value = NULL)
+  observe({
+    invalidateLater(5000, session)
+    n <- new.env()
+    print("load data_1d_sum.RData")
+    env <- load(here::here("app", "shiny", "data", "cache", "data_1d_sum.RData"), envir = n)
+    data_1d_sum(n[[names(n)]])
+  })
+  
+  data_1d_min <- reactiveVal(value = NULL)
+  observe({
+    invalidateLater(5000, session)
+    n <- new.env()
+    print("load data_1d_min.RData")
+    env <- load(here::here("app", "shiny", "data", "cache", "data_1d_min.RData"), envir = n)
+    data_1d_min(n[[names(n)]])
+  })
+  
+  data_1M_sum <- reactiveVal(value = NULL)
+  observe({
+    invalidateLater(5000, session)
+    n <- new.env()
+    print("load data_1M_sum.RData")
+    env <- load(here::here("app", "shiny", "data", "cache", "data_1M_sum.RData"), envir = n)
+    data_1M_sum(n[[names(n)]])
   })
   
   # data fetcher
@@ -106,7 +140,7 @@ server <- function(input, output, session) {
     if(exists("prevTab") == FALSE){
       prevTab <<- "none"
     }
-
+    
     curTab <- input$tabs
     if((curTab != "datapoints") && (prevTab == "datapoints")){
       print("Update Data because of tab-change")
@@ -127,7 +161,7 @@ server <- function(input, output, session) {
     }
     prevTab <<- curTab
   })
-
+  
   observeEvent(input$updateButton, {
     print("Update Data because of pressing button")
     withProgress(message = "Fetching data", detail = "this might take a while..." , value = NULL, {
@@ -139,6 +173,36 @@ server <- function(input, output, session) {
       toc()
     })
   })
+ 
+  # ======================================================================
+  # Modules
+  callModule(roomTempHumModule, "roomTempHum", aggData = data_1d_mean)
+  callModule(roomOutsideTempModule, "cmfTempROa", aggData = data_1h_mean)
+  callModule(roomAirQualityModule, "cmfAQual", aggData = data_1h_mean)
+  callModule(roomTempReductionModule, "roomTempReduction", aggData = data_1d_mean)
+  callModule(flatHeatingModule,"flatHeating", aggData = data_1M_sum)
+  callModule(flatHotWaterModule,"flatHotWater", aggData = data_1M_sum)
+  callModule(flatVentilationModule,"flatVentilation", aggData = data_15m_max)
+  callModule(flatElectricityModule,"flatElectricity", aggData = data_1h_sum)
+  callModule(centralHeatingSignatureModule,"centralHeatingSignature", aggDataTOa = data_1d_mean, aggDataEnergyHeat = data_1d_sum)
+  callModule(centralHeatingCurveModule,"centralHeatingCurve", aggData = data_1h_mean)
+  callModule(dataexplorerModule,"dataexplorer")
+  
+  # ======================================================================
+  # Settings
+  callModule(configurationModule, "app_configuration")
+  callModule(bldgHierarchyModule, "bldgHierarchy")
+  callModule(dataSourcesModule, "datasources")
+  callModule(dataSourcesModuleTtn, "datasources_ttn")
+  callModule(dataSourcesModuleInfluxdb, "datasources_influxdb")
+  callModule(dataSourcesModuleCsv, "datasources_csv")
+  callModule(dataPointsModule, "datapoints")
+  # ======================================================================
+  # server functions
+  observe({
+    output$pageTitle <- renderText({as.character(configFileApp()[["pageTitle"]])})
+  })
+  
   
   # Close the app when the session completes
   if(!interactive()) {
