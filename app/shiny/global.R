@@ -91,56 +91,56 @@ dataPoints <- reactiveFileReader(1000, NULL, here::here("app", "shiny", "config"
 # see OlsonNames() for full list and extend timeZoneList acoordingly
 timeZoneList <- data.frame("timeZone" = c("UTC","Europe/Zurich"))
 
-# check if rds exists
-if (!file.exists(here::here("app", "shiny", "data", "cache","data_15m_max.rds"))) {
-  df <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
-  saveRDS(df, here::here("app", "shiny", "data", "cache","data_15m_max.rds"))
+# check if RData exists
+df.all <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
+
+if (!file.exists(file = here::here("app", "shiny", "data", "cache","data_15m_max.RData"))) {
+  save(df.all, file = here::here("app", "shiny", "data", "cache","data_15m_max.RData"))
 }
 
-data_15m_max <- reactiveFileReader(1000, session =  session, file = here::here("app", "shiny", "data", "cache","data_15m_max.rds"), readRDS)
+# data_15m_max <- reactiveFileReader(1000, session =  session, file = file = here::here("app", "shiny", "data", "cache","data_15m_max.RData"), readRData)
 
-if (!file.exists(here::here("app", "shiny", "data", "cache","data_1h_mean.rds"))) {
-  df <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
-  saveRDS(df, here::here("app", "shiny", "data", "cache","data_1h_mean.rds"))
+if (!file.exists(file = here::here("app", "shiny", "data", "cache","data_1h_mean.RData"))) {
+  save(df.all, file = here::here("app", "shiny", "data", "cache","data_1h_mean.RData"))
 }
 
-data_1h_mean <- reactiveFileReader(1000, session =  session, file = here::here("app", "shiny", "data", "cache","data_1h_mean.rds"), readRDS)
+# data_1h_mean <- reactiveFileReader(1000, session =  session, file = file = here::here("app", "shiny", "data", "cache","data_1h_mean.RData"), readRData)
 
-if (!file.exists(here::here("app", "shiny", "data", "cache","data_1h_sum.rds"))) {
-  df <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
-  saveRDS(df, here::here("app", "shiny", "data", "cache","data_1h_sum.rds"))
+if (!file.exists(file = here::here("app", "shiny", "data", "cache","data_1h_sum.RData"))) {
+  # data_1h_sum <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
+  save(df.all, file = here::here("app", "shiny", "data", "cache","data_1h_sum.RData"))
 }
 
-data_1h_sum <- reactiveFileReader(1000, session =  session, file = here::here("app", "shiny", "data", "cache","data_1h_sum.rds"), readRDS)
+# data_1h_sum <- reactiveFileReader(1000, session =  session, file = file = here::here("app", "shiny", "data", "cache","data_1h_sum.RData"), readRData)
 
 
-if (!file.exists(here::here("app", "shiny", "data", "cache","data_1d_mean.rds"))) {
-  df <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
-  saveRDS(df, here::here("app", "shiny", "data", "cache","data_1d_mean.rds"))
+if (!file.exists(file = here::here("app", "shiny", "data", "cache","data_1d_mean.RData"))) {
+  # df.all <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
+  save(df.all, file = here::here("app", "shiny", "data", "cache","data_1d_mean.RData"))
 }
 
-data_1d_mean <- reactiveFileReader(1000, session =  session, file = here::here("app", "shiny", "data", "cache","data_1d_mean.rds"), readRDS)
+# data_1d_mean <- reactiveFileReader(1000, session =  session, file = file = here::here("app", "shiny", "data", "cache","data_1d_mean.RData"), readRData)
 
-if (!file.exists(here::here("app", "shiny", "data", "cache","data_1d_sum.rds"))) {
-  df <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
-  saveRDS(df, here::here("app", "shiny", "data", "cache","data_1d_sum.rds"))
+if (!file.exists(file = here::here("app", "shiny", "data", "cache","data_1d_sum.RData"))) {
+  # df.all <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
+  save(df.all, file = here::here("app", "shiny", "data", "cache","data_1d_sum.RData"))
 }
 
-data_1d_sum <- reactiveFileReader(1000, session =  session, file = here::here("app", "shiny", "data", "cache","data_1d_sum.rds"), readRDS)
+# data_1d_sum <- reactiveFileReader(1000, session =  session, file = file = here::here("app", "shiny", "data", "cache","data_1d_sum.RData"), readRData)
 
-if (!file.exists(here::here("app", "shiny", "data", "cache","data_1d_min.rds"))) {
-  df <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
-  saveRDS(df, here::here("app", "shiny", "data", "cache","data_1d_min.rds"))
+if (!file.exists(file = here::here("app", "shiny", "data", "cache","data_1d_min.RData"))) {
+  # df.all <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
+  save(df.all, file = here::here("app", "shiny", "data", "cache","data_1d_min.RData"))
 }
 
-data_1d_min <- reactiveFileReader(1000, session =  session, file = here::here("app", "shiny", "data", "cache","data_1d_min.rds"), readRDS)
+# data_1d_min <- reactiveFileReader(1000, session =  session, file = file = here::here("app", "shiny", "data", "cache","data_1d_min.RData"), readRData)
 
-if (!file.exists(here::here("app", "shiny", "data", "cache","data_1M_sum.rds"))) {
-  df <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
-  saveRDS(df, here::here("app", "shiny", "data", "cache","data_1M_sum.rds"))
+if (!file.exists(file = here::here("app", "shiny", "data", "cache","data_1M_sum.RData"))) {
+  # data_1M_sum <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
+  save(df.all, file = here::here("app", "shiny", "data", "cache","data_1M_sum.RData"))
 }
 
-data_1M_sum <- reactiveFileReader(1000, session =  session, file = here::here("app", "shiny", "data", "cache","data_1M_sum.rds"), readRDS)
+# data_1M_sum <- reactiveFileReader(1000, session =  session, file = file = here::here("app", "shiny", "data", "cache","data_1M_sum.RData"), readRData)
 
 # update data at startup
 # tic("ttnFetchServerData")
