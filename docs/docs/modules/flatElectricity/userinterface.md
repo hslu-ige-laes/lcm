@@ -41,12 +41,12 @@ A simple overview of the time series data per room.
 - With the checkboxes the measurements of a season can be shown and hidden individually.
 
 #### Extended
+- All the settings below are used to calculate the "typical household" consumption.
+- Please note that you only have to select devices that are really connected to the corresponding electric meter.
 
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/flatElectricity_04.PNG" style="border:1px solid lightgrey" width="90%"/>
 <br><br>
 
-- All the settings below are used to calculate the "typical household" consumption.
-- Please note that you only have to select devices that are really connected to the corresponding electric meter.
 - Depending on the setting and `Settings > App Configuration > Building Type` the typical consumption changes.
 - For detailed values, bachground information and formulas see  <a href="#nipkov">[1]</a>
 - Adaptions of the extended settings does not (yet) get changed.
