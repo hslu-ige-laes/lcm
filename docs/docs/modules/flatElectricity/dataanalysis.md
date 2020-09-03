@@ -17,3 +17,9 @@ grand_parent: Modules
 - calculate minimum per day (standby-losses)
 - calculate rolling averages for usage and standby-losses
 - calculate standby-share value with total energy consumtion and standby-average
+- calculate typical houshold consumption for comparison. Formulas and values from <a href="#nipkov">[1]</a>
+
+<hr>
+
+### References
+<a id="nipkov">[1]</a> Nipkov, J. (2013). Typischer Haushalt-Stromverbrauch. Schlussbericht. Bundesamt für Energie (BFE). [https://www.aramis.admin.ch/Default.aspx?DocumentID=61764](https://www.aramis.admin.ch/Default.aspx?DocumentID=61764)<br>
