@@ -306,21 +306,29 @@ roomTempHumModule <- function(input, output, session, aggData) {
 
       # legend
       l <- list(
-        orientation = "h"
+        orientation = "h",
+        tracegroupgap = "20",
+        font = list(size = 10),
+        xanchor = "center",
+        x = 0.5,
+        yanchor = "bottom",
+        y = -0.7,
+        itemclick = FALSE
       )
       
       df() %>%
         plot_ly(showlegend = TRUE) %>%
         add_polygons(
-          data = df.zoneComfortable, x = ~Temp, y = ~Hum, name = "Comfortable", opacity = 0.4, color = I("yellowgreen"), hoverinfo="skip"
+          data = df.zoneComfortable, x = ~Temp, y = ~Hum, name = "Comfortable", legendgroup = "group1", opacity = 0.4, color = I("yellowgreen"), hoverinfo="skip"
         ) %>% 
         add_polygons(
-          data = df.zoneStillComfortable, x = ~Temp, y = ~Hum, name = "Still comfortable", opacity = 0.25, color = I("orange"), hoverinfo="skip"
+          data = df.zoneStillComfortable, x = ~Temp, y = ~Hum, name = "Still comfortable", legendgroup = "group1", opacity = 0.25, color = I("orange"), hoverinfo="skip"
         ) %>%
         add_markers(data = df() %>% filter(season == "Spring"),
                     x = ~temperature,
                     y = ~humidity,
                     name = "Spring",
+                    legendgroup = "group2",
                     marker = list(color = "#2db27d", opacity = 0.4),
                     hoverinfo = "text",
                     text = ~ paste("Temp:    ", sprintf("%.1f \u00B0C", temperature),
@@ -333,6 +341,7 @@ roomTempHumModule <- function(input, output, session, aggData) {
                     x = ~temperature,
                     y = ~humidity,
                     name = "Summer",
+                    legendgroup = "group2",
                     marker = list(color = "#febc2b", opacity = 0.4),
                     hoverinfo = "text",
                     text = ~ paste("Temp:    ", sprintf("%.1f \u00B0C", temperature),
@@ -345,6 +354,7 @@ roomTempHumModule <- function(input, output, session, aggData) {
                     x = ~temperature,
                     y = ~humidity,
                     name = "Fall",
+                    legendgroup = "group2",
                     marker = list(color = "#440154", opacity = 0.4),
                     hoverinfo = "text",
                     text = ~ paste("Temp:    ", sprintf("%.1f \u00B0C", temperature),
@@ -357,6 +367,7 @@ roomTempHumModule <- function(input, output, session, aggData) {
                     x = ~temperature,
                     y = ~humidity,
                     name = "Winter",
+                    legendgroup = "group2",
                     marker = list(color = "#365c8d", opacity = 0.4),
                     hoverinfo = "text",
                     text = ~ paste("Temp:    ", sprintf("%.1f \u00B0C", temperature),
@@ -375,7 +386,7 @@ roomTempHumModule <- function(input, output, session, aggData) {
                        range = c(miny, maxy),
                        titlefont = list(size = 14, color = "darkgrey")),
           hoverlabel = list(align = "left"),
-          margin = list(l = 80, t = 50, r = 50, b = 10),
+          margin = list(l = 10, t = 0, r = 10, b = 0),
           legend = l
         ) %>%
 
