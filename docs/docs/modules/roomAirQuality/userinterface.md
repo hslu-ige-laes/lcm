@@ -43,5 +43,5 @@ Standard time series x-y plot with band of upper- and lower quantiles (0.05 and 
 <hr>
 
 ### References
-<a id="frank1975">[1]</a> Frank, W. (1975). Raumklima und thermische Behaglichkeit: Literaturauswertung, durchgeführt im Auftr. d. Bundesmin. f. Raumordnung, Bauwesen u. Städtebau. Berichte aus der Bauforschung: H. 104. <br>
+<a id="interAQ_frank1975">[1]</a> Frank, W. (1975). Raumklima und thermische Behaglichkeit: Literaturauswertung, durchgeführt im Auftr. d. Bundesmin. f. Raumordnung, Bauwesen u. Städtebau. Berichte aus der Bauforschung: H. 104. <br>
 <a id="svlw">[2]</a> Schweizerischer Verein Luft- und Wasserhygiene (2019). Messgerate_fur_Raumluft.pdf - Das ist gutes Raumklima. Retrieved August 31, 2020, from [https://www.svlw.ch/](https://www.svlw.ch/component/easyfolderlistingpro/?view=download&format=raw&data=eNpFT0FOwzAQ_Eq1H4idiAKbK0e4UKkcrYVsUqtOGtnrUgnxG37Cx7DjRJzsmdmZnSXUGr8C7hH6i-vYQxtQXCdkRxo4VM4Ke5JYeI0QA_syGRYKQW3SEDnIf8o9gjELl9FDsU40coYKIT_7wtoOWouqmDy7meSU5eYOoaqV2h2Oz2-7p8s5jjwJV3WjzAuHMLD__RFe83vreMuvG4R1goRNH715pTi62C9tksq37Td3_dqXb7P1HLYyOrUkEfo45bXQvi_sY3J4vlr-LHemGyYSe017v_9cMIbbbCg,)<br>

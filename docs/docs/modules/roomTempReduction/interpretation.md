@@ -10,7 +10,7 @@ grand_parent: Modules
 People have very different requirements for comfort in a room. Therefore, it will never be possible to satisfy everyone completely. Rather, one must always reckon with about **5 to 10% dissatisfied people**. <a href="#balmer2020">[2]</a>
 
 ### Comfort
-The comfort requirements have increased compared to the past and today, many people feel uncomfortable at 20°C <a href="#balmer2020">[2]</a>. Please consider that when looking at the left visualization which dates back to 1975 <a href="#frank1975">[3]</a>. 
+The comfort requirements have increased compared to the past and today, many people feel uncomfortable at 20°C <a href="#balmer2020">[2]</a>. Please consider that when looking at the left visualization which dates back to 1975 <a href="#inter_frank1975">[3]</a>. 
 
 - From a comfort perspective the temperature should be ** 21°C in winter**<a href="#balmer2020">[2]</a>
 - Consider the following rule of thumb: **per degree of higher room temperature about 6% more heating energy is needed**. With well-insulated buildings, the value is even higher. <a href="#balmer2020">[2]</a>
@@ -39,4 +39,4 @@ The placement of sensors is crucial. If the sensor is incorrectly positioned and
 ### References
 <a id="sensorplacement">[1]</a> Siemens Schweiz AG. (2018). Montagerichtlinien für Sensoren. [https://www.siemens.com/download?A6V11420159 ](https://www.siemens.com/download?A6V11420159)<br>
 <a id="balmer2020">[2]</a> Balmer, M., Hubbuch, M., & Sandmeier, E. (2020). Energetische Betriebsoptimierung: Gebäude effizienter betreiben (1. Auflage). Fachbuchreihe «Nachhaltiges Bauen und Erneuern». FAKTOR Verlag AG. [https://pubdb.bfe.admin.ch/de/publication/download/10042](https://pubdb.bfe.admin.ch/de/publication/download/10042)<br>
-<a id="frank1975">[3]</a> Frank, W. (1975). Raumklima und thermische Behaglichkeit: Literaturauswertung, durchgeführt im Auftr. d. Bundesmin. f. Raumordnung, Bauwesen u. Städtebau. Berichte aus der Bauforschung: H. 104. <br>
+<a id="inter_frank1975">[3]</a> Frank, W. (1975). Raumklima und thermische Behaglichkeit: Literaturauswertung, durchgeführt im Auftr. d. Bundesmin. f. Raumordnung, Bauwesen u. Städtebau. Berichte aus der Bauforschung: H. 104. <br>
