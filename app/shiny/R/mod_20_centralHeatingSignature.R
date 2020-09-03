@@ -120,6 +120,9 @@ centralHeatingSignatureModuleUI <- function(id) {
 
 centralHeatingSignatureModule <- function(input, output, session, aggDataEnergyHeat, aggDataTOa) {
 
+  stopifnot(is.reactive(aggDataEnergyHeat))
+  stopifnot(is.reactive(aggDataTOa))
+  
   # date range slider
   sliderDate <- reactiveValues()
 
@@ -142,14 +145,14 @@ centralHeatingSignatureModule <- function(input, output, session, aggDataEnergyH
   })
   
   observe({
-    dpList <- aggDataTOa %>% filter(dpType == "tempOutsideAir") %>% select(abbreviation) %>% unique()
+    dpList <- aggDataTOa() %>% filter(dpType == "tempOutsideAir") %>% select(abbreviation) %>% unique()
     updateSelectInput(session, "tempOutsideAir",
                       choices = dpList$abbreviation
     )
   })
 
   observe({
-    dpList <- aggDataEnergyHeat %>% filter(dpType == "energyHeatCentral")  %>% select(abbreviation) %>% unique()
+    dpList <- aggDataEnergyHeat() %>% filter(dpType == "energyHeatCentral")  %>% select(abbreviation) %>% unique()
     updateSelectInput(session, "energyHeatCentral",
                       choices = dpList$abbreviation
     )
@@ -159,9 +162,15 @@ centralHeatingSignatureModule <- function(input, output, session, aggDataEnergyH
   df.all <- reactive({
     req(input$tempOutsideAir)
     req(input$energyHeatCentral)
-    
-    data <- inner_join(aggDataTOa %>% filter(abbreviation == input$tempOutsideAir), aggDataEnergyHeat %>% filter(abbreviation == input$energyHeatCentral) , by="time") %>% na.omit()
- 
+    req(aggDataTOa())
+    req(aggDataEnergyHeat())
+
+    temp1 <- aggDataTOa()
+    temp1$time <- as.Date(temp1$time)
+    temp2 <- aggDataEnergyHeat()
+    temp2$time <- as.Date(temp2$time)
+    data <- inner_join(temp1 %>% filter(abbreviation == input$tempOutsideAir), temp2 %>% filter(abbreviation == input$energyHeatCentral) , by="time") %>% na.omit()
+
     names(data)[1] <- "Date"
     names(data)[2] <- "TOa"
     names(data)[3] <- "Sensor"
