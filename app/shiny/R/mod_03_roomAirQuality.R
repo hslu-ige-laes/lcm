@@ -120,6 +120,8 @@ roomAirQualityModuleUI <- function(id) {
 
 roomAirQualityModule <- function(input, output, session, aggData) {
 
+  stopifnot(is.reactive(aggData))
+  
   sliderDate <- reactiveValues()
   
   observe({
@@ -144,9 +146,9 @@ roomAirQualityModule <- function(input, output, session, aggData) {
   
   df.all <- reactive({
     withProgress(message = 'Calculating data', detail = "air quality plot", value = NULL, {
-      req(aggData)
+      req(aggData())
       
-      data <- aggData %>% filter(dpType == "aQualRoom")
+      data <- aggData() %>% filter(dpType == "aQualRoom")
       # rename columns for plot title, not nice solution, but it works ;-)
       data <- data %>% mutate(room = paste0(flat," - ", room))
       
@@ -252,11 +254,11 @@ roomAirQualityModule <- function(input, output, session, aggData) {
         theme_minimal() +
         theme( 
           strip.text = element_text(size = 13, color = "darkgrey"),
-          legend.position="top",
+          # legend.position="top",
           panel.spacing.y = unit(2, "lines"),
           panel.spacing.x = unit(0, "lines"),
-          plot.title = element_text(hjust = 0.5),
-          plot.subtitle = element_text(hjust = 0.5)
+          # plot.title = element_text(hjust = 0.5),
+          # plot.subtitle = element_text(hjust = 0.5)
         )
       
       yaxis <- list(
@@ -269,10 +271,12 @@ roomAirQualityModule <- function(input, output, session, aggData) {
         plotly::config(modeBarButtons = list(list("toImage")),
                        displaylogo = FALSE,
                        toImageButtonOptions = list(
-                        format = "svg"
+                         format = "svg"
                        )
         ) %>% 
-        layout(margin = list(t = 120), yaxis = yaxis)
+        layout(
+          # margin = list(t = 120), 
+          yaxis = yaxis)
       })
     })
 }

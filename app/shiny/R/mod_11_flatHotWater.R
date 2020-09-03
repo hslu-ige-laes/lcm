@@ -139,6 +139,8 @@ flatHotWaterModuleUI <- function(id) {
 
 flatHotWaterModule <- function(input, output, session, aggData) {
 
+  stopifnot(is.reactive(aggData))
+  
   # date range slider
   sliderDate <- reactiveValues()
   
@@ -162,7 +164,7 @@ flatHotWaterModule <- function(input, output, session, aggData) {
   })
 
   df.all <- reactive({
-    data <- aggData %>% filter(dpType == "hotWaterFlat")
+    data <- aggData() %>% filter(dpType == "hotWaterFlat")
     # convert m3 to ltr
     data <- data %>% mutate(value = value * 1000)
 

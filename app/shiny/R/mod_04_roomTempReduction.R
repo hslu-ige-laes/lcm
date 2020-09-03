@@ -121,6 +121,8 @@ roomTempReductionModuleUI <- function(id) {
 
 roomTempReductionModule <- function(input, output, session, aggData) {
 
+  stopifnot(is.reactive(aggData))
+  
   # date range slider
   sliderDate <- reactiveValues()
   
@@ -147,8 +149,8 @@ roomTempReductionModule <- function(input, output, session, aggData) {
   df.all <- reactive({
     withProgress(message = 'Calculating data', detail = "temperature reduction plot", value = NULL, {
 
-      req(aggData)
-      data <- aggData %>% filter(dpType == "tempRoom")
+      req(aggData())
+      data <- aggData() %>% filter(dpType == "tempRoom")
       # rename columns for ggplot title, not nice solution, but it works ;-)
       data <- data %>% mutate(room = paste0(flat," - ", room))
       

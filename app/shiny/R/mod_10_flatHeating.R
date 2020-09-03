@@ -143,6 +143,8 @@ flatHeatingModuleUI <- function(id) {
 
 flatHeatingModule <- function(input, output, session, aggData) {
 
+  stopifnot(is.reactive(aggData))
+  
   # date range slider
   sliderDate <- reactiveValues()
   
@@ -154,7 +156,7 @@ flatHeatingModule <- function(input, output, session, aggData) {
   })
   
   observe({
-    dates <- aggData %>% select(time) %>% arrange(time)
+    dates <- aggData() %>% select(time) %>% arrange(time)
     start <- as.Date(dates[1,1], tz = "Europe/Zurich")
     end <- as.Date(dates[nrow(dates),1], tz = "Europe/Zurich")
     updateSliderInput(session,
@@ -166,7 +168,7 @@ flatHeatingModule <- function(input, output, session, aggData) {
   })
   
   df.all <- reactive({
-    data <- aggData %>% filter(dpType == "energyHeatFlat")
+    data <- aggData() %>% filter(dpType == "energyHeatFlat")
     
     sizeList <- bldgHierarchy() %>% select(flat, size)
     sizeList$size <- as.numeric(sizeList$size)

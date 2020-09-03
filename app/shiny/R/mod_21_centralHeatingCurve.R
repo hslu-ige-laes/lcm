@@ -119,7 +119,9 @@ centralHeatingCurveModuleUI <- function(id) {
 }
 
 centralHeatingCurveModule <- function(input, output, session, aggData) {
-
+  
+  stopifnot(is.reactive(aggData))
+  
   # date range slider
   sliderDate <- reactiveValues()
 
@@ -144,14 +146,14 @@ centralHeatingCurveModule <- function(input, output, session, aggData) {
   # data fetching
   outsideTempData <- reactive({
     withProgress(message = 'Fetching data', detail = "tempOutsideAir", value = NULL, {
-      data <- aggData %>% filter(dpType == "tempOutsideAir")
+      data <- aggData() %>% filter(dpType == "tempOutsideAir")
     })
     return(data)
   })
 
   supplyTempData <- reactive({
     withProgress(message = 'Fetching data', detail = "tempSupplyHeat", value = NULL, {
-      data <- aggData %>% filter(dpType == "tempSupplyHeat")
+      data <- aggData() %>% filter(dpType == "tempSupplyHeat")
     })
     return(data)
   })

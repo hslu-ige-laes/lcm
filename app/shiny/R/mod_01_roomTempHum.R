@@ -157,6 +157,8 @@ roomTempHumModuleUI <- function(id) {
 
 roomTempHumModule <- function(input, output, session, aggData) {
   
+  stopifnot(is.reactive(aggData))
+  
   # date range slider
   sliderDate <- reactiveValues()
   
@@ -182,8 +184,8 @@ roomTempHumModule <- function(input, output, session, aggData) {
   # get separate temp and hum data and merge it
   df.all <- reactive({
     withProgress(message = 'Calculating data', detail = "temperature humidity plot", value = NULL, {
-      req(aggData)
-      data <- merge.data.frame(aggData %>% filter(dpType == "tempRoom"), aggData %>% filter(dpType == "humRoom"), by = c("time", "flat", "room"))
+      req(aggData())
+      data <- merge.data.frame(aggData() %>% filter(dpType == "tempRoom"), aggData() %>% filter(dpType == "humRoom"), by = c("time", "flat", "room"))
       names(data)[4] <- "temperature"
       names(data)[7] <- "humidity"
     })

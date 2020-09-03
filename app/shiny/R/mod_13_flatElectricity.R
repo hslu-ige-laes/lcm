@@ -210,7 +210,8 @@ flatElectricityModuleUI <- function(id) {
 )}
 
 flatElectricityModule <- function(input, output, session, aggData) {
-  
+
+  stopifnot(is.reactive(aggData))
   
   # read typical electricitiy values
   typEleValTable <- read.csv2(here::here("app", "shiny", "config", "typicalHousholdPowerConsumption.csv"), stringsAsFactors = FALSE, dec = ".")
@@ -272,10 +273,10 @@ flatElectricityModule <- function(input, output, session, aggData) {
   # get separate temp and hum data and merge it
   df.all <- reactive({
     withProgress(message = 'Calculating data', detail = "electricity plot", value = NULL, {
-      req(aggData)
+      req(aggData())
       
       # keep only eleFlat
-      data <- aggData %>% filter(dpType == "eleFlat")
+      data <- aggData() %>% filter(dpType == "eleFlat")
       
       # determine date related parameters for later filtering
       locTimeZone <- configFileApp()[["bldgTimeZone"]]

@@ -126,6 +126,8 @@ flatVentilationModuleUI <- function(id) {
 
 flatVentilationModule <- function(input, output, session, aggData) {
 
+  stopifnot(is.reactive(aggData))
+  
   # date range slider
   sliderDate <- reactiveValues()
 
@@ -163,11 +165,11 @@ flatVentilationModule <- function(input, output, session, aggData) {
   
   df.all <- reactive({
     req(input$dpVentilationFlat)
-    req(aggData)
+    req(aggData())
     withProgress(message = "Calculating", detail = "ventilationFlat.agg15m" , value = NULL, {
       
       # get time series
-      data <- aggData %>% filter(abbreviation == input$dpVentilationFlat)
+      data <- aggData() %>% filter(abbreviation == input$dpVentilationFlat)
       # rename value column
       names(data)[2] <- "value"
       

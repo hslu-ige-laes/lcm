@@ -125,6 +125,8 @@ roomOutsideTempModuleUI <- function(id) {
 
 roomOutsideTempModule <- function(input, output, session, aggData) {
 
+  stopifnot(is.reactive(aggData))
+  
   # date range slider
   sliderDate <- reactiveValues()
   
@@ -150,15 +152,15 @@ roomOutsideTempModule <- function(input, output, session, aggData) {
   # get separate temp and outside air data and merge it
   df.all <- reactive({
     withProgress(message = 'Calculating data', detail = "temperature room outside air plot", value = NULL, {
-      # saveRDS(aggData, paste0(here::here("app", "shiny", "temp", "temp.rds")))
-      data <- aggData %>% filter(dpType %in% c("tempRoom", "tempOutsideAir"))
+      # saveRDS(aggData(), paste0(here::here("app", "shiny", "temp", "temp.rds")))
+      data <- aggData() %>% filter(dpType %in% c("tempRoom", "tempOutsideAir"))
     })
     return(data)
   })
 
   # flat pull down menu
   observe({
-    data <- aggData %>% filter(dpType == "tempRoom") %>% select(flat) %>% unique()
+    data <- aggData() %>% filter(dpType == "tempRoom") %>% select(flat) %>% unique()
     # rename the set if there is only one value
     # https://stackoverflow.com/questions/43098849/display-only-one-value-in-selectinput-in-r-shiny-app
     if (nrow(data) == 1) {
@@ -179,7 +181,7 @@ roomOutsideTempModule <- function(input, output, session, aggData) {
   
   # room pull down menu
   observe({
-    data <- aggData %>% filter(dpType == "tempRoom") %>% select(room) %>% unique()
+    data <- aggData() %>% filter(dpType == "tempRoom") %>% select(room) %>% unique()
     # rename the set if there is only one value
     # https://stackoverflow.com/questions/43098849/display-only-one-value-in-selectinput-in-r-shiny-app
     if (nrow(data) == 1) {
@@ -193,7 +195,7 @@ roomOutsideTempModule <- function(input, output, session, aggData) {
   })
 
   observe({
-    data <- aggData %>% filter(dpType == "tempOutsideAir") %>% select(abbreviation) %>% unique()
+    data <- aggData() %>% filter(dpType == "tempOutsideAir") %>% select(abbreviation) %>% unique()
     # rename the set if there is only one value
     # https://stackoverflow.com/questions/43098849/display-only-one-value-in-selectinput-in-r-shiny-app
 
