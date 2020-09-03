@@ -18,7 +18,7 @@ A simple overview of the time series data per room.
   - lower plot with standby-losses in Watts
 - The points represent a rolling mean value of the last seven days
 - The solid dashed lines represent the total mean value of the visible points. On the right are two text annotations with the values of these two lines.
-- A horizontal line with a left aligned annotation shows a typical houshold for comparison. Calculated with extended settings (described below). Formulas and values from <a href="#nipkov">[1]</a>
+- A horizontal line with a left aligned annotation shows a typical houshold for comparison. Calculated with extended settings (described below). Formulas and values from <a href="#ui_nipkov">[1]</a>
 - Tooltip: Place the mouse pointer over a datapoint to get more information of a specific measurement.
 <br><br>
 
@@ -103,4 +103,4 @@ A simple overview of the time series data per room.
 <hr>
 
 ### References
-<a id="nipkov">[1]</a> Nipkov, J. (2013). Typischer Haushalt-Stromverbrauch. Schlussbericht. Bundesamt für Energie (BFE). [https://www.aramis.admin.ch/Default.aspx?DocumentID=61764](https://www.aramis.admin.ch/Default.aspx?DocumentID=61764)<br>
+<a id="ui_nipkov">[1]</a> Nipkov, J. (2013). Typischer Haushalt-Stromverbrauch. Schlussbericht. Bundesamt für Energie (BFE). [https://www.aramis.admin.ch/Default.aspx?DocumentID=61764](https://www.aramis.admin.ch/Default.aspx?DocumentID=61764)<br>
