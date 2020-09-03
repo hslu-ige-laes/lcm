@@ -55,21 +55,23 @@ influxdbCon <- function(host, port = "8086", user, pwd){
                       user = user,
                       pass = pwd)
   }, error = function(e) {
-    shinyalert(
-      title = "Error",
-      text = paste0("Could not connect to influxDB Host ",host ,":",port),
-      closeOnEsc = TRUE,
-      closeOnClickOutside = TRUE,
-      html = FALSE,
-      type = "error",
-      showConfirmButton = TRUE,
-      showCancelButton = FALSE,
-      confirmButtonText = "OK",
-      confirmButtonCol = "#AEDEF4",
-      timer = 0,
-      imageUrl = "",
-      animation = TRUE
-    )
+    if(isRunning()){
+      shinyalert(
+        title = "Error",
+        text = paste0("Could not connect to influxDB Host ",host ,":",port),
+        closeOnEsc = TRUE,
+        closeOnClickOutside = TRUE,
+        html = FALSE,
+        type = "error",
+        showConfirmButton = TRUE,
+        showCancelButton = FALSE,
+        confirmButtonText = "OK",
+        confirmButtonCol = "#AEDEF4",
+        timer = 0,
+        imageUrl = "",
+        animation = TRUE
+      )
+    }
   }
   )
   
@@ -209,12 +211,13 @@ influxdbGetTimeseries <- function(host, port = "8086", user = NULL, pwd = NULL, 
   }
   # message(qry)
   data <- as.data.frame(influx_query(con = influxdbCon(host, port, user, pwd), db = database, query = qry, simplifyList = TRUE, return_xts = FALSE))
-
-  if(is.na(data[1,2])){
+  
+  if(nrow(data) == 1){
     return(NULL)
   } else {
     data <- data %>%  select(time, tableName)
   }
+
   data$time <- parse_date_time(data$time, "YmdHM0S", tz = "UTC")
   data$time <- with_tz(data$time, locTimeZone)
   data$time <- round_date(data$time, unit = "second")
