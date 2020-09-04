@@ -128,13 +128,6 @@ if (!file.exists(file = here::here("app", "shiny", "data", "cache","data_1d_sum.
 
 # data_1d_sum <- reactiveFileReader(1000, session =  session, file = file = here::here("app", "shiny", "data", "cache","data_1d_sum.RData"), readRData)
 
-if (!file.exists(file = here::here("app", "shiny", "data", "cache","data_1d_min.RData"))) {
-  # df.all <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
-  save(df.all, file = here::here("app", "shiny", "data", "cache","data_1d_min.RData"))
-}
-
-# data_1d_min <- reactiveFileReader(1000, session =  session, file = file = here::here("app", "shiny", "data", "cache","data_1d_min.RData"), readRData)
-
 if (!file.exists(file = here::here("app", "shiny", "data", "cache","data_1M_sum.RData"))) {
   # data_1M_sum <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
   save(df.all, file = here::here("app", "shiny", "data", "cache","data_1M_sum.RData"))
