@@ -146,19 +146,18 @@ server <- function(input, output, session) {
       print("Update Data because of tab-change")
       withProgress(message = "Fetching data", detail = "this might take a while..." , value = NULL, { 
         tic("etlAggFilterData")
-        ttnFetchServerData()
         etlAggFilterData()
         toc()
       })
     }
-    if((curTab != "datapoints") && (prevTab == "datasources")){
-      print("Update Data because of tab-change")
-      withProgress(message = "Fetching data", detail = "this might take a while..." , value = NULL, { 
-        tic("ttnFetchServerData")
-        ttnFetchServerData()
-        toc()
-      })
-    }
+    # if((prevTab == "datasources")){
+    #   print("Update ttn Data because of tab-change")
+    #   withProgress(message = "Fetching data", detail = "this might take a while..." , value = NULL, { 
+    #     tic("ttnFetchServerData")
+    #     ttnFetchServerData()
+    #     toc()
+    #   })
+    # }
     prevTab <<- curTab
   })
   
