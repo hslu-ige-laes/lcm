@@ -76,6 +76,9 @@ etlAggFilterData <- function(){
     # saveRDS(df.all, fileName)
     # not nice I know...
     # eval(parse(text=paste0("data_",agg ,"_",func, "<- df.all")))
+    
+    df.all <- df.all %>% unique()
+      here
     save(df.all, file = fileName)
 
     # toc()
@@ -83,6 +86,15 @@ etlAggFilterData <- function(){
 
   }
 }
+
+clearCache <- function(){
+  fold <- here::here("app", "shiny", "data", "cache")
+  # get all files in the directories, recursively
+  f <- list.files(fold, include.dirs = F, full.names = T, recursive = T)
+  # remove the files
+  file.remove(f)
+}
+
 
 getDataPointNames <- function(dpSourceName){
   dpList <- NULL
