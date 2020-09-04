@@ -279,19 +279,39 @@ flatElectricityModule <- function(input, output, session, aggData) {
       data <- aggData() %>% filter(dpType == "eleFlat")
       
       # determine date related parameters for later filtering
+      # locTimeZone <- "Europe/Zurich"
       locTimeZone <- configFileApp()[["bldgTimeZone"]]
       data$day <- as.Date(data$time, tz = locTimeZone)
       data$week <- lubridate::week(data$time)
       data$month <- lubridate::month(data$time)
       data$year <- lubridate::year(data$time)
       
+      # data cleansing
+      # tag NA
+      data <- data %>% mutate(deleteNA = ifelse(is.na(value),1,0))
+      
+      # tag values below 0 and higher than 9.2 kW
+      data <- data %>% mutate(deleteHiLoVal = ifelse(value > 9.2,1, ifelse(value < 0,1,0)))
+      # Assumption max. fuse 40 ampere (higher fuses for single family houses)
+      # this results in continuous power 9.2 kW
+      # this results in an hourly consumption of 9.2kWh
+      # over 24h = approx. 221 kWh max. consumption per day
+      
+      # tag whole days which have one or more values to delete, keep only whole valid days
+      data <- data %>% group_by(day, flat, room) %>% mutate(delete = sum(deleteNA, na.rm = TRUE) + sum(deleteHiLoVal, na.rm = TRUE))
+      data <- data %>% ungroup()
+      
+      # delete full days with invalid data
+      data <- data %>% filter(delete == 0) %>% select(-deleteNA, -deleteHiLoVal, -delete)
+
       # determine season for later filtering
       data <- data %>% mutate(season = season(time))
       
       # calculate sum and min per day
-      data <- data %>% group_by(day, flat, room) %>% mutate(sum = sum(value)) %>% ungroup()
-      data <- data %>% group_by(day, flat, room) %>% mutate(min = min(value)*1000) %>% ungroup()
-      
+      data <- data %>% group_by(day, flat, room) %>% mutate(sum = sum(value))
+      data <- data %>% group_by(day, flat, room) %>% mutate(min = min(value)*1000)
+      data <- data %>% ungroup()
+
     })
     return(data)
   })
@@ -355,8 +375,8 @@ flatElectricityModule <- function(input, output, session, aggData) {
     data <- df() %>% select(day, sum, min, season) %>% unique()
     
     data <- data %>% mutate(ravgUsage = zoo::rollmean(x=sum, 7, fill = NA))
-    data <- data %>% mutate(ravgStandby = zoo::rollmean(x=min, 7, fill = NA))
-    
+    data <- data %>% mutate(rminStandby = -1 * zoo::rollmaxr(x = -1 * min, 7, fill = NA))
+
     return(data)
   })
   
@@ -434,7 +454,9 @@ flatElectricityModule <- function(input, output, session, aggData) {
 
   # Plot
   output$overviewPlot <- renderPlotly({
-    withProgress(message = 'Creating plot', detail = "electricity overview", value = NULL, {
+    
+    req(df.agg1d())
+    # withProgress(message = 'Creating plot', detail = "electricity overview", value = NULL, {
       minY <- 0
       maxYUsage <- max(df.all() %>% select(sum), na.rm=TRUE)
       maxYUsage <- max(maxYUsage, typEleConsVal()/365)
@@ -442,7 +464,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
       minX <- sliderDate$start
       maxX <- sliderDate$end
       averageUsage <- mean(df.agg1d()$sum, na.rm=TRUE)
-      averageStandby <- mean(df.agg1d()$min, na.rm=TRUE)
+      averageStandby <- mean(df.agg1d()$rminStandby, na.rm=TRUE)
       shareStandby <- nrow(df.agg1d() %>% select(sum) %>% na.omit()) * averageStandby * 24 / (1000 * sum(df.agg1d()$sum, na.rm=TRUE)) * 100
   
       # legend
@@ -618,12 +640,12 @@ flatElectricityModule <- function(input, output, session, aggData) {
         add_trace(data = df.agg1d(),
                   type = "bar",
                   y = ~min,
-                  name = "Standby",
+                  name = "Daily standby-losses",
                   legendgroup = "group3",
                   marker = list(color = "darkgrey", opacity = 0.2),
                   hoverinfo = "text",
                   text = ~ paste("<br />daily standby:           ", sprintf("%.0f W", min),
-                                 "<br />rolling average:        ", sprintf("%.0f W", ravgStandby),
+                                 "<br />rolling average:        ", sprintf("%.0f W", rminStandby),
                                  "<br />Average vis. points: ", sprintf("%.0f W", averageStandby),
                                  "<br />Date:                        ", day,
                                  "<br />Season:                   ", season
@@ -632,13 +654,13 @@ flatElectricityModule <- function(input, output, session, aggData) {
         add_trace(data = df.agg1d(),
                   type = "scatter",
                   mode = "markers",
-                  y = ~ravgStandby,
+                  y = ~rminStandby,
                   name = "Average Standby (7 days)",
                   legendgroup = "group3",
                   marker = list(color = "darkgrey", opacity = 0.5, symbol = "circle"),
                   hoverinfo = "text",
                   text = ~ paste("<br />daily standby:           ", sprintf("%.0f W", min),
-                                 "<br />rolling average:        ", sprintf("%.0f W", ravgStandby),
+                                 "<br />rolling average:        ", sprintf("%.0f W", rminStandby),
                                  "<br />Average vis. points: ", sprintf("%.0f W", averageStandby),
                                  "<br />Date:                        ", day,
                                  "<br />Season:                   ", season
@@ -682,7 +704,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
       
       # calculate ratio which is visual representative for comparison 
       ratio <- 1/maxYUsage * maxYStandby * 24 / 1000
-      
+      # browser()
       fig <- subplot(fig1, fig2, nrows = 2, shareX = TRUE, heights = c(1-ratio, ratio), titleY = TRUE) %>%
         plotly::config(modeBarButtons = list(list("toImage")),
                        displaylogo = FALSE,
@@ -692,6 +714,6 @@ flatElectricityModule <- function(input, output, session, aggData) {
         )
       
       return(fig)
-    })
+    # })
   })
 }
