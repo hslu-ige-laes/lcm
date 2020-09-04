@@ -22,6 +22,8 @@ source(here::here("app", "shiny", "R", "fct_etlAggData_server.R"))
 
 source(here::here("app", "shiny", "R", "utils_server.R"))
 
+options(readr.num_columns = 0)
+
 # ======================================================================
 # get newest ttn data from server
 # ======================================================================
