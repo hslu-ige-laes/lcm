@@ -226,26 +226,31 @@ roomTempReductionModule <- function(input, output, session, aggData) {
       seasonColors <- c(Winter = "#365c8d", Spring = "#2db27d", Summer ="#febc2b", Fall = "#440154")
       
       p <- ggplot(df()) +
-        geom_hline(aes(yintercept = input$temperatureSetpoint), linetype=1, color="darkorange", alpha=0.5) +
-        geom_hline(data = calculations(), aes(yintercept = meanValue), linetype=2, color="red", alpha=0.5) +
+        geom_hline(aes(yintercept = input$temperatureSetpoint,
+                       text = paste0("</br>Temperature setpoint: ", input$temperatureSetpoint, "\u00B0C"),
+        ), linetype=1, color="darkorange", alpha=0.5) +
+        geom_hline(data = calculations(),
+                   aes(yintercept = meanValue,
+                       text = paste0("</br>Temperature average: ", sprintf('%0.1f', round(meanValue, digits = 1)), "\u00B0C")),
+                   linetype=2, color="red", alpha=0.5) +
         geom_point(aes(x = as.Date(Date),
                        y = Temp,
                        color = season,
-                       text = paste("</br>Date:  ", as.Date(Date), "</br>Temp: ", Temp, "\u00B0C")),
+                       text = paste0("</br>Date:  ", as.Date(Date), "</br>Temp: ", Temp, "\u00B0C")),
                    size = 0.7, alpha = 0.7) +
         scale_color_manual(values = seasonColors) +
-        geom_text(data = calculations(),
-                  aes(x = as.Date(textPosX),
-                      y = textPosYMax + 0.5,
-                      label = paste0("Average = ", sprintf('%0.1f', round(meanValue, digits = 1)), "\u00B0C")),
-                  color = "red") +
+        # geom_text(data = calculations(),
+        #           aes(x = as.Date(textPosX),
+        #               y = textPosYMax + 0.5,
+        #               label = paste0("Average = ", sprintf('%0.1f', round(meanValue, digits = 1)), "\u00B0C")),
+        #           color = "red") +
         geom_text(data = calculations(),
                   aes(x = as.Date(textPosX),
                       y = textPosYMax -0.5,
                       label = paste0("Difference = ", sprintf('%0.1f', round(difference, digits = 1)), "K")),
                   color = "darkorange") +
         ggtitle("Temperature Flats with Average, Setpoint and resulting Difference") +
-        scale_x_date(limits = c(as.Date(start), as.Date(end)), date_labels = "%e. %b %Y") +
+        scale_x_date(limits = c(as.Date(start), as.Date(end)), date_labels = "%e. %b %y") +
         scale_y_continuous(limits=c(minY,maxY)) +
         facet_wrap(~room, ncol = 3, scales = "free") +
         theme_minimal() +
