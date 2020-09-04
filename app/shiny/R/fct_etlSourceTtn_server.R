@@ -82,7 +82,7 @@ ttnWriteRawCsv <- function(data = NULL, sourceName, locTimeZone = "Europe/Zurich
     }
   
   devices <- distinct(data, device_id)
-  
+  # i <- 1
   for (i in 1:nrow(devices)) {
     deviceName <- devices[i, 1]
     deviceData <- data %>% filter(device_id == deviceName)
@@ -94,7 +94,7 @@ ttnWriteRawCsv <- function(data = NULL, sourceName, locTimeZone = "Europe/Zurich
     
     # remove "time" and device_id in column 1 and 2 for looping through datapoints
     deviceDatapoints <- deviceDatapoints[c(-1, -2)];
-    
+    # j <- 1
     for(j in 1:length(deviceDatapoints)) {
       
       datapointName <- as.character(deviceDatapoints[j])
@@ -104,13 +104,14 @@ ttnWriteRawCsv <- function(data = NULL, sourceName, locTimeZone = "Europe/Zurich
       filter <- c("time", datapointName)
       datapointDataNew <- deviceData %>% select(one_of(filter)) %>% na.omit()
       
-      if (!file.exists(folderName)){
+      if (!dir.exists(folderName)){
         dir.create(folderName)
       }
       
       if(file.exists(datapointFileName)){
         # load existing file
-        datapointDataOld <- read_csv2(datapointFileName)
+        # datapointDataOld <- read_csv2(datapointFileName)
+        datapointDataOld <- read_delim(file = datapointFileName, delim = ";")
         datapointDataOld$time <- parse_date_time(datapointDataOld$time, "YmdHM0S", tz = locTimeZone)
 
         # find changes and append them to existing file
@@ -147,7 +148,7 @@ ttnFetchServerData <- function(){
                                      locTimeZone = configFileApp[["bldgTimeZone"]],
                                      range = "7d")
         
-        result <- ttnWriteRawCsv(ttnData, sourceName=configFileTtn[row,"sourceName"], locTimeZone = configFileApp[["bldgTimeZone"]])
+        result <- ttnWriteRawCsv(data = ttnData, sourceName=configFileTtn[row,"sourceName"], locTimeZone = configFileApp[["bldgTimeZone"]])
         
       }else{
         print(paste0(configFileTtn[row,"ttnAppId"], ": ttn Fetcher deactivated"))  
