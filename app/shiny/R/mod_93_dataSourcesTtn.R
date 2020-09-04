@@ -1,8 +1,3 @@
-
-# ======================================================================
-
-# ======================================================================
-
 dataSourcesModuleTtnUI <- function(id) {
   #' Data Sources Module Ttn UI
   #'
@@ -34,15 +29,7 @@ dataSourcesModuleTtnUI <- function(id) {
 }
 
 dataSourcesModuleTtn <- function(input, output, session) {
-  #' Data Sources Module Ttn
-  #'
-  #' Server-function for the module data sources
-  #' @export
-  #' @author Reto Marek
-  #'
-  
-  # ======================================================================
-  
+
   # Add script to detect selected row.
   output$script<-renderUI({
     fluidPage(
@@ -121,9 +108,11 @@ dataSourcesModuleTtn <- function(input, output, session) {
     
     # create new directory
     dir.create(here::here("app", "shiny", "data", "ttn", input$sourceName))
+    ttnFetchServerData()
+    
     shinyalert(
       title = "Data source folder",
-      text = paste0("If fetching is enabled, files get saved here: ", here::here("app", "shiny", "data", "ttn", input$sourceName)),
+      text = paste0("Files got saved here: ", here::here("app", "shiny", "data", "ttn", input$sourceName)),
       closeOnEsc = TRUE,
       closeOnClickOutside = TRUE,
       html = FALSE,
@@ -136,7 +125,7 @@ dataSourcesModuleTtn <- function(input, output, session) {
       imageUrl = "",
       animation = TRUE
     )
-    
+
     removeModal()
   }
   
@@ -219,10 +208,10 @@ dataSourcesModuleTtn <- function(input, output, session) {
     
     # Use isolate() to avoid dependency on input$xy
     data <- isolate(
-      ttnFetcher(appId=input$ttnAppId,
-                 key = input$ttnAccessKey,
-                 locTimeZone = configFileApp()[["bldgTimeZone"]],
-                 range = "1d")
+      ttnReadServerData(appId=input$ttnAppId,
+                        key = input$ttnAccessKey,
+                        locTimeZone = configFileApp()[["bldgTimeZone"]],
+                        range = "1d")
     )
     
     if(is.null(data)){
