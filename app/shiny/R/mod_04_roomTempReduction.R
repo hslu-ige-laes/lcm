@@ -136,7 +136,7 @@ roomTempReductionModule <- function(input, output, session, aggData) {
   observe({
     dates <- df.all() %>% select(time) %>% arrange(time)
     start <- as.Date(dates[1,1], tz = "Europe/Zurich")
-    end <- as.Date(dates[nrow(dates),1], tz = "Europe/Zurich")
+    end <- as.Date(dates[nrow(dates),1], tz = "Europe/Zurich") + 1
     updateSliderInput(session,
                       "slider",
                       min = start,
