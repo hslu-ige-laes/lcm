@@ -260,7 +260,7 @@ roomOutsideTempModule <- function(input, output, session, aggData) {
   # Temperature Room vs Outside Air Plot
    output$tempROaPlot <- renderPlotly({
     withProgress(message = 'Creating plot', detail = "indoor vs. outdoor temperature plot", value = NULL, {
-
+      
       # axis properties
       minx <- floor(min(-4,min(df.all()$tempOaRollMean)))
       maxx <- ceiling(max(32,max(df.all()$tempOaRollMean)))
