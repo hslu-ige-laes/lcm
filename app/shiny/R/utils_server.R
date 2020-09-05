@@ -19,6 +19,9 @@ season <- function(input.date){
 }
 
 aggregateXts <- function(xts, func = "mean", agg = "1d", locTimeZone = "Europe/Zurich") {
+  if(length(xts) == 0){
+    return(NULL)
+  }
   data <- switch(agg,
                  "15m" = {
                    temp <- aggregatets(xts, FUN=func, on="minutes", k=15, dropna=FALSE)
