@@ -117,15 +117,6 @@ server <- function(input, output, session) {
     data_1d_sum(n[[names(n)]])
   })
   
-  data_1d_min <- reactiveVal(value = NULL)
-  observe({
-    invalidateLater(5000, session)
-    n <- new.env()
-    print("load data_1d_min.RData")
-    env <- load(here::here("app", "shiny", "data", "cache", "data_1d_min.RData"), envir = n)
-    data_1d_min(n[[names(n)]])
-  })
-  
   data_1M_sum <- reactiveVal(value = NULL)
   observe({
     invalidateLater(5000, session)
@@ -167,6 +158,19 @@ server <- function(input, output, session) {
       tic("ttnFetchServerData")
       ttnFetchServerData()
       toc()
+      tic("etlAggFilterData")
+      etlAggFilterData()
+      toc()
+    })
+  })
+  
+  observeEvent(input$clearCacheButton, {
+    print("Clean cache files and update Data because of pressing button")
+    withProgress(message = "Clear cache and refetching data", detail = "this might take a while..." , value = NULL, {
+      tic("ttnFetchServerData")
+      ttnFetchServerData()
+      toc()
+      clearCache()
       tic("etlAggFilterData")
       etlAggFilterData()
       toc()
