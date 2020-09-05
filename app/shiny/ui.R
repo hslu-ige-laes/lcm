@@ -3,7 +3,8 @@
 header <- dashboardHeader(
   title = textOutput("pageTitle"),
   titleWidth = 250,
-  tags$li(actionLink("updateButton", label = " Update data", icon = icon("sync")), class = "dropdown")
+  tags$li(actionLink("updateButton", label = "  update data now", icon = icon("sync")), class = "dropdown"),
+  tags$li(actionLink("clearCacheButton", label = "  clear cache", icon = icon("broom")), class = "dropdown")
 )
 
 # ======================================================================
