@@ -6,10 +6,8 @@ parent: Central > Heating Curve
 grand_parent: Modules
 ---
 
-### Title
-#### Subtitle
-- content tbd <a href="#referencename">[1]</a>
-
-<hr>
-### References
-<a id="referencename">[1]</a> referende <br>
+### Energy Efficiency
+- Reduction of total heating energy
+- Detection of irregularities
+- Detect bad adjustment of the heating system
+- Comparison of target settings with effective plant operation

@@ -6,10 +6,13 @@ parent: Central > Heating Signature
 grand_parent: Modules
 ---
 
-### Title
-#### Subtitle
-- content tbd <a href="#referencename">[1]</a>
+### Energy Efficiency
+- Reduction of total heating energy
+- Detection of irregularities
+- Proof/quantification of implemented energy saving measures
+- Detect bad adjustment of the heating system
+- Determine effectively required heat output
+- Check if heating is oversized
+- Predict the development of heating energy consumption
+- Calculate energy index of the building
 
-<hr>
-### References
-<a id="referencename">[1]</a> referende <br>
