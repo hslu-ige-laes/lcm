@@ -6,10 +6,9 @@ parent: Flat > Heating
 grand_parent: Modules
 ---
 
-### Title
-#### Subtitle
-- content tbd <a href="#referencename">[1]</a>
+### Data Aquisition
+- monthly consumption in kWh per flat
 
-<hr>
-### References
-<a id="referencename">[1]</a> referende <br>
+### Calculations
+- calculate specific monthly consumption in kWh/m<sup>2</sup> per flat
+- calculate average consumption over all configured flats

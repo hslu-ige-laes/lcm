@@ -23,7 +23,7 @@ centralHeatingCurveModuleUI <- function(id) {
         ),
         box(
           width = 3,
-          numericInput(inputId = ns("rangeRollMinTSu"),
+          numericInput(inputId = ns("rangeRollMaxTSu"),
                        label = "Range Rolling Minimum Temp. Supply",
                        min = 0,
                        max = 48,
@@ -206,10 +206,10 @@ centralHeatingCurveModule <- function(input, output, session, aggData) {
     data <- data %>% mutate(season = season(Date))
     
     rangeRollMeanTOa <- max(148, min(0, as.numeric(input$rangeRollMeanTOa)))
-    rangeRollMinTSu <- max(48, min(0, as.numeric(input$rangeRollMinTSu)))
+    rangeRollMaxTSu <- max(48, min(0, as.numeric(input$rangeRollMaxTSu)))
     
     data <- data %>% mutate(tempOaRollMean = rollmean(TOaVal, rangeRollMeanTOa, fill = NA, align = "right"))
-    data <- data %>% mutate(tempSuRollMax = rollmax(TSuVal, rangeRollMinTSu, fill = NA, align = "right"))
+    data <- data %>% mutate(tempSuRollMax = rollmax(TSuVal, rangeRollMaxTSu, fill = NA, align = "right"))
     
     # test
     data <- data %>% select(Date, tempSuRollMax, tempOaRollMean, season) %>% unique()

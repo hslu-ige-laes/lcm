@@ -19,13 +19,13 @@ flatHotWaterModuleUI <- function(id) {
     ),
     sidebarPanel(
       width = 2,
-      sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y"),
       selectInput(ns("selCalc"), 
                   label = "Calculation",
                   choices = list("Absolute (ltr)", "Relative (ltr/(pers day))"),
                   selected = list("Relative (ltr/(pers day))"),
                   width = "200px"
-      )
+      ),
+      sliderInput(ns("slider"), "Time Range", min = as.Date("2019-01-01"), max =as.Date("2020-01-01"), value=c(as.Date("2019-03-01"), as.Date("2019-09-01")), timeFormat="%b %Y")
     ),
     mainPanel(
       width = 10,
@@ -264,7 +264,7 @@ flatHotWaterModule <- function(input, output, session, aggData) {
                         text = paste("</br>Year:     ", year ,"</br>Flat:      ",flat ,"</br>Vlm<sub>Hw</sub>: ", format(round(Consumption, digits = 1), big.mark="'"), "ltr/(pers day)")
                     )
           ) +
-          ggtitle("Hot Water Consumption Flat per Month")
+          ggtitle("Relative Hot Water Consumption Flat per Month")
         
         yAxisTitle <- "Vlm<sub>Hw</sub> in ltr/(pers day)"
         
@@ -279,7 +279,7 @@ flatHotWaterModule <- function(input, output, session, aggData) {
                                           text = paste("</br>Year:     ", year ,"</br>Flat:      ",flat ,"</br>Vlm<sub>Hw</sub>: ", format(round(Consumption, digits = 0), big.mark="'"), "ltr/month")
                                           )
           ) +
-          ggtitle("Hot Water Consumption Flat per Month")
+          ggtitle("Absolute Hot Water Consumption Flat per Month")
         
         yAxisTitle <- "Vlm<sub>Hw</sub> in ltr/month"
         
@@ -338,7 +338,7 @@ flatHotWaterModule <- function(input, output, session, aggData) {
                      aes(yintercept = averageYear),
                      color="darkorange",
                      linetype="dashed") +
-          ggtitle("Hot Water Consumption Flat per Year")
+          ggtitle("Relative Hot Water Consumption Flat per Year")
         
         yAxisTitle <- "Vlm<sub>Hw</sub> in ltr/(pers day)"
         
@@ -349,7 +349,7 @@ flatHotWaterModule <- function(input, output, session, aggData) {
                                                        text = paste("</br>Flat:     ",flat ,"</br>Vlm<sub>Hw</sub>: ", format(round(Consumption, digits = 0), big.mark="'"), "ltr/year")
                                                        )
           ) +
-          ggtitle("Hot Water Consumption Flat per Year")
+          ggtitle("Absolute Hot Water Consumption Flat per Year")
         
         yAxisTitle <- "Vlm<sub>Hw</sub> in ltr/year"
         
