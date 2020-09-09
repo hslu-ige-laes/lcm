@@ -71,6 +71,7 @@ influxdbCon <- function(host, port = "8086", user, pwd){
         imageUrl = "",
         animation = TRUE
       )
+      con <- NULL
     }
   }
   )
@@ -79,19 +80,34 @@ influxdbCon <- function(host, port = "8086", user, pwd){
 }
 
 influxdbGetDatabases <- function(host, port = "8086", user = NULL, pwd = NULL){
-  data <- filter(as.data.frame(show_databases(con = influxdbCon(host, port, user, pwd)), name != "_internal"))
+  influxCon = influxdbCon(host, port, user, pwd)
+  if(is.null(influxCon)){
+    data <- NULL
+  }else{
+    data <- filter(as.data.frame(show_databases(con = influxCon), name != "_internal"))
+  }
   return(data)
 }
 
 influxdbGetMeasurements <- function(host, port = "8086", user = NULL, pwd = NULL, database){
-  data <- as.data.frame(show_measurements(con = influxdbCon(host, port, user, pwd), db = database))
-  
+  influxCon = influxdbCon(host, port, user, pwd)
+  if(is.null(influxCon)){
+    data <- NULL
+  }else{
+    data <- as.data.frame(show_measurements(con = influxCon, db = database))
+  }
   return(data)
 }
 
 influxdbGetFieldKeys <- function(host, port = "8086", user = NULL, pwd = NULL, database = NULL, datapoint = NULL){
-  data <- as.data.frame(show_field_keys(con = influxdbCon(host, port, user, pwd), db = database, measurement = datapoint))
-  data <- data %>% select(fieldKey)
+  influxCon = influxdbCon(host, port, user, pwd)
+  if(is.null(influxCon)){
+    data <- NULL
+  }else{
+    data <- as.data.frame(show_field_keys(con = influxCon, db = database, measurement = datapoint))
+    data <- data %>% select(fieldKey)
+  }
+  
   return(data)
 }
 
@@ -211,8 +227,8 @@ influxdbGetTimeseries <- function(host, port = "8086", user = NULL, pwd = NULL, 
   }
   # message(qry)
   data <- as.data.frame(influx_query(con = influxdbCon(host, port, user, pwd), db = database, query = qry, simplifyList = TRUE, return_xts = FALSE))
-  
-  if(nrow(data) == 1){
+
+  if(nrow(data) <= 1){
     return(NULL)
   } else {
     data <- data %>%  select(time, tableName)
