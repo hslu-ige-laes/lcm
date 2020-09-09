@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Userinterface
+title: User Interface
 nav_order: 03
 parent: Flat > Hot Water
 grand_parent: Modules

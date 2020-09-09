@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Userinterface
+title: User Interface
 nav_order: 03
 parent: Central > Heating Signature
 grand_parent: Modules
