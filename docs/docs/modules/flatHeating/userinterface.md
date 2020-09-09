@@ -11,17 +11,34 @@ grand_parent: Modules
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/flatHeating_05.PNG" style="border:1px solid lightgrey"/>
 <br>
 
+- The stacked bar plot shows the relative heating energy of all configured flats in kWh/(m<sup>2</sup> year)
+- This visualization allows a yearly comparison of the total and changes of energy consumption shares
+- Tooltip: Place the mouse pointer over a section to get more information
+
+
 #### Relative Heating Energy Flats per Year
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/flatHeating_06.PNG" style="border:1px solid lightgrey"/>
 <br>
+
+- The side by side bar plot shows the relative heating energy of all configured flats in kWh/(m<sup>2</sup> year)
+- This visualization allows a yearly comparison between flats
+- Tooltip: Place the mouse pointer over a section to get more information
 
 #### Relative Heating Energy Building per Month
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/flatHeating_01.PNG" style="border:1px solid lightgrey"/>
 <br>
 
+- The stacked area plot shows the relative heating energy of all configured flats in kWh/(m<sup>2</sup> month)
+- This visualization allows a yearly comparison and allows easy determination of min- and max consumptions per year
+- Tooltip: Place the mouse pointer over a section to get more information
+
 #### Relative Heating Energy Flats per Month
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/flatHeating_02.PNG" style="border:1px solid lightgrey"/>
 <br>
+
+- The line plot shows the relative heating energy of all configured flats in kWh/(m<sup>2</sup> month)
+- This visualization allows comparisons beteween years of one flat and between flats in one view
+- Tooltip: Place the mouse pointer over a section to get more information
 
 ### Settings
 #### Basic
