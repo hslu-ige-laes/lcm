@@ -13,6 +13,7 @@ library(influxdbr)
 library(xts)
 library(highfrequency)
 library(NCmisc)
+library(shiny)
 
 source(here::here("app", "shiny", "R", "fct_etlSourceTtn_server.R"))
 source(here::here("app", "shiny", "R", "fct_etlSourceInfludxDB_server.R"))
@@ -28,14 +29,16 @@ options(readr.num_columns = 0)
 # get newest ttn data from server
 # ======================================================================
 
+print("=== START DATA FETCHING === ")
 tic("ttnFetchServerData")
 ttnFetchServerData()
 toc()
 
 # ======================================================================
-# Aggregator
+# Aggregator and Cache Creator
 # ======================================================================
 
 tic("etlAggFilterData")
 etlAggFilterData()
 toc()
+print("=== END DATA FETCHING === ")
