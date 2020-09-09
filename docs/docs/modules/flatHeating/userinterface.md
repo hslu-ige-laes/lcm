@@ -11,7 +11,7 @@ grand_parent: Modules
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/flatHeating_05.PNG" style="border:1px solid lightgrey"/>
 <br>
 
-#### Relative Heating Energy Flats per Year<br><br>
+#### Relative Heating Energy Flats per Year
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/flatHeating_06.PNG" style="border:1px solid lightgrey"/>
 <br>
 
