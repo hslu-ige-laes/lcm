@@ -13,7 +13,23 @@ centralHeatingCurveModuleUI <- function(id) {
         collapsed = TRUE,
         box(
           width = 3,
-          "no extended settings"
+          numericInput(inputId = ns("rangeRollMeanTOa"),
+                       label = "Range Rolling Mean Temp. Outs. Air",
+                       min = 0,
+                       max = 168,
+                       step = 1,
+                       value = 48
+                       )
+        ),
+        box(
+          width = 3,
+          numericInput(inputId = ns("rangeRollMinTSu"),
+                       label = "Range Rolling Minimum Temp. Supply",
+                       min = 0,
+                       max = 48,
+                       step = 1,
+                       value = 6
+          )
         )
       )
     ),
@@ -189,120 +205,130 @@ centralHeatingCurveModule <- function(input, output, session, aggData) {
     
     data <- data %>% mutate(season = season(Date))
     
-    data <- data %>% mutate(tempOaRollMean = rollmean(TOaVal, 48, fill = NA, align = "right"))
+    rangeRollMeanTOa <- max(148, min(0, as.numeric(input$rangeRollMeanTOa)))
+    rangeRollMinTSu <- max(48, min(0, as.numeric(input$rangeRollMinTSu)))
+    
+    data <- data %>% mutate(tempOaRollMean = rollmean(TOaVal, rangeRollMeanTOa, fill = NA, align = "right"))
+    data <- data %>% mutate(tempSuRollMax = rollmax(TSuVal, rangeRollMinTSu, fill = NA, align = "right"))
+    
+    # test
+    data <- data %>% select(Date, tempSuRollMax, tempOaRollMean, season) %>% unique()
+    
     data <- data %>% na.omit()
 
     return(data)
   })
 
-df.season <- reactive({
-  req(input$season)
-  df.all() %>% filter(season %in% input$season)
-})
-
-
-# filter data according to time slider setting
-df <- reactive({
-  start <- as.Date(sliderDate$start, tz = "Europe/Zurich")
-  end <- as.Date(sliderDate$end, tz = "Europe/Zurich")
-  data <- df.season() %>% filter(Date >= start & Date <= end)
-  return(data)
-})
-
-df.winter <- reactive({
-  df() %>% filter(season=="Winter")
-})
-
-df.spring <- reactive({
-  df() %>% filter(season=="Spring")
-})
-
-df.summer <- reactive({
-  df() %>% filter(season=="Summer")
-})
-
-df.fall <- reactive({
-  df() %>% filter(season=="Fall")
-})
-
-# Generate Plot
-output$centralHeatingCurvePlot <- renderPlotly({
-  # Create a Progress object
-  withProgress(message = 'Creating plot', detail = "centralHeatingCurvePlot", value = NULL, {
-    
-    minY <- min(df.all()$TSuVal) - 1
-    maxY <- max(df.all()$TSuVal) + 1
-    
-    p <- plot_ly()
-
-    if("Spring" %in% input$season){
-      p <- p %>% add_markers(data = df.spring(),
-                  x = ~TOaVal,
-                  y = ~TSuVal,
-                  marker = list(color = "#2db27d", opacity = 0.3),
-                  name = "Spring",
-                  hoverinfo = "text",
-                  text = ~ paste("Outside Temp:  ", sprintf("%.1f \u00B0C", tempOaRollMean),
-                                 "<br />Supply Temp: ", sprintf("%.1f \u00B0C", TSuVal),
-                                 "<br />Date:     ", df.spring()$Date,
-                                 "<br />Season: ", df.spring()$season
-                  )
-      )
-    }
-    if("Summer" %in% input$season){
-      p <- p %>% add_markers(data = df.summer(),
-                x = ~TOaVal,
-                y = ~TSuVal,
-                marker = list(color = "#fde725", opacity = 0.3),
-                name = "Summer",
-                hoverinfo = "text",
-                text = ~ paste("Outside Temp:  ", sprintf("%.1f \u00B0C", tempOaRollMean),
-                               "<br />Supply Temp: ", sprintf("%.1f \u00B0C", TSuVal),
-                               "<br />Date:     ", df.summer()$Date,
-                               "<br />Season: ", df.summer()$season
-                )
-      )
-    }
-    if("Fall" %in% input$season){
-      p <- p %>% add_markers(data = df.fall(),
-                  x = ~TOaVal,
-                  y = ~TSuVal,
-                  marker = list(color = "#440154", opacity = 0.3),
-                  name = "Fall",
-                  hoverinfo = "text",
-                  text = ~ paste("Outside Temp:  ", sprintf("%.1f \u00B0C", tempOaRollMean),
-                                 "<br />Supply Temp: ", sprintf("%.1f \u00B0C", TSuVal),
-                                 "<br />Date:     ", df.fall()$Date,
-                                 "<br />Season: ", df.fall()$season
-                  )
-      )
-    }
-    if("Winter" %in% input$season){
-      p <- p %>% add_markers(data = df.winter(),
-                  x = ~TOaVal,
-                  y = ~TSuVal,
-                  marker = list(color = "#365c8d", opacity = 0.3),
-                  name = "Winter",
-                  hoverinfo = "text",
-                  text = ~ paste("Outside Temp:  ", sprintf("%.1f \u00B0C", tempOaRollMean),
-                                 "<br />Supply Temp: ", sprintf("%.1f \u00B0C", TSuVal),
-                                 "<br />Date:     ", df.winter()$Date,
-                                 "<br />Season: ", df.winter()$season
-                  )
-      )
-    }
-
-    p <- p %>%
-      layout(
-        xaxis = list(title = "Outside temperature in \u00B0C (Rolling Mean last 48 hours)", range = c(min(-10,min(df.all()$TOaVal)), max(35,max(df.all()$TOaVal))), zeroline = F),
-        yaxis = list(title = "Supply temperature heating in \u00B0C", range = c(minY, maxY)),
-        showlegend = FALSE
-      ) %>%
-      plotly::config(modeBarButtons = list(list("toImage")), displaylogo = FALSE)
-
+  
+  
+  df.season <- reactive({
+    req(input$season)
+    df.all() %>% filter(season %in% input$season)
   })
-
-})
+  
+  
+  # filter data according to time slider setting
+  df <- reactive({
+    start <- as.Date(sliderDate$start, tz = "Europe/Zurich")
+    end <- as.Date(sliderDate$end, tz = "Europe/Zurich")
+    data <- df.season() %>% filter(Date >= start & Date <= end)
+    return(data)
+  })
+  
+  df.winter <- reactive({
+    df() %>% filter(season=="Winter")
+  })
+  
+  df.spring <- reactive({
+    df() %>% filter(season=="Spring")
+  })
+  
+  df.summer <- reactive({
+    df() %>% filter(season=="Summer")
+  })
+  
+  df.fall <- reactive({
+    df() %>% filter(season=="Fall")
+  })
+  
+  # Generate Plot
+  output$centralHeatingCurvePlot <- renderPlotly({
+    # Create a Progress object
+    withProgress(message = 'Creating plot', detail = "centralHeatingCurvePlot", value = NULL, {
+      
+      minY <- min(df.all()$tempSuRollMax) - 1
+      maxY <- max(df.all()$tempSuRollMax) + 1
+      
+      p <- plot_ly()
+  
+      if("Spring" %in% input$season){
+        p <- p %>% add_markers(data = df.spring(),
+                    x = ~tempOaRollMean,
+                    y = ~tempSuRollMax,
+                    marker = list(color = "#2db27d", opacity = 0.2),
+                    name = "Spring",
+                    hoverinfo = "text",
+                    text = ~ paste("Outside Temp:  ", sprintf("%.1f \u00B0C", tempOaRollMean),
+                                   "<br />Supply Temp: ", sprintf("%.1f \u00B0C", tempSuRollMax),
+                                   "<br />Date:     ", df.spring()$Date,
+                                   "<br />Season: ", df.spring()$season
+                    )
+        )
+      }
+      if("Summer" %in% input$season){
+        p <- p %>% add_markers(data = df.summer(),
+                  x = ~tempOaRollMean,
+                  y = ~tempSuRollMax,
+                  marker = list(color = "#fde725", opacity = 0.2),
+                  name = "Summer",
+                  hoverinfo = "text",
+                  text = ~ paste("Outside Temp:  ", sprintf("%.1f \u00B0C", tempOaRollMean),
+                                 "<br />Supply Temp: ", sprintf("%.1f \u00B0C", tempSuRollMax),
+                                 "<br />Date:     ", df.summer()$Date,
+                                 "<br />Season: ", df.summer()$season
+                  )
+        )
+      }
+      if("Fall" %in% input$season){
+        p <- p %>% add_markers(data = df.fall(),
+                    x = ~tempOaRollMean,
+                    y = ~tempSuRollMax,
+                    marker = list(color = "#440154", opacity = 0.2),
+                    name = "Fall",
+                    hoverinfo = "text",
+                    text = ~ paste("Outside Temp:  ", sprintf("%.1f \u00B0C", tempOaRollMean),
+                                   "<br />Supply Temp: ", sprintf("%.1f \u00B0C", tempSuRollMax),
+                                   "<br />Date:     ", df.fall()$Date,
+                                   "<br />Season: ", df.fall()$season
+                    )
+        )
+      }
+      if("Winter" %in% input$season){
+        p <- p %>% add_markers(data = df.winter(),
+                    x = ~tempOaRollMean,
+                    y = ~tempSuRollMax,
+                    marker = list(color = "#365c8d", opacity = 0.2),
+                    name = "Winter",
+                    hoverinfo = "text",
+                    text = ~ paste("Outside Temp:  ", sprintf("%.1f \u00B0C", tempOaRollMean),
+                                   "<br />Supply Temp: ", sprintf("%.1f \u00B0C", tempSuRollMax),
+                                   "<br />Date:     ", df.winter()$Date,
+                                   "<br />Season: ", df.winter()$season
+                    )
+        )
+      }
+  
+      p <- p %>%
+        layout(
+          xaxis = list(title = "Outside temperature in \u00B0C (Rolling Mean last 48 hours)", range = c(min(-10,min(df.all()$tempOaRollMean)), max(35,max(df.all()$tempOaRollMean))), zeroline = F),
+          yaxis = list(title = "Supply temperature heating in \u00B0C", range = c(minY, maxY)),
+          showlegend = FALSE
+        ) %>%
+        plotly::config(modeBarButtons = list(list("toImage")), displaylogo = FALSE)
+  
+    })
+  
+  })
 
 }
 
