@@ -1,5 +1,8 @@
 rm(list=ls())
 Sys.setenv(LC_CTYPE = "en_US.UTF-8")
+
+# Max. Upload Size for files 30MB (csv files can get really big...)
+options(shiny.maxRequestSize=30*1024^2)
 # options(shiny.error = browser)
 # options(shiny.fullstacktrace = FALSE)
 
