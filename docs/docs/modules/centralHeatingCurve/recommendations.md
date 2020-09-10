@@ -28,7 +28,7 @@ Check on the heating controller whether the night setback is set correctly. The 
 #### Setback times
 
 | Type of building                             | Night operation/reduced operation                                                       |
-|----------------------------------------------|-----------------------------------------------------------------------------------------|
+|:---------------------------------------------|:----------------------------------------------------------------------------------------|
 | Residential buildings with radiators<br>     | Start 1 hour before the usual bedtime <br>End 1-1.5 hours before the usual wake-up time |
 | Residential buildings with floor heating<br> | Start 3 hours before the usual bedtime <br>End 2-3 hours before the usual wake-up time  |
 
