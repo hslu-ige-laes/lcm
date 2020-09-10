@@ -9,6 +9,7 @@ grand_parent: Modules
 ### Reference values <a href="#inter_energiestiftung">[1]</a>
 In the year **1975**, a standard new residential building in Switzerland consumed **220 kWh/m<sup>2</sup>** energy to cover its heating requirements.
 Today's new buildings in Switzerland need only a fraction of this. Even more: Houses are no longer energy consumers - they are becoming energy suppliers.
+Consider the following rule of thumb: **per degree of higher room temperature about 6% more heating energy is needed**. With well-insulated buildings, the value is even higher. <a href="#inter_balmer2020">[2]</a>
 
 #### MuKEn 2008
 - The model regulations of the cantons in the energy sector only allow **48 kWh/m<sup>2</sup>** of energy to cover the heating requirements of **new buildings**.
@@ -28,4 +29,5 @@ Today's new buildings in Switzerland need only a fraction of this. Even more: Ho
 
 <hr>
 ### References
-<a id="inter_energiestiftung">[1]</a>[https://www.energiestiftung.ch/energieeffizienz-gebaeudestandards.html](https://www.energiestiftung.ch/energieeffizienz-gebaeudestandards.html)<br>	
+<a id="inter_energiestiftung">[1]</a>[https://www.energiestiftung.ch/energieeffizienz-gebaeudestandards.html](https://www.energiestiftung.ch/energieeffizienz-gebaeudestandards.html)<br>
+<a id="inter_balmer2020">[2]</a> Balmer, M., Hubbuch, M., & Sandmeier, E. (2020). Energetische Betriebsoptimierung: Gebäude effizienter betreiben (1. Auflage). Fachbuchreihe «Nachhaltiges Bauen und Erneuern». FAKTOR Verlag AG. [https://pubdb.bfe.admin.ch/de/publication/download/10042](https://pubdb.bfe.admin.ch/de/publication/download/10042)<br>
