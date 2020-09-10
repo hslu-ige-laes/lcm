@@ -12,7 +12,7 @@ Fill a bucket with the tap fully open and measure the time it takes to do this.
 Class B or better flow limiters are installed if it takes longer to fill the bucket than:
 
 | Content of measuring vessel      | 1 liter | 5 liters | 10 liters |
-|----------------------------------|---------|----------|-----------|
+|:---------------------------------|:-------:|:--------:|:---------:|
 | Filling time washbasin           | 8 sec.  | 38 sec.  | 75 sec.   |
 | Filling time shower              | 7 sec.  | 33 sec.  | 67 sec.   |
 
