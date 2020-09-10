@@ -28,7 +28,7 @@ If the real temperatures differ, a correction via the following formula is requi
 #### Water consumption planning values in liters/(person day)
 
 | Standard | 10/60°C | 10/45°C |
-|----------|:-------:|:-------:|
+|:---------|:-------:|:-------:|
 | simple   | 40      | 57      |
 | medium   | 45      | 64      |
 | high     | 55      | 79      |
@@ -36,5 +36,5 @@ If the real temperatures differ, a correction via the following formula is requi
 <hr>
 
 ### References
-<a id="inter_heatcompass">[1]</a>Energie Schweiz, Bundesamt für Energie. (2012). Der Heizkompass: für Hauswartinnen und Hauswarte.[https://pubdb.bfe.admin.ch/de/publication/download/340](https://pubdb.bfe.admin.ch/de/publication/download/340)<br>
-<a id="inter_sia385">[2]</a>SIA Schweizerischer Ingenieur- und Architektenverein (2015). Anlagen für Trinkwarmwasser in Gebäuden - Warmwasserbedarf, Gesamtanforderungen und Auslegung. (SN, SIA 385/2).<br>
+<a id="inter_heatcompass">[1]</a> Energie Schweiz, Bundesamt für Energie. (2012). Der Heizkompass: für Hauswartinnen und Hauswarte.[https://pubdb.bfe.admin.ch/de/publication/download/340](https://pubdb.bfe.admin.ch/de/publication/download/340)<br>
+<a id="inter_sia385">[2]</a> SIA Schweizerischer Ingenieur- und Architektenverein (2015). Anlagen für Trinkwarmwasser in Gebäuden - Warmwasserbedarf, Gesamtanforderungen und Auslegung. (SN, SIA 385/2).<br>
