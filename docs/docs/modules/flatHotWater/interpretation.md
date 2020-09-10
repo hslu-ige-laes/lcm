@@ -22,7 +22,7 @@ grand_parent: Modules
 In the Swiss standard SIA 385/2 <a href="#inter_sia385">[1]</a> water consumption values are defined in standard liters. It describes hot water consumption per person and day with a temperature of 60°C and an initial cold water temperature of 10°C.
 If the real temperatures differ, a correction via the following formula is required:
 - corrLiters = 50 / (hotWaterTemp - coldWaterTemp) * standardLiters
-- e.g. 50 / (45-10) * 40 = 57 litrs
+- e.g. 50 / (45-10) * 40 = 57 liters
 
 
 #### Water consumption planning values in liters/(person day)
