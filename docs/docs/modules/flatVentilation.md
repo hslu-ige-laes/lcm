@@ -2,6 +2,7 @@
 layout: default
 title: Flat > Ventilation
 nav_order: 12
+nav_exclude: true
 parent: Modules
 has_children: true
 permalink: /docs/modules/flatVentilation
