@@ -23,13 +23,12 @@ The challenge is to present the tips to the residents unobtrusively and with a l
 #### Flow limiters and water-saving fittings in general <a href="#recomm_heatcompass">[12]</a>
 - Pay attention to the energy label when purchasing sanitary products. This indicates economical shower heads, fittings or inserts. 
 - When choosing showers, fittings or flow limiters, make sure that they guarantee the right flow rates: for A-class appliances, this is between 4 and 6 liters per minute for showers and washbasins. 
-- When choosing a shower head, it is recommended to replace the existing one with an economy shower head. This can reduce water consumption by up to 50%. The energy consumption is also noticeably lowered. Economy showers also have the advantage of a pleasant, soft water jet.
-- For washbasins, the installation of flow limiters or water-saving fittings is recommended. Flow limiters are cheap and highly profitable. The amortization period is on average only half a year.
 
 #### Showering
 The best thing about showering is: No other activity can achieve greater savings through conscious behaviour every day and with such little effort.  <a href="#balmer2020">[1]</a>
 - Shower a little shorter and turn off the water while soaping. <a href="#wetzikon">[9]</a>
   - About 8 liters of water are used per minute in your shower with the standard installed shower head.
+- When choosing a shower head, it is recommended to replace the existing one with an economy shower head. This can reduce water consumption by up to 50%. The energy consumption is also noticeably lowered. Economy showers also have the advantage of a pleasant, soft water jet.
 
 #### Washing Machine
 - Fill the washing machine as completely as possible. <a href="#co2online">[3]</a>
@@ -50,6 +49,8 @@ The best thing about showering is: No other activity can achieve greater savings
 #### Washing hands
 - Wash your hands with cold water  <a href="#energieschweiz">[7]</a>
   - We often turn off the warm water before the warm water even comes out. This way the warm water in the pipe cools down again unused.
+- For washbasins, the installation of flow limiters or water-saving fittings is recommended. Flow limiters are cheap and highly profitable. The amortization period is on average only half a year.
+
 
 #### Bathing
 - Take a shower instead of a bath. <a href="#co2online">[3]</a>
