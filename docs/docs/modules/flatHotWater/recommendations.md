@@ -20,6 +20,11 @@ The following hot water saving tips can help residents to reduce their consumpti
 The challenge is to present the tips to the residents unobtrusively and with a lasting effect.
 
 ### Energy saving tips hot water
+#### Flow limiters and water-saving fittings in general <a href="#recomm_heatcompass">[12]</a>
+- Pay attention to the energy label when purchasing sanitary products. This indicates economical shower heads, fittings or inserts. 
+- When choosing showers, fittings or flow limiters, make sure that they guarantee the right flow rates: for A-class appliances, this is between 4 and 6 liters per minute for showers and washbasins. 
+- When choosing a shower head, it is recommended to replace the existing one with an economy shower head. This can reduce water consumption by up to 50%. The energy consumption is also noticeably lowered. Economy showers also have the advantage of a pleasant, soft water jet.
+- For washbasins, the installation of flow limiters or water-saving fittings is recommended. Flow limiters are cheap and highly profitable. The amortization period is on average only half a year.
 
 #### Showering
 The best thing about showering is: No other activity can achieve greater savings through conscious behaviour every day and with such little effort.  <a href="#balmer2020">[1]</a>
@@ -67,3 +72,4 @@ The best thing about showering is: No other activity can achieve greater savings
 <a id="wetzikon">[9]</a> [https://www.wetzikon.ch/verwaltung/bau-planung/tiefbau/stadtentwaesserung/tipps-und-tricks](https://www.wetzikon.ch/verwaltung/bau-planung/tiefbau/stadtentwaesserung/tipps-und-tricks)<br>
 <a id="mieterverband">[10]</a> [https://www.mieterverband.ch/mv/politik-positionen/news/2016/waschen-mit-kaltem-Wasser.html](https://www.mieterverband.ch/mv/politik-positionen/news/2016/waschen-mit-kaltem-Wasser.html)<br>
 <a id="polarstern">[11]</a> [https://www.polarstern-energie.de/magazin/artikel/8-tipps-so-sparst-du-warmwasser/#tipp1-warm-duschen](https://www.polarstern-energie.de/magazin/artikel/8-tipps-so-sparst-du-warmwasser/#tipp1-warm-duschen)<br>
+<a id="recomm_heatcompass">[12]</a>Energie Schweiz, Bundesamt für Energie. (2012). Der Heizkompass: für Hauswartinnen und Hauswarte.[https://pubdb.bfe.admin.ch/de/publication/download/340](https://pubdb.bfe.admin.ch/de/publication/download/340)<br>
