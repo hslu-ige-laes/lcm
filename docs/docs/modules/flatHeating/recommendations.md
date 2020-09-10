@@ -19,16 +19,16 @@ If there are no thermostatic valves installed on the radiators in your building,
 - The center position 3 on the thermostatic valve should correspond to a room temperature of 20 °C. If this temperature does not adjust automatically, this should be investigated.
 - The settings in the following table can be used as a guide.
 
-| Room            | Position of the Thermostatic valve | Temperature |
-|-----------------|------------------------------------|-------------|
-| Living room     | 3                                  | 20°C        |
-| Bedroom         | 2                                  | 17°C        |
-| Play/hobby room | 2-3                                | 17-20°C     |
-| Bath/toilet     | 3-4                                | 20-23°C     |
-| Corridor        | 2                                  | 17°C        |
-| Office          | 3                                  | 20°C        |
-| unused room     | *                                  | -           |
-
+| Room            | Position on valve | Temperature |
+|:----------------|:-------------------------------------:|:-----------:|
+| Living room     | 3                                     | 20°C        |
+| Bedroom         | 2                                     | 17°C        |
+| Play/hobby room | 2-3                                   | 17-20°C     |
+| Bath/toilet     | 3-4                                   | 20-23°C     |
+| Corridor        | 2                                     | 17°C        |
+| Office          | 3                                     | 20°C        |
+| unused room     | *                                     | -           |
+ 
 ### Energy saving tips heating for room users <a href="#recomm_heatcompass">[1]</a>
 #### Ensure unhindered heat emission
 - Do not place furniture in front of the radiators
