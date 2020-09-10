@@ -41,7 +41,7 @@ The correct setting of the heating curve takes a lot of time because of the iner
 - Avoid exposure to external heat, e.g. from the sun, lamps or appliances during the measurements.
 - The windows should remain closed.
 
-Based on the measurement results, the heating curve will be adjusted, see <a href="#recomm_balmer2020">[2, p. 37]. It will be corrected for cold and mild outdoor temperatures. The target room temperature must be defined in advance with the client. 
+Based on the measurement results, the heating curve will be adjusted, see <a href="#recomm_balmer2020">[2, p. 37]</a>. It will be corrected for cold and mild outdoor temperatures. The target room temperature must be defined in advance with the client. 
 
 It must be reached in the most unfavorable room at the beginning of the usage time. If the temperature is clearly too low only in individual rooms, the problem should not be solved by increasing the heating curve. Instead, the situation there must be clarified in detail:
 - Check the flow rate: Is the radiator warm over the entire surface? If it is warm at the top and cold at the bottom, the flow rate is too low.
