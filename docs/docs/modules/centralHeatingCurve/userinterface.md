@@ -9,7 +9,7 @@ grand_parent: Modules
 ### Visualization(s)
 #### Heating Curve
 
-<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/centralHeatingCurve_02.PNG" style="border:1px solid lightgrey"/>
+<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/centralHeatingCurve_01.PNG" style="border:1px solid lightgrey"/>
 <br>
 - The x-axis represents the average outdoor temperature.
 - The y-axis the supply heat temperature.
