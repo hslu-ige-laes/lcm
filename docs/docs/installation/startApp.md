@@ -6,7 +6,7 @@ parent: Installation
 ---
 
 ## via "R Portable"
-- Execute `lcm.bat` in the application folder
+- Execute `lcmStartApp.bat` in the application folder
 - A browser will open and show the application
 - To stop the application simply close the browser window
 
