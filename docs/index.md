@@ -24,3 +24,4 @@ Exploiting this potential is the goal of energy-related operational optimization
 <hr>
 ### References 
 <a id="balmer2020">[1]</a> Balmer, M., Hubbuch, M., & Sandmeier, E. (2020). Energetische Betriebsoptimierung: Gebäude effizienter betreiben (1. Auflage). Fachbuchreihe «Nachhaltiges Bauen und Erneuern». FAKTOR Verlag AG. [https://pubdb.bfe.admin.ch/de/publication/download/10042](https://pubdb.bfe.admin.ch/de/publication/download/10042)<br>
+	

@@ -73,7 +73,7 @@ body <- dashboardBody(
               width = 12,
               column(
                 width = 12,
-                includeMarkdown(here::here("docs","index.md"))
+                includeMarkdown(here::here("docs","home.md"))
               )
             )
     ),

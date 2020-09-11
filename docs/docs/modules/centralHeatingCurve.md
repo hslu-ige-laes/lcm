@@ -8,3 +8,8 @@ permalink: /docs/modules/centralHeatingCurve
 ---
 
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/centralHeatingCurve_00.PNG" style="border:1px solid lightgrey"/>
+
+### Prerequisite
+The module get automatically displayed when the following data points are configured:
+- Outside Temperature
+- Central Supply Temperature Heat
