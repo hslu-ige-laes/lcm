@@ -12,7 +12,7 @@ centralHeatingCurveModuleUI <- function(id) {
         collapsible = TRUE,
         collapsed = TRUE,
         box(
-          width = 3,
+          width = 2,
           numericInput(inputId = ns("rangeRollMeanTOa"),
                        label = "Range Rolling Mean Temp. Outs. Air in hours",
                        min = 1,
@@ -22,7 +22,7 @@ centralHeatingCurveModuleUI <- function(id) {
                        )
         ),
         box(
-          width = 3,
+          width = 2,
           numericInput(inputId = ns("rangeRollMaxTSu"),
                        label = "Range Rolling Maximum Temp. Supply Heat in hours",
                        min = 1,
@@ -30,7 +30,57 @@ centralHeatingCurveModuleUI <- function(id) {
                        step = 1,
                        value = 24
           )
+        ),
+        box(
+          width = 2,
+          numericInput(inputId = ns("heatCrvRTempSp"),
+                       label = "Heat Curve Room Temperature Setpoint in °C",
+                       min = 16,
+                       max = 26,
+                       step = 1,
+                       value = 20
+          )
+        ),
+        box(
+          width = 2,
+          numericInput(inputId = ns("heatCrvLevelCorr"),
+                       label = "Heat Curve Level Correction",
+                       min = -5,
+                       max = 5,
+                       step = 0.5,
+                       value = 0
+          )
+        ),
+        box(
+          width = 2,
+          numericInput(inputId = ns("heatCrvSlope"),
+                       label = "Heat Curve Level Slope",
+                       min = 0.1,
+                       max = 5,
+                       step = 0.05,
+                       value = 0.4
+          )
         )
+        # box(
+        #   width = 2,
+        #   numericInput(inputId = ns("heatCrvExp"),
+        #                label = "Heat Curve Exponent",
+        #                min = 1,
+        #                max = 2,
+        #                step = 0.05,
+        #                value = 1.3
+        #   )
+        # ),
+        # box(
+        #   width = 2,
+        #   numericInput(inputId = ns("heatCrvNgtSetback"),
+        #                label = "Heat Curve Night Setback in °C",
+        #                min = 0,
+        #                max = 5,
+        #                step = 1,
+        #                value = 2
+        #   )
+        # )
       )
     ),
     sidebarPanel(
@@ -250,15 +300,29 @@ centralHeatingCurveModule <- function(input, output, session, aggData) {
     df() %>% filter(season=="Fall")
   })
   
+  
+  df.heatCrv <- reactive({
+    TOa <- seq(-20, 30, 0.1)
+    df <- data.frame(TOa)
+    df <- df %>% mutate(TSu = input$heatCrvSlope * 1.8317984 * (input$heatCrvRTempSp - TOa)^0.8281902 + input$heatCrvLevelCorr + input$heatCrvRTempSp)
+    
+    return(df)
+  })
+  
   # Generate Plot
   output$centralHeatingCurvePlot <- renderPlotly({
     # Create a Progress object
     withProgress(message = 'Creating plot', detail = "centralHeatingCurvePlot", value = NULL, {
       
-      minY <- min(df.all()$tempSuRollMax) - 1
+      minY <- min(min(df.all()$tempSuRollMax) - 1, input$heatCrvRTempSp)
       maxY <- max(df.all()$tempSuRollMax) + 1
       
-      p <- plot_ly()
+      p <- plot_ly() %>% 
+        add_lines(data = df.heatCrv(),
+                  x = ~TOa,
+                  y = ~TSu,
+                  name = "Temp Su Heat Curve"
+        )
   
       if("Spring" %in% input$season){
         p <- p %>% add_markers(data = df.spring(),
