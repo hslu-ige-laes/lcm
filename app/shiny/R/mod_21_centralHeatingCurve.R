@@ -54,7 +54,7 @@ centralHeatingCurveModuleUI <- function(id) {
         box(
           width = 2,
           numericInput(inputId = ns("heatCrvSlope"),
-                       label = "Heat Curve Level Slope",
+                       label = "Heat Curve Slope",
                        min = 0.1,
                        max = 5,
                        step = 0.05,
