@@ -13,6 +13,7 @@ grand_parent: Modules
 <br>
 - The x-axis represents the average outdoor temperature.
 - The y-axis the supply heat temperature.
+- the line represents the heating curve which can get adapted in the extended settings.
 - Tooltip: Place the mouse pointer over a datapoint to get more information of a specific measurement.
 <br><br>
 
