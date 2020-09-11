@@ -6,10 +6,27 @@ parent: Flat > Heating
 grand_parent: Modules
 ---
 
-### Reference values <a href="#inter_energiestiftung">[1]</a>
+### Comparison with reference values of standards and labels <a href="#inter_balmer2020">[2]</a>
+For many buildings, labels such as Minergie or energy norms and standards are a basis for planning and implementation.
+They are based on standard usage profiles, some of which do not meet the requirements in real operation - whether intentionally or unintentionally.
+In most cases, this then leads to energy consumption in operation being significantly higher than planned.
+Typical for such deviations are, for example, room temperatures that are set by the users differently than assumed in the planning. 
+
+The goal of an optimization can now be to either explain why planning and operating values differ or converge. 
+
+Caution is advised when comparing real consumption data with the various forms of the Minergie label. Because this label is regularly updated to reflect the state of the art, it must be declared which version was used for the comparison.
+
+In the case of older, non-certified buildings, however, a comparison with label values may not be useful.
+In this case it is much more helpful to compare the data of the current operating year with historical consumption data of the same property.
+An inexplicable increase in energy consumption indicates that there is potential for optimization. 
+
+Consider the following rule of thumb: **per degree of higher room temperature about 6% more heating energy is needed**.
+So the logging of the room temperature and the analysis with the module "Room > Temperatur Reduction" might make sense.
+With well-insulated buildings, the value is even higher. <a href="#inter_balmer2020">[2]</a>
+
+#### History <a href="#inter_energiestiftung">[1]</a>
 In the year **1975**, a standard new residential building in Switzerland consumed **220 kWh/m<sup>2</sup>** energy to cover its heating requirements.
 Today's new buildings in Switzerland need only a fraction of this. Even more: Houses are no longer energy consumers - they are becoming energy suppliers.
-Consider the following rule of thumb: **per degree of higher room temperature about 6% more heating energy is needed**. With well-insulated buildings, the value is even higher. <a href="#inter_balmer2020">[2]</a>
 
 #### MuKEn 2008
 - The model regulations of the cantons in the energy sector only allow **48 kWh/m<sup>2</sup>** of energy to cover the heating requirements of **new buildings**.
