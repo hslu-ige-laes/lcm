@@ -7,7 +7,7 @@ grand_parent: Modules
 ---
 
 ### Data Aquisition
-- Temperatured in °C
+- Temperature room and outside air in °C
 - hourly values required
 
 ### Calculations

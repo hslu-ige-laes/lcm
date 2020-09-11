@@ -7,7 +7,11 @@ grand_parent: Modules
 ---
 
 ### Data Aquisition
-- tbd
+- Temperature outside air in °C
+- Heating energy consumption in kWh
+- hourly values recommended
 
 ### Calculations
-- tbd
+- merging the two values by date and hour
+- keep only pairs where both values are available
+- calculate season out of date (for later filtering)
