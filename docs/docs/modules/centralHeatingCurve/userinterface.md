@@ -51,3 +51,12 @@ grand_parent: Modules
 - The flow temperature fluctuates quite strongly, depending on whether the heating group is switched on or off. 
 - In addition, the temperature rarely reaches a steady state.
 - Therefore a sliding maximum value is used to try to determine useful values with simple analytical means. 
+
+**Heat Curve Room Temperature Setpoint in °C**
+- Heating Curve Setpoint of the romm temperature
+
+**Heat Curve Level Correction**
+- Paralell correction of the heating curve, positive values shift the curve up and negative values down
+
+**Heat Curve Slope**
+- Slope of the heating curve
