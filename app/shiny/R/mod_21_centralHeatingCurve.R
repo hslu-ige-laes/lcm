@@ -14,7 +14,7 @@ centralHeatingCurveModuleUI <- function(id) {
         box(
           width = 3,
           numericInput(inputId = ns("rangeRollMeanTOa"),
-                       label = "Range Rolling Mean Temp. Outs. Air",
+                       label = "Range Rolling Mean Temp. Outs. Air in hours",
                        min = 0,
                        max = 168,
                        step = 1,
@@ -24,11 +24,11 @@ centralHeatingCurveModuleUI <- function(id) {
         box(
           width = 3,
           numericInput(inputId = ns("rangeRollMaxTSu"),
-                       label = "Range Rolling Minimum Temp. Supply",
+                       label = "Range Rolling Maximum Temp. Supply Heat in hours",
                        min = 0,
                        max = 48,
                        step = 1,
-                       value = 6
+                       value = 24
           )
         )
       )
@@ -205,21 +205,21 @@ centralHeatingCurveModule <- function(input, output, session, aggData) {
     
     data <- data %>% mutate(season = season(Date))
     
-    rangeRollMeanTOa <- max(148, min(0, as.numeric(input$rangeRollMeanTOa)))
-    rangeRollMaxTSu <- max(48, min(0, as.numeric(input$rangeRollMaxTSu)))
-    
+    rangeRollMeanTOa <- min(148, max(0, as.numeric(input$rangeRollMeanTOa)))
+    rangeRollMaxTSu <- min(48, max(0, as.numeric(input$rangeRollMaxTSu)))
+    print(rangeRollMeanTOa)
+    print(rangeRollMaxTSu)
     data <- data %>% mutate(tempOaRollMean = rollmean(TOaVal, rangeRollMeanTOa, fill = NA, align = "right"))
     data <- data %>% mutate(tempSuRollMax = rollmax(TSuVal, rangeRollMaxTSu, fill = NA, align = "right"))
     
     # test
     data <- data %>% select(Date, tempSuRollMax, tempOaRollMean, season) %>% unique()
-    
+    # print(data)
     data <- data %>% na.omit()
 
     return(data)
   })
 
-  
   
   df.season <- reactive({
     req(input$season)
@@ -320,8 +320,8 @@ centralHeatingCurveModule <- function(input, output, session, aggData) {
   
       p <- p %>%
         layout(
-          xaxis = list(title = "Outside temperature in \u00B0C (Rolling Mean last 48 hours)", range = c(min(-10,min(df.all()$tempOaRollMean)), max(35,max(df.all()$tempOaRollMean))), zeroline = F),
-          yaxis = list(title = "Supply temperature heating in \u00B0C", range = c(minY, maxY)),
+          xaxis = list(title = paste0("Outside temperature in \u00B0C<br>(Rolling Mean last ", input$rangeRollMeanTOa, " hours)"), range = c(min(-10,min(df.all()$tempOaRollMean)), max(35,max(df.all()$tempOaRollMean))), zeroline = F),
+          yaxis = list(title = paste0("Supply temperature heating in \u00B0C<br>(Rolling Max last ", input$rangeRollMaxTSu, " hours)"), range = c(minY, maxY)),
           showlegend = FALSE
         ) %>%
         plotly::config(modeBarButtons = list(list("toImage")), displaylogo = FALSE)
