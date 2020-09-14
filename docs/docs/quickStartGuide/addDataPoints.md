@@ -7,7 +7,7 @@ has_toc: false
 ---
 
 # Add Data Points
-- Now we add two data points, the temperature and humidity.
+- Now we add two data points one for the temperature and another for the humidity sensor.
 - We tell the application to which room and flat they belong to and what kind of sensor they represent.
 
 ## Step 1: Room Temperature
@@ -34,7 +34,9 @@ Now we repeat the procedure of the temperature sensor for humidity.
    - the new data point appears in the table
 1. Click `update data now` on the top bar right
    - the tab `Room > Temp vs. Hum` appears
-   - this tab appears as soon as one or more data point of the type `Room Temperature` and `Room Humidity`are configured in the same room.
+   - this tab appears as soon as one or more data point of the type `Room Temperature` and `Room Humidity` are configured in the same room.
+
+Cool, everything seems to work and the first analysis of the sensor data is possible. Continue to learn more.
 
 [Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/nextSteps/){: .btn .btn-green }
 
