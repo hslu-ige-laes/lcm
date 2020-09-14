@@ -10,6 +10,7 @@ parent: Installation
 It works with the portableApps framework, so R can be run without a local installation. This works as well on a flash drive!
 - No installation required.
 
+<hr>
 
 ## Intall R locally
 - If "R Portable" is not suitable for you, R can be installed locally according to your operating system.
@@ -33,6 +34,7 @@ It works with the portableApps framework, so R can be run without a local instal
 - The exact installation procedure will vary depending on the Linux system you use. CRAN guides the process by grouping each set of source files with documentation or README files that explain how to install on your system.
 - Make shure to get the version 3.6.3
 
+<hr>
 
 # Install R Studio
 - R Studio is an application like Microsoft Word — except that instead of helping you write in English or German, R Studio helps you write in R.
