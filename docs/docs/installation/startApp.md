@@ -11,6 +11,8 @@ parent: Installation
 - A browser will open and show the application
 - To stop the application simply close the browser window
 
+<hr>
+
 ## in local installation
 ### RStudio console
 1. Open the R Studio Project by clicking `lcm.Rproj`
