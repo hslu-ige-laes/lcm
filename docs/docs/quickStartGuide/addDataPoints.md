@@ -36,7 +36,7 @@ Now we repeat the procedure of the temperature sensor for humidity.
    - the tab `Room > Temp vs. Hum` appears
    - this tab appears as soon as one or more data point of the type `Room Temperature` and `Room Humidity` are configured in the same room.
 
-Cool, everything seems to work and the first analysis of the sensor data is possible. Continue to learn more.
+Continue to learn more.
 
 [Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/nextSteps/){: .btn .btn-green }
 
