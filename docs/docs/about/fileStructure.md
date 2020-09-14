@@ -5,13 +5,17 @@ nav_order: 2
 parent: About the app
 
 ---
-## Table of contents
+# File structure
+{: .no_toc .text-delta }
+
+### Table of contents
 {: .no_toc .text-delta }
 
 1. TOC
 {:toc}
 
----
+<hr>
+
 ## /app
 - This folder contains application specific things.
 - app.R is the starting script for R Portable
@@ -111,9 +115,13 @@ myParsingScriptName <- function(filePath = NULL) {
 #### /www
 - Shiny application folder where files for the web server session can get saved, e.g. the favicon.ico
 
+<hr>
+
 ## /dist
 - This folder contains the R Portable code to run "lcm" in Windows as self-contained desktop R application.
 - If you work with a local R installation you don't need this folder.
+
+<hr>
 
 ## /docs
 - This folder contains documentation.
