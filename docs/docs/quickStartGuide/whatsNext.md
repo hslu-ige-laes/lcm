@@ -10,11 +10,11 @@ has_toc: false
 ## Celebrate!
 By completing this quick start guide you’ve learned how to set up and use the application.
 
-Here’s what you accomplished:
+Here’s what you accomplished
 - Downloaded and started the application
-- Created a building hierarchy to attach later on datapoints
+- Created a building hierarchy
 - Added a data source in form of a csv-file
-- Created two data points
+- Created two data points, assigned data types and conneted them to rooms/flat from the building hierarchy
 - Explored the first two modules
 
 Cool, everything seems to work and the first analysis of the sensor data is possible. 
