@@ -17,8 +17,4 @@ has_toc: false
 
 > Tip: To stop the application simply close the browser window
 
-<hr>
-
 Continue to see how you can [configure the application](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/configuration/){: .btn .btn-green }
-
-<hr>
