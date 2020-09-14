@@ -12,7 +12,7 @@ parent: About the app
 <hr>
 
 ## Color palette
-Most of the visualizations use the viridis R package (by Simon Garnier). It provides a color palette to make plots that are:
+Most of the visualizations use the [viridis color palette R package](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html). It provides a color palette to make plots that are:
 - printer-friendly
 - perceptually uniform and
 - easy to read by those with colorblindness
