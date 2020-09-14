@@ -11,7 +11,7 @@ has_toc: false
 By completing this quick start guide you’ve learned how to set up the application.
 
 Here’s what you accomplished:
-- Downloaded and Started the application
+- Downloaded and started the application
 - Created a building hierarchy to attach later on datapoints
 - Added a data source in form of a csv-file
 - Created two data points
