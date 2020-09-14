@@ -1,16 +1,5 @@
-
-# ======================================================================
-
-# ======================================================================
-
 dataSourcesModuleUI <- function(id) {
-  #' Data Sources Module UI
-  #'
-  #' User-Interface for the module data sources
-  #' @param id id for ns()
-  #' @export
-  #' @author Reto Marek
-  
+
   ns <- NS(id)
   
   tagList(
@@ -22,14 +11,14 @@ dataSourcesModuleUI <- function(id) {
         width = 12,
         tabsetPanel(
           id = "tabsetDataSources",
+          tabPanel("csv Files",
+                   dataSourcesModuleCsvUI("datasources_csv")
+          ),
           tabPanel("the things network",
                     dataSourcesModuleTtnUI("datasources_ttn")
           ),
           tabPanel("influxDB",
                    dataSourcesModuleInfluxdbUI("datasources_influxdb")
-          ),
-          tabPanel("csv Files",
-                   dataSourcesModuleCsvUI("datasources_csv")
           )
         )
       )
