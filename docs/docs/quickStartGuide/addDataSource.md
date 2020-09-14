@@ -22,4 +22,4 @@ has_toc: false
 
 Continue to see how you can add a data points.
 
-[Continue](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/addDataPoints/){: .btn .btn-green }
+[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/addDataPoints/){: .btn .btn-green }
