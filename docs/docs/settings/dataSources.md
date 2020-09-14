@@ -79,9 +79,8 @@ Supported data sources are csv files, LoRaWAN sensors over "the things network" 
 ### No ttn coverage at the buildings location
 - Don't panic, you can install and setup an own gateway within a few minutes. It's easy and will cost you less than 100 Swiss Francs (September 2020) for the hardware
 - Visit [https://www.thethingsnetwork.org/docs/gateways/](https://www.thethingsnetwork.org/docs/gateways/) for more information
-- You only need to have a WLAN internet connection in the building where you want to place the LoRaWAN sensors and a 5V USB power supply
-- Affordable [ttn indoor LoRaWAN Gateway](https://ch.rs-online.com/web/p/entwicklungstools-kommunikation-und-drahtlos/1843981/)
-- [Installation description](https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/#activate-your-gateway-in-under-5-min)
+- You only need to have a WLAN internet connection in the building and a 5V USB power supply
+- Affordable [indoor LoRaWAN Gateway from ttn](https://ch.rs-online.com/web/p/entwicklungstools-kommunikation-und-drahtlos/1843981/), and here the corresponding [installation description](https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/#activate-your-gateway-in-under-5-min)
 
 <hr>
 
