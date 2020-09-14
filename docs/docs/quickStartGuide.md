@@ -3,6 +3,7 @@ layout: default
 title: Quick Start Guide
 nav_order: 2
 has_children: true
+has_toc: false
 ---
 
 - This guide will bring you up and running within a few minutes.
