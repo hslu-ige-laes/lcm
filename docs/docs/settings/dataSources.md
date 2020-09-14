@@ -29,7 +29,7 @@ Supported data sources are csv files, LoRaWAN sensors over "the things network" 
 - It can be separated by comma, semicolons or tabulators
 - In case of a special file format you can write an own `Parsing script`. Details see [csv scripts](https://hslu-ige-laes.github.io/lcm/docs/about/fileStructure/#csvscripts).
 
-### How can I add a new csv file as data source?
+### Add new
 1. Click in the lcm application under `Settings > Data Sources > csv Files` the button `Add new`
 1. Fill the fields as follows:
    - SourceName: Name for the data source in the application which you can define freely.
@@ -45,14 +45,14 @@ Supported data sources are csv files, LoRaWAN sensors over "the things network" 
 
 <hr>
 
-## the things network (ttn)
+## the things network (ttn) applications
 ### General
 - The [Things Network](https://de.wikipedia.org/wiki/The_Things_Network) is a community based initiative to create a [LoRaWAN network](https://de.wikipedia.org/wiki/Long_Range_Wide_Area_Network). 
 - You can buy a LoRaWAN device and connect it to the network, free without charges or fees.
 - LoRaWAN devices are able to send messages over a range of about 10 kilometers wirelessly to a network gateway where the data get forwarded via internet to a ttn server.
 - Between the device and the ttn server there is an AES-128-End-to-End-Encryption
 
-### How can I integrate ttn data into the lcm application?
+### Add new
 1. Create a ttn application, add devices and configure them according to the separate [lora-devices-ttn documentation](https://hslu-ige-laes.github.io/lora-devices-ttn/).
    There you can find as well an overview of recommended devices.
 1. Then click in the lcm application under `Settings > Data Sources > the things network` the button `Add new`
@@ -66,7 +66,7 @@ Supported data sources are csv files, LoRaWAN sensors over "the things network" 
 1. Finally press `Add new data source`
 1. Now the ttn application and its device datapoints are selectable in `Settings > Data Points > Add new` under `Data Source` resp. `Data Point`
 
-### Background info about the data storage
+### ttn data storage information
 - Normally the things network (ttn) forwards only telegrams and does not store time series data.
 - But ttn offers a free database solution which stores all data for seven days.
 - The lcm applicaiton takes advantage of this possibility and uses an API to retrieve this data.
@@ -76,7 +76,7 @@ Supported data sources are csv files, LoRaWAN sensors over "the things network" 
 - If necessary (depending on `Settings > App Configuration > Time Zone`) a time zone change is made during the import into the lcm application.
 
 
-### Help, no ttn coverage at the buildings location!
+### No ttn coverage at the buildings location
 - Don't panic, you can install and setup an own gateway within a few minutes. It's easy and will cost you less than 100 Swiss Francs (September 2020) for the hardware
 - Visit [https://www.thethingsnetwork.org/docs/gateways/](https://www.thethingsnetwork.org/docs/gateways/) for more information
 - You only need to have a WLAN internet connection in the building where you want to place the LoRaWAN sensors and a 5V USB power supply
@@ -85,13 +85,13 @@ Supported data sources are csv files, LoRaWAN sensors over "the things network" 
 
 <hr>
 
-## influxDB
+## influxDB integration
 ### General
 - tbd
 - time zone UTC in ttn, change to `Settings > App Configuration > Time Zone`
 
 
-### How can I integrate influxDB into the lcm application?
+### Add new
 1. tbd
 1. Now the influx database and its measurements are selectable in `Settings > Data Points > Add new` under `Data Source` resp. `Data Point`
 
