@@ -7,9 +7,8 @@ parent: Settings
 
 ## Building Hierarchy
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsBldgHierarchy_02.PNG" style="border:1px solid lightgrey"/><br><br>
-
-- You can run multiple applications on one computer.
-- Each building gets its own application. So in one application you can have either a single familiy house with one flat or a multi family house with multiple flats.
+- You can run multiple lcm applications on one computer. Each application has its own folder.
+- In one application you can have either a single familiy house with one flat or a multi family house with multiple flats.
 - The application works with hierarchical elements:
   - for example a room temperature sensor belongs to a specific room and
   - a room belongs to a flat
