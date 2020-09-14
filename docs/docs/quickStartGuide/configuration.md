@@ -23,4 +23,5 @@ Here we go and create our first flat and room.
 1. Click `Add new flat`
 
 Continue to see how you can add a data source.
+
 [Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/addDataSource/){: .btn .btn-green }
