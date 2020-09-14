@@ -5,6 +5,7 @@ nav_order: 1
 parent: About the app
 ---
 
+# System Architecture
 ## Overview
 <br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/systemArchitecture_01.PNG" alt="Application architecture" onclick="window.open('https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/systemArchitecture_01.PNG', '_blank');" />
@@ -14,6 +15,8 @@ parent: About the app
 - To keep things simple, all the configurations and time series data are saved as csv files.
 - An aggregation and filter process then collects the required datapoints according to the app configuration and saves again the preprocessed data.
 - The Shiny application consists of different modules which then access, analyzes and visualizes these processed data.
+
+<hr>
 
 ## Data Sources
 Data can get fetched from different sources:
