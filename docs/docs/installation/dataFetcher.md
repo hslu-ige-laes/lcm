@@ -11,7 +11,17 @@ parent: Installation
 
 ## Windows
 The following setup procedure uses the Windows Task Scheduler, which periodically executes a batch file.
-1. 
+To create a task on Windows 10, use these steps:
+
+1. Open `Start`
+1. Search for `Task Scheduler`, and click the top result. The "Task Scheduler" (de: `Aufgabenplanung`) opens.
+1. Right-click the `Task Scheduler Library` branch (de: `Aufgabenplanungsbibliothek`), and select the `Create task...` option.
+1. Fill the fields as follows<br>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsDataFetcher_01.PNG" style="border:1px solid lightgrey"/><br><br>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsDataFetcher_02.PNG" style="border:1px solid lightgrey"/><br><br>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsDataFetcher_03.PNG" style="border:1px solid lightgrey"/><br><br>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsDataFetcher_04.PNG" style="border:1px solid lightgrey"/><br><br>
+
 
 
 ## MacOSX and Linux
@@ -21,3 +31,5 @@ The following setup procedure uses the cronjob daemon, which periodically execut
 1. paste the following entry at the end (change `MyAppPath` accordingly)<br>
    `0 * * * * Rscript /MyAppPath/dataFetcher/lcmDataFetcher.R`
 1. save file and close editor
+
+This cronjob executes the file every hour.
