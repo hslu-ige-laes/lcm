@@ -8,7 +8,7 @@ has_toc: false
 
 # Add Data Points
 - Now we add two data points, the temperature and humidity.
-- We tell the application to which room and flat they belong to and what kind of sensor they characterize.
+- We tell the application to which room and flat they belong to and what kind of sensor they represent.
 
 ## Step 1: Room Temperature
 1. Navigate to `Settings > Data Points` in the sidebar
