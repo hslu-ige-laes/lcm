@@ -5,15 +5,16 @@ nav_order: 02
 parent: Settings
 ---
 
-## General
+## Building Hierarchy
+<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsBldgHierarchy_02.PNG" style="border:1px solid lightgrey"/><br><br>
+
 - You can run multiple applications on one computer.
 - Each building gets its own application. So in one application you can have either a single familiy house with one flat or a multi family house with multiple flats.
+- The application works with hierarchical elements:
+  - for example a room temperature sensor belongs to a specific room and
+  - a room belongs to a flat
 
-The application works with hierarchical elements:
-- for example a room temperature sensor belongs to a specific room and
-- a room belongs to a flat
-
-## Content
+## Table content
 ### flat
 - name for the flat
 - appears e.g. on the charts and in the pull down menues
@@ -37,7 +38,7 @@ The application works with hierarchical elements:
 ## Examples
 ### single family house
 - In case of a single family house, the level "flat" is in fact superfluous.
-- Therefore the structure is quite simple
+- Therefore the structure is quite simple.
 - In the case of a single-family house, several rooms may be monitored.
 
 | flat | size | occupants | rooms |
