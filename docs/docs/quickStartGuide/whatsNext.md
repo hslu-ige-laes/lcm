@@ -21,9 +21,12 @@ Cool, everything seems to work and the first analysis of the sensor data is poss
 
 
 ## Next steps
-Now you are up and running to either
-- explore the sample data with the modules  [Room > Temp Reduction](https://hslu-ige-laes.github.io/lcm/docs/modules/roomTempReduction) or [Room > Temp vs. Hum](https://hslu-ige-laes.github.io/lcm/docs/modules/roomTempHum) or
-- adding your own data sources and data points to explore your own data and get to know the [other modules](https://hslu-ige-laes.github.io/lcm/docs/modules).
+Now you are up and running to
+- explore the sample data with the modules  [Room > Temp Reduction](https://hslu-ige-laes.github.io/lcm/docs/modules/roomTempReduction) and [Room > Temp vs. Hum](https://hslu-ige-laes.github.io/lcm/docs/modules/roomTempHum)
+- add your own [Data Sources](https://hslu-ige-laes.github.io/lcm/docs/settings/dataSources/) resp. [Data Points](https://hslu-ige-laes.github.io/lcm/docs/settings/dataPoints/) to explore your own data
+- get to know the [other modules](https://hslu-ige-laes.github.io/lcm/docs/modules)
+- configure a [Data Fetcher](https://hslu-ige-laes.github.io/lcm/docs/installation/dataFetcher/) which collects and saves your IoT data automatically
+- get more information [about the application](https://hslu-ige-laes.github.io/lcm/docs/about)
 
 **Have fun!**
 
