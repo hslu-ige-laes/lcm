@@ -23,3 +23,10 @@ Data can get fetched from different sources:
 - manual import via csv files
 - [ttn LoRa Data Storage](https://www.thethingsnetwork.org/docs/applications/storage/) (periodical API calls)
 - [influx database](https://docs.influxdata.com/influxdb/)
+
+See [Settings > Data Sources](https://hslu-ige-laes.github.io/lcm/docs/settings/dataSources/) for details.
+
+## Why not using an available cloud service/dashboard
+- As of today, the market does not offer an affordable application for residential construction. 
+- Today's IoT applications are subject to licensing and focus on the presentation of time series in standard plots.
+- More complicated data analyses and visualizations are rarely supported.
