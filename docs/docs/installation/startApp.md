@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Start App
+title: Start application
 nav_order: 03
 parent: Installation
 ---
