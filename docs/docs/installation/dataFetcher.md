@@ -16,12 +16,22 @@ To create a task on Windows 10, use these steps:
 1. Open `Start`
 1. Search for `Task Scheduler`, and click the top result. The "Task Scheduler" (de: `Aufgabenplanung`) opens.
 1. Right-click the `Task Scheduler Library` branch (de: `Aufgabenplanungsbibliothek`), and select the `Create task...` option.
-1. Fill the fields as follows<br>
-   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsDataFetcher_01.PNG" style="border:1px solid lightgrey"/><br><br>
-   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsDataFetcher_02.PNG" style="border:1px solid lightgrey"/><br><br>
-   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsDataFetcher_03.PNG" style="border:1px solid lightgrey"/><br><br>
-   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsDataFetcher_04.PNG" style="border:1px solid lightgrey"/><br><br>
-
+1. Fill the fields in the first tab as follows<br><br>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/installationDataFetcher_01.PNG" style="border:1px solid lightgrey"/><br><br>
+1. In the second tab create new Triggers as follows<br><br>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/installationDataFetcher_02.PNG" style="border:1px solid lightgrey"/><br><br>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/installationDataFetcher_03.PNG" style="border:1px solid lightgrey"/><br><br>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/installationDataFetcher_04.PNG" style="border:1px solid lightgrey"/><br><br>
+1. In the third tab create new Actions as follows<br><br>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/installationDataFetcher_05.PNG" style="border:1px solid lightgrey"/><br><br>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/installationDataFetcher_06.PNG" style="border:1px solid lightgrey"/><br><br>
+   Arguments: (change `MyAppPath` accordingly)<br>
+   `/c start /min C:\MyAppPath\dataFetcher\lcmDataFetcher.bat ^& exit`<br>
+1. In the fouth and fifth tab set the checkboxes as follows<br><br>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/installationDataFetcher_07.PNG" style="border:1px solid lightgrey"/><br><br>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/installationDataFetcher_08.PNG" style="border:1px solid lightgrey"/><br><br>
+1. Click OK to save
+1. You can right click the created task and execute it as test
 
 
 ## MacOSX and Linux
