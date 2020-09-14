@@ -6,8 +6,8 @@ parent: Quick Start Guide
 has_toc: false
 ---
 
-
-## Celebrate
+# Done
+## Celebrate!
 By completing this quick start tutorial, you’ve learned how to set up the application.
 
 Here’s what you accomplished:
