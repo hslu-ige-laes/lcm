@@ -8,14 +8,18 @@ has_toc: false
 
 **Celebrate!**
 
-By completing this tutorial, you’ve learned hot to use the application.
+By completing this quick start tutorial, you’ve learned how to set up the application.
 
-Here’s what you accomplished in this tutorial:
+Here’s what you accomplished:
 - Downloaded and Started the application
-- Created a building hierarchy to attach later on the datapoints to them
+- Created a building hierarchy to attach later on datapoints
 - Added a data source in form of a csv-file
-- Created data points
-- Explored functionality of two modules
+- Created two data points
 
-Now you are up and running. You can continue with adding more data sources and data points.
-- Links
+Now you are up and running to either
+- explore the sample data with the modules `Room > Temp Reduction` or `Room > Temp vs. Hum` or
+- adding your own data sources and data points
+
+**Have fun!**
+
+
