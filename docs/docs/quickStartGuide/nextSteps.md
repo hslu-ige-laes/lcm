@@ -7,7 +7,7 @@ has_toc: false
 ---
 
 
-### Celebrate
+## Celebrate
 By completing this quick start tutorial, you’ve learned how to set up the application.
 
 Here’s what you accomplished:
@@ -17,7 +17,7 @@ Here’s what you accomplished:
 - Created two data points
 
 
-### Next Steps
+## Next Steps
 Now you are up and running to either
 - explore the sample data with the modules `Room > Temp Reduction` or `Room > Temp vs. Hum` or
 - adding your own data sources and data points
