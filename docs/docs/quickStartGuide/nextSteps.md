@@ -16,6 +16,7 @@ Here’s what you accomplished:
 - Added a data source in form of a csv-file
 - Created two data points
 
+
 ### Next Steps
 Now you are up and running to either
 - explore the sample data with the modules `Room > Temp Reduction` or `Room > Temp vs. Hum` or
