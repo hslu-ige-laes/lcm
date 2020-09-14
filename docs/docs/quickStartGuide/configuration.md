@@ -14,8 +14,8 @@ has_toc: false
 
 ## Step 2: Building Hierarchy
 The application works with hierarchical elements:
-- for example a room temperature sensor belongs to a specific room
-- and a room belongs to a flat
+- for example a room temperature sensor belongs to a specific room and
+- a room belongs to a flat
 
 For our example we create one flat with multiple rooms.
 
