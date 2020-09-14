@@ -18,19 +18,22 @@ Supported data sources are csv files, LoRaWAN sensors over "the things network" 
 <hr>
 
 ## csv Files
+### General
 - Time series data can get imported from csv files
 - The data should have the following structure:
   ```javascript
   time,value1,value2
   2020-07-30 13:00:00,53,10.5
   ```
+- The file can include one or multiple value columns
 - It can be separated by comma, semicolons or tabulators
+- In case of a special file format you can write an own `Parsing script`. Details see [csv scripts](https://hslu-ige-laes.github.io/lcm/docs/about/fileStructure/#csvscripts).
 
-### How can I add a new csv file?
+### How can I add a new csv file as data source?
 1. Click in the lcm application under `Settings > Data Sources > csv Files` the button `Add new`
 1. Fill the fields as follows:
    - SourceName: Name for the data source in the application which you can define freely.
-   - Parsing Script: in case of a special file format you can select/write an own parsing script. Details see [csv scripts](https://hslu-ige-laes.github.io/lcm/docs/about/fileStructure/#csvscripts). If you are unsure leave `none`.
+   - Parsing Script: Select a special parsing script if required. If you are unsure leave `none`.
    - Choose CSV file: navigate to the csv file you want to import
    - Separator and Quote: depending on the file.
    - Time Zone Source Data: select the time zone in which the data in the csv file got monitored. If your time zone is not listed, please add it manually to the variable `timeZoneList` in the file `/app/shiny/global.R`
@@ -43,7 +46,7 @@ Supported data sources are csv files, LoRaWAN sensors over "the things network" 
 <hr>
 
 ## the things network (ttn)
-### What is the things network
+### General
 - The [Things Network](https://de.wikipedia.org/wiki/The_Things_Network) is a community based initiative to create a [LoRaWAN network](https://de.wikipedia.org/wiki/Long_Range_Wide_Area_Network). 
 - You can buy a LoRaWAN device and connect it to the network, free without charges or fees.
 - LoRaWAN devices are able to send messages over a range of about 10 kilometers wirelessly to a network gateway where the data get forwarded via internet to a ttn server.
@@ -74,12 +77,16 @@ Supported data sources are csv files, LoRaWAN sensors over "the things network" 
 
 
 ### Help, no ttn coverage at the buildings location!
-- tbd
+- Don't panic, you can install and setup an own gateway within a few minutes. It's easy and will cost you less than 100 Swiss Francs (September 2020) for the hardware
+- Visit [https://www.thethingsnetwork.org/docs/gateways/](https://www.thethingsnetwork.org/docs/gateways/) for more information
+- You only need to have a WLAN internet connection in the building where you want to place the LoRaWAN sensors and a 5V USB power supply
+- Affordable [ttn indoor LoRaWAN Gateway](https://ch.rs-online.com/web/p/entwicklungstools-kommunikation-und-drahtlos/1843981/)
+- [Installation description](https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/#activate-your-gateway-in-under-5-min)
 
 <hr>
 
 ## influxDB
-### What is influxDB
+### General
 - tbd
 - time zone UTC in ttn, change to `Settings > App Configuration > Time Zone`
 
