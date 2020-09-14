@@ -15,12 +15,15 @@ Here’s what you accomplished:
 - Created a building hierarchy to attach later on datapoints
 - Added a data source in form of a csv-file
 - Created two data points
+- Explored the first two modules
+
+Cool, everything seems to work and the first analysis of the sensor data is possible. 
 
 
-## Next Steps
+## What's next?
 Now you are up and running to either
-- explore the sample data with the modules `Room > Temp Reduction` or `Room > Temp vs. Hum` or
-- adding your own data sources and data points
+- explore the sample data with the modules  [Room > Temp Reduction](https://hslu-ige-laes.github.io/lcm/docs/modules/roomTempReduction) or [Room > Temp vs. Hum](https://hslu-ige-laes.github.io/lcm/docs/modules/roomTempHum) or
+- adding your own data sources and data points to explore your own data and get to know the [other modules](https://hslu-ige-laes.github.io/lcm/docs/modules).
 
 **Have fun!**
 
