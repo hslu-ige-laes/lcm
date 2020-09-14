@@ -8,7 +8,7 @@ parent: About the app
 # System Architecture
 ## Overview
 <br>
-<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/systemArchitecture_01.PNG" alt="Application architecture" onclick="window.open('https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/systemArchitecture_01.PNG', '_blank');" />
+<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/systemArchitecture_01.PNG" alt="Application architecture" style="border:1px solid lightgrey" onclick="window.open('https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/systemArchitecture_01.PNG', '_blank');" />
 <br>
 - The architecture follows the [data warehouse](https://en.wikipedia.org/wiki/Data_warehouse)- and [ETL principle](https://en.wikipedia.org/wiki/Extract,_transform,_load) (Extract, Transform, Load), where "Load" colloquially stands for store.
 - Time series data from multiple [Data Sources](https://hslu-ige-laes.github.io/lcm/docs/settings/dataSources/) get collected and saved in a raw format (the only exceptions are influxDB data, where the original raw data does not get saved).
