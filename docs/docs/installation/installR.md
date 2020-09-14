@@ -1,20 +1,17 @@
 ---
 layout: default
-title: Install R locally
+title: Install R
 nav_order: 02
 parent: Installation
 ---
 
 # Install R
 ## R Portable
-No installation required.
+- No installation required.
 
 
 ## Intall R locally
-If "R Portable" is not suitable for you, R and R Studio can be installed as follows.
-
-R is maintained by an international team of developers who make the language available through the web page of [The Comprehensive R Archive Network](http://cran.r-project.org/).
-The top of the web page provides three links for downloading R. Follow the link that describes your operating system: Windows, Mac, or Linux.
+- If "R Portable" is not suitable for you, R can be installed locally according to your operating system.
 
 ## Windows
 1. <a href="https://cran.r-project.org/bin/windows/base/old/3.6.3/R-3.6.3-win.exe" download>Click to download R version 3.6.3</a>
@@ -37,7 +34,8 @@ The top of the web page provides three links for downloading R. Follow the link 
 
 
 # Install R Studio
-R Studio is an application like Microsoft Word — except that instead of helping you write in English or German, R Studio helps you write in R.
+- R Studio is an application like Microsoft Word — except that instead of helping you write in English or German, R Studio helps you write in R.
+- R Studio is recommended for development purposes only. 
 
 1. Click [here](https://rstudio.com/products/rstudio/download/) to choose the operating system and download R Studio Desktop "Free". 
 1. Follow the instructions that follow.
