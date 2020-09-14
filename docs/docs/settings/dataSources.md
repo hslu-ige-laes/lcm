@@ -86,12 +86,24 @@ Supported data sources are csv files, LoRaWAN sensors over "the things network" 
 
 ## influxDB integration
 ### General
-- tbd
-- time zone UTC in ttn, change to `Settings > App Configuration > Time Zone`
+- An [influxDB](https://en.wikipedia.org/wiki/InfluxDB) is a specialized database for time series.
+- Data can get injected from external systems and read easily from the lcm application.
+- An already existing ifnluxDB instance is prerequisite. Database installation and data injection is not described in detail here.
+- This integration is only implemented for users with influxDB knowledge.
+- The lcm application assumes that stored data of influxDB is in UTC time zone.
+- During import the lcm application changes the time zone to the configured one of `Settings > App Configuration > Time Zone`
 
 
 ### Add new
-1. tbd
+1. Click in the lcm application under `Settings > Data Sources > influxDB` the button `Add new`
+1. Fill the fields as follows:
+   - SourceName: Name for the data source in the application which you can define freely.
+   - InfluxDB Host Address: IP address of the influxDB instance
+   - Port: influxDB's port, per default 8086
+   - Username and Password: optional, depending on influxDB settings.
+1. Click the button `Query databases` to get an overview of the configured databases in the influxDB instance
+1. Select the desired database with the pull down menu
+1. Click the button `Test settings and preview data` to get an overview of the available measurements of the selected database
+1. Click `Add new data source` if everything looks fine
 1. Now the influx database and its measurements are selectable in `Settings > Data Points > Add new` under `Data Source` resp. `Data Point`
-
 
