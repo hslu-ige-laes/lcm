@@ -6,6 +6,8 @@ has_children: true
 has_toc: false
 ---
 
+# Quick Start Guide
+
 - This guide will bring you up and running within a few minutes.
 - It is aimed for a **windows operating system** <sup><a href="#windows">*</a></sup> and you won't have to install any tool.
 
