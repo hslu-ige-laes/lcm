@@ -10,6 +10,10 @@ parent: Installation
 - This is what the "Data Fetcher" is doing. The script fetches all data from the configured "the things network applications" and saves them locally in csv files.
 - Below is a description of how this process can be initiated automatically on various operating systems.
 
+<hr>
+### Table of contents
+{: .no_toc .text-delta }
+
 1. TOC
 {:toc}
 
