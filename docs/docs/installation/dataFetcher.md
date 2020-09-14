@@ -35,7 +35,7 @@ To create a task on Windows 10, use these steps:
 
 
 ## MacOSX and Linux
-The following setup procedure uses the cronjob daemon, which periodically executes a batch file.
+The following setup procedure uses the cronjob daemon, which periodically executes a R script file.
 
 1. open `/etc/crontab` in your favorite editor
 1. paste the following entry at the end (change `MyAppPath` accordingly)<br>
