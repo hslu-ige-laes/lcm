@@ -25,10 +25,10 @@ Now you are ready to...
 - explore the sample data with the modules  [Room > Temp Reduction](https://hslu-ige-laes.github.io/lcm/docs/modules/roomTempReduction) and [Room > Temp vs. Hum](https://hslu-ige-laes.github.io/lcm/docs/modules/roomTempHum)
 - create your own [Building Hierarchy](https://hslu-ige-laes.github.io/lcm/docs/settings/bldgHierarchy/)
 - add your own [Data Sources](https://hslu-ige-laes.github.io/lcm/docs/settings/dataSources/) 
-- add a [LoRaWAN device via a ttn application](https://hslu-ige-laes.github.io/lcm/docs/settings/dataSources/#the-things-network-ttn-applications) to get live data of a sensor
+- add [LoRaWAN devices via ttn applications](https://hslu-ige-laes.github.io/lcm/docs/settings/dataSources/#the-things-network-ttn-applications) to get live data of a sensor
 - add your own [Data Points](https://hslu-ige-laes.github.io/lcm/docs/settings/dataPoints/) to explore your own data
 - get to know the [other modules](https://hslu-ige-laes.github.io/lcm/docs/modules)
-- configure a [Data Fetcher](https://hslu-ige-laes.github.io/lcm/docs/installation/dataFetcher/) which collects and saves your IoT data automatically
+- configure a [Data Fetcher](https://hslu-ige-laes.github.io/lcm/docs/installation/dataFetcher/) which collects and saves your ttn data automatically
 - get more information [about the application](https://hslu-ige-laes.github.io/lcm/docs/about)
 
 **Have fun!**
