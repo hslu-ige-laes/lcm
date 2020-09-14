@@ -17,6 +17,7 @@ Exploiting this potential is the goal of energy-related operational optimization
 - As of today, the market does not offer an affordable application for residential construction. 
 - Today's IoT applications are subject to licensing and focus on the presentation of time series in standard plots.
 - More complicated data analyses and visualizations are rarely supported.
+- Many people today still want to store as little data as possible on the internet and are not happy with a fully centralized solution.
 
 <hr>
 
