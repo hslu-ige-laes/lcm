@@ -7,8 +7,7 @@ parent: Settings
 
 ## App Configuration
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsAppConfiguration_01.PNG" style="border:1px solid lightgrey"/><br><br>
-
-- Don't forget to save changed settings with the button `Save settings to configApp.csv`
+- Hint: Don't forget to save changed settings with the button `Save settings to configApp.csv`
 
 ### Title on top left
 - You can choose whatever you want. For example your comanys name or the name of the project/building.
