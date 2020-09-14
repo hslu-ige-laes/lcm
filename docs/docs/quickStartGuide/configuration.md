@@ -9,7 +9,8 @@ has_toc: false
 # Configuration
 ## Step 1: App Configuration
 1. Navigate to `Settings > App Configuration` in the sidebar.
-1. Extract the content of the zip-file to a folder of your choice
+1. Choose the `Building Type` and set the `Building altitude`
+1. Click `Save settings in configApp.csv`
 
 ## Step 2: Building Hierarchy
 In a later step you can create data points. Each data point belongs to a hierarchical element like a room temperature sensor belongs to a room. Additionaly a room belongs to a flat.
