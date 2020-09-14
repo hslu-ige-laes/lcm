@@ -13,8 +13,11 @@ has_toc: false
 1. Click `Save settings in configApp.csv`
 
 ## Step 2: Building Hierarchy
-In a later step you can create data points. Each data point belongs to a hierarchical element like a room temperature sensor belongs to a room. Additionaly a room belongs to a flat.
-Here we go and create our first flat and room.
+The application works with hierarchical elements:
+- for example a room temperature sensor belongs to a specific room
+- and a room belongs to a flat
+
+For our example we create one flat with multiple rooms.
 
 1. Navigate to `Settings > Building Hierarchy` in the sidebar.
 1. Click `Add new`
