@@ -19,7 +19,7 @@ TBD:
 Link auf shinyapps.io für Test's
 See it in action
 
-[Getting started](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/){: .btn .btn-green }
+[Quick Start Guide](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/){: .btn .btn-green }
 
 ### Background <sub><a href="#balmer2020">[1]</a></sub>
 The construction of energy-efficient buildings is now state of the art in Switzerland. However, when in operation they often do not achieve the planned values. This is partly due to user behavior, which is difficult to plan. On the other hand, it is due to the fact that the technical systems in buildings are not operated optimally. As a result, even new buildings constructed according to energy labels often require significantly more energy than necessary. This is also true to an even greater extent for existing buildings. And this is the real problem if we want to achieve the goals of energy and climate policy. Around three-quarters of buildings in Switzerland were built before 1990 and in most cases do not meet today's energy requirements. There is a huge potential for efficiency gains here.
