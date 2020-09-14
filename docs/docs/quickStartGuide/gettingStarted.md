@@ -9,7 +9,7 @@ has_toc: false
 # Getting Started
 ## Step 1: Download application
 1. <a href="https://downgit.github.io/#/home?url=https://github.com/hslu-ige-laes/lcm" download>Click to download lcm application</a>
-1. Extract the content to a folder of your choice
+1. Extract the content of the zip-file to a folder of your choice
 
 
 ## Step 2: Start application
