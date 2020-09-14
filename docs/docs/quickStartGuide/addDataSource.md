@@ -11,6 +11,7 @@ has_toc: false
 - The sample file includes the temperature and humidity measurments of one sensor.
 - Later you can link your own files and also other data sources like LoRa devices or databases.
 
+
 1. Navigate to `Settings > Data Sources` in the sidebar.
 1. Click `Add new`
 1. Set a user defined `source Name` like `tempHumFlatA`
