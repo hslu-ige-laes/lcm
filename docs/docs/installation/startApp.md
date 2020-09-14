@@ -7,8 +7,6 @@ parent: Installation
 
 # Start applicaton
 ## in R Portable
-It works with the portableApps framework, so R can be run without a local installation. This works as well on a flash drive!
-
 - Execute `lcmStartApp.bat` in the application folder
 - A browser will open and show the application
 - To stop the application simply close the browser window
