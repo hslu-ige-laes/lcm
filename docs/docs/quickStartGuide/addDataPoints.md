@@ -38,5 +38,5 @@ Now we repeat the procedure of the temperature sensor for humidity.
 
 Continue to learn more.
 
-[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/nextSteps/){: .btn .btn-green }
+[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/whatsNext/){: .btn .btn-green }
 
