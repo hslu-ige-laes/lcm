@@ -38,7 +38,7 @@ bldgHierarchyModule <- function(input, output, session) {
   observeEvent(input$addButton, {
     showModal({
       ns <- session$ns
-      modalDialog(title = "Add new data point",
+      modalDialog(title = "Add new flat",
                   size = "l",
                   easyClose = FALSE,
                   fluidPage(
