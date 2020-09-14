@@ -8,7 +8,7 @@ has_toc: false
 
 # Done
 ## Celebrate!
-By completing this quick start tutorial, you’ve learned how to set up the application.
+By completing this quick start guide you’ve learned how to set up the application.
 
 Here’s what you accomplished:
 - Downloaded and Started the application
