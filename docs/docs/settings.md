@@ -6,3 +6,4 @@ has_children: true
 permalink: /docs/settings
 ---
 
+# Settings
