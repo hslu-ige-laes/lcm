@@ -5,9 +5,14 @@ nav_order: 04
 parent: Installation
 ---
 # Data fetcher
+{: .no_toc }
 - The measured values of LoRaWAN sensors are sent via antennas to a server of the things network. There the data is stored for a maximum of seven days. Consequently, the lcm application must retrieve and locally store the measured values at least every seven days.
 - This is what the "Data Fetcher" is doing. The script fetches all data from the configured "the things network applications" and saves them locally in csv files.
 - Below is a description of how this process can be initiated automatically on various operating systems.
+
+{:toc}
+
+<hr>
 
 ## Windows
 The following setup procedure uses the Windows Task Scheduler, which periodically executes a batch file.
