@@ -18,8 +18,8 @@ has_toc: false
 1. Choose the sample data file `tempHum.csv` which you can find in your application folder in the subfolder `/sampleData`
 1. Click `Add new data source`
 
-> The new csv file data source appears in the table.
+The new csv file data source appears in the table.
 
-Continue to see how you can add a data points.
+Continue to see how you can add data points.
 
 [Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/addDataPoints/){: .btn .btn-green }
