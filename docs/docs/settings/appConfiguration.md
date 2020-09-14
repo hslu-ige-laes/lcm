@@ -6,7 +6,7 @@ parent: Settings
 ---
 
 ## App Configuration
-<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsAppConfiguration_01.PNG" style="border:1px solid lightgrey"/><br><br>
+<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsAppConfiguration_01.PNG" style="border:1px solid lightgrey"/><br>
 - Hint: Don't forget to save changed settings with the button `Save settings to configApp.csv`
 
 ### Title on top left
