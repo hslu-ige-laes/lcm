@@ -10,7 +10,7 @@ parent: Settings
 - Hint: Don't forget to save changed settings with the button `Save settings to configApp.csv`
 
 ### Title on top left
-- You can choose whatever you want. For example your comanys name or the name of the project/building.
+- You can choose whatever you want. For example your company name or the name of the project/building.
 
 ### Building Type
 - Choose what type of building you monitor
