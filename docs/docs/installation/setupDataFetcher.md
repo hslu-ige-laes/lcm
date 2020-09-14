@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Set up data fetcher
-nav_order: 5
+nav_order: 04
 parent: Installation
 ---
+# Data fetcher
+tbd: intro
 
 ## Windows
 tbd: describe how to set up scheduled jobs

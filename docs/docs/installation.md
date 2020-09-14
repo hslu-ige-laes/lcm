@@ -7,9 +7,11 @@ permalink: /docs/installation
 ---
 
 # Installation
-- To run the application an installed R environment is required.
+- To run the application an R environment is required.
 - The application is tested with R version 3.6.3.
-- R Studio (a graphical user interface for R) is recommended.
-- Therefore you can run "lcm" on windows, linux and OSX operating systems where R is installed.
-- Both R and RStudio are free and easy to download, see instructions below.
-- For windows operating systems we have packed an "R Portable" solution where no installation of R is required to run the application.
+- On windows opearting systems there are basically two different ways to execute the application:
+  - a "portable" version where you don't have to install any software
+  - a "local installation" of R
+- For other operating systems like linux and OSX you have to install R always locally.
+- R Studio (a graphical user interface) is recommended for development.
+- Both R and RStudio are free and easy to download.

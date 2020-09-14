@@ -1,10 +1,16 @@
 ---
 layout: default
-title: Install R
-nav_order: 2
+title: Install R locally
+nav_order: 02
 parent: Installation
 ---
 
+# Install R
+## R Portable
+No installation required.
+
+
+## Intall R locally
 If "R Portable" is not suitable for you, R and R Studio can be installed as follows.
 
 R is maintained by an international team of developers who make the language available through the web page of [The Comprehensive R Archive Network](http://cran.r-project.org/).
@@ -28,3 +34,11 @@ The top of the web page provides three links for downloading R. Follow the link 
 - Click the [link](https://cran.r-project.org/bin/linux/) and then follow the directory trail to the version of Linux you wish to install on.
 - The exact installation procedure will vary depending on the Linux system you use. CRAN guides the process by grouping each set of source files with documentation or README files that explain how to install on your system.
 - Make shure to get the version 3.6.3
+
+
+# Install R Studio
+R Studio is an application like Microsoft Word — except that instead of helping you write in English or German, R Studio helps you write in R.
+
+1. Click [here](https://rstudio.com/products/rstudio/download/) to choose the operating system and download R Studio Desktop "Free". 
+1. Follow the instructions that follow.
+1. Once you’ve installed R Studio, you can open it like any other program on your computer—usually by clicking an icon on your desktop.
