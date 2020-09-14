@@ -43,6 +43,7 @@ To create a task on Windows 10, use these steps:
 1. Click OK to save
 1. You can right click the created task and execute it as test
 
+<hr>
 
 ## MacOSX and Linux
 The following setup procedure uses the cronjob daemon, which periodically executes a R script file.
