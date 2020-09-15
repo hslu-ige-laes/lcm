@@ -4,6 +4,7 @@ title: Data Sources
 nav_order: 03
 parent: Settings
 ---
+
 # Data Sources
 {: .no_toc }
 Supported data sources are csv files, LoRaWAN sensors over "the things network" and influxDB connections.
