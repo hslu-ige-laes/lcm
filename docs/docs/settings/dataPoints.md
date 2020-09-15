@@ -18,29 +18,29 @@ With this information the modules filter and preprocess the time series.
 ## Add new
 1. Click in the lcm application under `Settings > Data Points` the button `Add new`
 1. Fill the fields as follows:
-   - **Abbreviation**
+   - **Abbreviation**<br>
      Name for the data point in the application which you can define freely.
-   - **Name**
+   - **Name**<br>
      Description of the data point which you can define freely.
      It appears in diagram headers of the modules.
-   - **Datapoint Type**
+   - **Datapoint Type**<br>
      Choose the appropriate type.
      The different modules of the lcm application look at this information and filter the data accordingly.
-   - **Unit**
+   - **Unit**<br>
      Used for some diagram axis descriptions
-   - **Locality**
+   - **Locality**<br>
      The configured flat(s) from `Settings > Building Hierarchy` appear here as well as "Building" which is always present and foreseen for central devices like a central heating meter.
-   - **Room**
+   - **Room**<br>
      The presented list depends on the drop down "Locality" and shows the rooms which got configured in `Settings > Building Hierarchy`.
-   - **Data Source**
+   - **Data Source**<br>
      The configured sources from `Settings > Data Sources` appear.
-   - **Data Point**
+   - **Data Point**<br>
      The presented list depends on the drop down "Data Source" and shows all measurements of the selected source.
-   - **Field Key (InfluxDB only)**
+   - **Field Key (InfluxDB only)**<br>
      Get's automatically selected. If there are multiple Field Keys available you can select one.
-   - **Factor**
+   - **Factor**<br>
      During data import all measured values get multiplicated with this factor.
-   - **Value Type**
+   - **Value Type**<br>
      absolute Value: sensors which measure an absolute values
 	 Counter Reading: values normally from meters which represent an increasing counter value
 1. Click `Test settings and preview data` and if everything looks fine `Add new data point`
