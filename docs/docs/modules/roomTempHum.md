@@ -7,6 +7,8 @@ has_children: true
 permalink: /docs/modules/roomTempHum
 ---
 
+# Room > Temp vs. Hum
+
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempHum_00.PNG" style="border:1px solid lightgrey"/>
 
 ### Prerequisite

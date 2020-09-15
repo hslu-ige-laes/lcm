@@ -7,6 +7,8 @@ has_children: true
 permalink: /docs/modules/roomTempReduction
 ---
 
+# Room > Temp Reduction
+
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempReduction_00.PNG" style="border:1px solid lightgrey"/>
 
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempReduction_05.PNG" style="border:1px solid lightgrey"/>
