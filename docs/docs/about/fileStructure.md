@@ -7,9 +7,8 @@ parent: About the app
 ---
 
 # File structure
-{: .no_toc .text-delta }
 
-### Table of contents
+<hr>
 
 1. TOC
 {:toc}
@@ -132,5 +131,8 @@ myParsingScriptName <- function(filePath = NULL) {
 - The documentation gets automatically generated with GithubPages and is published under [https://hslu-ige-laes.github.io/lcm/](https://hslu-ige-laes.github.io/lcm/)
 - The documentation is written in [Markdown language](https://en.wikipedia.org/wiki/Markdown).
 
+<hr>
+
 ## /sampleData
 - Sample csv file which is used in the Quick Start Guide
+
