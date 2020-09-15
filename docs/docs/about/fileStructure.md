@@ -15,7 +15,6 @@ parent: About the app
 {: .no_toc .text-delta }
 
 1. TOC
-
 {:toc}
 
 <hr>
