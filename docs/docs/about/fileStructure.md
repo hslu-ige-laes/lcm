@@ -117,13 +117,20 @@ myParsingScriptName <- function(filePath = NULL) {
 
 <hr>
 
+## /dataFetcher
+- This folder contains the R [Data Fetcher](https://hslu-ige-laes.github.io/lcm/docs/installation/dataFetcher/) script and a batch file which fetches the data from the things network apllications.
+
+<hr>
+
 ## /dist
 - This folder contains the R Portable code to run "lcm" in Windows as self-contained desktop R application.
 - If you work with a local R installation you don't need this folder.
-
 <hr>
 
 ## /docs
 - This folder contains documentation.
 - The documentation gets automatically generated with GithubPages and is published under [https://hslu-ige-laes.github.io/lcm/](https://hslu-ige-laes.github.io/lcm/)
 - The documentation is written in [Markdown language](https://en.wikipedia.org/wiki/Markdown).
+
+## /sampleData
+- Sample csv file which is used in the Quick Start Guide
