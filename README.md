@@ -15,6 +15,14 @@
 
 (c) Lucerne University of Sciences and Arts, 2020
 
+
+## Quick Start Guide
+[English](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/en/)
+[Deutsch](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/)
+[Français](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/)
+[Italiano](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/)
+
+
 ## Simplified installation instructions
 > For more details please consult [https://hslu-ige-laes.github.io/lcm/docs/installation](https://hslu-ige-laes.github.io/lcm/docs/installation)
 
@@ -32,8 +40,3 @@
 1. execute `runApp("./app/shiny/")`
 1. A browser will open and show the application
 
-## Quick Start Guide
-[English](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/en/)
-[Deutsch](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/)
-[Français](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/)
-[Italiano](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/)
