@@ -12,7 +12,7 @@ People have very different requirements for comfort in a room. Therefore, it wil
 ### Comfort
 The comfort requirements have increased compared to the past and today, many people feel uncomfortable at 20°C <a href="#balmer2020">[2]</a>. Please consider that when looking at the left visualization which dates back to 1975 <a href="#inter_frank1975">[3]</a>. 
 
-- From a comfort perspective the temperature should be ** 21°C in winter**<a href="#balmer2020">[2]</a>
+- From a comfort perspective the temperature should be **21°C in winter** <a href="#balmer2020">[2]</a>
 - Consider the following rule of thumb: **per degree of higher room temperature about 6% more heating energy is needed**. With well-insulated buildings, the value is even higher. <a href="#balmer2020">[2]</a>
 - Bedrooms in well-insulated and well-ventilated buildings may well have 18°C.
 - But attention, lower temperatures result in higher relative humidities and can cause mould growth. It is therefore recommended to monitor not only the room temperatures but also the room air humidity.
