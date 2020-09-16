@@ -3,6 +3,7 @@ layout: default
 title: Add Data Points
 nav_order: 4
 parent: Deutsch
+grand_parent: Quick Start Guide
 has_toc: false
 ---
 

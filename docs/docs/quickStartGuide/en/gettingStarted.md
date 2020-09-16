@@ -3,6 +3,7 @@ layout: default
 title: Getting started
 nav_order: 1
 parent: English
+grand_parent: Quick Start Guide
 has_toc: false
 ---
 
