@@ -27,6 +27,6 @@ In der lcm-Anwendung werden Gebäude hierarchisch definiert. Zum Beispiel:
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsBldgHierarchy_01.PNG" style="border:1px solid lightgrey"/>
 1. Klicken Sie auf `Add new flat` um die Wohnung der Hierarchie hinzuzufügen
 
-Drücken Sie "Weiter", um zu erfahren, wie Sie eine Datenquelle hinzufügen können.
+Drücken Sie "Weiter" um zu erfahren, wie Sie eine Datenquelle hinzufügen können.
 
 [Weiter](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/addDataSource/){: .btn .btn-green }
