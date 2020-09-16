@@ -1,32 +1,33 @@
 ---
 layout: default
-title: Configuration
+title: Configurazione
 nav_order: 2
 parent: Italiano
 grand_parent: Quick Start Guide
 has_toc: false
 ---
 
-# Configuration
-## Step 1: Application configuration
-1. Navigate to `Settings > App Configuration` in the sidebar
-1. Choose the appropriate `Building Type` and set the `Building altitude`
-1. Click `Save settings in configApp.csv`
+# Configurazione
+## Passo 1: Configurazione dell'applicazione
+1. nella barra laterale, passare alle impostazioni dell'applicazione `Settings > App Configuration`
+1. selezionare il "tipo di edificio" appropriato (casa unifamiliare o condominio) e impostare l'altezza dell'edificio
+1. cliccare sul pulsante di salvataggio `Save settings in configApp.csv`
 
-## Step 2: Define building hierarchy
-In the lcm application, buildings are defined hierarchically. For instance:
-- A room temperature sensor belongs to a given room
-- A room belongs to a given flat
-- Etc.
+## Passo 2: Definire la gerarchia dell'edificio
+Nella lcm-applicazione gli edifici sono definiti gerarchicamente.<br>
+Per esempio
+- un sensore di temperatura ambiente appartiene ad una certa stanza
+- una stanza appartiene ad un certo appartamento
+- e così via
 
-**Example:** Define a single flat with multiple rooms.
+**Esempio:** Definire un singolo appartamento con più stanze.
 
-1. Navigate to `Settings > Building Hierarchy` in the sidebar
-1. Click `Add new`
-1. Fill in the form as follows:<br>
-   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsBldgHierarchy_01.PNG" style="border:1px solid lightgrey"/>
-1. Click `Add new flat`
+1. navigare nella barra laterale fino alle impostazioni della gerarchia degli edifici `Settings > Building Hierarchy`
+1. cliccare su `Add new` per creare una nuova voce
+1. compilare il modulo nel modo seguente:<br>.
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsBldgHierarchy_01.PNG" style="border:1px grigio chiaro massiccio"/>
+1. cliccare su `Add new flat` per aggiungere l'appartamento alla gerarchia
 
-Press "Next" in order to learn how to add a data source.
+Fare clic su "Avanti" per imparare ad aggiungere una fonte di dati.
 
-[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/addDataSource/){: .btn .btn-green }
+[Avanti](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/addDataSource/){: .btn .btn-green }
