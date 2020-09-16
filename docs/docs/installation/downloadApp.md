@@ -5,9 +5,9 @@ nav_order: 01
 parent: Installation
 ---
 
-# Download Application
-- You can run multiple applications on one computer.
-- Each building gets its own application. So in one application you can have either a single familiy house with one flat or a multi family house with multiple flats.
+# Download application
+- You can run multiple instances of the lcm application on a single computer
+- Each building runs within its own application. So within one application, you can either monitor a single-family house with one flat, or an apartment house with multiple flats
 
-1. <a href="https://downgit.github.io/#/home?url=https://github.com/hslu-ige-laes/lcm" download>Click to download lcm application</a>
-1. Extract the content of the zip-file to a folder of your choice
+1. <a href="https://downgit.github.io/#/home?url=https://github.com/hslu-ige-laes/lcm" download>Click to download the lcm application</a>
+1. Extract the content of the downloaded zip-file into the folder of your choice
