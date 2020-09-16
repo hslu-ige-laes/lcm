@@ -9,7 +9,7 @@ has_toc: false
 
 # Primi passi
 ## Passo 1: Scaricare l'applicazione
-1. <a href="https://downgit.github.io/#/home?url=https://github.com/hslu-ige-laes/lcm" download>clicca qui per scaricare l'applicazione lcm</a>.
+1. <a href="https://downgit.github.io/#/home?url=https://github.com/hslu-ige-laes/lcm" download>clicca qui per scaricare l'applicazione lcm</a>
 1. decomprimere il contenuto del file zip scaricato in una cartella a scelta
 
 

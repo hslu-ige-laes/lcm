@@ -10,8 +10,8 @@ has_toc: false
 # Guida rapida 
 
 - Questa guida rapida consente di impostare un'installazione funzionante di lcm in pochi minuti
-- La guida è rivolta al sistema operativo **windows** <sup><a href="#windows">*</a></sup 
-- Non è necessario installare alcuno strumento aggiuntivo per utilizzare l'applicazione.
+- La guida è rivolta al sistema operativo **windows** <sup><a href="#windows">*</a></sup>
+- Non è necessario installare alcuno strumento aggiuntivo per utilizzare l'applicazione
 
 [Per iniziare](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/gettingStarted/){: .btn .btn-green }
 

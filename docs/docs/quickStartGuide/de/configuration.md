@@ -14,8 +14,7 @@ has_toc: false
 1. Klicken Sie auf den Speichern-Knopf `Save settings in configApp.csv`.
 
 ## Schritt 2: Definieren Sie die Gebäudehierarchie
-In der lcm-Anwendung werden Gebäude hierarchisch definiert.<br>
-Zum Beispiel
+In der lcm-Anwendung werden Gebäude hierarchisch definiert. Zum Beispiel:
 - gehört eine Raumtemperaturfühler zu einem bestimmten Raum
 - gehört ein Zimmer zu einer bestimmten Wohnung
 - usw.
@@ -25,7 +24,7 @@ Zum Beispiel
 1. Navigieren Sie in der Seitenleiste zu den Gebäudehierarchie-Einstellungen `Settings > Building Hierarchy`
 1. Klicken Sie auf `Add new` um einen neuen Eintrag zu erstellen.
 1. Füllen Sie das Formular wie folgt aus:<br>
-   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsBldgHierarchy_01.PNG" style="border:1px solid hellgrau"/>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsBldgHierarchy_01.PNG" style="border:1px solid lightgrey"/>
 1. Klicken Sie auf `Add new flat` um die Wohnung der Hierarchie hinzuzufügen.
 
 Drücken Sie "Weiter", um zu erfahren, wie Sie eine Datenquelle hinzufügen können.

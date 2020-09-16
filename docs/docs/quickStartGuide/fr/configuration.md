@@ -14,8 +14,7 @@ has_toc: false
 1. Cliquez sur `Save settings in configApp.csv` pour enregistrer les paramètres.
 
 ## Étape 2 : Définir la hiérarchie des bâtiments
-Dans l'application lcm, les bâtiments sont définis de manière hiérarchique.<br>
-Par exemple:
+Dans l'application lcm, les bâtiments sont définis de manière hiérarchique. Par exemple:
 - Un capteur de température ambiante appartient à une pièce donnée
 - Une chambre appartient à un appartement donné
 - Etc.

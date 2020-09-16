@@ -8,8 +8,8 @@ has_toc: false
 ---
 
 # Ajouter des points de données
-- Nous pouvons maintenant ajouter deux points de données: un pour le capteur de température et un autre pour le capteur d'humidité.
-- Nous configurons également à quelle pièce et à quel appartement appartient chaque capteur et quel type de capteur il est.
+- Nous pouvons maintenant ajouter deux points de données: un pour le capteur de température et un autre pour le capteur d'humidité
+- Nous configurons également à quelle pièce et à quel appartement appartient chaque capteur et quel type de capteur il est
 
 ## Étape 1 : Température ambiante
 1. naviguez dans la barre latérale jusqu'aux paramètres des points de données `Settings > Data Points`
@@ -35,7 +35,7 @@ Nous répétons maintenant la procédure ci-dessus pour le capteur d'humidité.
    - le nouveau point de données est ajouté au tableau
 1. cliquez sur `update data now` dans la barre supérieure droite
    - l'onglet `Room > Temp vs. Hum` apparaît
-   - cet onglet apparaît dès qu'un ou plusieurs points de données de type `Room Temperature` et `Room Humidity` sont présents dans une pièce en même temps.
+   - cet onglet apparaît dès qu'un ou plusieurs points de données de type `Room Temperature` et `Room Humidity` sont présents dans une pièce en même temps
 
 Cliquez sur "Suivant" pour découvrir les autres options disponibles.
 

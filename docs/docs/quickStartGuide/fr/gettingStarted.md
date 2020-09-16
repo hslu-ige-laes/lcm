@@ -17,7 +17,7 @@ has_toc: false
 1. Démarrez l'application en exécutant `lcmStartApp.bat` dans le dossier d'application
 1. Un navigateur Web s'ouvre automatiquement et affiche la demande
 
-**Conseil : Pour quitter l'application, il suffit de fermer la fenêtre du navigateur Web
+**Conseil**: Pour quitter l'application, il suffit de fermer la fenêtre du navigateur Web
 
 Appuyez sur "Suivant" pour savoir comment configurer l'application.
 

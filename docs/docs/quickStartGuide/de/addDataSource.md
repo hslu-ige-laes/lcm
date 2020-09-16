@@ -12,11 +12,11 @@ has_toc: false
 - Die Beispieldatei enthält Temperatur- und Feuchtigkeitsmessungen aus einem Raum
 - Später können Sie Ihre eigenen CSV-Dateien sowie andere Datenquellen, z.B. LoRaWAN-Sensoren oder InfluxDB-Datenbanken, importieren (siehe [Wie weiter?](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/whatsNext/))
 
-1. Navigieren Sie in der Seitenleiste zu den Einstellungen der Datenquelle `Settings > Data Sources`.
-1. Klicken Sie auf `Add new` um eine neue Quelle hinzuzufügen.
-1. Setzen Sie einen benutzerdefinierten Quellennamen `source Name`, wie z.B. `tempHumFlatA`.
-1. Wählen Sie die Beispieldatendatei `tempHum.csv` aus. Diese Datei befindet sich in Ihrem Anwendungsordner im Unterordner `/sampleData`.
-1. Klicken Sie auf `Add new data source` um die neue Datenquelle hinzufügen.
+1. Navigieren Sie in der Seitenleiste zu den Einstellungen der Datenquelle `Settings > Data Sources`
+1. Klicken Sie auf `Add new` um eine neue Quelle hinzuzufügen
+1. Setzen Sie einen benutzerdefinierten Quellennamen `source Name`, wie z.B. `tempHumFlatA`
+1. Wählen Sie die Beispieldatendatei `tempHum.csv` aus. Diese Datei befindet sich in Ihrem Anwendungsordner im Unterordner `/sampleData`
+1. Klicken Sie auf `Add new data source` um die neue Datenquelle hinzufügen
 
 Die neue CSV-Datenquelle erscheint jetzt in der Quellentabelle.
 

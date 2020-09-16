@@ -24,7 +24,7 @@ Maintenant, nous espérons que tout a bien fonctionné jusqu'à présent et que 
 - Explorez les exemples de données avec les modules [Room > Temp Reduction](https://hslu-ige-laes.github.io/lcm/docs/modules/roomTempReduction) et [Room > Temp vs. Hum](https://hslu-ige-laes.github.io/lcm/docs/modules/roomTempHum)
 - Créez votre propre [hiérarchie des bâtiments](https://hslu-ige-laes.github.io/lcm/docs/settings/bldgHierarchy/)
 - Ajoutez vos propres [sources de données](https://hslu-ige-laes.github.io/lcm/docs/settings/dataSources/)
-- Ajoutez [LoRaWAN devices via ttn applications](https://hslu-ige-laes.github.io/lcm/docs/settings/dataSources/#the-things-network-ttn-applications) pour obtenir des données en direct des capteurs IoT.
+- Ajoutez [LoRaWAN devices via ttn applications](https://hslu-ige-laes.github.io/lcm/docs/settings/dataSources/#the-things-network-ttn-applications) pour obtenir des données en direct des capteurs IoT
 - Ajoutez vos propres [points de données](https://hslu-ige-laes.github.io/lcm/docs/settings/dataPoints/) pour explorer vos propres données
 - Faites connaissance avec les [autres modules](https://hslu-ige-laes.github.io/lcm/docs/modules)
 - Configurez un [Data Fetcher](https://hslu-ige-laes.github.io/lcm/docs/installation/dataFetcher/), qui collecte et stocke automatiquement vos données ttn

@@ -12,11 +12,11 @@ has_toc: false
 - Il file di esempio contiene misure di temperatura e umidità da una stanza
 - In seguito è possibile importare i propri file CSV e altre fonti di dati, ad esempio i sensori LoRaWAN o le banche dati InfluxDB (vedi [E poi?](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/whatsNext/))
 
-1. navigare nella barra laterale fino alle impostazioni della sorgente dati `Settings > Data Sources`.
+1. navigare nella barra laterale fino alle impostazioni della sorgente dati `Settings > Data Sources`
 1. cliccare su `Add new` per aggiungere una nuova fonte
-1. impostare un nome sorgente personalizzato `source Name`, come `tempHumFlatA`.
-1. selezionare il file dei dati del campione `tempHum.csv`. Questo file si trova nella cartella dell'applicazione nella sottocartella `/sampleData`.
-1. Cliccare su `Add new data source` per aggiungere la nuova fonte dati.
+1. impostare un nome sorgente personalizzato `source Name`, come `tempHumFlatA`
+1. selezionare il file dei dati del campione `tempHum.csv`. Questo file si trova nella cartella dell'applicazione nella sottocartella `/sampleData`
+1. Cliccare su `Add new data source` per aggiungere la nuova fonte dati
 
 La nuova sorgente dati CSV appare ora nella tabella delle sorgenti.
 
