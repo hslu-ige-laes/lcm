@@ -16,13 +16,6 @@ Possible reasons:
 - different orientations of the apartments and correspondingly different solar heat inputs
 - wrongly placed sensors, which are illuminated by the sun (see chapter "Interpretation" for sensor placement guideline) 
 
-#### Similar temperature differences between the rooms/flats
-
-
-**TBD: Bis hierher gekommen....**
-
-Vorlagetexte...
-
 #### too warm
 - If the controller is already set at a minimum (not lower than 12°C) and it is still too warm, the adjacent rooms/apartments or internal and external loads are sufficient to cover the heat losses.
 
