@@ -16,18 +16,18 @@ Hier sehen Sie, was Sie bisher erreicht haben:
 - Gebäudehierarchie erstellt
 - Eine CSV-Datenquelle hinzugefügt
 - Zwei Datenpunkte erstellt, entsprechende Datentypen zugewiesen und einem Raum/Wohnung zugewiesen
-- Die ersten zwei [Module] (https://hslu-ige-laes.github.io/lcm/docs/modules) kennengelernt
+- Erste zwei [Module](https://hslu-ige-laes.github.io/lcm/docs/modules) kennengelernt
 
 Nun hat bisher hoffentlich alles gut funktioniert, und die erste Analyse einiger Sensordaten ist möglich.
 
 ## Nächste Schritte
 - Erkunden Sie die Beispieldaten mit den Modulen [Room > Temp Reduction](https://hslu-ige-laes.github.io/lcm/docs/modules/roomTempReduction) und [Room > Temp vs. Hum](https://hslu-ige-laes.github.io/lcm/docs/modules/roomTempHum)
 - Erstellen Sie Ihre eigene [Gebäudehierarchie](https://hslu-ige-laes.github.io/lcm/docs/settings/bldgHierarchy/)
-- Fügen Sie Ihre eigenen [Dtenquellen](https://hslu-ige-laes.github.io/lcm/docs/settings/dataSources/) hinzu
+- Fügen Sie Ihre eigenen [Datenquellen](https://hslu-ige-laes.github.io/lcm/docs/settings/dataSources/) hinzu
 - Fügen Sie [LoRaWAN-Geräte über ttn-Anwendungen](https://hslu-ige-laes.github.io/lcm/docs/settings/dataSources/#the-things-network-ttn-applications) hinzu, um Live-Daten von IoT-Sensoren zu erhalten.
 - Fügen Sie Ihre eigenen [Datenpunkte](https://hslu-ige-laes.github.io/lcm/docs/settings/dataPoints/) hinzu, um Ihre eigenen Daten zu erforschen
 - Lernen Sie die [anderen Module](https://hslu-ige-laes.github.io/lcm/docs/modules) kennen
-- Konfigurieren Sie einen [Data Fetcher](https://hslu-ige-laes.github.io/lcm/docs/installation/dataFetcher/), der Ihre ttn-Daten automatisch sammelt und speichert.
-- Lesen Sie sich in Details [über die lcm-Anwendung](https://hslu-ige-laes.github.io/lcm/docs/about) ein.
+- Konfigurieren Sie einen [Data Fetcher](https://hslu-ige-laes.github.io/lcm/docs/installation/dataFetcher/), der Ihre ttn-Daten automatisch sammelt und speichert
+- Lesen Sie sich in Details [über die lcm-Anwendung](https://hslu-ige-laes.github.io/lcm/docs/about) ein
 
 **Viel Spass!**

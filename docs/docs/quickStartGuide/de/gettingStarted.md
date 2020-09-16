@@ -14,7 +14,7 @@ has_toc: false
 
 
 ## Schritt 2: Anwendung starten
-1. Starten Sie die Anwendung durch Doppelklicken von `lcmStartApp.bat` welche im obersten Anwendungsordner liegt
+1. Starten Sie die Anwendung durch Doppelklicken der Datei `lcmStartApp.bat` welche im obersten Anwendungsordner liegt
 1. Ein Web-Browser öffnet sich automatisch und zeigt die Anwendung
 
 **Tipp:** Um die Anwendung zu beenden, schliessen Sie einfach das Webbrowser-Fenster

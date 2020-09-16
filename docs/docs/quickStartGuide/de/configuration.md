@@ -10,11 +10,12 @@ has_toc: false
 # Konfiguration
 ## Schritt 1: Anwendungskonfiguration
 1. Navigieren Sie in der Seitenleiste zu den Applikaitions-Einstellungen `Settings > App Configuration`.
-1. Wählen Sie den entsprechenden "Gebäudetyp" und stellen Sie die "Gebäudehöhe" ein.
+1. Wählen Sie den entsprechenden "Gebäudetyp" (Einfamilienhaus oder Mehrfamilienhaus) aus und stellen Sie die "Gebäudehöhe" ein.
 1. Klicken Sie auf den Speichern-Knopf `Save settings in configApp.csv`.
 
 ## Schritt 2: Definieren Sie die Gebäudehierarchie
-In der lcm-Anwendung werden Gebäude hierarchisch definiert. Zum Beispiel
+In der lcm-Anwendung werden Gebäude hierarchisch definiert.<br>
+Zum Beispiel
 - gehört eine Raumtemperaturfühler zu einem bestimmten Raum
 - gehört ein Zimmer zu einer bestimmten Wohnung
 - usw.
