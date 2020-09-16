@@ -16,6 +16,8 @@ permalink: /
 - The lcm monitoring solution is cost-effective and "do it yourself"
 
 ### Quick Start Guide
+The Quick Start Guide is available in multiple languages, please select one.
+
 [English](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/en/){: .btn .btn-green }
 [Deutsch](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/){: .btn .btn-green }
 [Français](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/){: .btn .btn-green }
