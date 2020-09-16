@@ -27,7 +27,7 @@ Now we repeat the above procedure for the humidity sensor.
 
 1. Navigate to `Settings > Data Points` in the sidebar
 1. Click `Add new`
-1. Fill the form as follows:<br>
+1. Fill in the form as follows:<br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsDataPoints_02.PNG" style="border:1px solid lightgrey"/>
 1. Click `Test settings and preview data`
 1. Click `Add new data point`
