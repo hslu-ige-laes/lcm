@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Getting started
+title: Erste Schritte
 nav_order: 1
 parent: Deutsch
 grand_parent: Quick Start Guide

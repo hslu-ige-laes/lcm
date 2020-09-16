@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Add Data Points
+title: Datenpunkte hinzufügen
 nav_order: 4
 parent: Deutsch
 grand_parent: Quick Start Guide

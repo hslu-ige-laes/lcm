@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Add Data Source
+title: Datenquelle hinzufügen
 nav_order: 3
 parent: Deutsch
 grand_parent: Quick Start Guide
