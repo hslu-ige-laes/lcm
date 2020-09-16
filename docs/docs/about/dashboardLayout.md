@@ -11,7 +11,7 @@ parent: About the app
 <br>
 - In the left sidebar you can select the different [Modules](https://hslu-ige-laes.github.io/lcm/docs/modules).<br>
   They appear according to the configured [Data Points](https://hslu-ige-laes.github.io/lcm/docs/settings/dataPoints/).
-- The Data Ecplorer allows an exploration of the configured data points and includes as well an export function.
+- The Data Explorer allows an exploration of the configured data points and includes as well an export function.
 - [Settings](https://hslu-ige-laes.github.io/lcm/docs/settings) indludes the
   - [App Configuration](https://hslu-ige-laes.github.io/lcm/docs/settings/appConfiguration/)
   - [Building Hierarchy](https://hslu-ige-laes.github.io/lcm/docs/settings/bldgHierarchy/)
