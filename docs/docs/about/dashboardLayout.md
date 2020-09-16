@@ -19,7 +19,7 @@ parent: About the app
   - [Data Points](https://hslu-ige-laes.github.io/lcm/docs/settings/dataPoints/)
 - Depending on the selected [Module](https://hslu-ige-laes.github.io/lcm/docs/modules), the content of the main window will change.<br>
   It includes a
-  - Filter pane with the most used options
+  - filter pane with the most used options
   - an extended properties part which can get accessed by clicking the plus symbol on the top right sidebar
   - the main window with the visualization(s)
   - bottom part with different tabs which includes background information about the module
