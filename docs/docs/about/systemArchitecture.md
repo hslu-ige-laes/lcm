@@ -1,7 +1,7 @@
 ---
 layout: default
 title: System Architecture
-nav_order: 1
+nav_order: 2
 parent: About the app
 ---
 
