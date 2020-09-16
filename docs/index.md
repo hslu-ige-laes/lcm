@@ -16,3 +16,5 @@ permalink: /
 - A cost-effective solution is to be presented in the price-sensitive market of residential buildings.
 
 [Quick Start Guide](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/){: .btn .btn-green }
+
+<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/aboutDashboardLayout_02.png" alt="Application architecture" style="border:1px solid lightgrey" onclick="window.open('https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/aboutDashboardLayout_02.png', '_blank');" />
