@@ -16,7 +16,7 @@ has_toc: false
 1. Start the application by executing `lcmStartApp.bat` in the application folder
 1. A Web browser will open automatically and display the application
 
-**Tip:** In order to stop the application, simply close the Web browser window
+**Tip:** In order to quit the application, simply close the Web browser window
 
 Press "Next" in order to learn how to configure the application.
 
