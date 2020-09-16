@@ -2,7 +2,7 @@
 layout: default
 title: Configuration
 nav_order: 2
-parent: Quick Start Guide
+parent: Deutsch
 has_toc: false
 ---
 

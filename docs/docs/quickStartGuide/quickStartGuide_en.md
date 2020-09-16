@@ -2,6 +2,7 @@
 layout: default
 title: English
 nav_order: 1
+parent: Quick Start Guide
 has_children: true
 has_toc: false
 ---

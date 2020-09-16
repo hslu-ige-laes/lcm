@@ -2,6 +2,8 @@
 layout: default
 title: Deutsch
 nav_order: 2
+parent: Quick Start Guide
+
 has_children: true
 has_toc: false
 ---

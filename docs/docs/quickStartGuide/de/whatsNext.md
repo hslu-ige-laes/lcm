@@ -2,7 +2,7 @@
 layout: default
 title: What's Next?
 nav_order: 5
-parent: Quick Start Guide
+parent: Deutsch
 has_toc: false
 ---
 

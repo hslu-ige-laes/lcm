@@ -2,6 +2,7 @@
 layout: default
 title: Français
 nav_order: 3
+parent: Quick Start Guide
 has_children: true
 has_toc: false
 ---

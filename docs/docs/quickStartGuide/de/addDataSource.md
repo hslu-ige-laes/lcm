@@ -2,7 +2,7 @@
 layout: default
 title: Add Data Source
 nav_order: 3
-parent: Quick Start Guide
+parent: Deutsch
 has_toc: false
 ---
 
