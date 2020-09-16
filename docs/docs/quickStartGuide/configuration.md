@@ -18,12 +18,11 @@ In the lcm application, buildings are defined hierarchically. For instance:
 - A room belongs to a given flat
 - Etc.
 
-
 **Example:** Define a single flat with multiple rooms.
 
 1. Navigate to `Settings > Building Hierarchy` in the sidebar
 1. Click `Add new`
-1. Fill in the form as follows<br>
+1. Fill in the form as follows:<br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsBldgHierarchy_01.PNG" style="border:1px solid lightgrey"/>
 1. Click `Add new flat`
 
