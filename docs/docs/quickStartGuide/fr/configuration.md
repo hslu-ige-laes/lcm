@@ -8,12 +8,12 @@ has_toc: false
 ---
 
 # Configuration
-## Étape 1 : Configuration de l'application
+## Étape 1: Configuration de l'application
 1. Naviguez vers `Settings > App Configuration` dans la barre latérale pour configurer les paramètres de l'application
-1. Choisissez le type de bâtiment `Building Type` approprié et réglez l'altitude du bâtiment `Building altitude`.
-1. Cliquez sur `Save settings in configApp.csv` pour enregistrer les paramètres.
+1. Choisissez le type de bâtiment `Building Type` approprié et réglez l'altitude du bâtiment `Building altitude`
+1. Cliquez sur `Save settings in configApp.csv` pour enregistrer les paramètres
 
-## Étape 2 : Définir la hiérarchie des bâtiments
+## Étape 2: Définir la hiérarchie des bâtiments
 Dans l'application lcm, les bâtiments sont définis de manière hiérarchique. Par exemple:
 - Un capteur de température ambiante appartient à une pièce donnée
 - Une chambre appartient à un appartement donné
