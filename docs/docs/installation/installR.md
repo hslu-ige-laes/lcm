@@ -12,7 +12,7 @@ The lcm application works with the portableApps framework, which allows one to r
 
 <hr>
 
-## Install R locally
+## Local installation
 - If "R Portable" is not suitable for you, R should be installed locally. Please refer to the instructions of your operating system (below)
 
 ### Windows
