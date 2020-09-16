@@ -15,10 +15,10 @@ permalink: /
 - Supported data sources include LoRaWAN sensors, influxDB and CSV files
 - The lcm monitoring solution is cost-effective and "do it yourself"
 
-[Quick Start Guide (en)](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/en/){: .btn .btn-green }
-[Schnellstart-Anleitung (de)](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/){: .btn .btn-green }
-[Guide d'introduction rapide (fr)](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/){: .btn .btn-green }
-[Guida rapida all'utilizzo (it)](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/){: .btn .btn-green } 
+[English](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/en/){: .btn .btn-green }
+[Deutsch](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/){: .btn .btn-green }
+[Français](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/){: .btn .btn-green }
+[Italiano](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/){: .btn .btn-green } 
 
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/aboutDashboardLayout_02.png" alt="Application architecture" style="border:1px solid lightgrey" onclick="window.open('https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/aboutDashboardLayout_02.png', '_blank');" />
 
