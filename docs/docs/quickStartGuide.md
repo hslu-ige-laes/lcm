@@ -6,9 +6,9 @@ has_children: true
 has_toc: false
 ---
 
-# Quickstart Guide
+# Quick Start Guide
 
-- This quickstart guide will allow you to set up a working installation of lcm within a few minutes
+- This quick start guide will allow you to set up a working installation of lcm within a few minutes
 - The guide is aimed at the **windows operating system** <sup><a href="#windows">*</a></sup> 
 - You will not need to install any additional tools in order to start using the application
 
