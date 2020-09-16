@@ -9,7 +9,7 @@ has_toc: false
 # Add Data Source
 - In this example, we add a CSV file that stems from a datalogger
 - The sample file contains temperature and humidity measurements from one room
-- Later on, you can import your own CSV files as well as other data sources, e.g. LoRaWAN sensors or InfluxDB databases
+- Later on, you can import your own CSV files as well as other data sources, e.g. LoRaWAN sensors or InfluxDB databases (see [What's next](https://hslu-ige-laes.github.io/lcm/docs/whatsNext.md)
 
 
 1. Navigate to `Settings > Data Sources` in the sidebar
