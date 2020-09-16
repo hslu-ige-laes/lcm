@@ -10,7 +10,7 @@ has_toc: false
 # Datenquelle hinzufügen
 - In diesem Beispiel fügen wir eine CSV-Datei hinzu, die von einem Datenlogger stammt
 - Die Beispieldatei enthält Temperatur- und Feuchtigkeitsmessungen aus einem Raum
-- Später können Sie Ihre eigenen CSV-Dateien sowie andere Datenquellen, z.B. LoRaWAN-Sensoren oder InfluxDB-Datenbanken, importieren (siehe [Wie weiter?](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/whatsNext/))
+- Später können Sie Ihre eigenen CSV-Dateien sowie andere Datenquellen, z.B. LoRaWAN-Sensoren oder InfluxDB-Datenbanken, importieren
 
 1. Navigieren Sie in der Seitenleiste zu den Einstellungen der Datenquelle `Settings > Data Sources`
 1. Klicken Sie auf `Add new` um eine neue Quelle hinzuzufügen
