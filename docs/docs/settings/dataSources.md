@@ -19,7 +19,7 @@ Supported data sources are: CSV files, LoRaWAN sensors over "The Things Network"
 <hr>
 
 ## csv Files
-### General
+### Generalities
 - Time series data can get imported from CSV files
 - The data should have the following structure:
   ```javascript
@@ -53,7 +53,7 @@ Supported data sources are: CSV files, LoRaWAN sensors over "The Things Network"
 <hr>
 
 ## the things network (TTN) applications
-### General
+### Generalities
 - [The Things Network](https://de.wikipedia.org/wiki/The_Things_Network) is a community based initiative to create a [LoRaWAN network](https://de.wikipedia.org/wiki/Long_Range_Wide_Area_Network)
 - You can buy a LoRaWAN device and connect it to the network, free without charges or fees
 - LoRaWAN devices are able to send messages over a distance of about 10 kilometres wirelessly to a network gateway, where the data gets forwarded via internet to a TTN server
@@ -96,7 +96,7 @@ Supported data sources are: CSV files, LoRaWAN sensors over "The Things Network"
 <hr>
 
 ## influxDB integration
-### General
+### Generalities
 - An [influxDB](https://en.wikipedia.org/wiki/InfluxDB) is a specialized database for time series
 - Data can get injected from external systems and read easily from the lcm application
 - An already existing ifnluxDB instance is prerequisite. Database installation and data injection is not described in detail here
