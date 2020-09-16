@@ -8,15 +8,14 @@ permalink: /
 
 <img src="https://github.com/hslu-ige-laes/lcm/raw/master/docs/assets/images/lcm.png" width="100"/>
 
-## lcm - Low-Cost Monitoring
+# lcm - Low-Cost Monitoring
 - "lcm" is an open source monitoring application for residential buildings
 - The focus of the application is on providing energy savings whilst maintaining the expected comfort level
 - The application fetches, stores, analyzes and displays data from various sources
 - Supported data sources include LoRaWAN sensors, influxDB and CSV files
 - The lcm monitoring solution is cost-effective and "do it yourself"
 
-### Quick Start Guide
-The Quick Start Guide is available in multiple languages, please select one.
+## Quick Start Guide
 
 [English](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/en/){: .btn .btn-green }
 [Deutsch](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/){: .btn .btn-green }
