@@ -36,7 +36,7 @@ Now we repeat the above procedure for the humidity sensor.
    - the tab `Room > Temp vs. Hum` appears
    - this tab appears as soon as one or more data point of the type `Room Temperature` and `Room Humidity` are added to the same room
 
-Click "Next" in order to learn how to set up more advanced monitoring systems.
+Click "Next" in order to learn how to set up a complete monitoring system.
 
 [Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/whatsNext/){: .btn .btn-green }
 
