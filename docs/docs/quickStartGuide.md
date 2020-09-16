@@ -6,13 +6,14 @@ has_children: true
 has_toc: false
 ---
 
-# Quick Start Guide
+# Quickstart Guide
 
-- This guide will bring you up and running within a few minutes.
-- It is aimed for a **windows operating system** <sup><a href="#windows">*</a></sup> and you won't have to install any tool.
+- This quickstart guide will allow you to set up a working installation of lcm within a few minutes
+- The guide is aimed at the **windows operating system** <sup><a href="#windows">*</a></sup> 
+- You will not need to install any additional tools in order to start using the application
 
 [Get me up and running](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/gettingStarted/){: .btn .btn-green }
 
 <hr>
-<a id="windows">*</a> For other operating systems please refer to the chapter [Installation](https://hslu-ige-laes.github.io/lcm/docs/installation)
+<a id="windows">*</a> In order to run lcm with another operating system, please refer to the [Installation](https://hslu-ige-laes.github.io/lcm/docs/installation) section 
 <br>
