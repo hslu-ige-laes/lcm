@@ -19,7 +19,7 @@ In the lcm application, buildings are defined hierarchically. For instance:
 - Etc.
 
 
-Example: Define one flat with multiple rooms.
+**Example:** Define a single flat with multiple rooms.
 
 1. Navigate to `Settings > Building Hierarchy` in the sidebar
 1. Click `Add new`
