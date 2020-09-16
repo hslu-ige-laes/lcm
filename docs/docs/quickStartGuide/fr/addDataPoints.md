@@ -1,43 +1,43 @@
 ---
 layout: default
-title: Add Data Points
+title: Ajouter points de données
 nav_order: 4
 parent: Français
 grand_parent: Quick Start Guide
 has_toc: false
 ---
 
-# Add Data Points
-- Now we can add two data points: one for the temperature sensor and another one for the humidity sensor
-- We further configure to which room and flat each sensors belongs, and what kind of sensor it is
+# Ajouter des points de données
+- Nous pouvons maintenant ajouter deux points de données: un pour le capteur de température et un autre pour le capteur d'humidité.
+- Nous configurons également à quelle pièce et à quel appartement appartient chaque capteur et quel type de capteur il est.
 
-## Step 1: Room Temperature
-1. Navigate to `Settings > Data Points` in the sidebar
-1. Click `Add new`
-1. Fill in the form as follows:<br>
+## Étape 1 : Température ambiante
+1. naviguez dans la barre latérale jusqu'aux paramètres des points de données `Settings > Data Points`
+1. cliquez sur `Add new` pour ajouter un nouveau point de données
+1. remplissez le formulaire comme suit:<br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsDataPoints_01.PNG" style="border:1px solid lightgrey"/>
-1. Click `Test settings and preview data` in order to preview the data
-1. Finally, click `Add new data point`
-   - the new data point is added to the table
-1. Click `update data now` on the top bar right
-   - the tab `Room > Temp Reduction` appears
-   - this tab appears as soon as one or more data point of the type `Room Temperature` are added
+1. cliquez sur `Test settings and preview data` pour obtenir un aperçu des données
+1. cliquez enfin sur `Add new data point`
+   - le nouveau point de données est ajouté au tableau
+1. cliquez sur `update data now` dans la barre supérieure droite pour mettre à jour les données
+   - l'onglet `Room > Temp Reduction` apparaît dans la barre latérale
+   - cet onglet apparaît dès qu'un ou plusieurs points de données de type `Room Temperature` sont ajoutés
 
-## Step 2: Room Humidity
-Now we repeat the above procedure for the humidity sensor.
+## Étape 2 : Humidité de la pièce
+Nous répétons maintenant la procédure ci-dessus pour le capteur d'humidité.
 
-1. Navigate to `Settings > Data Points` in the sidebar
-1. Click `Add new`
-1. Fill in the form as follows:<br>
+1. naviguez dans la barre latérale jusqu'aux paramètres des points de données `Settings > Data Points`
+1. cliquez sur `Add new` pour ajouter un nouveau point de données
+1. remplir le formulaire comme suit:<br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsDataPoints_02.PNG" style="border:1px solid lightgrey"/>
-1. Click `Test settings and preview data`
-1. Click `Add new data point`
-   - the new data point is added to the table
-1. Click `update data now` on the top bar right
-   - the tab `Room > Temp vs. Hum` appears
-   - this tab appears as soon as one or more data point of the type `Room Temperature` and `Room Humidity` are added to the same room
+1. cliquez sur `Test settings and preview data`
+1. cliquez sur `Add new data point`
+   - le nouveau point de données est ajouté au tableau
+1. cliquez sur `update data now` dans la barre supérieure droite
+   - l'onglet `Room > Temp vs. Hum` apparaît
+   - cet onglet apparaît dès qu'un ou plusieurs points de données de type `Room Temperature` et `Room Humidity` sont présents dans une pièce en même temps.
 
-Click "Next" in order to learn how to set up a complete monitoring system.
+Cliquez sur "Suivant" pour découvrir les autres options disponibles.
 
-[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/whatsNext/){: .btn .btn-green }
+[Suivant](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/whatsNext/){: .btn .btn-green }
 

@@ -1,26 +1,26 @@
 ---
 layout: default
-title: Add Data Source
+title: Ajouter une source
 nav_order: 3
 parent: Français
 grand_parent: Quick Start Guide
 has_toc: false
 ---
 
-# Add Data Source
-- In this example, we add a CSV file that stems from a datalogger
-- The sample file contains temperature and humidity measurements from one room
-- Later on, you can import your own CSV files as well as other data sources, e.g. LoRaWAN sensors or InfluxDB databases (see [What's next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/whatsNext/))
+# Ajouter une source
+- Dans cet exemple, nous ajoutons un fichier CSV qui provient d'un enregistreur de données
+- Le fichier échantillon contient les mesures de température et d'humidité d'une pièce
+- Par la suite, vous pouvez importer vos propres fichiers CSV ainsi que d'autres sources de données, par exemple les capteurs LoRaWAN ou les bases de données InfluxDB (voir [Quoi d'autre?](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/whatsNext/)
 
+1. Naviguer vers `Settings > Data Sources` dans la barre latérale pour configurer une source de données
+1. Cliquez sur `Add new` pour ajouter une nouvelle source
+1. Définir un nom de source `source Name` défini par l'utilisateur, tel que `tempHumFlatA`
+1. Choisissez le fichier de données d'exemple `tempHum.csv`. Ce fichier est inclus dans votre dossier d'application dans le sous-dossier `/sampleData`
+1. Cliquez sur `Add new data source` pour ajouter la nouvelle source de données
 
-1. Navigate to `Settings > Data Sources` in the sidebar
-1. Click `Add new`
-1. Set a user-defined `source Name`, such as `tempHumFlatA`
-1. Choose the sample data file `tempHum.csv`. This file is included in your application folder in the subfolder `/sampleData`
-1. Click `Add new data source`
+La nouvelle source de données CSV apparaît désormais dans le tableau des sources.
 
-The new CSV data source now appears in the source table.
+Cliquez sur "Suivant" pour savoir comment vous pouvez ajouter des points de données individuels.
 
-Click "Next" in order to learn how you can add individual data points.
+[Suivant](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/addDataPoints/){: .btn .btn-green }
 
-[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/addDataPoints/){: .btn .btn-green }

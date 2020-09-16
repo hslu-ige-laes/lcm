@@ -1,24 +1,24 @@
 ---
 layout: default
-title: Getting started
+title: Démarrage
 nav_order: 1
 parent: Français
 grand_parent: Quick Start Guide
 has_toc: false
 ---
 
-# Getting Started
-## Step 1: Download application
-1. <a href="https://downgit.github.io/#/home?url=https://github.com/hslu-ige-laes/lcm" download>Click here to download the lcm application</a>
-1. Extract the content of the downloaded zip-file into the folder of your choice
+# Démarrage
+## Étape 1 : Télécharger le formulaire de candidature
+1. <a href="https://downgit.github.io/#/home?url=https://github.com/hslu-ige-laes/lcm" download>Cliquez ici pour télécharger l'application lcm</a>
+1. Extrayez le contenu du fichier zip téléchargé dans le dossier de votre choix
 
 
-## Step 2: Start application
-1. Start the application by executing `lcmStartApp.bat` in the application folder
-1. A Web browser will open automatically and display the application
+## Étape 2 : Lancement de la demande
+1. Démarrez l'application en exécutant `lcmStartApp.bat` dans le dossier d'application
+1. Un navigateur Web s'ouvre automatiquement et affiche la demande
 
-**Tip:** In order to quit the application, simply close the Web browser window
+**Conseil : Pour quitter l'application, il suffit de fermer la fenêtre du navigateur Web
 
-Press "Next" in order to learn how to configure the application.
+Appuyez sur "Suivant" pour savoir comment configurer l'application.
 
-[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/configuration/){: .btn .btn-green }
+[Suivant](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/configuration/){: .btn .btn-green }
