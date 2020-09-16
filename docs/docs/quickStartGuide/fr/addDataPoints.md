@@ -38,5 +38,5 @@ Now we repeat the above procedure for the humidity sensor.
 
 Click "Next" in order to learn how to set up a complete monitoring system.
 
-[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/whatsNext/){: .btn .btn-green }
+[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/whatsNext/){: .btn .btn-green }
 

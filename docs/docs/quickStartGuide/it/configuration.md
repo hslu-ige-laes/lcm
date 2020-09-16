@@ -28,4 +28,4 @@ In the lcm application, buildings are defined hierarchically. For instance:
 
 Press "Next" in order to learn how to add a data source.
 
-[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/addDataSource/){: .btn .btn-green }
+[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/addDataSource/){: .btn .btn-green }

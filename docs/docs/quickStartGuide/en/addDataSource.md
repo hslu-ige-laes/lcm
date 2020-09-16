@@ -22,4 +22,4 @@ The new CSV data source now appears in the source table.
 
 Click "Next" in order to learn how you can add individual data points.
 
-[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/addDataPoints/){: .btn .btn-green }
+[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/en/addDataPoints/){: .btn .btn-green }

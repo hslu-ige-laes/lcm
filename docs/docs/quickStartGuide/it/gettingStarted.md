@@ -20,4 +20,4 @@ has_toc: false
 
 Press "Next" in order to learn how to configure the application.
 
-[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/configuration/){: .btn .btn-green }
+[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/configuration/){: .btn .btn-green }
