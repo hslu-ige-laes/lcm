@@ -8,17 +8,17 @@ has_toc: false
 ---
 
 # Erste Schritte
-## Step 1: Download application
-1. <a href="https://downgit.github.io/#/home?url=https://github.com/hslu-ige-laes/lcm" download>Click here to download the lcm application</a>
-1. Extract the content of the downloaded zip-file into the folder of your choice
+## Schritt 1: Anwendung herunterladen
+1. <a href="https://downgit.github.io/#/home?url=https://github.com/hslu-ige-laes/lcm" download>Hier klicken um die lcm-Anwendung herunterzuladen</a>
+1. Entpacken Sie den Inhalt der heruntergeladenen Zip-Datei in einen Ordner Ihrer Wahl
 
 
-## Step 2: Start application
-1. Start the application by executing `lcmStartApp.bat` in the application folder
-1. A Web browser will open automatically and display the application
+## Schritt 2: Anwendung starten
+1. Starten Sie die Anwendung durch Doppelklicken von `lcmStartApp.bat` welche im obersten Anwendungsordner liegt
+1. Ein Web-Browser öffnet sich automatisch und zeigt die Anwendung
 
-**Tip:** In order to quit the application, simply close the Web browser window
+**Tipp:** Um die Anwendung zu beenden, schliessen Sie einfach das Webbrowser-Fenster
 
-Press "Next" in order to learn how to configure the application.
+Drücken Sie "Weiter", um zu erfahren, wie Sie die Anwendung konfigurieren können.
 
-[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/configuration/){: .btn .btn-green }
+[Weiter](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/configuration/){: .btn .btn-green }

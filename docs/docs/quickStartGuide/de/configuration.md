@@ -7,26 +7,26 @@ grand_parent: Quick Start Guide
 has_toc: false
 ---
 
-# Configuration
-## Step 1: Application configuration
-1. Navigate to `Settings > App Configuration` in the sidebar
-1. Choose the appropriate `Building Type` and set the `Building altitude`
-1. Click `Save settings in configApp.csv`
+# Konfiguration
+## Schritt 1: Anwendungskonfiguration
+1. Navigieren Sie in der Seitenleiste zu den Applikaitions-Einstellungen `Settings > App Configuration`.
+1. Wählen Sie den entsprechenden "Gebäudetyp" und stellen Sie die "Gebäudehöhe" ein.
+1. Klicken Sie auf den Speichern-Knopf `Save settings in configApp.csv`.
 
-## Step 2: Define building hierarchy
-In the lcm application, buildings are defined hierarchically. For instance:
-- A room temperature sensor belongs to a given room
-- A room belongs to a given flat
-- Etc.
+## Schritt 2: Definieren Sie die Gebäudehierarchie
+In der lcm-Anwendung werden Gebäude hierarchisch definiert. Zum Beispiel
+- gehört eine Raumtemperaturfühler zu einem bestimmten Raum
+- gehört ein Zimmer zu einer bestimmten Wohnung
+- usw.
 
-**Example:** Define a single flat with multiple rooms.
+**Beispiel:** Definieren Sie eine einzelne Wohnung mit mehreren Zimmern.
 
-1. Navigate to `Settings > Building Hierarchy` in the sidebar
-1. Click `Add new`
-1. Fill in the form as follows:<br>
-   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsBldgHierarchy_01.PNG" style="border:1px solid lightgrey"/>
-1. Click `Add new flat`
+1. Navigieren Sie in der Seitenleiste zu den Gebäudehierarchie-Einstellungen `Settings > Building Hierarchy`
+1. Klicken Sie auf `Add new` um einen neuen Eintrag zu erstellen.
+1. Füllen Sie das Formular wie folgt aus:<br>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsBldgHierarchy_01.PNG" style="border:1px solid hellgrau"/>
+1. Klicken Sie auf `Add new flat` um die Wohnung der Hierarchie hinzuzufügen.
 
-Press "Next" in order to learn how to add a data source.
+Drücken Sie "Weiter", um zu erfahren, wie Sie eine Datenquelle hinzufügen können.
 
-[Next](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/addDataSource/){: .btn .btn-green }
+[Weiter](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/addDataSource/){: .btn .btn-green }
