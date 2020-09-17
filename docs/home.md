@@ -9,6 +9,8 @@
 
 For a detailed documentation, please refer to **<a href="https://hslu-ige-laes.github.io/lcm/" target="_blank">https://hslu-ige-laes.github.io/lcm/</a>**
 
+<hr>
+
 **Disclaimer**<br>
 This is a prototype. The authors decline any liability or responsibility in connection with the lcm application.
 
