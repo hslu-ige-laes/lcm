@@ -10,7 +10,7 @@ grand_parent: Modules
 #### Temperature Flats with Average, Setpoint and resulting Difference
 A simple overview of the time series data per room.
 <br><br>
-<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempReduction_01.PNG" style="border:1px solid lightgrey" width = "90%"/>
+<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/roomTempReduction_01.PNG" style="border:1px solid lightgrey"/>
 <br>
 - The orange solid line represents the room temperature setpoint which can be changed in the extended settings (see below)
 - The red dashed line represents the average value of the room. It takes the season- and time range selection into account.
