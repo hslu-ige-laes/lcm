@@ -16,7 +16,7 @@ has_toc: false
 ## Schritt 2: Definieren Sie die Gebäudehierarchie
 In der lcm-Anwendung werden Gebäude hierarchisch definiert. Zum Beispiel:
 - gehört eine Raumtemperaturfühler zu einem bestimmten Raum
-- gehört ein Zimmer zu einer bestimmten Wohnung
+- gehört ein Raum zu einer bestimmten Wohnung
 - usw.
 
 **Beispiel:** Definieren Sie eine einzelne Wohnung mit mehreren Zimmern.
