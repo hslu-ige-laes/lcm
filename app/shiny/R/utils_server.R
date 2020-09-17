@@ -1,15 +1,5 @@
 season <- function(input.date){
-  #' Get season of date
-  #'
-  #' Get the season of an input date
-  #' @param input.date a POSIXct, POSIXlt, Date, chron, yearmon, yearqtr, zoo, zooreg, timeDate, xts, its, ti, jul, timeSeries, or fts object..
-  #' @return Returns the corresponding season [Winter, Spring, Summer, Fall].
-  #' @export
-  #' @examples
-  #' x <- as.Date("2019-01-18")
-  #' season(x) #"Winter"
-  #'
-  #' @author Reto Marek
+
   numeric.date <- 100 * lubridate::month(input.date) + lubridate::day(input.date)
   ## input Seasons upper limits in the form MMDD in the "break =" option:
   cuts <- base::cut(numeric.date, breaks = c(0,0229,0531,0831,1130,1231))
@@ -96,19 +86,8 @@ getRoomsOfFlat <- function(selectedFlat){
   return(rooms)
 }
 
-# configFile <- list(pageTitle = "Low Cost Monitoring", theme = "cerulean", new = "test")
 loadDataPointsFile <- function(dataPointsFilePath) {
-  #' Load Data Points File
-  #'
-  #' Load the datapoints csv-file into R list
-  #' @param filename a String representing the filename inclusive extension.
-  #' @return Returns the configuration in a list.
-  #' @export
-  #' @examples
-  #' loadConfigFile("config.csv")
-  #'
-  #' @author Reto Marek
-  
+
   dataPoints <- read_delim(file = dataPointsFilePath,
                            delim = ";",
                            col_names = TRUE,
@@ -136,19 +115,8 @@ saveDataPointsFile <- function() {
   write_csv2(dataPoints, here::here("app", "shiny", "data", "dataPoints.csv"))
 }
 
-# configFile <- list(pageTitle = "Low Cost Monitoring", theme = "cerulean", new = "test")
 loadConfigFile <- function(configFilePath) {
-  #' Load Configuration File
-  #'
-  #' Load the configuration csv-file into R list
-  #' @param filename a String representing the filename inclusive extension.
-  #' @return Returns the configuration in a list.
-  #' @export
-  #' @examples
-  #' loadConfigFile("config.csv")
-  #'
-  #' @author Reto Marek
-  
+
   temp <- read.table(
     file = configFilePath,
     sep = ";"
@@ -161,15 +129,10 @@ loadConfigFile <- function(configFilePath) {
 }
 
 
-# key <- "theme"
-# value <- "onenote"
+
 saveConfigFile <- function(configFilePath, key, value) {
-  # write list to config file
-  # print("saveConfigFile() called")
-  # print(key)
-  # print(value)
+
   configFile <- loadConfigFile(configFilePath)
-  # print(configFile)
   configFile[key] <- value
   write.table(
     as.data.frame(configFile),
