@@ -1,30 +1,5 @@
-
-# ======================================================================
-
-# ======================================================================
-
-# import csv script functions and create list for pull down menu
-csvScriptFiles <- as.data.frame(gsub("\\.R$","", list.files(here::here("app", "shiny", "csvScripts"), pattern="\\.R$")))
-csvScriptList <- data.frame()
-if(nrow(csvScriptFiles) > 0){
-  for(row in 1:nrow(csvScriptFiles)){
-    csvScriptFilePath <- paste0(here::here("app", "shiny", "csvScripts"), "/", csvScriptFiles[row,1], ".R")
-    source(csvScriptFilePath)
-    csvScriptList <- rbind(csvScriptList, as.data.frame(getFunctionsInFile(csvScriptFilePath)))
-  }
-}
-names(csvScriptList)[1] <- "name"
-csvScriptList <- csvScriptList %>% arrange(desc(name))
-
-
 dataSourcesModuleCsvUI <- function(id) {
-  #' Data Sources Module Ttn UI
-  #'
-  #' User-Interface for the module data sources part The Things network
-  #' @param id id for ns()
-  #' @export
-  #' @author Reto Marek
-  
+
   ns <- NS(id)
   
   tagList(
@@ -48,14 +23,6 @@ dataSourcesModuleCsvUI <- function(id) {
 }
 
 dataSourcesModuleCsv <- function(input, output, session) {
-  #' Data Sources Module Ttn
-  #'
-  #' Server-function for the module data sources
-  #' @export
-  #' @author Reto Marek
-  #'
-  
-  # ======================================================================
 
   # Add script to detect selected row.
   output$script<-renderUI({
@@ -421,7 +388,6 @@ dataSourcesModuleCsv <- function(input, output, session) {
       imageUrl = "",
       animation = TRUE
     )
-    
   }
 }
 
