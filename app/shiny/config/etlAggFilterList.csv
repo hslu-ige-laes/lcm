@@ -4,4 +4,4 @@ agg;func;fill;filterDpType
 1h;sum;none;eleFlat
 1d;mean;none;tempRoom,humRoom,tempOutsideAir
 1d;sum;none;energyHeatCentral,eleFlat
-1M;sum;none;hotWaterFlat,energyHeatFlat,eleFlat
+1M;sum;none;hotWaterFlat,energyHeatFlat
