@@ -1,9 +1,4 @@
 
-# ======================================================================
-# tbd: fill in influxdbGetMeasurements anschauen was enum wäre
-# tbd: problem with diffMax where there is no start and end-Date in the query!
-# ======================================================================
-
 # # Testcalls
 # host = "10.180.26.130"
 # port = "8086"
@@ -143,31 +138,31 @@ influxdbGetTimeseries <- function(host, port = "8086", user = NULL, pwd = NULL, 
              tableName <- fieldKey
            },
            diffMax = {
-             ## get difference from max values in aggregation range
+             # get difference from max values in aggregation range
              field_keys <- paste0('difference(max(', '"', fieldKey, '"', '))')
              group_by <- paste0('time(', agg, ')')
              tableName <- "difference"
            },
            mean = {
-             ## get mean values in aggregation range
+             # get mean values in aggregation range
              field_keys <- paste0('mean(', '"', fieldKey, '"', ')')
              group_by <- paste0('time(', agg, ')')
              tableName <- "mean"
            },
            median = {
-             ## get median values in certain range
+             # get median values in certain range
              field_keys <- paste0('median(', '"', fieldKey, '"', ')')
              group_by <- paste0('time(', agg, ')')
              tableName <- "median"
            },
            min = {
-             ## get min values in aggregation range
+             # get min values in aggregation range
              field_keys <- paste0('min(', '"', fieldKey, '"', ')')
              group_by <- paste0('time(', agg, ')')
              tableName <- "min"
            },
            max = {
-             ## get max values in aggregation range
+             # get max values in aggregation range
              field_keys <- paste0('max(', '"', fieldKey, '"', ')')
              group_by <- paste0('time(', agg, ')')
              tableName <- "max"
@@ -248,13 +243,13 @@ influxdbGetTimeseries <- function(host, port = "8086", user = NULL, pwd = NULL, 
     
     switch(funcOld,
            diffMax = {
-             ## get difference from max values in aggregation range
+             # get difference from max values in aggregation range
              data <- as.data.frame(aggregateXts(xts, "max", aggOld, locTimeZone))
              data[[measurement]] <- data[[measurement]] - lag(data[[measurement]])
              data <- data %>% na.omit()
            },
            {
-             ## get values in aggregation range according to func argument
+             # get values in aggregation range according to func argument
              data <- as.data.frame(aggregateXts(xts, func, aggOld, locTimeZone))
            }
     )
@@ -266,8 +261,6 @@ influxdbGetTimeseries <- function(host, port = "8086", user = NULL, pwd = NULL, 
     
   }
   
-  # saveRDS(data, paste0(here::here(), "/app/shiny/temp/temp.rds"))
-  # browser()
   if(valueType == "counterVal"){
     data[[2]] <- data[[2]] - lag(data[[2]])
     data <- data %>% na.omit()
@@ -287,10 +280,7 @@ influxdbGetTimeseries <- function(host, port = "8086", user = NULL, pwd = NULL, 
     # rearrange columns
     data <- data %>% select(time, everything())
   }
-  
-  # browser()
-  # saveRDS(data, paste0(here::here(), "/app/shiny/temp/temp.rds"))
-  
+
   # delete first row
   if(funcOld == "diffMax"){
     data = data[-1,]
