@@ -13,7 +13,7 @@ has_toc: false
 - La guida è rivolta al sistema operativo **windows** <sup><a href="#windows">*</a></sup>
 - Non è necessario installare alcuno strumento aggiuntivo per utilizzare l'applicazione
 
-[Per iniziare](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/gettingStarted/){: .btn .btn-green }
+[Primi passi](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/gettingStarted/){: .btn .btn-green }
 
 <hr>
 <a id="windows">*</a> Per eseguire l'applicazione lcm con un altro sistema operativo, leggere il capitolo [Installation](https://hslu-ige-laes.github.io/lcm/docs/installation) 
