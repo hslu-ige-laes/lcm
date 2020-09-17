@@ -73,7 +73,7 @@ dataPointsModule <- function(input, output, session) {
                                                 "Room Humidity" = "humRoom",
                                                 "Room Air Quality CO2" = "aQualRoom",
                                                 "Flat Hot Water" = "hotWaterFlat",
-                                                "Flat Heat Energy" = "heatEnergyFlat",
+                                                "Flat Heat Energy" = "energyHeatFlat",
                                                 "Flat Ventilation" = "ventilationFlat",
                                                 "Flat Electricity" = "eleFlat",
                                                 "Outside Temperature" = "tempOutsideAir",
