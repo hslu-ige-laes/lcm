@@ -1,11 +1,5 @@
 dataSourcesModuleTtnUI <- function(id) {
-  #' Data Sources Module Ttn UI
-  #'
-  #' User-Interface for the module data sources part The Things network
-  #' @param id id for ns()
-  #' @export
-  #' @author Reto Marek
-  
+
   ns <- NS(id)
   
   tagList(
@@ -352,7 +346,6 @@ dataSourcesModuleTtn <- function(input, output, session) {
       imageUrl = "",
       animation = TRUE
     )
-    
   }
 }
 
