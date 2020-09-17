@@ -15,7 +15,7 @@ has_toc: false
 
 ## Étape 2: Définir la hiérarchie des bâtiments
 Dans l'application lcm, les bâtiments sont définis de manière hiérarchique. Par exemple:
-- Un capteur de température ambiante appartient à une pièce donnée
+- Un capteur de température ambiante appartient à une chambre
 - Une chambre appartient à un appartement donné
 - Etc.
 
