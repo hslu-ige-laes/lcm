@@ -22,7 +22,7 @@ The lcm application works with the portableApps framework, which allows one to r
 1. The wizard will install R into your "Program Files" folders and add a shortcut in your Start menu. Note that you will need to have all necessary administration rights to install new software on your machine
 
 ### Mac OSX
-1. [Click to download R version 3.6.3](https://cran.r-project.org/bin/macosx/R-4.0.2.pkg){:target="_blank" :download}
+1. [Click to download R version 3.6.3](https://cran.r-project.org/bin/macosx/R-3.6.3.pkg){:target="_blank" :download}
 1. Run the downloaded installer file and follow the installation wizard
 1. The installer allows you to customize your installation. However the default values will be suitable for most users
 
