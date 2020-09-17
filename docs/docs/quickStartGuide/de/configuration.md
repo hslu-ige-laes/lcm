@@ -19,7 +19,7 @@ In der lcm-Anwendung werden Gebäude hierarchisch definiert. Zum Beispiel:
 - gehört ein Raum zu einer bestimmten Wohnung
 - usw.
 
-**Beispiel:** Definieren Sie eine einzelne Wohnung mit mehreren Zimmern.
+**Beispiel:** Definieren Sie eine einzelne Wohnung mit mehreren Räumen.
 
 1. Navigieren Sie in der Seitenleiste zu den Gebäudehierarchie-Einstellungen `Settings > Building Hierarchy`
 1. Klicken Sie auf `Add new` um einen neuen Eintrag zu erstellen
