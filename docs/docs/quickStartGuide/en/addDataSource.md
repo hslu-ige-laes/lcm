@@ -16,7 +16,7 @@ has_toc: false
 1. Navigate to `Settings > Data Sources` in the sidebar
 1. Click `Add new`
 1. Set a user-defined `source Name`, such as `tempHumFlatA`
-1. Choose the sample data file `tempHum.csv`. This file is included in your application folder in the subfolder `/sampleData`
+1. Choose over the button `Browse...` the sample data file `tempHum.csv`. This file is included in your application folder in the subfolder `/sampleData`
 1. Click `Add new data source`
 
 The new CSV data source now appears in the source table.

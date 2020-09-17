@@ -15,7 +15,7 @@ has_toc: false
 1. Navigieren Sie in der Seitenleiste zu den Einstellungen der Datenquelle `Settings > Data Sources`
 1. Klicken Sie auf `Add new` um eine neue Quelle hinzuzufügen
 1. Setzen Sie einen benutzerdefinierten Quellennamen `source Name`, wie z.B. `tempHumFlatA`
-1. Wählen Sie die Beispieldatendatei `tempHum.csv` aus. Diese Datei befindet sich in Ihrem Anwendungsordner im Unterordner `/sampleData`
+1. Wählen Sie über den Knopf `Browse...` die Beispieldatendatei `tempHum.csv` aus. Diese Datei befindet sich in Ihrem Anwendungsordner im Unterordner `/sampleData`
 1. Klicken Sie auf `Add new data source` um die neue Datenquelle hinzufügen
 
 Die neue CSV-Datenquelle erscheint jetzt in der Quellentabelle.
