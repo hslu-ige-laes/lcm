@@ -456,7 +456,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
   output$overviewPlot <- renderPlotly({
     
     req(df.agg1d())
-    # withProgress(message = 'Creating plot', detail = "electricity overview", value = NULL, {
+    withProgress(message = 'Creating plot', detail = "electricity overview", value = NULL, {
       minY <- 0
       maxYUsage <- max(df.all() %>% select(sum), na.rm=TRUE)
       maxYUsage <- max(maxYUsage, typEleConsVal()/365)
@@ -714,6 +714,6 @@ flatElectricityModule <- function(input, output, session, aggData) {
         )
       
       return(fig)
-    # })
+    })
   })
 }
