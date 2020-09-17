@@ -1,16 +1,5 @@
-
-# ======================================================================
-
-# ======================================================================
-
 dataSourcesModuleInfluxdbUI <- function(id) {
-  #' Data Sources Module Ttn UI
-  #'
-  #' User-Interface for the module data sources part The Things network
-  #' @param id id for ns()
-  #' @export
-  #' @author Reto Marek
-  
+
   ns <- NS(id)
   
   tagList(
@@ -34,14 +23,6 @@ dataSourcesModuleInfluxdbUI <- function(id) {
 }
 
 dataSourcesModuleInfluxdb <- function(input, output, session) {
-  #' Data Sources Module Ttn
-  #'
-  #' Server-function for the module data sources
-  #' @export
-  #' @author Reto Marek
-  #'
-  
-  # ======================================================================
 
   # Add script to detect selected row.
   output$script<-renderUI({
