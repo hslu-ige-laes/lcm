@@ -15,3 +15,7 @@ app/shiny/config/configInfluxdb.csv
 app/shiny/config/configTtn.csv
 app/shiny/config/dataPoints.csv
 dataFetcher/lcmDataFetcher.log
+app/shiny/config/bldgHierarchy.csv
+app/shiny/config/configCsv.csv
+app/shiny/config/configInfluxdb.csv
+app/shiny/config/dataPoints.csv
