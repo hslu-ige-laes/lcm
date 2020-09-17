@@ -61,26 +61,6 @@ centralHeatingCurveModuleUI <- function(id) {
                        value = 0.4
           )
         )
-        # box(
-        #   width = 2,
-        #   numericInput(inputId = ns("heatCrvExp"),
-        #                label = "Heat Curve Exponent",
-        #                min = 1,
-        #                max = 2,
-        #                step = 0.05,
-        #                value = 1.3
-        #   )
-        # ),
-        # box(
-        #   width = 2,
-        #   numericInput(inputId = ns("heatCrvNgtSetback"),
-        #                label = "Heat Curve Night Setback in °C",
-        #                min = 0,
-        #                max = 5,
-        #                step = 1,
-        #                value = 2
-        #   )
-        # )
       )
     ),
     sidebarPanel(
