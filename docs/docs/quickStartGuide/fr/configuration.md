@@ -19,7 +19,7 @@ Dans l'application lcm, les bâtiments sont définis de manière hiérarchique. 
 - Une chambre appartient à un appartement donné
 - Etc.
 
-**Exemple:** Définir un appartement simple avec plusieurs pièces.
+**Exemple:** Définir un appartement simple avec plusieurs chambres.
 
 1. Naviguez vers `Settings > Building Hierarchy` dans la barre latérale pour ajuster la hiérarchie des bâtiments
 1. Cliquez sur `Add new` pour ajouter un nouvel élément à la hiérarchie
