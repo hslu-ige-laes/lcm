@@ -54,7 +54,7 @@ Supported data sources are: CSV files, LoRaWAN sensors over "The Things Network"
 
 ## the things network (TTN) applications
 ### Generalities
-- [The Things Network](https://de.wikipedia.org/wiki/The_Things_Network) is a community based initiative to create a [LoRaWAN network](https://de.wikipedia.org/wiki/Long_Range_Wide_Area_Network){:target="_blank"}
+- [The Things Network](https://de.wikipedia.org/wiki/The_Things_Network){:target="_blank"} is a community based initiative to create a [LoRaWAN network](https://de.wikipedia.org/wiki/Long_Range_Wide_Area_Network){:target="_blank"}
 - You can buy a LoRaWAN device and connect it to the network, free without charges or fees
 - LoRaWAN devices are able to send messages over a distance of about 10 kilometres wirelessly to a network gateway, where the data gets forwarded via internet to a TTN server
 - The link between the device and the TTN server is secured using an AES-128-End-to-End-Encryption
