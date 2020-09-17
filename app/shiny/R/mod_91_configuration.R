@@ -2,7 +2,6 @@ configurationModuleUI <- function(id) {
 
   ns <- NS(id)
 
-  
   tagList(
     fluidRow(
       box(
