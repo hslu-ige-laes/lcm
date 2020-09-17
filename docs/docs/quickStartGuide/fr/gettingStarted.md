@@ -9,7 +9,7 @@ has_toc: false
 
 # Démarrage
 ## Étape 1: Télécharger le formulaire de candidature
-1. <a href="https://downgit.github.io/#/home?url=https://github.com/hslu-ige-laes/lcm" download>Cliquez ici pour télécharger l'application lcm</a>
+1. [Cliquez ici pour télécharger l'application lcm](https://downgit.github.io/#/home?url=https://github.com/hslu-ige-laes/lcm){:target="_blank" :download}
 1. ouvrir le fichier zip
 1. glisser-déposer le dossier `lcm-master` dans un dossier de votre choix
    - vous pouvez renommer le dossier `lcm-master` avec un nom de votre choix

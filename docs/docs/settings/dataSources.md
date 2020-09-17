@@ -54,13 +54,13 @@ Supported data sources are: CSV files, LoRaWAN sensors over "The Things Network"
 
 ## the things network (TTN) applications
 ### Generalities
-- [The Things Network](https://de.wikipedia.org/wiki/The_Things_Network) is a community based initiative to create a [LoRaWAN network](https://de.wikipedia.org/wiki/Long_Range_Wide_Area_Network)
+- [The Things Network](https://de.wikipedia.org/wiki/The_Things_Network) is a community based initiative to create a [LoRaWAN network](https://de.wikipedia.org/wiki/Long_Range_Wide_Area_Network){:target="_blank"}
 - You can buy a LoRaWAN device and connect it to the network, free without charges or fees
 - LoRaWAN devices are able to send messages over a distance of about 10 kilometres wirelessly to a network gateway, where the data gets forwarded via internet to a TTN server
 - The link between the device and the TTN server is secured using an AES-128-End-to-End-Encryption
 
 ### Add new
-1. Create a TTN application, add devices and configure them according to the separate [lora-devices-ttn documentation](https://hslu-ige-laes.github.io/lora-devices-ttn/).
+1. Create a TTN application, add devices and configure them according to the separate [lora-devices-ttn documentation](https://hslu-ige-laes.github.io/lora-devices-ttn/){:target="_blank"}.
    There you can find as well an overview of recommended devices
 1. Then click in the lcm application under `Settings > Data Sources > the things network` the button `Add new`
 1. Fill the fields as follows:
@@ -82,22 +82,22 @@ Supported data sources are: CSV files, LoRaWAN sensors over "The Things Network"
 - But TTN offers a free database solution which stores all data for seven days
 - The lcm application takes advantage of this possibility and uses an API to retrieve this data
 - The retrieved data gets stored in CSV files which you can find in the folder `/app/shiny/data/ttn/yourTtnAppName/yourTtnDeviceName_yourTtnDatapointName.csv`
-- In the [lora-devices-ttn documentation](https://hslu-ige-laes.github.io/lora-devices-ttn/) it is described how to add this integration to your application
+- In the [lora-devices-ttn documentation](https://hslu-ige-laes.github.io/lora-devices-ttn/){:target="_blank"} it is described how to add this integration to your application
 - The measurements in the storage get saved with a UTC timestamp
 - If necessary (depending on `Settings > App Configuration > Time Zone`) a time zone change is made during the import into the lcm application
 
 
 ### No TTN coverage at the buildings location
 - Don't panic, you can install and setup an own gateway within a few minutes. It's easy and will cost you less than 100 Swiss Francs (September 2020) for the hardware
-  - an affordable [indoor LoRaWAN Gateway from ttn](https://ch.rs-online.com/web/p/entwicklungstools-kommunikation-und-drahtlos/1843981/)
-  - and the corresponding [installation description](https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/#activate-your-gateway-in-under-5-min)
+  - an affordable [indoor LoRaWAN Gateway from ttn](https://ch.rs-online.com/web/p/entwicklungstools-kommunikation-und-drahtlos/1843981/){:target="_blank"}
+  - and the corresponding [installation description](https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/#activate-your-gateway-in-under-5-min){:target="_blank"}
 - You only need to have a WLAN internet connection in the building and a 5V USB power supply
 
 <hr>
 
 ## influxDB integration
 ### Generalities
-- An [influxDB](https://en.wikipedia.org/wiki/InfluxDB) is a specialized database for time series
+- An [influxDB](https://en.wikipedia.org/wiki/InfluxDB){:target="_blank"} is a specialized database for time series
 - Data can get injected from external systems and read easily from the lcm application
 - An already existing ifnluxDB instance is prerequisite. Database installation and data injection is not described in detail here
 - This integration is only implemented for users with influxDB knowledge

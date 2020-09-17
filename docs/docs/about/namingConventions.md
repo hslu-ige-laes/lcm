@@ -5,6 +5,6 @@ nav_order: 8
 parent: About the app
 ---
 # Naming Conventions
-The naming convention of the book [Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/structure.html#conventions-matter) was adopted.
+The naming convention of the book [Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/structure.html#conventions-matter){:target="_blank"} was adopted.
 
 

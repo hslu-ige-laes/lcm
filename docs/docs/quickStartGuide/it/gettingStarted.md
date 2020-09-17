@@ -9,7 +9,7 @@ has_toc: false
 
 # Primi passi
 ## Passo 1: Scaricare l'applicazione
-1. <a href="https://downgit.github.io/#/home?url=https://github.com/hslu-ige-laes/lcm" download>clicca qui per scaricare l'applicazione lcm</a>
+1. [Clicca qui per scaricare l'applicazione lcm](https://downgit.github.io/#/home?url=https://github.com/hslu-ige-laes/lcm){:target="_blank" :download}
 1. aprire il file zip
 1. trascinare la cartella `lcm-master` in una cartella a scelta
    - è possibile rinominare la cartella `lcm-master` con un nome a scelta

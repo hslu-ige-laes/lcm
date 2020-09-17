@@ -22,7 +22,7 @@ Exploiting this potential is the goal of energy-related operational optimization
 <hr>
 
 ## Used software
-- The app is built as a [Shiny](https://shiny.rstudio.com/) web application which is based on the [programming language R](https://en.wikipedia.org/wiki/R_(programming_language)){:target="_blank"}
+- The app is built as a [Shiny](https://shiny.rstudio.com/){:target="_blank"} web application which is based on the [programming language R](https://en.wikipedia.org/wiki/R_(programming_language)){:target="_blank"}
 - R and its web application extension [Shiny](https://shiny.rstudio.com/){:target="_blank"} are a good solution to build prototypes of web apps which require data analysis and visualization functionality
 - No programming skills are required to install and use the application
 - If you want to extend or adapt the application a basic knowledge of R, [RStudio](https://rstudio.com/products/rstudio/){:target="_blank"} and the graph library [ggplot](https://ggplot2.tidyverse.org/reference/ggplot.html){:target="_blank"} and [ploty](https://plotly.com/r/){:target="_blank"} are required
