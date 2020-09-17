@@ -27,15 +27,6 @@ dataSourcesModuleUI <- function(id) {
 }
 
 dataSourcesModule <- function(input, output, session) {
-  #' Data Sources Module
-  #'
-  #' Server-function for the module data sources
-  #' @export
-  #' @author Reto Marek
-  #'
-  
-  # ======================================================================
 
 
 }
-
