@@ -24,7 +24,6 @@ etlAggFilterData <- function(){
       df.all <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
     } else {
       load(file = fileName)
-      # not nice I know...
       # eval(parse(text=paste0("df.all <- ", "data_",agg ,"_",func)))
     }
     
@@ -38,8 +37,6 @@ etlAggFilterData <- function(){
       list.old <- df.all %>% select(abbreviation) %>% unique()
       
       data <- list()
-      
-      # row2 <- 2
       
       # loop through list
       for (row2 in 1:nrow(list)) {
@@ -68,23 +65,12 @@ etlAggFilterData <- function(){
     } else {
       df.all <- setNames(data.frame(matrix(ncol = 6, nrow = 0)), c("time", "value", "abbreviation", "flat", "room", "dpType"))
     }
-    
-    # tic("data wrangling")
-    
-    # df.all.raw <<- df.all.raw %>% unique()
-    # df.all.raw <- df.all.raw %>% group_by(abbreviation, time)
-    # saveRDS(df.all, fileName)
-    # not nice I know...
-    # eval(parse(text=paste0("data_",agg ,"_",func, "<- df.all")))
-    
+
     df.all <- df.all %>% unique()
-      here
+  
     save(df.all, file = fileName)
 
-    # toc()
-    # toc()
-
-  }
+    }
 }
 
 clearCache <- function(){
@@ -203,7 +189,6 @@ getTimeSeries <- function(dpAbbr = NULL, dpSource = NULL, dpSourceRef = NULL, da
   }else{ # no datasource found
     data <- NULL
   }
-  # print(head(data))
   return(data)
 }
 
