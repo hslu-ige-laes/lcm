@@ -11,7 +11,6 @@ roomAirQualityModuleUI <- function(id) {
         width = 12,
         collapsible = TRUE,
         collapsed = TRUE,
-        # air quality classes according to EN 16798
         box(
           width = 2,
           numericInput(ns("iAQual1"), "Limit I (ppm)", min = 400, max = 2000, value = 600, step = 50, width = "150px"),
