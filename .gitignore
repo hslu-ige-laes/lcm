@@ -19,3 +19,4 @@ app/shiny/config/bldgHierarchy.csv
 app/shiny/config/configCsv.csv
 app/shiny/config/configInfluxdb.csv
 app/shiny/config/dataPoints.csv
+app/shiny/config/bldgHierarchy.csv
