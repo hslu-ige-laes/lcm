@@ -1,3 +1,16 @@
+# import csv script functions and create list for pull down menu
+csvScriptFiles <- as.data.frame(gsub("\\.R$","", list.files(here::here("app", "shiny", "csvScripts"), pattern="\\.R$")))
+csvScriptList <- data.frame()
+if(nrow(csvScriptFiles) > 0){
+  for(row in 1:nrow(csvScriptFiles)){
+    csvScriptFilePath <- paste0(here::here("app", "shiny", "csvScripts"), "/", csvScriptFiles[row,1], ".R")
+    source(csvScriptFilePath)
+    csvScriptList <- rbind(csvScriptList, as.data.frame(getFunctionsInFile(csvScriptFilePath)))
+  }
+}
+names(csvScriptList)[1] <- "name"
+csvScriptList <- csvScriptList %>% arrange(desc(name))
+
 dataSourcesModuleCsvUI <- function(id) {
 
   ns <- NS(id)
@@ -211,17 +224,34 @@ dataSourcesModuleCsv <- function(input, output, session) {
     
   csvDataRaw <- reactive({
     req(input$csvFileName)
- 
+    
     data <- read_delim(input$csvFileName$datapath,
                        delim = input$csvSep,
                        quote = input$csvQuote
     )
-
     # implement scripts
     if(input$csvScript != "none"){
       tryCatch({
         data <- do.call(input$csvScript, list(filePath = input$csvFileName$datapath))
-      })
+      },
+      error = function(e){
+        shinyalert(
+          title = "Error",
+          text = "Could not read file.",
+          closeOnEsc = TRUE,
+          closeOnClickOutside = TRUE,
+          html = FALSE,
+          type = "error",
+          showConfirmButton = TRUE,
+          showCancelButton = FALSE,
+          confirmButtonText = "OK",
+          confirmButtonCol = "#AEDEF4",
+          timer = 0,
+          imageUrl = "",
+          animation = TRUE
+        )
+      }
+      )
     }
 
     if(is.null(data)){
@@ -263,13 +293,14 @@ dataSourcesModuleCsv <- function(input, output, session) {
     
     colnames(data) = gsub(input$colnameTime, "time", colnames(data))
     data <- data %>% select(time, everything())
-
     # make timezone conversion
-    data$time <- parse_date_time(data$time, "YmdHM0S", tz = input$sourceTimeZone)
+    # data$time <- parse_datetime(data$time, locale = locale(tz = input$sourceTimeZone))
+    # data$time <- parse_date_time(data$time, "YmdHM0S", tz = input$sourceTimeZone)
+    data$time <- force_tz(data$time, input$sourceTimeZone)
     data$time <- with_tz(data$time, locTimeZone)
     data$time <- round_date(data$time, unit = "second")
     data$time <- as.POSIXct(data$time, tz = locTimeZone)
-
+    
     return(data)
   })
 
