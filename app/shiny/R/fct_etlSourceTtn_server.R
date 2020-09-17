@@ -1,18 +1,3 @@
-# libraries are included in global.R
-# library(httr)
-# library(jsonlite)
-# library(dplyr)
-# library(lubridate)
-# library(tictoc) # for time measuring
-
-# ==========================================================================
-# tbd: get data only if there are new data -> kind of reactivePoll
-# tbd: Error handling überlegen, wie werden Nutzer informiert über Fehler?
-#      "else"-part ganz am Ende vom Code
-#      ev. try catch einbauen für Error Handling
-# tbd: wie Fehler abfangen bei ttnData(), das hätte zwei return values was kompliziert wird.
-# ==========================================================================
-
 # # settings for local debugging
 # appId <- "lowcostmonitoring"
 # key <- "ttn-account-v2.5X4MFYGQI3B48pECjyyAybIZozz2_Fg2YXehzJ4t3g0"
@@ -47,9 +32,7 @@ ttnReadServerData <- function(appId, key, locTimeZone = "Europe/Zurich", range =
       return(NULL)
     }
   )
-  # print("response")
-  # print(response)
-  # print(status_code(response))
+
   if(is.null(response)){
     data <- NULL
     print("Error in html request")
@@ -94,7 +77,7 @@ ttnWriteRawCsv <- function(data = NULL, sourceName, locTimeZone = "Europe/Zurich
     
     # remove "time" and device_id in column 1 and 2 for looping through datapoints
     deviceDatapoints <- deviceDatapoints[c(-1, -2)];
-    # j <- 1
+    
     for(j in 1:length(deviceDatapoints)) {
       
       datapointName <- as.character(deviceDatapoints[j])
@@ -158,17 +141,17 @@ ttnFetchServerData <- function(){
 }
 
 # # Test function call for debugging
-datapoint <- "wisely01_temp"
-locTimeZone = "Europe/Zurich"
-func = "mean"
-agg = "1W"
-agg = "1d"
-fill = "none"
-datetimeStart = "2020-01-01"
-datetimeEnd = "2020-03-01"
-sourceName = "AvelonWiselySensors"
-
-# head(ttnGetTimeSeries(datapoint, datetimeStart, datetimeEnd, func, agg, locTimeZone))
+# datapoint <- "wisely01_temp"
+# locTimeZone = "Europe/Zurich"
+# func = "mean"
+# agg = "1W"
+# agg = "1d"
+# fill = "none"
+# datetimeStart = "2020-01-01"
+# datetimeEnd = "2020-03-01"
+# sourceName = "AvelonWiselySensors"
+# 
+# # head(ttnGetTimeSeries(datapoint, datetimeStart, datetimeEnd, func, agg, locTimeZone))
 
 ttnGetTimeSeries <- function(datapoint, sourceName,
                              datetimeStart = NULL, datetimeEnd = NULL,
@@ -194,8 +177,7 @@ ttnGetTimeSeries <- function(datapoint, sourceName,
            # do nothing as default, e.g. for "absVal"
          }
   )
-  # saveRDS(df, paste0(here::here(), "/app/shiny/temp/temp.rds"))
-  
+
   # multiply with conversion valueFactor (for example 0.001 to get from Watthours to Kilowatthours)
   df[[2]] <- df[[2]] * valueFactor
   
