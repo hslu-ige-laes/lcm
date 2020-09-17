@@ -27,6 +27,6 @@ Nella lcm-applicazione gli edifici sono definiti gerarchicamente. Per esempio:
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsBldgHierarchy_01.PNG" style="border:1px solid lightgrey"/>
 1. cliccare su `Add new flat` per aggiungere l'appartamento alla gerarchia
 
-Fare clic su "Continua" per imparare ad aggiungere una fonte di dati.
+Cliccate su "Continua" per imparare ad aggiungere una fonte di dati.
 
 [Continua](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/addDataSource/){: .btn .btn-green }

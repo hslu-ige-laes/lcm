@@ -20,6 +20,6 @@ has_toc: false
 
 La nuova sorgente dati CSV appare ora nella tabella delle sorgenti.
 
-Fare clic su "Continua" per imparare ad aggiungere singoli punti dati.
+Cliccate su "Continua" per imparare ad aggiungere singoli punti dati.
 
 [Continua](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/addDataPoints/){: .btn .btn-green }

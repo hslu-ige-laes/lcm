@@ -20,6 +20,6 @@ has_toc: false
 
 **Tip:** Per uscire dall'applicazione, basta chiudere la finestra del browser web
 
-Premere "Continua" per imparare a configurare l'applicazione.
+Cliccate su "Continua" per imparare a configurare l'applicazione.
 
 [Continua](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/configuration/){: .btn .btn-green }
