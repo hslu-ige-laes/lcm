@@ -703,8 +703,8 @@ flatElectricityModule <- function(input, output, session, aggData) {
         )
       
       # calculate ratio which is visual representative for comparison 
-      ratio <- 1/maxYUsage * maxYStandby * 24 / 1000
-      # browser()
+      # ratio <- 1/maxYUsage * maxYStandby * 24 / 1000
+      ratio <- 0.3
       fig <- subplot(fig1, fig2, nrows = 2, shareX = TRUE, heights = c(1-ratio, ratio), titleY = TRUE) %>%
         plotly::config(modeBarButtons = list(list("toImage")),
                        displaylogo = FALSE,
