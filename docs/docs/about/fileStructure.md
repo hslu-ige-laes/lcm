@@ -138,5 +138,5 @@ myParsingScriptName <- function(filePath = NULL) {
 <hr>
 
 ## /sampleData
-- Sample csv file which is used in the Quick Start Guide
+- Sample csv files for demonstration purposes
 
