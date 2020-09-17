@@ -21,7 +21,7 @@ csvGetTimeSeries <- function(fileName, datapoint,
            # do nothing as default, e.g. for "absVal"
          }
   )
-  
+
   # multiply with conversion valueFactor (for example 0.001 to get from Watthours to Kilowatthours)
   df[[datapoint]] <- df[[datapoint]] * valueFactor
   
