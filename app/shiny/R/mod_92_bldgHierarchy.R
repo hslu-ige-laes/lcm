@@ -17,7 +17,6 @@ bldgHierarchyModuleUI <- function(id) {
         tags$br(),
         tags$hr(),
         dataTableOutput(ns("tableContent"))
-        # uiOutput(ns("script"))
       )
     )
   )
