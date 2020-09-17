@@ -14,25 +14,25 @@ Exploiting this potential is the goal of energy-related operational optimization
 <hr>
 
 ## Why not using an available cloud service/dashboard
-- As of today, the market does not offer an affordable application for residential construction. 
-- Today's IoT applications are subject to licensing and focus on the presentation of time series in standard plots.
-- More complicated data analyses and visualizations are rarely supported.
-- Many people today still want to store as little data as possible on the internet and are not happy with a fully centralized solution.
+- As of today, the market does not offer an affordable application for residential construction
+- Today's IoT applications are subject to licensing and focus on the presentation of time series in standard plots
+- More complicated data analyses and visualizations are rarely supported
+- Many people today still want to store as little data as possible on the internet and are not happy with a fully centralized solution
 
 <hr>
 
 ## Used software
-- The app is built as a [Shiny](https://shiny.rstudio.com/) web application which is based on the [programming language R](https://en.wikipedia.org/wiki/R_(programming_language)).
-- R and its web application extension [Shiny](https://shiny.rstudio.com/) are a good solution to build prototypes of web apps which require data analysis and visualization functionality.
-- No programming skills are required to install and use the application.
-- If you want to extend or adapt the application a basic knowledge of R, [RStudio](https://rstudio.com/products/rstudio/) and the graph library [ggplot](https://ggplot2.tidyverse.org/reference/ggplot.html) and [ploty](https://plotly.com/r/) are required.
-- The nice thing with R Shiny application is, that everything is open source and no further knowledge of HTML, CSS or JavaScript is required to build small and minimal apps.
+- The app is built as a [Shiny](https://shiny.rstudio.com/) web application which is based on the [programming language R](https://en.wikipedia.org/wiki/R_(programming_language)){:target="_blank"}
+- R and its web application extension [Shiny](https://shiny.rstudio.com/){:target="_blank"} are a good solution to build prototypes of web apps which require data analysis and visualization functionality
+- No programming skills are required to install and use the application
+- If you want to extend or adapt the application a basic knowledge of R, [RStudio](https://rstudio.com/products/rstudio/){:target="_blank"} and the graph library [ggplot](https://ggplot2.tidyverse.org/reference/ggplot.html){:target="_blank"} and [ploty](https://plotly.com/r/){:target="_blank"} are required
+- The nice thing with R Shiny application is, that everything is open source and no further knowledge of HTML, CSS or JavaScript is required to build small and minimal apps
 
 ### Getting started with R, RStudio and Shiny
-- [RStudio Education](https://education.rstudio.com/learn/beginner/) serves as good starting point for beginners in R and RStudio. 
+- [RStudio Education](https://education.rstudio.com/learn/beginner/){:target="_blank"} serves as good starting point for beginners in R and RStudio
 - If you are only new to Shiny we suggest the free <a href="https://mastering-shiny.org/" target="_blank">"Mastering Shiny book"</a>
 
 <hr>
 ### References 
-<a id="balmer2020">[1]</a> Balmer, M., Hubbuch, M., & Sandmeier, E. (2020). Energetische Betriebsoptimierung: Gebäude effizienter betreiben (1. Auflage). Fachbuchreihe «Nachhaltiges Bauen und Erneuern». FAKTOR Verlag AG. [https://pubdb.bfe.admin.ch/de/publication/download/10042](https://pubdb.bfe.admin.ch/de/publication/download/10042)<br>
+<a id="balmer2020">[1]</a> Balmer, M., Hubbuch, M., & Sandmeier, E. (2020). Energetische Betriebsoptimierung: Gebäude effizienter betreiben (1. Auflage). Fachbuchreihe «Nachhaltiges Bauen und Erneuern». FAKTOR Verlag AG. [https://pubdb.bfe.admin.ch/de/publication/download/10042](https://pubdb.bfe.admin.ch/de/publication/download/10042){:target="_blank"}<br>
 	
