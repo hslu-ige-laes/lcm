@@ -55,6 +55,7 @@ flatHotWaterModuleUI <- function(id) {
                    )
                  )
         )
+        # Streamgraph did not work properly, removed
         # tabPanel("Stream",
         #          fluidRow(
         #            box(
@@ -396,7 +397,7 @@ flatHotWaterModule <- function(input, output, session, aggData) {
         layout(margin = list(t = 120), yaxis = yaxis)
     })
   })
- 
+  # Streamgraph did not work properly, removed
   # output$hotWaterFlatStream <- renderStreamgraph({
   #   # Create a Progress object
   #   withProgress(message = 'Creating plot', detail = "hot water flats stream", value = NULL, {
