@@ -24,6 +24,8 @@ permalink: /
 [Français](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/){: .btn .btn-green }
 [Italiano](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/){: .btn .btn-green } 
 
+<hr>
+
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/aboutDashboardLayout_02.png" style="border:1px solid lightgrey" onclick="window.open('https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/aboutDashboardLayout_02.png', '_blank');" />
 
 <hr>
