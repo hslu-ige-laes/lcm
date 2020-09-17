@@ -13,4 +13,4 @@ permalink: /docs/modules/roomAirQuality
 
 ### Prerequisite
 The module get automatically displayed when the following data points are configured:
-- Room Air Quality CO2
+- Room Air Quality CO<sub>2</sub>
