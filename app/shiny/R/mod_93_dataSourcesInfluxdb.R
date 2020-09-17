@@ -333,6 +333,5 @@ dataSourcesModuleInfluxdb <- function(input, output, session) {
     write_csv2(configInfluxdb.new, here::here("app", "shiny", "config", "configInfluxdb.csv"))
     removeModal()
   }
-  
 }
 
