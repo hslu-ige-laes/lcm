@@ -1,16 +1,3 @@
-
-# # Test function call for debugging
-# fileName <- "TempFeuchteWhg3.csv"
-# fileName <- "KwlFanPercZul.csv"
-# datapoint <- "Feuchte"
-# datetimeStart = "2019-01-01"
-# datetimeEnd = "2019-10-31"
-# func = "mean"
-# agg = "1d"
-# 
-# head(csvGetTimeSeries(fileName, datapoint, datetimeStart, datetimeEnd, func, agg))
-# 
-
 csvGetTimeSeries <- function(fileName, datapoint,
                              datetimeStart = NULL, datetimeEnd = NULL,
                              func = "raw", agg = "1d", fill = "null", valueFactor = 1, valueType = "absVal",
@@ -40,9 +27,6 @@ csvGetTimeSeries <- function(fileName, datapoint,
   
   df <- df %>% na.omit()
 
-  # tbd: this line sometimes doesn't work, check how to replace "" with NA. Does not work with time column?!
-  # df <- df %>% mutate_all(na_if,"")
-  # df <- df %>% na.omit()
   df$time <- parse_date_time(df$time, "YmdHMS", tz = locTimeZone)
   df <- df %>% na.omit()
   df <- df %>% dplyr::arrange(time)
