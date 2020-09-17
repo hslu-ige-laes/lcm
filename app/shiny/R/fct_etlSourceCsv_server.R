@@ -7,14 +7,14 @@ csvGetTimeSeries <- function(fileName, datapoint,
   # df <- read_delim(file = here::here("app", "shiny", "data", "csv", fileName), na = c("", "NA"), delim = ";")
   
   df <- df %>% select(time, datapoint)
+  df <- df %>% na.omit()
   
   switch(valueType,
          counterVal = {
            # increasing counter reading values
            # calculate difference to get consumption values
            df[[datapoint]] <- df[[datapoint]] - lag(df[[datapoint]])
-           
-           # tbd: handle counter reading fall backs...
+           df <- df %>% filter(df[[datapoint]] >= 0)
            
          },
          {
