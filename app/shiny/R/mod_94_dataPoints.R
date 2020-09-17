@@ -320,7 +320,7 @@ dataPointsModule <- function(input, output, session) {
       withProgress(message = 'Fetching data and create plot', detail = paste0(input$dpSourceName, " : ", input$dpSourceReference), value = NULL, { 
         
         plotData <- getTimeSeries(dpSource = input$dpSourceName, dpSourceRef = input$dpSourceReference, dpFieldKey = input$dpFieldKey, valueFactor = input$valueFactor, valueType = input$valueType)
- 
+
         xts <- xts(plotData[,-1], order.by = plotData$time)
       
         dygraph(xts, main = input$dpName) %>%
