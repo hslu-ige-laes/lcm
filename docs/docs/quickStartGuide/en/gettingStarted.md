@@ -10,7 +10,9 @@ has_toc: false
 # Getting Started
 ## Step 1: Download application
 1. <a href="https://downgit.github.io/#/home?url=https://github.com/hslu-ige-laes/lcm" download>Click here to download the lcm application</a>
-1. Extract the content of the downloaded zip-file into the folder of your choice
+1. open the zip-file
+1. drag n drop the folder `lcm-master` into a folder of your choice
+   - you can rename the folder `lcm-master` to any name
 
 
 ## Step 2: Start application
