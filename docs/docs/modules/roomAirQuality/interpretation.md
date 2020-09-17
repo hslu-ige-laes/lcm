@@ -7,9 +7,9 @@ grand_parent: Modules
 ---
 
 ### General <a href="#nachhaltigebueros">[2]</a>
-Today, CO2 is one of the most important indicators for evaluating the air quality in office and residential buildings.
-Since humans produce CO2 by breathing and release it into the air, the CO2 content in occupied, unventilated rooms increases rapidly.
-With increasing CO2 concentration, room users experience odorous complaints and, with significantly increased CO2 concentration, even health problems (concentration disorders, headaches, dizziness, etc.). 
+Today, CO<sub>2</sub> is one of the most important indicators for evaluating the air quality in office and residential buildings.
+Since humans produce CO<sub>2</sub> by breathing and release it into the air, the CO<sub>2</sub> content in occupied, unventilated rooms increases rapidly.
+With increasing CO<sub>2</sub> concentration, room users experience odorous complaints and, with significantly increased CO<sub>2</sub> concentration, even health problems (concentration disorders, headaches, dizziness, etc.). 
 
 ### Thresholds
 - In Switzerland, the Swiss Accident Insurance Institution is generally responsible for health-related limit values at the workplace <a href="#suva">[1]</a>. 
@@ -17,13 +17,13 @@ With increasing CO2 concentration, room users experience odorous complaints and,
 - These are limit values that are intended to ensure health protection but NOT comfort:
   While the SUVA sets 5'000 ppm (parts per million) as MAK value for carbon dioxide,
   the guideline to the regulation 3 of the labor law states:
-  “Good indoor air is given if the total concentration of 1'000 ppm CO2 is not exceeded over the period of use of the room.
-- In standard SIA 382/1 <a href="#sia382">[3, Table 8]</a>, the Swiss Association of Engineers and Architects specifies a classification of indoor air quality. Residential and office spaces fall into category 3, for which CO2 levels between 1'000 and 1'400 ppm are prescribed.
+  “Good indoor air is given if the total concentration of 1'000 ppm CO<sub>2</sub> is not exceeded over the period of use of the room.
+- In standard SIA 382/1 <a href="#sia382">[3, Table 8]</a>, the Swiss Association of Engineers and Architects specifies a classification of indoor air quality. Residential and office spaces fall into category 3, for which CO<sub>2</sub> levels between 1'000 and 1'400 ppm are prescribed.
 - The Swiss Air and Water Hygiene Association recommends values between 800 - 1'200 ppm for a good indoor climate, with the optimum at 1'000 ppm and a maximum value of 1'400 ppm <a href="#svlw">[4]</a>. These values are the default in the application.
 
-### CO2 Sensor self calibration
-- Most CO2 sensors have a self-correcting ABC (Automatic Baseline Correction) algorithm.
-- It is assumed that the sensor reaches the fresh air value of approx. 400 ppm CO2 at least once in x days (sensor specific) by window- or mechanical ventilation.
+### CO<sub>2</sub> Sensor self calibration
+- Most CO<sub>2</sub> sensors have a self-correcting ABC (Automatic Baseline Correction) algorithm.
+- It is assumed that the sensor reaches the fresh air value of approx. 400 ppm CO<sub>2</sub> at least once in x days (sensor specific) by window- or mechanical ventilation.
 - This algorithm constantly tracks the lowest measured value of the sensor over the last x days and slowly corrects the unavoidable long-term drift.
 
 <hr>

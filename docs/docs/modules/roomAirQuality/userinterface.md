@@ -7,7 +7,7 @@ grand_parent: Modules
 ---
 
 ### Visualization(s)
-#### CO2 Flats with Indoor Air Quality Zones
+#### CO<sub>2</sub> Flats with Indoor Air Quality Zones
 
 Standard time series x-y plot with band of upper- and lower quantiles (0.05 and 0.95).
 <br><br>

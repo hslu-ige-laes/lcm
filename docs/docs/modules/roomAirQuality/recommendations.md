@@ -17,8 +17,8 @@ grand_parent: Modules
 - Make air volume adjustment by a ventilation company if there is a suspicion that some rooms get too little air compared to others
 - Adaptation of the timer program to current needs by reprogramming (can usually be done by customers themselves)
 
-### Ventilation system with CO2 sensor(s)
-- Newer plants work demand-oriented, e.g. by means of CO2 control, in order to not supply too large quantities of air, which can lead to an unnecessary drying out of the rooms.
+### Ventilation system with CO<sub>2</sub> sensor(s)
+- Newer plants work demand-oriented, e.g. by means of CO<sub>2</sub> control, in order to not supply too large quantities of air, which can lead to an unnecessary drying out of the rooms.
 - Such sensors can also be installed later and are available as well for residential systems.
 
 <hr>
