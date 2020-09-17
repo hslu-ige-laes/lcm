@@ -25,14 +25,6 @@ dataPointsModuleUI <- function(id) {
 
 dataPointsModule <- function(input, output, session) {
 
-  # tbd: abfangen wenn dataPoints.csv leer ist oder nicht existiert... dito andere files.
-  # tbd: braucht es oben in ui das noch: uiOutput(ns("script")) ?
-  
-  # Read Config File.
-  ## define separate function to read because of encoding
-  # readFunc <- function(x){read_csv2(x, locale = locale(encoding = "UTF-8"))}
-  # configDataPoints <- reactiveFileReader(500, session, here::here("app", "shiny", "config","dataPoints.csv"), readFunc)
-  
   # Create Table.
   output$tableContent <- renderDataTable({
     datatable(dataPoints(),
