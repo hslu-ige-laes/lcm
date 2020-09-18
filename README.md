@@ -9,8 +9,10 @@
 
 ## Links
   **[> Live Demo](https://hslu-ige-laes.shinyapps.io/lowcostmonitoring/)**
+  
   **[> Documentation](https://hslu-ige-laes.github.io/lcm/)**
-  **Quick Start Guide** [English](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/en/) [Deutsch](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/) [Français](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/) [Italiano](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/)
+  
+  ** > Quick Start Guide** [English](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/en/) [Deutsch](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/) [Français](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/) [Italiano](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/)
 
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/aboutDashboardLayout_02.png" style="border:1px solid lightgrey" onclick="window.open('https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/aboutDashboardLayout_02.png', '_blank');" />
 
