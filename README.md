@@ -1,9 +1,9 @@
 # lcm - Low Cost Monitoring
 <img src="https://github.com/hslu-ige-laes/lcm/raw/master/docs/assets/images/lcm.png" width="100" align="right" class="inline"/>
 
-> **See [https://hslu-ige-laes.shinyapps.io/lowcostmonitoring/](https://hslu-ige-laes.shinyapps.io/lowcostmonitoring/) for a live demo of the functionalities**
+> **[Live Demo](https://hslu-ige-laes.shinyapps.io/lowcostmonitoring/)**
 
-> **See [https://hslu-ige-laes.github.io/lcm/](https://hslu-ige-laes.github.io/lcm/) for detailed documentation**
+> **[Documentation](https://hslu-ige-laes.github.io/lcm/)**
 
 - "lcm" is an open source monitoring application for residential buildings
 - The focus of the application is on providing energy savings whilst maintaining the expected comfort
