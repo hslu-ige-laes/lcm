@@ -9,7 +9,7 @@ has_toc: false
 
 # Démarrage
 ## Étape 1: Télécharger le formulaire de candidature
-1. [Cliquez ici pour télécharger l'application lcm](https://github.com/hslu-ige-laes/lcm/archive/v0.2.zip){:target="_blank" :download}
+1. [Cliquez ici pour télécharger l'application lcm](https://github.com/hslu-ige-laes/lcm/releases/latest/lcm.zip){:target="_blank" :download}
 1. ouvrir le fichier zip
 1. glisser-déposer le dossier `lcm-x.y` dans un dossier de votre choix
    - vous pouvez renommer le dossier `lcm-x.y` avec un nom de votre choix
