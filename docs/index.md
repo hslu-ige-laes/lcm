@@ -15,16 +15,10 @@ permalink: /
 - Supported data sources include LoRaWAN sensors, influxDB and CSV files
 - The lcm monitoring solution is cost-effective and "do it yourself"
 
-**See [https://hslu-ige-laes.shinyapps.io/lowcostmonitoring/) for a live demo of the functionalities**
-
-<hr>
-
-## Quick Start Guide
-
-[English](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/en/){: .btn .btn-green }
-[Deutsch](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/){: .btn .btn-green }
-[Français](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/){: .btn .btn-green }
-[Italiano](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/){: .btn .btn-green } 
+### Links
+  **[> Live Demo](https://hslu-ige-laes.shinyapps.io/lowcostmonitoring/)**<br>
+  **[> Documentation](https://hslu-ige-laes.github.io/lcm/)**<br>
+   **> Quick Start Guide**  [English](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/en/){: .btn .btn-green }  [Deutsch](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/){: .btn .btn-green }  [Français](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/){: .btn .btn-green }  [Italiano](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/){: .btn .btn-green }
 
 <hr>
 
