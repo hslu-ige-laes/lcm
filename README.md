@@ -28,6 +28,7 @@ This is a prototype. The authors decline any liability or responsibility in conn
 ### without installing R (only on Windows)
 1. <a href="https://github.com/hslu-ige-laes/lcm/archive/v0.2.zip" download>Download lcm application</a>
 1. Extract the content to a folder of your choice
+  - you can rename the folder `lcm-x.y` to any name
 1. Execute `lcmStartApp.bat` in the application folder
 1. A browser will open and show the application
 
