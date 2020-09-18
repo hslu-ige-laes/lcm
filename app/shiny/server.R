@@ -66,8 +66,19 @@ server <- function(input, output, session) {
   })
   
   output$dataExplorerMenuItem <- renderMenu({
-    if((nrow(dataPoints())) > 0){
+    if(((nrow(dataPoints())) > 0) && (!demoMode)){
       menuItem("Data Explorer", icon = icon("chart-line"), tabName = "dataexplorer")
+    }
+  })
+  
+  output$settingsMenuItem <- renderMenu({
+    if(!demoMode){
+      menuItem("Settings", icon = icon("cog"), startExpanded = FALSE,
+               menuSubItem("App Configuration", icon = icon("user-cog"), tabName = "configuration"),
+               menuSubItem("Building Hierarchy", icon = icon("home"), tabName = "bldgHierarchy"),
+               menuSubItem("Data Sources", icon = icon("database"), tabName = "datasources"),
+               menuSubItem("Data Points", icon = icon("list-ul"), tabName = "datapoints")
+      )
     }
   })
   
@@ -153,28 +164,60 @@ server <- function(input, output, session) {
   })
   
   observeEvent(input$updateButton, {
-    print("Update Data because of pressing button")
-    withProgress(message = "Fetching data", detail = "this might take a while..." , value = NULL, {
-      tic("ttnFetchServerData")
-      ttnFetchServerData()
-      toc()
-      tic("etlAggFilterData")
-      etlAggFilterData()
-      toc()
-    })
+    if(!demoMode){
+      print("Update Data because of pressing button")
+      withProgress(message = "Fetching data", detail = "this might take a while..." , value = NULL, {
+        tic("ttnFetchServerData")
+        ttnFetchServerData()
+        toc()
+        tic("etlAggFilterData")
+        etlAggFilterData()
+        toc()
+      })
+    }else{
+      shinyalert(
+        title = "Info",
+        text = "Functionality not available on shinyapps.io",
+        closeOnEsc = TRUE,
+        closeOnClickOutside = TRUE,
+        html = FALSE,
+        type = "info",
+        showConfirmButton = FALSE,
+        showCancelButton = FALSE,
+        timer = 2000,
+        imageUrl = "",
+        animation = TRUE
+      )
+    }
   })
   
   observeEvent(input$clearCacheButton, {
-    print("Clean cache files and update Data because of pressing button")
-    withProgress(message = "Clear cache and refetching data", detail = "this might take a while..." , value = NULL, {
-      tic("ttnFetchServerData")
-      ttnFetchServerData()
-      toc()
-      clearCache()
-      tic("etlAggFilterData")
-      etlAggFilterData()
-      toc()
-    })
+    if(!demoMode){
+      print("Clean cache files and update Data because of pressing button")
+      withProgress(message = "Clear cache and refetching data", detail = "this might take a while..." , value = NULL, {
+        tic("ttnFetchServerData")
+        ttnFetchServerData()
+        toc()
+        clearCache()
+        tic("etlAggFilterData")
+        etlAggFilterData()
+        toc()
+      })
+    }else{
+      shinyalert(
+        title = "Info",
+        text = "Functionality not available on shinyapps.io",
+        closeOnEsc = TRUE,
+        closeOnClickOutside = TRUE,
+        html = FALSE,
+        type = "info",
+        showConfirmButton = FALSE,
+        showCancelButton = FALSE,
+        timer = 2000,
+        imageUrl = "",
+        animation = TRUE
+      )
+    }
   })
  
   # ======================================================================
