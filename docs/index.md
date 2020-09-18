@@ -16,9 +16,9 @@ permalink: /
 - The lcm monitoring solution is cost-effective and "do it yourself"
 
 ## Links
-- **[Live Demo](https://hslu-ige-laes.shinyapps.io/lowcostmonitoring/)**
-- **[Documentation](https://hslu-ige-laes.github.io/lcm/)**
-- **Quick Start Guide**<br>
+- [Live Demo](https://hslu-ige-laes.shinyapps.io/lowcostmonitoring/)
+- [Documentation](https://hslu-ige-laes.github.io/lcm/)
+- Quick Start Guide<br>
   [English](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/en/){: .btn .btn-green }  [Deutsch](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/){: .btn .btn-green }  [Français](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/){: .btn .btn-green }  [Italiano](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/){: .btn .btn-green }
 
 <hr>
