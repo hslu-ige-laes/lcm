@@ -15,6 +15,8 @@ permalink: /
 - Supported data sources include LoRaWAN sensors, influxDB and CSV files
 - The lcm monitoring solution is cost-effective and "do it yourself"
 
+**See [https://hslu-ige-laes.shinyapps.io/lowcostmonitoring/) for a live demo of the functionalities**
+
 <hr>
 
 ## Quick Start Guide
