@@ -9,10 +9,10 @@ has_toc: false
 
 # Primi passi
 ## Passo 1: Scaricare l'applicazione
-1. [Clicca qui per scaricare l'applicazione lcm](https://downgit.github.io/#/home?url=https://github.com/hslu-ige-laes/lcm){:target="_blank" :download}
+1. [Clicca qui per scaricare l'applicazione lcm](https://github.com/hslu-ige-laes/lcm/archive/v0.2.zip){:target="_blank" :download}
 1. aprire il file zip
-1. trascinare la cartella `lcm-master` in una cartella a scelta
-   - è possibile rinominare la cartella `lcm-master` con un nome a scelta
+1. trascinare la cartella `lcm-x.y` in una cartella a scelta
+   - è possibile rinominare la cartella `lcm-x.y` con un nome a scelta
 
 ## Passo 2: Avviare l'applicazione
 1. avviare l'applicazione facendo doppio clic sul file `lcmStartApp.bat` che si trova nella cartella dell'applicazione più in alto

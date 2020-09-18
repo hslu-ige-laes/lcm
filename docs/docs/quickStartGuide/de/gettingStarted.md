@@ -10,10 +10,10 @@ has_toc: false
 # Erste Schritte
 ## Schritt 1: Anwendung herunterladen
 
-1. [Hier klicken um die lcm-Anwendung herunterzuladen](https://downgit.github.io/#/home?url=https://github.com/hslu-ige-laes/lcm){:target="_blank" :download}
+1. [Hier klicken um die lcm-Anwendung herunterzuladen](https://github.com/hslu-ige-laes/lcm/archive/v0.2.zip){:target="_blank" :download}
 1. Öffnen Sie die Zip-Datei
-1. Ziehen Sie den Ordner `lcm-master` per Drag & Drop in einen Ordner Ihrer Wahl
-   - Sie können den Ordner `lcm-master` nach Belieben umbenennen
+1. Ziehen Sie den Ordner `lcm-x.y` per Drag & Drop in einen Ordner Ihrer Wahl
+   - Sie können den Ordner `lcm-x.y` nach Belieben umbenennen
 
 ## Schritt 2: Anwendung starten
 1. Starten Sie die Anwendung durch Doppelklicken der Datei `lcmStartApp.bat` welche im obersten Ordner liegt
