@@ -32,12 +32,7 @@ sidebar <- dashboardSidebar(
     menuItemOutput("centralHeatingSignatureMenuItem"),
     menuItemOutput("centralHeatingCurveMenuItem"),
     menuItemOutput("dataExplorerMenuItem"),
-    menuItem("Settings", icon = icon("cog"), startExpanded = FALSE,
-             menuSubItem("App Configuration", icon = icon("user-cog"), tabName = "configuration"),
-             menuSubItem("Building Hierarchy", icon = icon("home"), tabName = "bldgHierarchy"),
-             menuSubItem("Data Sources", icon = icon("database"), tabName = "datasources"),
-             menuSubItem("Data Points", icon = icon("list-ul"), tabName = "datapoints")
-    )
+    menuItemOutput("settingsMenuItem")
   )
 )
 # ======================================================================
