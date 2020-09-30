@@ -2,7 +2,7 @@ rm(list=ls())
 Sys.setenv(LC_CTYPE = "en_US.UTF-8")
 
 # demoMode is for publishing on shinyapps.io, application has less functionality
-demoMode <- TRUE
+demoMode <- FALSE
 
 # Max. Upload Size for files 30MB (csv files can get really big...)
 options(shiny.maxRequestSize=30*1024^2)
