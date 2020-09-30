@@ -22,6 +22,9 @@ parent: Installation
 
 ### via Desktop Link (Windows only)
 1. Create a new desktop link
-1. Define the following target: `"C:\Program Files\R\R-3.6.3\bin\R.exe" -e "shiny::runApp('C:/PATH_TO_YOUR_APP/lcm/app/shiny', launch.browser = TRUE)`, where you need to replace `PATH_TO_YOUR_APP` with your folder location
+1. Define the following target:
+  `"C:\Program Files\R\R-3.6.3\bin\R.exe" -e "shiny::runApp('C:/PATH_TO_YOUR_APP/lcm/app/shiny', launch.browser = TRUE)`
+  where you need to replace `PATH_TO_YOUR_APP` with your folder location
+  <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/installationStartApp_01.PNG" style="border:1px solid lightgrey"/>
 1. When double-clicking the link icon, a Command Prompt as well as a Web browser open
 1. To quit the application, close the Command Prompt
