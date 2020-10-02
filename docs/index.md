@@ -6,7 +6,7 @@ description: "Low Cost Monitoring - Documentation"
 permalink: /
 ---
 
-<img src="https://github.com/hslu-ige-laes/lcm/raw/master/docs/assets/images/home_Demo.gif" width="100%"/>
+<img src="https://github.com/hslu-ige-laes/lcm/raw/master/docs/assets/images/lcm.png" width="100"/>
 
 # lcm - Low-Cost Monitoring
 - "lcm" is an open source monitoring application for residential buildings
@@ -22,7 +22,7 @@ permalink: /
 
 <hr>
 
-<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/aboutDashboardLayout_02.png" style="border:1px solid lightgrey" onclick="window.open('https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/aboutDashboardLayout_02.png', '_blank');" />
+<img src="https://github.com/hslu-ige-laes/lcm/raw/master/docs/assets/images/home_Demo.gif" width="100%"/>
 
 <hr>
 
