@@ -59,9 +59,9 @@ Supported data sources are: CSV files, LoRaWAN sensors over "The Things Network"
 - The link between the device and the TTN server is secured using an AES-128-End-to-End-Encryption
 
 
-### ttn LoRaWAN system architecture
+### System architecture
 <br>
-<img src="https://github.com/hslu-ige-laes/lcm/raw/master/docs/assets/images/settingsDataSources_01.PNG" width="100"/>
+<img src="https://github.com/hslu-ige-laes/lcm/raw/master/docs/assets/images/settingsDataSources_01.PNG" width="100%"/>
 <br>
 - LoRaWAN devices on the left send their sensor data to one or multiple antennas, so called LoRaWAN Gateways
 - The gateway(s) forward the data to servers from the ttn community
@@ -122,6 +122,7 @@ Once you have created an application with devices as described above, you can co
 - This integration is only implemented for users with influxDB knowledge
 - The lcm application assumes that stored data of influxDB is in UTC time zone
 - During import the lcm application changes the time zone to the configured one of `Settings > App Configuration > Time Zone`
+- Currently, influxDB version 1.x is supported
 
 
 ### Add new
