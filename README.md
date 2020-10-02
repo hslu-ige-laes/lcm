@@ -15,13 +15,6 @@
 - Quick Start Guide<br>
   [English](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/en/) - [Deutsch](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/) - [Français](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/) - [Italiano](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/)
 
-**Disclaimer**<br>
-This is a prototype. The authors decline any liability or responsibility in connection with the lcm application.
-
-&copy; Lucerne University of Sciences and Arts, 2020
-
-<hr>
-
 ## Simplified installation instructions
 > For more details please consult [https://hslu-ige-laes.github.io/lcm/docs/installation](https://hslu-ige-laes.github.io/lcm/docs/installation)
 
@@ -38,4 +31,11 @@ This is a prototype. The authors decline any liability or responsibility in conn
 1. Open R and install required libraries (see global.R)
 1. execute `runApp("./app/shiny/")`
 1. A browser will open and show the empty application
+
+<hr>
+
+**Disclaimer**<br>
+This is a prototype. The authors decline any liability or responsibility in connection with the lcm application.
+
+&copy; Lucerne University of Sciences and Arts, 2020
 
