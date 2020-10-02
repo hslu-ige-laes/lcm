@@ -29,7 +29,7 @@ This is a prototype. The authors decline any liability or responsibility in conn
 1. <a href="https://github.com/hslu-ige-laes/lcm/releases/latest/download/lcm.zip" download>Download lcm application</a>
 1. Extract the content to a folder of your choice (you can rename the folder `lcm-x.y` to any name)
 1. Execute `lcmStartApp.bat` in the application folder
-1. A browser will open and show the application
+1. A browser will open and show the empty application
 
 ### with R installation
 1. Download and install R version 3.6.3 from [http://cran.r-project.org/](http://cran.r-project.org/)
@@ -37,5 +37,5 @@ This is a prototype. The authors decline any liability or responsibility in conn
 1. Extract the content to a folder of your choice
 1. Open R and install required libraries (see global.R)
 1. execute `runApp("./app/shiny/")`
-1. A browser will open and show the application
+1. A browser will open and show the empty application
 
