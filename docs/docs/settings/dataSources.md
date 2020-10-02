@@ -61,7 +61,7 @@ Supported data sources are: CSV files, LoRaWAN sensors over "The Things Network"
 
 ### System architecture
 <br>
-<img src="https://github.com/hslu-ige-laes/lcm/raw/master/docs/assets/images/settingsDataSources_01.PNG" width="100% style="border:1px solid lightgrey"/>
+<img src="https://github.com/hslu-ige-laes/lcm/raw/master/docs/assets/images/settingsDataSources_01.PNG" width="100%" style="border:1px solid lightgrey"/>
 <br>
 - LoRaWAN devices on the left send their sensor data to one or multiple antennas, so called LoRaWAN Gateways
 - The gateway(s) forward the data to servers from the ttn community
