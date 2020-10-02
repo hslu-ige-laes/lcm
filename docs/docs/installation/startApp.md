@@ -8,7 +8,7 @@ parent: Installation
 # Start applicaton
 ## R Portable
 - Execute `lcmStartApp.bat` in the application folder
-- A Web browser will open and display the application
+- A Web browser will open and display the empty application
 - To quit the application, simply close the browser window
 
 <hr>
