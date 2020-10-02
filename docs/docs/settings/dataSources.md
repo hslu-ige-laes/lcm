@@ -61,7 +61,7 @@ Supported data sources are: CSV files, LoRaWAN sensors over "The Things Network"
 
 ### System architecture
 <br>
-<img src="https://github.com/hslu-ige-laes/lcm/raw/master/docs/assets/images/settingsDataSources_01.PNG" width="100%"/>
+<img src="https://github.com/hslu-ige-laes/lcm/raw/master/docs/assets/images/settingsDataSources_01.PNG" width="100% style="border:1px solid lightgrey"/>
 <br>
 - LoRaWAN devices on the left send their sensor data to one or multiple antennas, so called LoRaWAN Gateways
 - The gateway(s) forward the data to servers from the ttn community
@@ -73,7 +73,7 @@ Supported data sources are: CSV files, LoRaWAN sensors over "The Things Network"
 - Hint: the measurements in the storage get saved with a UTC timestamp. The lcm application handels that automatically and changes the timezone depending on `Settings > App Configuration > Time Zone`
 
 
-### Devices
+### Add devices
 - You can buy a LoRaWAN device and connect it to the network, free without charges or fees
 - The [lora-devices-ttn documentation](https://hslu-ige-laes.github.io/lora-devices-ttn/){:target="_blank"} gives an overview of different LoRaWAN devices
 - Simply click there on a LoRaWAN device and you will get
