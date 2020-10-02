@@ -11,5 +11,4 @@ parent: Installation
 
 1. [Click here to download the lcm application](https://github.com/hslu-ige-laes/lcm/releases/latest/download/lcm.zip){:target="_blank" :download}
 1. open the zip-file
-1. drag n drop the folder `lcm-x.y` into a folder of your choice
-   - you can rename the folder `lcm-x.y` to any name
+1. drag n drop the folder `lcm-x.y` into a folder of your choice (you can rename the folder `lcm-x.y` to any name)
