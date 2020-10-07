@@ -16,7 +16,7 @@ has_toc: false
 1. cliccare su `Add new` per aggiungere una nuova fonte
 1. impostare un nome sorgente personalizzato `source Name`, come `flatTempHum`
 1. selezionare  tramite il pulsante `Browse...` il file dei dati del campione `flatTempHum.csv`. Questo file si trova nella cartella dell'applicazione nella sottocartella `/sampleData`<br>
-   La vostra finestra dovrebbe avere questo aspetto<br><br>
+   La vostra finestra dovrebbe avere questo aspetto<br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_05.PNG" style="border:1px solid lightgrey"/><br>
 1. Cliccare su `Add new data source` per aggiungere la nuova fonte dati
 

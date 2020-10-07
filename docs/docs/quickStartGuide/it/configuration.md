@@ -13,7 +13,7 @@ has_toc: false
 1. selezionare il "tipo di edificio" appropriato (casa unifamiliare o condominio) e impostare l'altezza dell'edificio
 1. cliccare sul pulsante di salvataggio `Save settings in configApp.csv`
 
-Il risultato dovrebbe essere così:<br><br>
+Il risultato dovrebbe essere così:<br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_03.PNG" style="border:1px solid lightgrey"/>
 
 
@@ -31,7 +31,7 @@ Nella lcm-applicazione gli edifici sono definiti gerarchicamente. Per esempio:
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsBldgHierarchy_01.PNG" style="border:1px solid lightgrey"/>
 1. cliccare su `Add new flat` per aggiungere l'appartamento alla gerarchia
 
-Il risultato dovrebbe essere così:<br><br>
+Il risultato dovrebbe essere così:<br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_04.PNG" style="border:1px solid lightgrey"/>
 
 Cliccate su "Continua" per imparare ad aggiungere una fonte di dati.

@@ -13,7 +13,7 @@ has_toc: false
 1. Choisissez le type de bâtiment `Building Type` approprié et réglez l'altitude du bâtiment `Building altitude`
 1. Cliquez sur `Save settings in configApp.csv` pour enregistrer les paramètres
 
-Le résultat devrait ressembler à ceci:<br><br>
+Le résultat devrait ressembler à ceci:<br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_03.PNG" style="border:1px solid lightgrey"/>
 
 
@@ -31,7 +31,7 @@ Dans l'application lcm, les bâtiments sont définis de manière hiérarchique. 
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsBldgHierarchy_01.PNG" style="border:1px solid lightgrey"/>
 1. Cliquez sur `Add new flat`  pour ajouter le nouvel appartement
 
-Le résultat devrait ressembler à ceci:<br><br>
+Le résultat devrait ressembler à ceci:<br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_04.PNG" style="border:1px solid lightgrey"/>
 
 Appuyez sur "Suivant" pour savoir comment ajouter une source de données.
