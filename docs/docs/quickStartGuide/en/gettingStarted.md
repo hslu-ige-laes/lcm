@@ -22,7 +22,7 @@ The result should look like this:<br>
 1. Start the application by executing `lcmStartApp.bat` in the application folder
 1. A Web browser will open automatically and display the empty application
 
-The result should look like this<br>
+The result should look like this:<br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_02.PNG" style="border:1px solid lightgrey"/>
 
 **Tip:** In order to quit the application, simply close the Web browser window

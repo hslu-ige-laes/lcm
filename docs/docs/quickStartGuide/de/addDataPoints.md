@@ -14,8 +14,8 @@ has_toc: false
 ## Schritt 1: Raumtemperatur
 1. Navigieren Sie in der Seitenleiste zu den Einstellungen der Datenpunkte `Settings > Data Points`
 1. Klicken Sie auf `Add new` um einen neuen Datenpunkt hinzuzufügen
-1. Füllen Sie das Formular wie folgt aus und klicken Sie auf `Test settings and preview data` um eine Vorschau der Daten zu erhalten<br>
-   Ihr Fenster sollte wie folgt aussehen<br><br>
+1. Füllen Sie das Formular wie folgt aus und klicken Sie auf `Test settings and preview data` um eine Vorschau der Daten zu erhalten<br><br>
+   Ihr Fenster sollte wie folgt aussehen:<br><br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_07.PNG" style="border:1px solid lightgrey"/><br>
 1. Klicken Sie schliesslich auf `Add new data point`
    - der neue Datenpunkt wird der Tabelle hinzugefügt
@@ -31,8 +31,8 @@ Nun wiederholen wir das obige Verfahren für den Feuchtesensor.
 
 1. Navigieren Sie erneut in der Seitenleiste zu `Settings > Data Points`
 1. Klicken Sie auf `Add new`
-1. Füllen Sie das Formular wie folgt aus und klicken Sie auf `Test settings and preview data`<br>
-   Ihr Fenster sollte wie folgt aussehen<br><br>
+1. Füllen Sie das Formular wie folgt aus und klicken Sie auf `Test settings and preview data`<br><br>
+   Ihr Fenster sollte wie folgt aussehen:<br><br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_09.PNG" style="border:1px solid lightgrey"/><br>
 1. Klicken Sie auf `Add new data point`
    - der neue Datenpunkt wird der Tabelle hinzugefügt

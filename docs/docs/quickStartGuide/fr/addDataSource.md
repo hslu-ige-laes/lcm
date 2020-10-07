@@ -15,8 +15,8 @@ has_toc: false
 1. Naviguer vers `Settings > Data Sources` dans la barre latérale pour configurer une source de données
 1. Cliquez sur `Add new` pour ajouter une nouvelle source
 1. Définir un nom de source `source Name` défini par l'utilisateur, tel que `flatTempHum`
-1. Choisissez via le bouton `Browse...` le fichier de données d'exemple `flatTempHum.csv`. Ce fichier est inclus dans votre dossier d'application dans le sous-dossier `/sampleData`<br>
-   Votre fenêtre devrait ressembler à ceci<br>
+1. Choisissez via le bouton `Browse...` le fichier de données d'exemple `flatTempHum.csv`. Ce fichier est inclus dans votre dossier d'application dans le sous-dossier `/sampleData`<br><br>
+   Votre fenêtre devrait ressembler à ceci:<br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_05.PNG" style="border:1px solid lightgrey"/><br>
 1. Cliquez sur `Add new data source` pour ajouter la nouvelle source de données
 
