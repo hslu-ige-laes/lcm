@@ -13,13 +13,13 @@ has_toc: false
 1. [Hier klicken um die lcm-Anwendung herunterzuladen](https://github.com/hslu-ige-laes/lcm/releases/latest/download/lcm.zip){:target="_blank" :download}
 1. Öffnen Sie die Zip-Datei
 1. Ziehen Sie den Ordner `lcm-x.y` per Drag & Drop in einen Ordner Ihrer Wahl
-   - Sie können den Ordner `lcm-x.y` nach Belieben umbenennen
+   - Sie können den Ordner `lcm-x.y` nach Belieben umbenennen, z.B. myProject<br><br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_01.PNG" style="border:1px solid lightgrey"/>
 
 
 ## Schritt 2: Anwendung starten
 1. Starten Sie die Anwendung durch Doppelklicken der Datei `lcmStartApp.bat` welche im obersten Ordner liegt
-1. Ein Web-Browser öffnet sich automatisch und zeigt die leere Anwendung
+1. Ein Web-Browser öffnet sich automatisch und zeigt die leere Anwendung<br><br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_02.PNG" style="border:1px solid lightgrey"/>
 
 **Tipp:** Um die Anwendung zu beenden, schliessen Sie einfach das Webbrowser-Fenster
