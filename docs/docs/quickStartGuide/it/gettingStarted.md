@@ -15,7 +15,7 @@ has_toc: false
    - è possibile rinominare la cartella `lcm-x.y` con un nome a scelta, ad esempio `myProject`
 
 Il risultato dovrebbe essere così<br><br>
-   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_01.PNG" style="border:1px solid lightgrey"/>
+<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_01.PNG" style="border:1px solid lightgrey"/>
 
 
 ## Passo 2: Avviare l'applicazione
