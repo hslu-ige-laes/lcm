@@ -12,7 +12,7 @@ has_toc: false
 1. [Clicca qui per scaricare l'applicazione lcm](https://github.com/hslu-ige-laes/lcm/releases/latest/download/lcm.zip){:target="_blank" :download}
 1. aprire il file zip
 1. trascinare la cartella `lcm-x.y` in una cartella a scelta
-   - è possibile rinominare la cartella `lcm-x.y` con un nome a scelta, ad esempio myProject<br><br>
+   - è possibile rinominare la cartella `lcm-x.y` con un nome a scelta, ad esempio `myProject`<br><br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_01.PNG" style="border:1px solid lightgrey"/>
 
 ## Passo 2: Avviare l'applicazione
