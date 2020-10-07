@@ -33,7 +33,7 @@ configurationModuleUI <- function(id) {
                        title="Building Type",
                        status="primary",
                        width = 3,
-                       helpText("The building type is used for electrical consumtion calculations."),
+                       helpText("The building type is used for electrical consumption calculations."),
                        radioButtons(ns("bldgType"), "Type", choices = c("Single Family House" = "single","Multi Family House" = "multi", selected = NULL)),
                        tags$br()
                      ),
