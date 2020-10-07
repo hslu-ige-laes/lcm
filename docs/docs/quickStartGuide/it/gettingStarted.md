@@ -13,10 +13,12 @@ has_toc: false
 1. aprire il file zip
 1. trascinare la cartella `lcm-x.y` in una cartella a scelta
    - è possibile rinominare la cartella `lcm-x.y` con un nome a scelta
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_01.PNG" style="border:1px solid lightgrey"/>
 
 ## Passo 2: Avviare l'applicazione
 1. avviare l'applicazione facendo doppio clic sul file `lcmStartApp.bat` che si trova nella cartella dell'applicazione più in alto
 1. un browser web si apre automaticamente e visualizza l'applicazione
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_02.PNG" style="border:1px solid lightgrey"/>
 
 **Tip:** Per uscire dall'applicazione, basta chiudere la finestra del browser web
 

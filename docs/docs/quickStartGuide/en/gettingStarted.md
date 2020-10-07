@@ -13,11 +13,13 @@ has_toc: false
 1. open the zip-file
 1. drag n drop the folder `lcm-x.y` into a folder of your choice
    - you can rename the folder `lcm-x.y` to any name
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_01.PNG" style="border:1px solid lightgrey"/>
 
 
 ## Step 2: Start application
 1. Start the application by executing `lcmStartApp.bat` in the application folder
 1. A Web browser will open automatically and display the application
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_02.PNG" style="border:1px solid lightgrey"/>
 
 **Tip:** In order to quit the application, simply close the Web browser window
 
