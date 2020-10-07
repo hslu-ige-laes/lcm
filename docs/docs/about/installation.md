@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Installation
-nav_order: 3
+nav_order: 1
+parent: About lcm
 has_children: true
-permalink: /docs/installation
+permalink: /docs/about/installation
+
 ---
 
 # Installation

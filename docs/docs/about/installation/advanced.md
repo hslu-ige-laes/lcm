@@ -3,6 +3,7 @@ layout: default
 title: Advanced
 nav_order: 04
 parent: Installation
+grand_parent: About lcm
 ---
 
 # Advanced

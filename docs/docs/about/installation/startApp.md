@@ -3,6 +3,7 @@ layout: default
 title: Start application
 nav_order: 02
 parent: Installation
+grand_parent: About lcm
 ---
 
 # Start applicaton
