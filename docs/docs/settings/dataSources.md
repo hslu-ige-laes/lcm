@@ -99,7 +99,7 @@ Once you have created an application with devices as described above, you can co
    - **Access Key**<br>
      You can copy/paste this key from your TTN application overview (at the bottom of the page, starts with `ttn-account-v...`)
    - **Fetching Enabled**<br>
-     This setting defines whether the data get automatically imported by the [lcm Data Fetcher](https://hslu-ige-laes.github.io/lcm/docs/installation/dataFetcher/). If you want to disable one application, you can deselect the checkbox
+     This setting defines whether the data get automatically imported by the [lcm Data Fetcher](https://hslu-ige-laes.github.io/lcm/docs/about/installation/dataFetcher/). If you want to disable one application, you can deselect the checkbox
 1. Press `Test settings and preview data`
    - now you should get an overview of the data in the TTN storage
 1. Finally press `Add new data source`

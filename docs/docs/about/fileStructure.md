@@ -121,7 +121,7 @@ myParsingScriptName <- function(filePath = NULL) {
 <hr>
 
 ## /dataFetcher
-- This folder contains the R [Data Fetcher](https://hslu-ige-laes.github.io/lcm/docs/installation/dataFetcher/) script and a batch file which fetches the data from the things network apllications
+- This folder contains the R [Data Fetcher](https://hslu-ige-laes.github.io/lcm/docs/about/installation/dataFetcher/) script and a batch file which fetches the data from the things network apllications
 
 <hr>
 

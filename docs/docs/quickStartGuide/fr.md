@@ -16,5 +16,5 @@ has_toc: false
 [Démarrage](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/gettingStarted/){: .btn .btn-green }
 
 <hr>
-<a id="windows">*</a> Pour exécuter l'application lcm avec un autre système d'exploitation, veuillez lire le chapitre [Installation](https://hslu-ige-laes.github.io/lcm/docs/installation) 
+<a id="windows">*</a> Pour exécuter l'application lcm avec un autre système d'exploitation, veuillez lire le chapitre [Installation](https://hslu-ige-laes.github.io/lcm/docs/about/installation) 
 <br>

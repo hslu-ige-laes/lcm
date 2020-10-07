@@ -17,5 +17,5 @@ has_toc: false
 [Erste Schritte](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/gettingStarted/){: .btn .btn-green }
 
 <hr>
-<a id="windows">*</a> Um die lcm-Anwendung mit einem anderen Betriebssystem auszuführen, lesen Sie bitte das Kapitel [Installation](https://hslu-ige-laes.github.io/lcm/docs/installation) 
+<a id="windows">*</a> Um die lcm-Anwendung mit einem anderen Betriebssystem auszuführen, lesen Sie bitte das Kapitel [Installation](https://hslu-ige-laes.github.io/lcm/docs/about/installation) 
 <br>

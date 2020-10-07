@@ -32,7 +32,7 @@ Maintenant, nous espérons que tout a bien fonctionné jusqu'à présent et que 
 - Ajoutez vos propres [sources de données](https://hslu-ige-laes.github.io/lcm/docs/settings/dataSources/)
 - Ajoutez [LoRaWAN devices via ttn applications](https://hslu-ige-laes.github.io/lcm/docs/settings/dataSources/#the-things-network-ttn-applications){:target="_blank"} pour obtenir des données en direct des capteurs IoT
 - Ajoutez vos propres [points de données](https://hslu-ige-laes.github.io/lcm/docs/settings/dataPoints/) pour explorer vos propres données
-- Configurez un [Data Fetcher](https://hslu-ige-laes.github.io/lcm/docs/installation/dataFetcher/), qui collecte et stocke automatiquement vos données ttn
+- Configurez un [Data Fetcher](https://hslu-ige-laes.github.io/lcm/docs/about/installation/dataFetcher/), qui collecte et stocke automatiquement vos données ttn
 
 **Amusez-vous bien!**
 

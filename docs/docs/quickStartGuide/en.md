@@ -16,5 +16,5 @@ has_toc: false
 [Get me up and running](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/en/gettingStarted/){: .btn .btn-green }
 
 <hr>
-<a id="windows">*</a> In order to run lcm with another operating system, please refer to the [Installation](https://hslu-ige-laes.github.io/lcm/docs/installation) section 
+<a id="windows">*</a> In order to run lcm with another operating system, please refer to the [Installation](https://hslu-ige-laes.github.io/lcm/docs/about/installation) section 
 <br>
