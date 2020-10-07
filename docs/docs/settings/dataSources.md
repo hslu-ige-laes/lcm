@@ -53,7 +53,7 @@ Supported data sources are: CSV files, LoRaWAN sensors over "The Things Network"
 <hr>
 
 ## the things network (ttn) applications
-### Generalities
+### General
 - [The Things Network](https://de.wikipedia.org/wiki/The_Things_Network){:target="_blank"} is a community based initiative to create a [LoRaWAN network](https://de.wikipedia.org/wiki/Long_Range_Wide_Area_Network){:target="_blank"}
 - LoRaWAN devices are able to send messages over a distance of about 10 kilometres wirelessly to a network gateway, where the data gets forwarded via internet to a TTN server
 - The link between the device and the TTN server is secured using an AES-128-End-to-End-Encryption
@@ -68,9 +68,15 @@ Supported data sources are: CSV files, LoRaWAN sensors over "The Things Network"
 - From there, the data normally get forwarded to the end application
 - Normally the things network does not store time series data permanently in a data storage
 - In the lcm application we use a cache offered by ttn, the 7-day data storage
-- From there we can easily fetch the data when we want
+- From there we can easily fetch the data when we want with the [Data Fetcher](https://hslu-ige-laes.github.io/lcm/docs/about/installation/dataFetcher/)
 - The retrieved data gets stored in CSV files which you can find in the folder `/app/shiny/data/ttn/yourTtnAppName/yourTtnDeviceName_yourTtnDatapointName.csv`
 - Hint: the measurements in the storage get saved with a UTC timestamp. The lcm application handels that automatically and changes the timezone depending on `Settings > App Configuration > Time Zone`
+
+
+### Important prerequisite
+- The data from LoRaWAN sensors are transmitted to a server of The Things Network. The data are then stored for a maximum of seven days. Consequently, the lcm application must retrieve and locally store the sensor data at least every seven days
+- This is the purpose of the "Data Fetcher". The Data Fetcher script collects all data from configured "the things network applications" and stores them locally as CSV files
+- Here you can find information of how to set up the [Data Fetcher](https://hslu-ige-laes.github.io/lcm/docs/about/installation/dataFetcher/)
 
 
 ### Add devices
