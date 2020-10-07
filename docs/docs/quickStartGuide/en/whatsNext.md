@@ -16,7 +16,7 @@ Here’s what you have accomplished so far:
 - Create a building hierarchy
 - Add a CSV data source
 - Create two data points, assign corresponding data types and connet them to rooms/flats within the building hierarchy
-- Explor the first two [Modules](https://hslu-ige-laes.github.io/lcm/docs/modules)
+- Explore the first two [Modules](https://hslu-ige-laes.github.io/lcm/docs/modules)
 
 Now hopefully, everything has worked fine so far and the first analysis of some sensor data is possible.
 
