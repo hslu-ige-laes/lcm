@@ -29,7 +29,7 @@ grand_parent: About lcm
 - Make sure to download version 3.6.3
 
 ## R Studio Software
-- R Studio is development environment for R
+- R Studio is a development environment for R
 - R Studio is recommended for development purposes only; it is not needed for runtime purposes
 
 1. Click [here](https://rstudio.com/products/rstudio/download/){:target="_blank"} to choose the operating system and download R Studio Desktop "Free"
