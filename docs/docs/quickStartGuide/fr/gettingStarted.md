@@ -12,12 +12,12 @@ has_toc: false
 1. [Cliquez ici pour télécharger l'application lcm](https://github.com/hslu-ige-laes/lcm/releases/latest/download/lcm.zip){:target="_blank" :download}
 1. ouvrir le fichier zip
 1. glisser-déposer le dossier `lcm-x.y` dans un dossier de votre choix
-   - vous pouvez renommer le dossier `lcm-x.y` avec un nom de votre choix
+   - vous pouvez renommer le dossier `lcm-x.y` avec un nom de votre choix, par exemple myProject<br><br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_01.PNG" style="border:1px solid lightgrey"/>
 
 ## Étape 2: Lancement de la demande
 1. Démarrez l'application en exécutant `lcmStartApp.bat` dans le dossier d'application
-1. Un navigateur Web s'ouvre automatiquement et affiche la vide demande
+1. Un navigateur Web s'ouvre automatiquement et affiche la vide demande<br><br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_02.PNG" style="border:1px solid lightgrey"/>
 
 **Conseil**: Pour quitter l'application, il suffit de fermer la fenêtre du navigateur Web
