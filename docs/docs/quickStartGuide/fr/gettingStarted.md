@@ -17,7 +17,7 @@ has_toc: false
 
 ## Étape 2: Lancement de la demande
 1. Démarrez l'application en exécutant `lcmStartApp.bat` dans le dossier d'application
-1. Un navigateur Web s'ouvre automatiquement et affiche la demande
+1. Un navigateur Web s'ouvre automatiquement et affiche la vide demande
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_02.PNG" style="border:1px solid lightgrey"/>
 
 **Conseil**: Pour quitter l'application, il suffit de fermer la fenêtre du navigateur Web

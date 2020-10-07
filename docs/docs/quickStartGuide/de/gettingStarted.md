@@ -19,7 +19,7 @@ has_toc: false
 
 ## Schritt 2: Anwendung starten
 1. Starten Sie die Anwendung durch Doppelklicken der Datei `lcmStartApp.bat` welche im obersten Ordner liegt
-1. Ein Web-Browser öffnet sich automatisch und zeigt die Anwendung
+1. Ein Web-Browser öffnet sich automatisch und zeigt die leere Anwendung
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_02.PNG" style="border:1px solid lightgrey"/>
 
 **Tipp:** Um die Anwendung zu beenden, schliessen Sie einfach das Webbrowser-Fenster

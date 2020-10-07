@@ -17,7 +17,7 @@ has_toc: false
 
 ## Passo 2: Avviare l'applicazione
 1. avviare l'applicazione facendo doppio clic sul file `lcmStartApp.bat` che si trova nella cartella dell'applicazione più in alto
-1. un browser web si apre automaticamente e visualizza l'applicazione
+1. un browser web si apre automaticamente e visualizza l'applicazione vuota
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_02.PNG" style="border:1px solid lightgrey"/>
 
 **Tip:** Per uscire dall'applicazione, basta chiudere la finestra del browser web
