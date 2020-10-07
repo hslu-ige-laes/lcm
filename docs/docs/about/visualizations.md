@@ -2,7 +2,7 @@
 layout: default
 title: Visualizations
 nav_order: 9
-parent: About the app
+parent: About lcm
 ---
 
 # Visualizations

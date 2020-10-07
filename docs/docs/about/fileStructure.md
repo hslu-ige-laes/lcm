@@ -2,7 +2,7 @@
 layout: default
 title: File structure
 nav_order: 3
-parent: About the app
+parent: About lcm
 
 ---
 
