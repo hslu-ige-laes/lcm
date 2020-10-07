@@ -14,7 +14,7 @@ has_toc: false
 1. Ziehen Sie den Ordner `lcm-x.y` per Drag & Drop in einen Ordner Ihrer Wahl
    - Sie können den Ordner `lcm-x.y` nach Belieben umbenennen, z.B. `myProject`
 
-Das Ergebnis sollte wie folgt aussehen<br><br>
+Das Ergebnis sollte wie folgt aussehen:<br><br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_01.PNG" style="border:1px solid lightgrey"/>
 
 

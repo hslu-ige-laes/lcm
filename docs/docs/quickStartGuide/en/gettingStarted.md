@@ -14,7 +14,7 @@ has_toc: false
 1. drag n drop the folder `lcm-x.y` into a folder of your choice
    - you can rename the folder `lcm-x.y` to any name, e.g. `myProject`
 
-The result should look like this<br><br>
+The result should look like this:<br><br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_01.PNG" style="border:1px solid lightgrey"/>
 
 
