@@ -14,7 +14,7 @@ has_toc: false
 1. Ziehen Sie den Ordner `lcm-x.y` per Drag & Drop in einen Ordner Ihrer Wahl
    - Sie können den Ordner `lcm-x.y` nach Belieben umbenennen, z.B. `myProject`
 
-Das Ergebnis sollte wie folgt aussehen:<br><br>
+Das Ergebnis sollte wie folgt aussehen:<br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_01.PNG" style="border:1px solid lightgrey"/>
 
 
@@ -22,7 +22,7 @@ Das Ergebnis sollte wie folgt aussehen:<br><br>
 1. Starten Sie die Anwendung durch Doppelklicken der Datei `lcmStartApp.bat` welche im obersten Ordner liegt
 1. Ein Web-Browser öffnet sich automatisch und zeigt die leere Anwendung
 
-Das Ergebnis sollte wie folgt aussehen<br><br>
+Das Ergebnis sollte wie folgt aussehen<br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_02.PNG" style="border:1px solid lightgrey"/>
 
 **Tipp:** Um die Anwendung zu beenden, schliessen Sie einfach das Webbrowser-Fenster

@@ -13,7 +13,7 @@ has_toc: false
 1. Wählen Sie den entsprechenden "Gebäudetyp" (Einfamilienhaus oder Mehrfamilienhaus) aus und stellen Sie die "Gebäudehöhe" ein
 1. Klicken Sie auf den Speichern-Knopf `Save settings in configApp.csv`
 
-Das Ergebnis sollte wie folgt aussehen:<br><br>
+Das Ergebnis sollte wie folgt aussehen:<br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_03.PNG" style="border:1px solid lightgrey"/>
 
 
@@ -31,7 +31,7 @@ In der lcm-Anwendung werden Gebäude hierarchisch definiert. Zum Beispiel:
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsBldgHierarchy_01.PNG" style="border:1px solid lightgrey"/>
 1. Klicken Sie auf `Add new flat` um die Wohnung der Hierarchie hinzuzufügen
 
-Das Ergebnis sollte wie folgt aussehen:<br><br>
+Das Ergebnis sollte wie folgt aussehen:<br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_04.PNG" style="border:1px solid lightgrey"/>
 
 Drücken Sie "Weiter" um zu erfahren, wie Sie eine Datenquelle hinzufügen können.

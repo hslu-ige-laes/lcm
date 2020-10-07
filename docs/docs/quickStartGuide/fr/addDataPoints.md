@@ -15,7 +15,7 @@ has_toc: false
 1. naviguez dans la barre latérale jusqu'aux paramètres des points de données `Settings > Data Points`
 1. cliquez sur `Add new` pour ajouter un nouveau point de données
 1. remplissez le formulaire comme suit et cliquez sur `Test settings and preview data` pour obtenir un aperçu des données<br>
-   Votre fenêtre devrait ressembler à ceci<br><br>
+   Votre fenêtre devrait ressembler à ceci<br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_07.PNG" style="border:1px solid lightgrey"/><br>
 1. cliquez enfin sur `Add new data point`
    - le nouveau point de données est ajouté au tableau
@@ -23,7 +23,7 @@ has_toc: false
    - l'onglet `Room > Temp Reduction` apparaît dans la barre latérale
    - cet onglet apparaît dès qu'un ou plusieurs points de données de type `Room Temperature` sont ajoutés
 
-Le résultat devrait ressembler à ceci:<br><br>
+Le résultat devrait ressembler à ceci:<br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_08.PNG" style="border:1px solid lightgrey"/><br>
 
 ## Étape 2: Humidité de la pièce
@@ -32,7 +32,7 @@ Nous répétons maintenant la procédure ci-dessus pour le capteur d'humidité.
 1. naviguez dans la barre latérale jusqu'aux paramètres des points de données `Settings > Data Points`
 1. cliquez sur `Add new` pour ajouter un nouveau point de données
 1. remplir le formulaire comme suit et cliquez sur `Test settings and preview data`<br>
-   Votre fenêtre devrait ressembler à ceci<br><br>
+   Votre fenêtre devrait ressembler à ceci<br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_09.PNG" style="border:1px solid lightgrey"/><br>
 1. cliquez sur `Add new data point`
    - le nouveau point de données est ajouté au tableau
@@ -40,7 +40,7 @@ Nous répétons maintenant la procédure ci-dessus pour le capteur d'humidité.
    - l'onglet `Room > Temp vs. Hum` apparaît
    - cet onglet apparaît dès qu'un ou plusieurs points de données de type `Room Temperature` et `Room Humidity` sont présents dans une pièce en même temps
 
-Le résultat devrait ressembler à ceci:<br><br>
+Le résultat devrait ressembler à ceci:<br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_10.PNG" style="border:1px solid lightgrey"/><br>
 
 

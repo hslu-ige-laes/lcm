@@ -16,7 +16,7 @@ has_toc: false
 1. Klicken Sie auf `Add new` um eine neue Quelle hinzuzufügen
 1. Setzen Sie einen benutzerdefinierten Quellennamen `source Name`, wie z.B. `flatTempHum`
 1. Wählen Sie über den Knopf `Browse...` die Beispieldatendatei `flatTempHum.csv` aus. Diese Datei befindet sich in Ihrem Anwendungsordner im Unterordner `/sampleData`<br>
-   Ihr Fenster sollte wie folgt aussehen<br><br>
+   Ihr Fenster sollte wie folgt aussehen<br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_05.PNG" style="border:1px solid lightgrey"/><br>
 1. Klicken Sie auf `Add new data source` um die neue Datenquelle hinzufügen
 

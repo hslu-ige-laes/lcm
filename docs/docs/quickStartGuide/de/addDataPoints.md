@@ -23,7 +23,7 @@ has_toc: false
    - die Registerkarte `Room > Temp Reduction` erscheint in der Seitenleiste
    - diese Registerkarte erscheint, sobald ein oder mehrere Datenpunkte vom Typ `Room Temperature` hinzugefügt werden
 
-Das Ergebnis sollte wie folgt aussehen:<br><br>
+Das Ergebnis sollte wie folgt aussehen:<br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_08.PNG" style="border:1px solid lightgrey"/><br>
 
 ## Schritt 2: Raumluftfeuchtigkeit
@@ -40,7 +40,7 @@ Nun wiederholen wir das obige Verfahren für den Feuchtesensor.
    - die Registerkarte `Room > Temp vs. Hum` erscheint
    - diese Registerkarte erscheint, sobald ein oder mehrere Datenpunkte des Typs `Room Temperature` und `Room Humidity` in einem Raum gleichzeitig vorhanden sind
 
-Das Ergebnis sollte wie folgt aussehen:<br><br>
+Das Ergebnis sollte wie folgt aussehen:<br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_10.PNG" style="border:1px solid lightgrey"/><br>
 
 

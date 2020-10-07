@@ -17,11 +17,11 @@ has_toc: false
 1. Click `Add new`
 1. Set a user-defined `source Name`, such as `flatTempHum`
 1. Choose over the button `Browse...` the sample data file `flatTempHum.csv`. This file is included in your application folder in the subfolder `/sampleData`<br>
-   Your window should look like this<br><br>
+   Your window should look like this<br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_05.PNG" style="border:1px solid lightgrey"/><br>
 1. Click `Add new data source`
 
-The new CSV data source now appears in the source table:<br><br>
+The new CSV data source now appears in the source table:<br>
 <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_06.PNG" style="border:1px solid lightgrey"/>
 
 Click "Next" in order to learn how you can add individual data points.
