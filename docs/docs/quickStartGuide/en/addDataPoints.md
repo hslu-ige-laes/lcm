@@ -14,7 +14,7 @@ has_toc: false
 ## Step 1: Room Temperature
 1. Navigate to `Settings > Data Points` in the sidebar
 1. Click `Add new`
-1. Fill in the form as follows and then click `Test settings and preview data` in order to preview the data.
+1. Fill in the form as follows and then click `Test settings and preview data` in order to preview the data<br>
    Your window should look like this<br><br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_07.PNG" style="border:1px solid lightgrey"/><br>
 1. Finally, click `Add new data point`
@@ -32,7 +32,7 @@ Now we repeat the above procedure for the humidity sensor.
 
 1. Navigate to `Settings > Data Points` in the sidebar
 1. Click `Add new`
-1. Fill in the form as follows and then click `Test settings and preview data`
+1. Fill in the form as follows and then click `Test settings and preview data`<br>
    Your window should look like this<br><br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_09.PNG" style="border:1px solid lightgrey"/><br>
 1. Click `Add new data point`

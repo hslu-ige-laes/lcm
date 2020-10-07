@@ -14,7 +14,7 @@ has_toc: false
 ## Étape 1: Température ambiante
 1. naviguez dans la barre latérale jusqu'aux paramètres des points de données `Settings > Data Points`
 1. cliquez sur `Add new` pour ajouter un nouveau point de données
-1. remplissez le formulaire comme suit et cliquez sur `Test settings and preview data` pour obtenir un aperçu des données
+1. remplissez le formulaire comme suit et cliquez sur `Test settings and preview data` pour obtenir un aperçu des données<br>
    Votre fenêtre devrait ressembler à ceci<br><br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_07.PNG" style="border:1px solid lightgrey"/><br>
 1. cliquez enfin sur `Add new data point`
@@ -31,7 +31,7 @@ Nous répétons maintenant la procédure ci-dessus pour le capteur d'humidité.
 
 1. naviguez dans la barre latérale jusqu'aux paramètres des points de données `Settings > Data Points`
 1. cliquez sur `Add new` pour ajouter un nouveau point de données
-1. remplir le formulaire comme suit et cliquez sur `Test settings and preview data`
+1. remplir le formulaire comme suit et cliquez sur `Test settings and preview data`<br>
    Votre fenêtre devrait ressembler à ceci<br><br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_09.PNG" style="border:1px solid lightgrey"/><br>
 1. cliquez sur `Add new data point`
