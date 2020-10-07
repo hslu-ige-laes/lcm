@@ -31,9 +31,9 @@ Nun wiederholen wir das obige Verfahren für den Feuchtesensor.
 
 1. Navigieren Sie erneut in der Seitenleiste zu `Settings > Data Points`
 1. Klicken Sie auf `Add new`
-1. Füllen Sie das Formular wie folgt aus:<br>
-   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsDataPoints_02.PNG" style="border:1px solid lightgrey"/>
-1. Klicken Sie auf `Test settings and preview data`
+1. Füllen Sie das Formular wie folgt aus und klicken Sie auf `Test settings and preview data`
+   Ihr Fenster sollte wie folgt aussehen<br><br>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_09.PNG" style="border:1px solid lightgrey"/><br>
 1. Klicken Sie auf `Add new data point`
    - der neue Datenpunkt wird der Tabelle hinzugefügt
 1. Klicken Sie in der oberen rechten Leiste auf `update data now`
