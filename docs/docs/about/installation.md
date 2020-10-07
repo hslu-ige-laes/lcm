@@ -15,6 +15,6 @@ permalink: /docs/about/installation
 - It is recommended to perform the installation on a dedicated windows laptop, which is exclusively used for this purpose and running 24/7
 - On windows operating systems, there are two different ways to execute the application:
   - the "portable" version, where you don't have to install any additional software (this is used in the Quick Start Guide)
-  - the "local installation" of R, see [Local Installation](https://hslu-ige-laes.github.io/lcm/docs/about/installation/localinstallation/)
+  - the "local installation" of R, see [Local Installation](https://hslu-ige-laes.github.io/lcm/docs/about/installation/localInstallation/)
 - For other operating systems such as Linux and Mac OSX or development of lcm, you need to install R always locally
-  - See [Local Installation](https://hslu-ige-laes.github.io/lcm/docs/about/installation/localinstallation/)
+  - See [Local Installation](https://hslu-ige-laes.github.io/lcm/docs/about/installation/localInstallation/)
