@@ -1,19 +1,15 @@
 ---
 layout: default
-title: Install R
-nav_order: 02
+title: Advanced
+nav_order: 04
 parent: Installation
 ---
 
-# Install R
-## R Portable
-The lcm application works with the portableApps framework, which allows one to run R without a local installation. This works as well on a flash drive!
-- No local installation required
-
-<hr>
+# Advanced
 
 ## Local installation
-- If "R Portable" is not suitable for you, R should be installed locally. Please refer to the instructions of your operating system (below)
+- The lcm application works per default with the portableApps framework, which allows one to run R without a local installation. This works as well on a flash drive!
+- If "R Portable" is not suitable for you, R should be installed locally. Please refer to the following instructions.
 
 ### Windows
 

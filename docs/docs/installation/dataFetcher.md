@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Data Fetcher
-nav_order: 04
+nav_order: 03
 parent: Installation
 ---
 # Data Fetcher
