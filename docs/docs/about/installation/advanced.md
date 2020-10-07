@@ -6,24 +6,22 @@ parent: Installation
 grand_parent: About lcm
 ---
 
-# Advanced
-
-## Local installation
+# local Installation of R
 - The lcm application works per default with the portableApps framework, which allows one to run R without a local installation. This works as well on a flash drive!
-- If "R Portable" is not suitable for you, R should be installed locally. Please refer to the following instructions.
+- If "R Portable" is not suitable for you or if you want to develop and adapt lcm, R should be installed locally. Please refer to the following instructions which depend on your operating system.
 
-### Windows
+## Windows
 
 1. [Click to download R version 3.6.3](https://cran.r-project.org/bin/windows/base/old/3.6.3/R-3.6.3-win.exe){:target="_blank" :download}
 1. Run the downloaded installer file and follow the installation wizard
 1. The wizard will install R into your "Program Files" folders and add a shortcut in your Start menu. Note that you will need to have all necessary administration rights to install new software on your machine
 
-### Mac OSX
+## Mac OSX
 1. [Click to download R version 3.6.3](https://cran.r-project.org/bin/macosx/R-3.6.3.pkg){:target="_blank" :download}
 1. Run the downloaded installer file and follow the installation wizard
 1. The installer allows you to customize your installation. However the default values will be suitable for most users
 
-### Linux
+## Linux
 - R comes preinstalled on many Linux systems
 - The CRAN website provides files to build R from source on Debian, Redhat, SUSE, and Ubuntu systems under the link “Download R for Linux”
 - Click the [link](https://cran.r-project.org/bin/linux/){:target="_blank"} and then follow the directory trail to the version of Linux you wish to install R on top of
@@ -32,7 +30,7 @@ grand_parent: About lcm
 
 <hr>
 
-# Install R Studio
+# Installation of R Studio
 - R Studio is development environment for R
 - R Studio is recommended for development purposes only; it is not needed for runtime purposes
 
