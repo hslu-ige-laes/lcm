@@ -24,7 +24,7 @@ has_toc: false
    - this tab appears as soon as one or more data point of the type `Room Temperature` are added
 
 The result should look like this:<br><br>
-   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_08.PNG" style="border:1px solid lightgrey"/><br>
+<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_08.PNG" style="border:1px solid lightgrey"/><br>
 
 
 ## Step 2: Room Humidity
