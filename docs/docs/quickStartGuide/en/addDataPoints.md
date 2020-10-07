@@ -42,7 +42,7 @@ Now we repeat the above procedure for the humidity sensor.
    - this tab appears as soon as one or more data point of the type `Room Temperature` and `Room Humidity` are added to the same room
 
 The result should look like this:<br><br>
-   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_10.PNG" style="border:1px solid lightgrey"/><br>
+<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_10.PNG" style="border:1px solid lightgrey"/><br>
 
 
 Click "Next" in order to learn how to set up a complete monitoring system.
