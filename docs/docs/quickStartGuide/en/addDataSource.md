@@ -15,11 +15,14 @@ has_toc: false
 
 1. Navigate to `Settings > Data Sources` in the sidebar
 1. Click `Add new`
-1. Set a user-defined `source Name`, such as `tempHumFlatA`
-1. Choose over the button `Browse...` the sample data file `roomTempHum.csv`. This file is included in your application folder in the subfolder `/sampleData`
+1. Set a user-defined `source Name`, such as `flatTempHumA`
+1. Choose over the button `Browse...` the sample data file `flatTempHumA.csv`. This file is included in your application folder in the subfolder `/sampleData`
+   Your window should look like this<br><br>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_05.PNG" style="border:1px solid lightgrey"/><br>
 1. Click `Add new data source`
 
-The new CSV data source now appears in the source table.
+The new CSV data source now appears in the source table:<br><br>
+<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_06.PNG" style="border:1px solid lightgrey"/>
 
 Click "Next" in order to learn how you can add individual data points.
 

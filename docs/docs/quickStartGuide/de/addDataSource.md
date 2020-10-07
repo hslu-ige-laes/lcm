@@ -14,11 +14,14 @@ has_toc: false
 
 1. Navigieren Sie in der Seitenleiste zu den Einstellungen der Datenquelle `Settings > Data Sources`
 1. Klicken Sie auf `Add new` um eine neue Quelle hinzuzufügen
-1. Setzen Sie einen benutzerdefinierten Quellennamen `source Name`, wie z.B. `tempHumFlatA`
-1. Wählen Sie über den Knopf `Browse...` die Beispieldatendatei `roomTempHum.csv` aus. Diese Datei befindet sich in Ihrem Anwendungsordner im Unterordner `/sampleData`
+1. Setzen Sie einen benutzerdefinierten Quellennamen `source Name`, wie z.B. `flatTempHumA`
+1. Wählen Sie über den Knopf `Browse...` die Beispieldatendatei `flatTempHumA.csv` aus. Diese Datei befindet sich in Ihrem Anwendungsordner im Unterordner `/sampleData`
+   Ihr Fenster sollte wie folgt aussehen<br><br>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_05.PNG" style="border:1px solid lightgrey"/><br>
 1. Klicken Sie auf `Add new data source` um die neue Datenquelle hinzufügen
 
-Die neue CSV-Datenquelle erscheint jetzt in der Quellentabelle.
+Die neue CSV-Datenquelle erscheint jetzt in der Quellentabelle:
+<img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_06.PNG" style="border:1px solid lightgrey"/>
 
 Klicken Sie auf "Weiter", um zu erfahren, wie Sie einzelne Datenpunkte hinzufügen können.
 
