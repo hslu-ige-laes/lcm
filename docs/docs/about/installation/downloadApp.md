@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Download App
-nav_order: 01
+nav_order: 02
 parent: Installation
 grand_parent: About lcm
 ---

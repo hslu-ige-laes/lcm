@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Local Installation
-nav_order: 04
+nav_order: 01
 parent: Installation
 grand_parent: About lcm
 ---
