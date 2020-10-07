@@ -75,7 +75,8 @@ Supported data sources are: CSV files, LoRaWAN sensors over "The Things Network"
 
 ### Add devices
 - You can buy a LoRaWAN device and connect it to the network, free without charges or fees
-- The [lora-devices-ttn documentation](https://hslu-ige-laes.github.io/lora-devices-ttn/){:target="_blank"} gives an overview of different LoRaWAN devices
+- The separately available [lora-devices-ttn documentation](https://hslu-ige-laes.github.io/lora-devices-ttn/){:target="_blank"} gives an overview of different LoRaWAN devices
+- This documentation is kept separately because these steps are lcm independent
 - Simply click there on a LoRaWAN device and you will get
   - important documents
   - ordering information
