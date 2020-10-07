@@ -11,7 +11,9 @@ has_toc: false
 ## Schritt 1: Anwendungskonfiguration
 1. Navigieren Sie in der Seitenleiste zu den Applikaitions-Einstellungen `Settings > App Configuration`
 1. Wählen Sie den entsprechenden "Gebäudetyp" (Einfamilienhaus oder Mehrfamilienhaus) aus und stellen Sie die "Gebäudehöhe" ein
-1. Klicken Sie auf den Speichern-Knopf `Save settings in configApp.csv`
+1. Klicken Sie auf den Speichern-Knopf `Save settings in configApp.csv`<br><br>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_03.PNG" style="border:1px solid lightgrey"/>
+
 
 ## Schritt 2: Definieren Sie die Gebäudehierarchie
 In der lcm-Anwendung werden Gebäude hierarchisch definiert. Zum Beispiel:
@@ -25,7 +27,8 @@ In der lcm-Anwendung werden Gebäude hierarchisch definiert. Zum Beispiel:
 1. Klicken Sie auf `Add new` um einen neuen Eintrag zu erstellen
 1. Füllen Sie das Formular wie folgt aus:<br>
    <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/settingsBldgHierarchy_01.PNG" style="border:1px solid lightgrey"/>
-1. Klicken Sie auf `Add new flat` um die Wohnung der Hierarchie hinzuzufügen
+1. Klicken Sie auf `Add new flat` um die Wohnung der Hierarchie hinzuzufügen<br><br>
+   <img src="https://raw.githubusercontent.com/hslu-ige-laes/lcm/master/docs/assets/images/quickStartGuide_04.PNG" style="border:1px solid lightgrey"/>
 
 Drücken Sie "Weiter" um zu erfahren, wie Sie eine Datenquelle hinzufügen können.
 
