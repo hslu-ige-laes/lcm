@@ -4,8 +4,8 @@
 ## Create new release
 1. [https://github.com/hslu-ige-laes/lcm/releases](https://github.com/hslu-ige-laes/lcm/releases)
 1. click `Draft a new release`
-   - Tag version: e.g. `v0.3-alpha`
-   - Release Title: e.g. `third test release - alpha`
+   - Tag version: e.g. `v0.3-alpha` (Versioning see semver.org)
+   - Release Title: leave empty, so the version is as well the title (common practice on github)
    - check `This is a pre-release`
    - Click `Publish release`
 1. Download `Source code (zip)`
