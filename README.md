@@ -16,7 +16,7 @@
   [English](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/en/) - [Deutsch](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/de/) - [Français](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/fr/) - [Italiano](https://hslu-ige-laes.github.io/lcm/docs/quickStartGuide/it/)
 
 ## Simplified installation instructions
-> For more details please consult [https://hslu-ige-laes.github.io/lcm/docs/installation](https://hslu-ige-laes.github.io/lcm/docs/installation)
+> For more details please consult [https://hslu-ige-laes.github.io/lcm/docs/about/installation](https://hslu-ige-laes.github.io/lcm/docs/about/installation)
 
 ### without installing R (only on Windows)
 1. <a href="https://github.com/hslu-ige-laes/lcm/releases/latest/download/lcm.zip" download>Download lcm application</a>
