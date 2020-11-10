@@ -63,8 +63,8 @@ A simple overview of the time series data per room.
 - If the effective room number deviates significantly, i.e. by more than 1, from a "typical room number", the typical energy consumption is adjusted accordingly.
 
 **Dishwasher**
-- none: no dishwaser powered with this meter
-- classic: dishwaser available, no further classification
+- none: no dishwasher powered with this meter
+- classic: dishwasher available, no further classification
 - with hot water supply: electrical dishwasher which uses as well hot water to heat up
 
 **Freezer**
@@ -98,7 +98,7 @@ A simple overview of the time series data per room.
 
 **Common electricity (building equipment, common lighting)**
 - included: e.g. for single family houses with main meter
-- excluded:  e.g. for multi family houses where the meter of the flat gets analyzed. Normally the coomon electricity is measured by a separate meter.
+- excluded:  e.g. for multi family houses where the meter of the flat gets analyzed. Normally the common electricity is measured by a separate meter.
 
 <hr>
 
