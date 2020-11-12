@@ -425,7 +425,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
     
     # Dryer
     switch(input$dryer,
-           none = {value <- value - (table$dryerCorrVal)},
+           none = {value <- value - ((table$laundryCorrVal + table$dryerCorrVal) * 0.5)},
            roomAir = {value <- value - ((table$laundryCorrVal + table$dryerCorrVal) * 0.25)},
            heatPump = {value <- value - ((table$laundryCorrVal + table$dryerCorrVal) * 0.25)},
            classic = {value <- value}
