@@ -270,7 +270,7 @@ flatElectricityModule <- function(input, output, session, aggData) {
     )
   })
   
-  # get separate temp and hum data and merge it
+  # get data
   df.all <- reactive({
     withProgress(message = 'Calculating data', detail = "electricity plot", value = NULL, {
       req(aggData())
