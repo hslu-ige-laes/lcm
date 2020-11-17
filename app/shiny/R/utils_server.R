@@ -14,12 +14,12 @@ aggregateXts <- function(xts, func = "mean", agg = "1d", locTimeZone = "Europe/Z
   }
   data <- switch(agg,
                  "15m" = {
-                   temp <- aggregatets(xts, FUN=func, on="minutes", k=15, dropna=FALSE)
+                   temp <- aggregateTS(xts, FUN=func, on="minutes", k=15, dropna=FALSE)
                    tzone(temp) <- locTimeZone
                    return(temp)
                  },
                  "1h" = {
-                   temp <- aggregatets(xts, FUN=func, on="hours", k=1, dropna=FALSE)
+                   temp <- aggregateTS(xts, FUN=func, on="hours", k=1, dropna=FALSE)
                    tzone(temp) <- locTimeZone
                    return(temp)
                  },
