@@ -40,11 +40,12 @@
 #     8   Heating meter operating hours since commissioning (in case of a failure this value does not get increased)
 #     9   Heating meter average volume flow
 #    10   Heating meter current power
-#    11   timestamp of reading values Nr. 1...13
-#    13   Additional meter 1 impulse count (for flow meters normally 1 impulse per 10 ltrs)
-#    14   Additional meter 2 impulse count (for flow meters normally 1 impulse per 10 ltrs)
-#    15   Heating meter energy value at date of programmed reading, see Nr. 19
-#    16   Heating meter volume flow value at date of programmed reading, see Nr. 19
+#    11   timestamp of reading values Nr. 1...12
+#    12   Additional meter 1 impulse count (for flow meters normally 1 impulse per 10 ltrs)
+#    13   Additional meter 2 impulse count (for flow meters normally 1 impulse per 10 ltrs)
+#    14   Heating meter energy value at date of programmed reading, see Nr. 19
+#    15   Heating meter volume flow value at date of programmed reading, see Nr. 19
+#    16   Heating meter volume flow value at date of programmed reading, see Nr. 19 (in case of a failure this value does not get increased)
 #    17   Additional meter 1 impulse count at date of programmed reading, see Nr. 19
 #    18   Additional meter 2 impulse count at date of programmed reading, see Nr. 19
 #    19   Date of the programmed planned reading
