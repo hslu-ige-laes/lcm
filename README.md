@@ -1,5 +1,5 @@
 # lcm - Low Cost Monitoring
-<img src="https://github.com/hslu-ige-laes/lcm/raw/master/docs/assets/images/lcm.png" width="100" align="right" class="inline"/>
+<img src="https://github.com/hslu-ige-laes/lcm/raw/master/docs/assets/images/lcm.png" width="140" align="right" class="inline"/>
 
 - "lcm" is an open source monitoring application for residential buildings
 - The focus of the application is on providing energy savings whilst maintaining the expected comfort
