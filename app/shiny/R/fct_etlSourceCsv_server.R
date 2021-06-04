@@ -3,7 +3,7 @@ csvGetTimeSeries <- function(fileName, datapoint,
                              func = "raw", agg = "1d", fill = "null", valueFactor = 1, valueType = "absVal",
                              locTimeZone = "Europe/Zurich"){
   
-  df <- read_csv2(file = here::here("app", "shiny", "data", "csv", fileName), na.strings = c("", "NA"))
+  df <- read_csv2(file = here::here("app", "shiny", "data", "csv", fileName), na = c("", "NA"))
   # df <- read_delim(file = here::here("app", "shiny", "data", "csv", fileName), na = c("", "NA"), delim = ";")
   
   df <- df %>% select(time, datapoint)
