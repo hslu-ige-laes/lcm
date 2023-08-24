@@ -108,6 +108,24 @@ dataSourcesModuleInfluxdbv1x <- function(input, output, session) {
   })
   
   observeEvent(input$influxdbQueryDbButton, {
+    if(grepl("http", input$influxdbHost) || grepl(":", input$influxdbHost) || grepl("//", input$influxdbHost)){
+      shinyalert(
+        title = "Error",
+        text = "The host should be in the format 192.168.178.1",
+        closeOnEsc = TRUE,
+        closeOnClickOutside = TRUE,
+        html = FALSE,
+        type = "error",
+        showConfirmButton = TRUE,
+        showCancelButton = FALSE,
+        confirmButtonText = "OK",
+        confirmButtonCol = "#AEDEF4",
+        timer = 0,
+        imageUrl = "",
+        animation = TRUE
+      )
+      return()
+    }
     withProgress(message = 'InfluxDB Connection', detail = "Query databases, please wait (timeout = 10s)", value = NULL, {
       
       influxDB.dbOverview <<- filter(influxdbGetDatabases(host = input$influxdbHost,
