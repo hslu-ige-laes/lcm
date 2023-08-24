@@ -9,7 +9,7 @@ dataSourcesModuleInfluxdbv1xUI <- function(id) {
         status="primary",
         width = 12,
         useShinyalert(), # Set up shinyalert
-        helpText("Get sensor data measurements from a Influx Database Version 1.8."),
+        helpText("Get sensor data measurements from a Influx Database Version 1.x."),
         tags$hr(),
         actionButton(ns("addButton"),label = "Add new"),
         actionButton(ns("deleteButton"),label = "Delete selected"),
