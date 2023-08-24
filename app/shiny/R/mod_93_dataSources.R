@@ -17,8 +17,8 @@ dataSourcesModuleUI <- function(id) {
           tabPanel("the things network",
                     dataSourcesModuleTtnUI("datasources_ttn")
           ),
-          tabPanel("influxDB",
-                   dataSourcesModuleInfluxdbUI("datasources_influxdb")
+          tabPanel("influxDB v1.x",
+                   dataSourcesModuleInfluxdbv1xUI("datasources_influxdbv1x")
           )
         )
       )

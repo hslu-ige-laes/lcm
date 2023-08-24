@@ -76,7 +76,7 @@ source(here::here("app", "shiny", "R", "mod_92_bldgHierarchy.R"))
 
 source(here::here("app", "shiny", "R", "mod_93_dataSources.R"))
 source(here::here("app", "shiny", "R", "mod_93_dataSourcesTtn.R"))
-source(here::here("app", "shiny", "R", "mod_93_dataSourcesInfluxdb.R"))
+source(here::here("app", "shiny", "R", "mod_93_dataSourcesInfluxdbv1x.R"))
 source(here::here("app", "shiny", "R", "mod_93_dataSourcesCsv.R"))
 
 source(here::here("app", "shiny", "R", "mod_94_dataPoints.R"))
@@ -86,7 +86,7 @@ source(here::here("app", "shiny", "R", "mod_94_dataPoints.R"))
 
 configFileApp <- reactiveFileReader(1000, NULL, here::here("app", "shiny", "config", "configApp.csv"), loadConfigFile)
 configFileTtn <- reactiveFileReader(1000, NULL, here::here("app", "shiny", "config", "configTtn.csv"), loadDataSourceFile)
-configFileInfluxdb <- reactiveFileReader(1000, NULL, here::here("app", "shiny", "config", "configInfluxdb.csv"), loadDataSourceFile)
+configFileInfluxdbv1x <- reactiveFileReader(1000, NULL, here::here("app", "shiny", "config", "configInfluxdbv1x.csv"), loadDataSourceFile)
 configFileCsv <- reactiveFileReader(1000, NULL, here::here("app", "shiny", "config", "configCsv.csv"), loadDataSourceFile)
 
 etlAggFilterList <- reactiveFileReader(1000, NULL, here::here("app", "shiny", "config", "etlAggFilterList.csv"), loadDataPointsFile)

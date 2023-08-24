@@ -1,15 +1,15 @@
-dataSourcesModuleInfluxdbUI <- function(id) {
+dataSourcesModuleInfluxdbv1xUI <- function(id) {
 
   ns <- NS(id)
   
   tagList(
     fluidRow(
       box(
-        title="Influx Database Overview",
+        title="Influx Database Version 1.x Overview",
         status="primary",
         width = 12,
         useShinyalert(), # Set up shinyalert
-        helpText("Get sensor data measurements from a locale Influx Database."),
+        helpText("Get sensor data measurements from a Influx Database Version 1.8."),
         tags$hr(),
         actionButton(ns("addButton"),label = "Add new"),
         actionButton(ns("deleteButton"),label = "Delete selected"),
@@ -22,7 +22,7 @@ dataSourcesModuleInfluxdbUI <- function(id) {
   )
 }
 
-dataSourcesModuleInfluxdb <- function(input, output, session) {
+dataSourcesModuleInfluxdbv1x <- function(input, output, session) {
 
   # Add script to detect selected row.
   output$script<-renderUI({
@@ -35,7 +35,7 @@ dataSourcesModuleInfluxdb <- function(input, output, session) {
   
   # Create Table.
   output$tableContent <- renderDataTable({
-    datatable(configFileInfluxdb(),
+    datatable(configFileInfluxdbv1x(),
               selection = "single",
               filter = "none",
               options = list(pageLength = 20, bFilter = 0, bLengthChange = 0, ordering = FALSE, bInfo = 0),

@@ -240,7 +240,7 @@ server <- function(input, output, session) {
   callModule(bldgHierarchyModule, "bldgHierarchy")
   callModule(dataSourcesModule, "datasources")
   callModule(dataSourcesModuleTtn, "datasources_ttn")
-  callModule(dataSourcesModuleInfluxdb, "datasources_influxdb")
+  callModule(dataSourcesModuleInfluxdbv1x, "datasources_influxdbv1x")
   callModule(dataSourcesModuleCsv, "datasources_csv")
   callModule(dataPointsModule, "datapoints")
   # ======================================================================
