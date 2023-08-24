@@ -128,17 +128,36 @@ dataSourcesModuleInfluxdbv1x <- function(input, output, session) {
     }
     withProgress(message = 'InfluxDB Connection', detail = "Query databases, please wait (timeout = 10s)", value = NULL, {
       
-      influxDB.dbOverview <<- filter(influxdbGetDatabases(host = input$influxdbHost,
-                                                          port = input$influxdbPort,
-                                                          user = input$influxdbUser,
-                                                          pwd = input$influxdbPwd), 
-                                     name != "_internal")
+      databases = influxdbGetDatabases(host = input$influxdbHost,
+                                       port = input$influxdbPort,
+                                       user = input$influxdbUser,
+                                       pwd = input$influxdbPwd)
     })
     
-    updateSelectizeInput(session, 'influxdbDatabase',
-                         choices = influxDB.dbOverview$name,
-                         server = TRUE
-    )
+    if(is.null(databases)){
+      shinyalert(
+        title = "Error",
+        text = "Error in establishing connection, please verify the settings",
+        closeOnEsc = TRUE,
+        closeOnClickOutside = TRUE,
+        html = FALSE,
+        type = "error",
+        showConfirmButton = TRUE,
+        showCancelButton = FALSE,
+        confirmButtonText = "OK",
+        confirmButtonCol = "#AEDEF4",
+        timer = 0,
+        imageUrl = "",
+        animation = TRUE
+      )
+      return()
+    } else {
+      influxDB.dbOverview <<- filter(databases, name != "_internal")
+      
+      updateSelectizeInput(session, 'influxdbDatabase',
+                           choices = influxDB.dbOverview$name,
+                           server = TRUE)
+    }
   })
   
   # tbd: delete entries if some inputs get changed
@@ -272,7 +291,7 @@ dataSourcesModuleInfluxdbv1x <- function(input, output, session) {
                                            influxdbDatabase = input$influxdbDatabase
       )
       configInfluxdb.new <- rbind(configInfluxdb.old, configInfluxdb.newItem)
-      write_csv2(configInfluxdb.new, here::here("app", "shiny", "config", "configInfluxdb.csv"))
+      write_csv2(configInfluxdb.new, here::here("app", "shiny", "config", "configInfluxdbv1x.csv"))
       
       removeModal()
     }
@@ -348,7 +367,7 @@ dataSourcesModuleInfluxdbv1x <- function(input, output, session) {
   deleteEntry <- function(){
     configInfluxdb.old <- configFileInfluxdb()
     configInfluxdb.new <- configInfluxdb.old[-c(input$tableContent_rows_selected), ]
-    write_csv2(configInfluxdb.new, here::here("app", "shiny", "config", "configInfluxdb.csv"))
+    write_csv2(configInfluxdb.new, here::here("app", "shiny", "config", "configInfluxdbv1x.csv"))
     removeModal()
   }
 }
